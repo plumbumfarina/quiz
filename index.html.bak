@@ -11,23 +11,21 @@
 	<link href="css/style.css" rel="stylesheet">
   </head>
   <body>
-	<div class="container">
-		<nav class="navbar navbar-default">
-			<div class="container-fluid">
-				<div class="navbar-header">
-					<a class="navbar-brand" href="#">Projekt</a>
-					<p>Menü</p>
-				</div>
-			</div>
-		</nav>
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<a class="navbar-brand" href="#">Projekt</a>
+			<p>Menü</p>
+		</div>
+	</nav>
 	
-
-			<div id="start_screen" class="jumbotren quiz_start>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-8">
 			
-				<h1>Herzlich Willkommen</h1>
-				<p>Das Quiz startet sofort.</p>
-				<p><button id="start_btn" class="btn btn-primary btn-lg" role="button">Jetzt starten</button></p>
-				
+				<h1>Überschrift</h1>
+				<p>Dies ist der Einleitungstext.</p>
+				<button id="mehrErfahren" type="button" class="btn btn-success">Mehr erfahren...</button>
+				<p id="mehr text"></p>
 			</div>
 			<div class="col-md-4">
 				<img src="bilder/einhorn.png" width="300px"></img>
