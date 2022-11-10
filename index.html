@@ -15,23 +15,56 @@
 		<nav class="navbar navbar-default">
 			<div class="container-fluid">
 				<div class="navbar-header">
-					<a class="navbar-brand" href="#">Projekt</a>
+					<a class="navbar-brand" href="#">Quiz</a>
 					<p>Menü</p>
 				</div>
 			</div>
 		</nav>
 	
 
-			<div id="start_screen" class="jumbotren quiz_start>
-			
+			<div id="start_screen" class="jumbotren quiz_start" hidden>
 				<h1>Herzlich Willkommen</h1>
 				<p>Das Quiz startet sofort.</p>
-				<p><button id="start_btn" class="btn btn-primary btn-lg" role="button">Jetzt starten</button></p>
-				
+				<p><button id="start_btn" class="btn btn-primary btn-lg" role="button">Jetzt starten</button></p>	
 			</div>
-			<div class="col-md-4">
-				<img src="bilder/einhorn.png" width="300px"></img>
-				<p class="text-right"><a href="impressum.html">Impressum</a></p>
+			
+			<div id="over" class="jumbotren quiz_end" hidden>
+				<h1>Quiz vorbei...</h1>
+				<p>Dein Punktestand ist: <span id="endpoints">0</span> von <span id="possiblepoints">0</span></p>
+				<p>button class="restart btn btn-primary btn-lg" role="button">Nochmal starten</button></p>
+			</div>
+			
+			<div id="question" class="jumbotren" >
+				<h2>Frage <span id="qra">1</h2>
+				<p id="question_text">Dies ist die Frage.</p>
+				<div class="row">
+					<div class="col-md-6">
+						<p><button id="answer"_a_btn" class="answer btn btn-default btn-lg btn-black" role="button">
+						A: <span id="answer_a">Antwort 1</span></button></p>
+					</div>
+					<div class="col-md-6">
+						<p><button id="answer_a_btn" class="answer btn btn-default btn-lg btn-black" role="button">
+						B: <span id="answer_a">Antwort 2</span></button></p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+						<p><button id="answer_a_btn" class="answer btn btn-default btn-lg btn-black" role="button">
+						C: <span id="answer_a">Antwort 3</span></button></p>
+					</div>
+					<div class="col-md-6">
+						<p><button id="answer_a_btn" class="answer btn btn-default btn-lg btn-black" role="button">
+						D: <span id="answer_a">Antwort 4</span></button></p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-10">
+					</div>
+					<div class="col-md-2">
+						<p><button id="answer_commit_btn" class="btn btn-primary btn-lg btn-black" role="button">
+							<span id="commit_text">Weiter</span><button></p>
+					</div>
+				</div>
 			</div>
 	</div>
 
