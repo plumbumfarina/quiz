@@ -1,0 +1,37 @@
+${funktion{} {
+	//Hauptfunktion
+}};
+
+var currentQuestionNo = 0;
+var points = 0;
+var rightAnswerPoints = 10;
+var currentQuestion;
+
+var questions = [
+	{
+		"id":"1",
+		"question" : "Frage Nummer 1",
+		"answers" : {
+			"A":"Antwort 1",
+			"B":"Antwort 2",
+			"C":"Antwort 3",
+			"D":"Antwort 4"
+		},
+		"right":"C"
+	},{
+		"id":"2",
+		"question" : "Frage Nummer 2",
+		"answers" : {
+			"A":"Antwort 1",
+			"B":"Antwort 2",
+			"C":"Antwort 3",
+			"D":"Antwort 4"
+		},
+		"right":"A"
+	}		
+]; 
+
+function showNextQuestion() {
+	console.log("Loading Question:" + currentQuestionNo);
+	currentQuestion = questions[currentQuestionNo];
+} 
