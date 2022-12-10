@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!-- das ist die Codierung für den Tab bei der Internetseite des Quizes -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Projekt</title>
+
+    <!-- Bootstrap -->
+    <!-- das ist die Menüleiste -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+  </head>
+  <body>
+	<div class="container">
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#">Quiz</a>
+					<p>Menü</p>
+				</div>
+			</div>
+		</nav>
+	
+     <!-- das ist die Codierung für die "Herzlich Willkommen"-Leiste -->
+			<div id="start_screen" class="jumbotren quiz_start" >
+				<h1>Herzlich Willkommen</h1>
+				<p>Das Quiz startet sofort.</p>
+        <!-- das ist der "Jetzt starten"-Button-->
+				<p><button id="start_btn" class="btn btn-primary btn-lg" role="button">Jetzt starten</button></p>	
+			</div>
+	</div>
+
+    <!-- das ist die Codierung für die Verbindung mit Java Script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+   
+    <script src="js/bootstrap.min.js"></script>
+	<script src="js/quiz.js"></script>
+  </body>
+</html>
