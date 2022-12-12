@@ -19,15 +19,27 @@ function clearInputError(inputElement) {
 document.addEventListener("DOMContentLoaded", () => {
     const loginForm = document.querySelector("#login");
     const createAccountForm = document.querySelector("#createAccount");
+    const forgotPasswordForm = document.querySelector("#forgotPassword");
 
     document.querySelector("#linkCreateAccount").addEventListener("click", () => {
         loginForm.classList.add("form--hidden");
         createAccountForm.classList.remove("form--hidden");
+        forgotPasswordForm.classList.add("form--hidden");
+        document.getElementById("signupUsername").focus();
     });
-    
+
     document.querySelector("#linkLogin").addEventListener("click", () => {
         loginForm.classList.remove("form--hidden");
         createAccountForm.classList.add("form--hidden");
+        forgotPasswordForm.classList.add("form--hidden");
+        document.getElementById("loginUsername").focus();
+    });
+
+    document.querySelector("#linkForgotPassword").addEventListener("click", () => {
+        loginForm.classList.add("form--hidden");
+        createAccountForm.classList.add("form--hidden");
+        forgotPasswordForm.classList.remove("form--hidden");
+        document.getElementById("resetEmail").focus();
     });
 
     loginForm.addEventListener("submit", e => {
@@ -36,6 +48,30 @@ document.addEventListener("DOMContentLoaded", () => {
         // Perform your AJAX / Fetch login
 
         setFormMessage(loginForm, "error", "Invalid username/password combination!");
+    });
+
+    createAccountForm.addEventListener("submit", e => {
+        e.preventDefault();
+
+        // write data to db
+
+        // send mail to verify
+
+        setFormMessage(createAccountForm, "error", "Registration not possible!");
+    });
+
+    forgotPasswordForm.addEventListener("reset", e => {
+        e.preventDefault();
+
+        // verify input email
+
+        // generate password
+
+        // overwrite password in db
+
+        // send mail
+
+        setFormMessage(forgotPasswordForm, "error", "This email does not exist!");
     });
 
     document.querySelectorAll(".form__input").forEach(inputElement => {

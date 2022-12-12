@@ -118,6 +118,11 @@ body {
     transform: scale(0.98);
 }
 
+.form__button--close {
+    width: 5%;
+    align-items: flex-end;
+}
+
 .form__text {
     text-align: center;
 }
