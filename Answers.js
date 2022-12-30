@@ -1,6 +1,6 @@
-${funktion{} {
+$(function() {
 	//Hauptfunktion
-}};
+});
 
 var currentQuestionNo = 0;
 var points = 0;
@@ -34,4 +34,16 @@ var questions = [
 function showNextQuestion() {
 	console.log("Loading Question:" + currentQuestionNo);
 	currentQuestion = questions[currentQuestionNo];
+	
+	$("#qno").text(currentQuestionNo + 1);
+	$("#question_text").text(currentQuestion.question);
+	$("#question_a").text(currentQuestion.answers.A);
+	$("#question_b").text(currentQuestion.answers.B);
+	$("#question_c").text(currentQuestion.answers.C);
+	$("#question_d").text(currentQuestion.answers.D);
 } 
+
+function getRightAnswer() {
+	return currentQuestion.right;
+}
+
