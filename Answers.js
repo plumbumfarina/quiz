@@ -1,5 +1,5 @@
 $(function() {
-	//Hauptfunktion
+	//Diese Codierung ist dafür, dass der in html geschriebenen Code individuell auf die einzelnen Fragen angepasst wird, inklusive der Antwortmöglichkeiten//
 });
 
 var currentQuestionNo = 0;
