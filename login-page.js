@@ -45,6 +45,8 @@ document.addEventListener("DOMContentLoaded", () => {
     loginForm.addEventListener("submit", e => {
         e.preventDefault();
 
+        
+
         // Perform your AJAX / Fetch login
 
         setFormMessage(loginForm, "error", "Invalid username/password combination!");
@@ -52,6 +54,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     createAccountForm.addEventListener("submit", e => {
         e.preventDefault();
+        // get data from form
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
 
         // write data to db
 
