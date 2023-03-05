@@ -12,3 +12,8 @@ a {
 	color: #000000
 }
 
+footer {
+  padding: 10px 20px;
+  background: #666;
+  color: white;
+}
