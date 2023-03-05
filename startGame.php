@@ -5,7 +5,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Projekt</title>
+	<link rel="stylesheet" href="style.css" type="text/css" media="screen"/>
+    <title>Neues Spiel</title>
 
     <!-- Bootstrap -->
     <!-- das ist die Menüleiste -->
@@ -14,25 +15,26 @@
   </head>
   <body>
 	<div class="container">
-		<nav class="navbar navbar-default">
-			<div class="container-fluid">
-				<div class="navbar-header">
-					<a href="index.html">Startseite</a>
-					<a href="h_decks.html">Meine Kartendecks</a>
-					<a href="h_startGame.html">Neues Spiel</a>
-					<a href="h_settings.html">Einstellungen</a>
-					<a class="navbar-brand" href="#">Quiz</a> <!--Wo soll das hinführen?-->
-					<p>Menü</p>
+	<?php
+			include('navbar.php')
+		?>	
+	
 				</div>
 			</div>
 		</nav>
 	
      <!-- das ist die Codierung für die "Herzlich Willkommen"-Leiste -->
 			<div id="start_screen" class="jumbotren quiz_start" >
-				<h1>Herzlich Willkommen</h1>
-				<p>Das Quiz startet sofort.</p>
+				<h1>Neues Spiel starten</h1>
+				<h2>Bitte wähle einen Spielmodus aus</h2>
+				<br>
+				<br>
         <!-- das ist der "Jetzt starten"-Button-->
-				<p><button id="start_btn" class="btn btn-primary btn-lg" role="button">Jetzt starten</button></p>	
+				<p style="text-align:center"><button id="start_btn" class="btn btn-primary btn-lg" role="button">Einzelspiel</button></p>
+				<p style="text-align:center"><button id="start_btn" class="btn btn-primary btn-lg start" role="button">Mehrspieler</button></p>	<!-- Hier muss noch die Klasse für die Mehrspieler rein -->
+				
+
+
 			</div>
 	</div>
 
@@ -41,5 +43,10 @@
    
     <script src="js/bootstrap.min.js"></script>
 	<script src="js/quiz.js"></script>
+
+	<?php
+			include('footer.php')
+		?>
+
   </body>
 </html>

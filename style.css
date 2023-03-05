@@ -3,7 +3,18 @@ body { padding-top: 70px; }
 
 h1 {
   color: #ff8c00;
+  text-align: center;
+
 }
+
+h2 {
+  color:#000000;
+  text-align: center;
+
+
+}
+
+
 .faded {
   color: #999;
 }
@@ -13,7 +24,47 @@ a {
 }
 
 footer {
-  padding: 10px 20px;
-  background: #666;
+  padding: 15px 10px;
+  background: #ff8c00;
   color: white;
+  bottom: 0;
+  position: absolute;
+  width: 100%;
 }
+
+nav {
+
+  padding: 15px 10px;
+  background: #ff8c00;
+  color: white;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  width: 100%;
+
+}
+
+
+button {
+  display: inline-block;
+  background-color: #fffbfb;
+  border-radius: 8px;
+  border: 1px solid #000000;
+  color: #000000;
+  text-align: center;
+  font-size: 24px;
+  padding: 20px;
+  width: 400px;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  }
+
+  button:hover {
+    background-color: #ff8c00;
+    }

@@ -14,25 +14,17 @@
   </head>
   <body>
 	<div class="container">
-		<nav class="navbar navbar-default">
-			<div class="container-fluid">
-				<div class="navbar-header">
-					
-					<a href="index.html">Startseite</a>
-					<a href="h_decks.html">Meine Kartendecks</a>
-					<a href="h_startGame.html">Neues Spiel</a>
-				</div>
-			</div>
-
-		</nav>
-	
+		<?php
+			include('navbar.php')
+		?>
 
 			<div id="start_screen" class="jumbotren quiz_start" >
-				<h1>Herzlich Willkommen zum Quiz :)</h1>
-				<p>Was möchtest du heute lernen?</p>
-				<p><button id="start_btn" class="btn btn-primary btn-lg start" role="button">Neues Spiel starten</button></p>	
-				<p><button id="kartendecks_btn" class="btn btn-primary btn-lg kartendeck" role="button">Kartendecks</button></p>	
-				<p><button id="einstellungen_btn" class="btn btn-primary btn-lg einstellungen" role="button">Benutzereinstellungen</button></p>	
+				<h1>Herzlich Willkommen zum Quiz</h1>
+				<br>
+				<br>
+				<p style="text-align:center"><button id="start_btn" class="btn btn-primary btn-lg start" role="button">Neues Spiel starten</button></p>	  <!-- Der Button muss auf die Seite GameStart führen und die andern Button auch auf die jeweiligen Seiten -->
+				<p style="text-align:center"><button id="kartendecks_btn" class="btn btn-primary btn-lg kartendeck" role="button">Kartendecks</button></p>	
+				<p style="text-align:center"><button id="einstellungen_btn" class="btn btn-primary btn-lg einstellungen" role="button">Benutzereinstellungen</button></p>	
 				
 			</div>
 			
@@ -79,13 +71,9 @@
 	<script src="js/quiz.js" type="text/javascript"></script>
 	<script src="js/script.js"></script>
 
-	<footer>
-		<a href="h_settings.html">Allgemeine Einstellungen</a>
-		<a href="h_cookies.html">Cookie Einstellungen</a>
-		<a href="h_contact.html">Kontakt</a>
-		<a href="h_privacy.html">Privatsphäreeinstellungen</a>
-		<a href="h_imprint.html">Impressum</a>
-	</footer>
+	<?php
+			include('footer.php')
+		?>
 
   </body>
 
