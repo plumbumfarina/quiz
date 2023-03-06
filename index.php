@@ -22,10 +22,11 @@
 				<h1>Herzlich Willkommen zum Quiz</h1>
 				<br>
 				<br>
-				<p style="text-align:center"><button id="start_btn" class="btn btn-primary btn-lg start" role="button">Neues Spiel starten</button></p>	  <!-- Der Button muss auf die Seite GameStart führen und die andern Button auch auf die jeweiligen Seiten -->
-				<p style="text-align:center"><button id="kartendecks_btn" class="btn btn-primary btn-lg kartendeck" role="button">Kartendecks</button></p>	
-				<p style="text-align:center"><button id="einstellungen_btn" class="btn btn-primary btn-lg einstellungen" role="button">Benutzereinstellungen</button></p>	
-				
+				<div class="button-container">
+					<p style="text-align:center"><button id="start_btn" class="btn btn-primary btn-lg start" role="button">Neues Spiel starten</button></p>	  <!-- Der Button muss auf die Seite GameStart führen und die andern Button auch auf die jeweiligen Seiten -->
+					<p style="text-align:center"><button id="kartendecks_btn" class="btn btn-primary btn-lg kartendeck" role="button">Kartendecks</button></p>	
+					<p style="text-align:center"><button id="einstellungen_btn" class="btn btn-primary btn-lg einstellungen" role="button">Benutzereinstellungen</button></p>	
+				</div>
 			</div>
 			
 			<div id="over" class="jumbotren quiz_end" hidden>
