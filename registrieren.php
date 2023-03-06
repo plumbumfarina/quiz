@@ -7,6 +7,7 @@ $dbconnector = new PDO('mysql:host=localhost;dbname=quiz', 'root', 'toor');
 <head>
   <title>Registrierung</title>
   <link rel="stylesheet" href="login-page.css">
+  <link rel="stylesheet" href="style.css" type="text/css" media="screen"/>
 </head>
 <body>
 
