@@ -1,3 +1,25 @@
+<?php
+session_start();
+$dbconnector = new PDO('mysql:host=localhost;dbname=quiz', 'root', 'toor');
+
+if (isset($_GET['login'])) {
+    $email = $_POST['email'];
+    $passwort = $_POST['passwort'];
+
+    $retrieveUser = $dbconnector->prepare("SELECT * FROM user WHERE email = :email");
+    $answer = $retrieveUser->execute(array('email' => $email));
+    $user = $retrieveUser->fetch();
+
+    //Passwort überprüfen
+    if ($user !== false && ($passwort == $user['passwort'])) {
+        $_SESSION['userid'] = $user['user_id'];
+        die('Login erfolgreich. Weiter zu <a href=#startseite>Startseite</a>');
+    } else {
+        $errorMessage = "E-Mail oder Passwort inkorrekt<br>";
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,67 +34,28 @@
 </head>
 
 <body>
-<?php
-			include('navbar.php')
-		?>	
 
     <div class="container">
 
         <form class="form" id="login">
             <h1 class="form__title">Login</h1>
             <div class="form__message form__message--error"></div>
-            <div class="form__input-group">
-                <input type="text" class="form__input" id="loginUsername" autofocus placeholder="Username or email">
-                <div class="form__input-error-message"></div>
-            </div>
-            <div class="form__input-group">
-                <input type="password" class="form__input" placeholder="Password">
-                <div class="form__input-error-message"></div>
-            </div>
-            <button class="form__button" type="submit">Continue</button>
-            <p class="form__text">
-                <a class="form__link" href="#" id="linkForgotPassword">Forgot your password?</a>
-            </p>
-            <p class="form__text">
-                <a class="form__link" href="#" id="linkCreateAccount">Don't have an account? Create account</a>
-            </p>
-        </form>
 
-        <form class="form form--hidden" id="createAccount">
-            <h1 class="form__title">Create Account</h1>
-            <div class="form__message form__message--error"></div>
             <div class="form__input-group">
-                <input type="text" id="signupUsername" class="form__input" placeholder="Username">
+                <input type="email" class="form__input" maxlength="250" name="email" autofocus placeholder="E-Mail">
                 <div class="form__input-error-message"></div>
             </div>
+
             <div class="form__input-group">
-                <input type="text" class="form__input" placeholder="Email Address">
+                <input type="password" class="form__input" maxlength="250" name="passwort" placeholder="Dein Password">
                 <div class="form__input-error-message"></div>
             </div>
-            <div class="form__input-group">
-                <input type="password" class="form__input" placeholder="Password">
-                <div class="form__input-error-message"></div>
-            </div>
-            <div class="form__input-group">
-                <input type="password" class="form__input" placeholder="Confirm password">
-                <div class="form__input-error-message"></div>
-            </div>
-            <button class="form__button" type="submit">Continue</button>
+
+            <input class="form__button" type="submit" value="Abschicken">
+            
             <p class="form__text">
-                <a class="form__link" href="#" id="linkLogin">Already have an account? Sign in</a>
+                <a class="form__link" href="registrieren.php" id="linkCreateAccount">Kein Account? Registrieren</a>
             </p>
-        </form>
-
-        <form class="form form--hidden" id="forgotPassword">
-            <h1 class="form__title">Forgot Password</h1>
-            <button class="form__button form__button--close" type="close">X</button>
-            <div class="form__message form__message--error"></div>
-            <div class="form__input-group">
-                <input type="text" class="form__input" id="resetEmail" placeholder="Email">
-                <div class="form__input-error-message"></div>
-            </div>
-            <button class="form__button" type="submit">Continue</button>
-
         </form>
         
     </div>
