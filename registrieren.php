@@ -65,7 +65,7 @@ if(isset($_GET['register'])) {
 
 if($showFormular) {
 ?>
-<div class="container">
+<div class="container__login">
         <form action="?register=1" method="post">
         <h1 class="form__title">Registrierung</h1>
                 <div class="form__input-group">

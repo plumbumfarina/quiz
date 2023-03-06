@@ -35,7 +35,7 @@ if (isset($_GET['login'])) {
 
 <body>
 
-    <div class="container">
+    <div class="container__login">
 
         <form class="form" id="login">
             <h1 class="form__title">Login</h1>
