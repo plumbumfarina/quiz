@@ -6,11 +6,9 @@ if (isset($_GET['login'])) {
     $email = $_POST['email'];
     $passwort = $_POST['passwort'];
 
-    $retrieveUser = $dbconnector->prepare("SELECT * FROM user WHERE email = :email");
-    $retrieveUser->bindParam(':email', $email);
-    $retrieveUser->execute();
-    // $answer = $retrieveUser->execute(array('email' => $email));
-    $user = $retrieveUser->fetch();
+    $statement = $dbconnector->prepare("SELECT * FROM user WHERE email = :email");
+    $resukt = $statement->execute(array('email' => $email));
+    $user = $statement->fetch();
 
     //Passwort überprüfen
     if ($user !== false && ($passwort == $user['passwort'])) {
