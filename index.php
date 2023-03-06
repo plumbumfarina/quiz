@@ -1,3 +1,11 @@
+<?php
+session_start();
+if(!isset($_SESSION['userid'])) {
+    header('location: login.php');
+    die('Bitte zuerst einloggen');
+}
+?>
+
 <!Doctype html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1-transitional.dtd">
 
 <html cmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">

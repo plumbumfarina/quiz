@@ -7,13 +7,16 @@ if (isset($_GET['login'])) {
     $passwort = $_POST['passwort'];
 
     $retrieveUser = $dbconnector->prepare("SELECT * FROM user WHERE email = :email");
-    $answer = $retrieveUser->execute(array('email' => $email));
+    $retrieveUser->bindParam(':email', $email);
+    $retrieveUser->execute();
+    // $answer = $retrieveUser->execute(array('email' => $email));
     $user = $retrieveUser->fetch();
 
     //Passwort überprüfen
     if ($user !== false && ($passwort == $user['passwort'])) {
         $_SESSION['userid'] = $user['user_id'];
-        die('Login erfolgreich. Weiter zu <a href=#startseite>Startseite</a>');
+        header('location: index.php');
+        die('Login erfolgreich. Weiter zur Startseite.');
     } else {
         $errorMessage = "E-Mail oder Passwort inkorrekt<br>";
     }
