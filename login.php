@@ -2,12 +2,12 @@
 session_start();
 $dbconnector = new PDO('mysql:host=localhost;dbname=quiz', 'root', 'toor');
 
-if (isset($_GET['login'])) {
+if(isset($_GET['login'])) {
     $email = $_POST['email'];
     $passwort = $_POST['passwort'];
 
     $statement = $dbconnector->prepare("SELECT * FROM user WHERE email = :email");
-    $resukt = $statement->execute(array('email' => $email));
+    $result = $statement->execute(array('email' => $email));
     $user = $statement->fetch();
 
     //Passwort überprüfen
@@ -38,7 +38,7 @@ if (isset($_GET['login'])) {
 
     <div class="container__login">
 
-        <form class="form" id="login">
+        <form action="?login=1" method="post">
             <h1 class="form__title">Login</h1>
             <div class="form__message form__message--error"></div>
 
