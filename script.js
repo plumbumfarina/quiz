@@ -82,7 +82,7 @@ $("#continue_btn").click(function() {
 }); 
 
 $(".restart").click(function() {
-	$(".quiz_end").fadeOut(function() {
-		startQuiz();
-	});
+  $(".quiz_end").fadeOut(function() {
+    startQuiz();  
+  });
 });
