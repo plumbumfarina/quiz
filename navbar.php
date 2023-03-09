@@ -9,6 +9,8 @@
 			<a href="index.php">Startseite</a>
 			<a href="decks.php">Meine Kartendecks</a>
 			<a href="startGame.php">Neues Spiel</a>
+			<p>Hallo <b> <?php echo $nickname; ?></b>!</p>
+			
 		</div>
 	</div>
 
