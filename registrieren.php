@@ -2,6 +2,7 @@
 session_start();
 $dbconnector = new PDO('mysql:host=localhost;dbname=quiz', 'root', 'toor');
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -54,8 +55,9 @@ if(isset($_GET['register'])) {
 #        $result = $statement->execute(array('email' => $email, 'passwort' => $passwort_hash));
 
         if($result) {
+            header("Refresh: 5; URL=../login.php");
             header('location: login.php');
-#           echo 'Du wurdest erfolgreich registriert. <a href="index.php">Zum Login</a>';
+            echo 'Du wurdest erfolgreich registriert. In 5 Sekunden geht es zum Login.';
             $showFormular = false;
         } else {
             echo 'Beim Abspeichern ist leider ein Fehler aufgetreten<br>';
