@@ -43,7 +43,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // Insert the questions and answers
     foreach($fragen as $key => $frage) {
-        $antwort = $antworten[$key];
+        $antworten_for_question = array_slice($antworten, $key * 4, 4);
 
         $stmt = $dbh->prepare("INSERT INTO fragen (fragentext, fragendeck_id) VALUES (:fragentext, :fragendeck_id)");
         $stmt->bindParam(':fragentext', $frage);
@@ -52,10 +52,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         $fragen_id = $dbh->lastInsertId();
 
-        $stmt = $dbh->prepare("INSERT INTO antworten (name, antworttext, fragen_id, richtigkeit) VALUES ('', :antworttext, :fragen_id, 1)");
-        $stmt->bindParam(':antworttext', $antwort);
-        $stmt->bindParam(':fragen_id', $fragen_id);
-        $stmt->execute();
+        foreach($antworten_for_question as $antwort) {
+            $stmt = $dbh->prepare("INSERT INTO antworten (name, antworttext, fragen_id, richtigkeit) VALUES ('', :antworttext, :fragen_id, 1)");
+            $stmt->bindParam(':antworttext', $antwort);
+            $stmt->bindParam(':fragen_id', $fragen_id);
+            $stmt->execute();
+        }
     }
 
     // Redirect the user to the dashboard
