@@ -17,6 +17,12 @@ $dbpass = 'toor';
 
 $dbh = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass);
 
+// Get the available modules
+$stmt = $dbh->query("SELECT modulkuerzel FROM modul");
+
+// Fetch the modules as an array
+$modules = $stmt->fetchAll(PDO::FETCH_COLUMN);
+
 // Check if the form is submitted
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Get the form data
@@ -53,7 +59,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     // Redirect the user to the dashboard
-    header("Location: dashboard.php");
+    header("Location: decks.php");
     exit();
 }
 ?>
@@ -72,9 +78,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         <label for="modul_id">Modul:</label>
         <select name="modul_id">
-            <option value="1">Modul 1</option>
-            <option value="2">Modul 2</option>
-            <option value="3">Modul 3</option>
+            <?php foreach($modules as $module): ?>
+                <option value="<?php echo $module; ?>"><?php echo $module; ?></option>
+            <?php endforeach; ?>
         </select><br><br>
     
     <h2>Questions and answers:</h2>
