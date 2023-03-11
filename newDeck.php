@@ -90,7 +90,16 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
             <label for="frage">Question:</label>
             <input type="text" name="fragen[]" required><br><br>
 
-            <label for="antwort">Answer:</label>
+            <label for="antwort1">Answer 1:</label>
+            <input type="text" name="antworten[]" required><br><br>
+
+            <label for="antwort2">Answer 2:</label>
+            <input type="text" name="antworten[]" required><br><br>
+
+            <label for="antwort3">Answer 3:</label>
+            <input type="text" name="antworten[]" required><br><br>
+
+            <label for="antwort4">Answer 4:</label>
             <input type="text" name="antworten[]" required><br><br>
         </div>
     </div>
@@ -119,19 +128,21 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         question.appendChild(document.createElement("br"));
         question.appendChild(document.createElement("br"));
 
-        var label = document.createElement("label");
-        label.setAttribute("for", "antwort");
-        label.innerText = "Answer:";
-        question.appendChild(label);
+        for (var i = 1; i <= 4; i++) {
+            var label = document.createElement("label");
+            label.setAttribute("for", "antwort" + i);
+            label.innerText = "Answer " + i + ":";
+            question.appendChild(label);
 
-        var input = document.createElement("input");
-        input.setAttribute("type", "text");
-        input.setAttribute("name", "antworten[]");
-        input.setAttribute("required", "");
-        question.appendChild(input);
+            var input = document.createElement("input");
+            input.setAttribute("type", "text");
+            input.setAttribute("name", "antworten[]");
+            input.setAttribute("required", "");
+            question.appendChild(input);
 
-        question.appendChild(document.createElement("br"));
-        question.appendChild(document.createElement("br"));
+            question.appendChild(document.createElement("br"));
+            question.appendChild(document.createElement("br"));
+        }
 
         document.getElementById("questions").appendChild(question);
     }
