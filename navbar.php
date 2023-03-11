@@ -11,6 +11,7 @@
 			<a href="startGame.php">Neues Spiel</a>
 			<a href="lib/logout.php">LOGOUT</a>
 			<a href="neuesDeck.html">Neues Deck</a>
+			<a href="newDeck.php">Neues Deck php</a>
 			<p>Hallo <b> <?php echo $nickname; ?></b>!</p>
 
 		</div>
