@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Create a Deck</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="deck.js"></script>
+</head>
+<body>
+	<h1>Create a Deck of Questions</h1>
+	<form id="createDeckForm" method="POST">
+		<label for="deckName">Deck Name:</label>
+		<input type="text" id="deckName" name="deckName" required>
+		<hr>
+		<div id="questionsDiv">
+			<h2>Questions:</h2>
+			<div class="question">
+				<label for="question1">Question 1:</label>
+				<input type="text" id="question1" name="question[]" required>
+				<br>
+				<label for="answer1">Answer 1:</label>
+				<input type="text" id="answer1" name="answer1[]" required>
+				<br>
+				<label for="answer2">Answer 2:</label>
+				<input type="text" id="answer2" name="answer2[]" required>
+				<br>
+				<label for="answer3">Answer 3:</label>
+				<input type="text" id="answer3" name="answer3[]" required>
+				<br>
+				<label for="answer4">Answer 4:</label>
+				<input type="text" id="answer4" name="answer4[]" required>
+				<hr>
+			</div>
+		</div>
+		<button type="button" id="addQuestionBtn">Add Question</button>
+		<hr>
+		<button type="submit">Create Deck</button>
+	</form>
+</body>
+</html>
