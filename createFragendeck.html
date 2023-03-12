@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Create a New Fragendeck</title>
+</head>
+<body>
+	<h1>Create a New Fragendeck</h1>
+	<form method="post" action="create_fragendeck.php">
+		<label for="deck_name">Fragendeck Name:</label>
+		<input type="text" id="deck_name" name="deck_name" required><br><br>
+		
+		<label for="num_questions">Number of Questions:</label>
+		<input type="number" id="num_questions" name="num_questions" min="1" required><br><br>
+		
+		<div id="questions_div"></div>
+		
+		<button type="button" onclick="addQuestion()">Add Question</button>
+		<button type="submit">Create Fragendeck</button>
+	</form>
+	
+	<script>
+		function addQuestion() {
+			var num_questions = document.getElementById("num_questions").value;
+			var num_existing_questions = document.querySelectorAll(".question").length;
+			
+			if (num_existing_questions < num_questions) {
+				var question_num = num_existing_questions + 1;
+				var div = document.createElement("div");
+				div.classList.add("question");
+				div.innerHTML = `
+					<h3>Question ${question_num}</h3>
+					<label for="question_${question_num}">Question:</label>
+					<input type="text" id="question_${question_num}" name="questions[]" required><br><br>
+					
+					<label for="answer_${question_num}_1">Answer 1:</label>
+					<input type="text" id="answer_${question_num}_1" name="answers[]" required><br><br>
+					
+					<label for="answer_${question_num}_2">Answer 2:</label>
+					<input type="text" id="answer_${question_num}_2" name="answers[]" required><br><br>
+					
+					<label for="answer_${question_num}_3">Answer 3:</label>
+					<input type="text" id="answer_${question_num}_3" name="answers[]" required><br><br>
+					
+					<label for="answer_${question_num}_4">Answer 4:</label>
+					<input type="text" id="answer_${question_num}_4" name="answers[]" required><br><br>
+				`;
+				
+				document.getElementById("questions_div").appendChild(div);
+			}
+		}
+	</script>
+</body>
+</html>
