@@ -86,9 +86,9 @@
 
         Datenschutzerklärung erstellt mit dem Trusted Shops Rechtstexter in Kooperation mit Wilde Beuger Solmecke Rechtsanwälte.
         </p>
+    <footer>
+        <?php
+			include('footer.php')?>
+    </footer>
 </body>
 </html>
-
-<?php
-			include('footer.php')
-?>

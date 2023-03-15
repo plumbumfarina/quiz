@@ -1,8 +1,31 @@
+h1 {
+  color: #ff8c00;
+  text-align: center;
+  margin-top: 70px;
+}
+
+h2 {
+  color:#000000;
+  text-align: center;
+}
+
 body { 
     --color-primary: #ff8c00;
     --color-primary-dark: #cf7200;
     
-    padding-top: 70px; 
+    padding-top: 60px; 
+    margin-bottom: 150px;
+}
+
+footer {
+
+  background: #ff8c00;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  left: 0;
+  padding-left: 15px;
+  padding-top: 13px;
 }
 
 /* START LOGIN CSS */
@@ -69,7 +92,7 @@ body {
   background: #ffffff;
 }
 
-.from__input--error {
+.form__input--error {
   color: var(--color-error);
   border-color: var(--color-error);
 }
@@ -122,21 +145,6 @@ body {
 
 /* ENDE LOGIN CSS */
 
-h1 {
-  color: #ff8c00;
-  text-align: center;
-  margin-top: 70px;
-
-}
-
-h2 {
-  color:#000000;
-  text-align: center;
-  
-
-
-}
-
 
 .faded {
   color: #999;
@@ -144,17 +152,6 @@ h2 {
 
 a {
 	color: #000000
-}
-
-footer {
-  position: fixed;
-  bottom: 0;
-  padding: 15px 10px;
-  background: #ff8c00;
-  color: white;
-  width: 100%;
-  left: 0;
-  
 }
 
 nav {
