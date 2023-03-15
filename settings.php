@@ -9,7 +9,7 @@
 </head>
 <body>
 <?php
-			include('navbar.php')
+			include('navbar2.php')
 		?>	
 		
         <h1>Hier kannst Du Einstellungen vornehmen</h1>

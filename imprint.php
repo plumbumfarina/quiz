@@ -13,7 +13,7 @@
 </head>
 <body>
 <?php
-			include('navbar.php')
+			include('navbar2.php')
 		?>	
 		
 		<h1>Impressum</h1>

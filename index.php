@@ -1,9 +1,9 @@
 <?php
-session_start();
+/*session_start();
 if(!isset($_SESSION['userid'])) {
     header('location: login.php');
     die('Bitte zuerst einloggen');
-}
+}*/
 ?>
 
 <!Doctype html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1-transitional.dtd">
@@ -23,7 +23,7 @@ if(!isset($_SESSION['userid'])) {
   <body>
 	<div class="container">
 		<?php
-			include('navbar.php')
+			include('navbar2.php')
 		?>
 
 			<div id="start_screen" class="jumbotren quiz_start" >
