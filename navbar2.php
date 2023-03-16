@@ -1,16 +1,29 @@
-<?php
-	include('lib/getNickname.php');
-?> 
-<nav class="navMenu">
-			
-			<a href="index.php">Startseite</a>
-			<a href="decks.php">Meine Kartendecks</a>
-			<a href="startGame.php">Neues Spiel</a>
-			<a href="lib/logout.php">LOGOUT</a>
-			<a href="neuesDeck.html">Neues Deck</a>
-			<a href="newDeck.php">Neues Deck php</a>
-			<a href="createFragendeck.html">Neues Deck create.html</a>
-			<a href="fragenUebersicht.php">fragenUebersicht.php</a>
-			<p>Hallo <b> <?php echo $nickname; ?></b>!</p>
-            
-</nav>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar with Arrow</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <?php
+        include('lib/getNickname.php');
+    ?> 
+    <nav class="navMenu">
+        <ul>
+            <li><a href="index.php">Startseite</a></li>
+            <li><a href="decks.php">Meine Kartendecks</a></li>
+            <li><a href="startGame.php">Neues Spiel</a></li>
+            <li><a href="lib/logout.php">LOGOUT</a></li>
+            <li><a href="neuesDeck.html">Neues Deck</a></li>
+            <li><a href="newDeck.php">Neues Deck php</a></li>
+            <li><a href="createFragendeck.html">Neues Deck create.html</a></li>
+            <li><a href="fragenUebersicht.php">fragenUebersicht.php</a></li>
+        </ul>
+        <p>Hallo <b> <?php echo $nickname; ?></b>!</p>
+    </nav>
+</body>
+</html>
