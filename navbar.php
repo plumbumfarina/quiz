@@ -1,6 +1,6 @@
 <?php
 	include('lib/getNickname.php');
-?>
+?> 
 
 <nav class="navbar navbar-default">
 	<div class="container-fluid">
