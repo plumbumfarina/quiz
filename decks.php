@@ -28,15 +28,16 @@ include('lib/getFragenNumber.php');
 ?>
 
 
-<div class=container__login>
+<div>
     <div class="container mt-3">
         <h1 class="form__title">Fragendecks</h1>
-            <table class="table table-hover">
+            <table class="table table-striped">
                 <thead class="table-dark">
                     <tr>
                         <th>Deckname</th>
                         <th>Modulkürzel</th>
                         <th>Modulname</th>
+                        <th>Bearbeiten</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -54,13 +55,20 @@ include('lib/getFragenNumber.php');
                             die("Connection failed: " . $conn->connect_error);
                         }
 
-                        $sql = "SELECT fragendeck_name, fragendeck.modul_id, modulkuerzel, modulname FROM fragendeck JOIN modul WHERE (fragendeck.modul_id = modul.modul_id) AND (user_id = $user_id)" ;
+                        $sql = "SELECT fragendeck_id, fragendeck_name, fragendeck.modul_id, modulkuerzel, modulname FROM fragendeck JOIN modul WHERE (fragendeck.modul_id = modul.modul_id) AND (user_id = $user_id)" ;
                         $result = $conn->query($sql);
 
                         if ($result->num_rows > 0) {
                             // output data of each row
                             while($row = $result->fetch_assoc()) {
-                                echo "<tr><td>" . $row["fragendeck_name"]. "</td><td>" . $row["modulkuerzel"]. "</td><td>" . $row["modulname"]. "</td></tr>";
+                                echo "<tr>
+                                    <td>" . $row["fragendeck_name"]. "</td>
+                                    <td>" . $row["modulkuerzel"]. "</td>
+                                    <td>" . $row["modulname"]. "</td>
+                                    <td>
+                                        <button type='button' class='btn btn-outline-warning' value='" . $row["fragendeck_id"]. "' onclick='openPage(" .  $row['fragendeck_id']. ")'> bearbeiten </button>
+                                    </td>
+                                </tr>";
                             }
                         } else {
                             echo "0 results";
@@ -70,24 +78,11 @@ include('lib/getFragenNumber.php');
                     ?>
                 </tbody>
             </table>
-            <div class="row">
-                <div class="col">
-                    <button type="button" class="btn btn-outline-success"> Hinzufügen
-                    </button>
-                </div>
-                <div class="col">
-                    <button type="button" class="btn btn-outline-warning"> Bearbeiten
-                    </button>
-                </div>
-                <div class="col">
-                    <button type="button" class="btn btn-outline-danger"> Löschen
-                    </button>
-                </div>
-            </div>
     </div>
 </div>
-<div class=container__login>
+<div>
     <div class="container mt-3">
+        <h1 class="form__title">Fragendeck hinzufügen</h1>
         <form>
             <div class="mb-3">
                 <label for="deckName">Fragendeckname:</label>
@@ -140,10 +135,11 @@ include('lib/getFragenNumber.php');
         </form>
     </div>
 </div>
-<footer>
-<?php
-    include('footer.php')
-?>
-</footer>
+
+<script>
+function openPage(id) {
+  window.location.href = "fragenUebersicht.php?fragendeck_id=" + id;
+}
+</script>
 </body>
 </html>
