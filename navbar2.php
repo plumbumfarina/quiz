@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Navbar with Arrow</title>
     <link rel="stylesheet" href="styles.css">
+
 </head>
 <body>
     <?php
@@ -17,11 +18,12 @@
             <li><a href="index.php">Startseite</a></li>
             <li><a href="decks.php">Meine Kartendecks</a></li>
             <li><a href="startGame.php">Neues Spiel</a></li>
-            <li><a href="lib/logout.php">LOGOUT</a></li>
             <li><a href="neuesDeck.html">Neues Deck</a></li>
             <li><a href="newDeck.php">Neues Deck php</a></li>
             <li><a href="createFragendeck.html">Neues Deck create.html</a></li>
             <li><a href="fragenUebersicht.php">fragenUebersicht.php</a></li>
+            <a class="navMenu-logout" href="lib/logout.php">LOGOUT</a>
+
         </ul>
         <p>Hallo <b> <?php echo $nickname; ?></b>!</p>
     </nav>

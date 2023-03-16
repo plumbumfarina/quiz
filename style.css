@@ -299,6 +299,9 @@ input:checked + .slider:before {
 
 .navMenu {
   display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  flex-grow: 1;
 }
 
 .navMenu ul {
@@ -348,6 +351,10 @@ nav {
   justify-content: space-between;
   position: absolute;
   display: flex;
-  gap: 10px;
+}
 
+.navMenu-logout {
+  position: absolute;
+  top: 15px;
+  right: 10px;
 }
