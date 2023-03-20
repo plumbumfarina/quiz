@@ -10,9 +10,7 @@
 			<a href="decks.php">Meine Kartendecks</a>
 			<a href="startGame.php">Neues Spiel</a>
 			<a href="lib/logout.php">LOGOUT</a>
-			<a href="neuesDeck.html">Neues Deck</a>
-			<a href="newDeck.php">Neues Deck php</a>
-			<a href="createFragendeck.html">Neues Deck create.html</a>
+			<a href="newDeck.php">Neues Deck</a>
 			<a href="fragenUebersicht.php">fragenUebersicht.php</a>
 			<p>Hallo <b> <?php echo $nickname; ?></b>!</p>
 
