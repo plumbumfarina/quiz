@@ -3,6 +3,7 @@ session_start();
 $dbconnector = new PDO('mysql:host=localhost;dbname=quiz', 'root', 'toor');
 ?>
 
+
 <!DOCTYPE html>
 <html>
 <head>
