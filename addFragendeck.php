@@ -26,7 +26,7 @@ if(isset($deckname)) {
 }
 
 if ($conn->query($sql) === TRUE) {
-  header("Refresh: 5; URL=../decks.php");
+  header("Refresh: 0.1; URL=../decks.php");
   echo "Neues Fragendeck erfolgreich angelegt. In 5 Sekunden geht es zum Login.";
 } else {
   echo "Error: " . $sql . "<br>" . $conn->error;
