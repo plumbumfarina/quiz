@@ -19,7 +19,7 @@ if ($conn->connect_error) {
 
 // Prüfung ob ein Fragendeckname angegeben wurde
 if(isset($fragendeck_id)) {
-    $sql = "DELETE FROM fragendeck WHERE fragendeck_id = $fragendeck_ids";
+    $sql = "DELETE FROM fragendeck WHERE fragendeck_id = $fragendeck_id";
 } else {
     echo "Kein Fragendeckname angegeben.";
 }
