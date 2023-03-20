@@ -78,7 +78,7 @@ include('lib/getFragenNumber.php');
                                         <button type='button' class='btn btn-outline-warning' value='" . $row["fragen_id"]. "' onclick='openPage(" .  $row['fragen_id']. ")'> Bearbeiten </button>
                                     </td>
                                     <td>
-                                        <button type='button' class='btn btn-outline-danger' value='" . $row["fragendeck_id"]. "'> Löschen </button>
+                                        <button type='button' class='btn btn-outline-danger' value='" . $row["fragendeck_id"]. "' onclick='openPage(" . $row['fragen_id']. ")'> Löschen </button>
                                     </td>
                                 </tr>";
                             }
