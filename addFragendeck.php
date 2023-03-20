@@ -20,7 +20,7 @@ $modulkuerzel = $_POST['modul'];
 
 // Prüfung ob ein Fragendeckname angegeben wurde
 if(isset($deckname)) {
-    $sql = "INSERT INTO fragendeck (fragendeck_name, modul_id, user_id) VALUES ('$deckname', (SELECT modul_id FROM modul WHERE modulkuerzel='$modulkuerzel'), $user_id)";
+    $sql = "INSERT INTO fragendeck (fragendeck_name, modul_id, user_id) VALUES ('$deckname', (SELECT modul_id FROM modul WHERE modulname='$modulname'), $user_id)";
 } else {
     echo "Kein Fragendeckname angegeben.";
 }
