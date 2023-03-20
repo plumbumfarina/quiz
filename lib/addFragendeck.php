@@ -17,10 +17,11 @@ if ($conn->connect_error) {
 
 $deckname = $_POST['deckname'];
 $modulkuerzel = $_POST['modul'];
+$public = $_POST['public'];
 
 // Prüfung ob ein Fragendeckname angegeben wurde
 if(isset($deckname)) {
-    $sql = "INSERT INTO fragendeck (fragendeck_name, modul_id, user_id) VALUES ('$deckname', (SELECT modul_id FROM modul WHERE modulname='$modulname'), $user_id)";
+    $sql = "INSERT INTO fragendeck (fragendeck_name, modul_id, user_id, public) VALUES ('$deckname', (SELECT modul_id FROM modul WHERE modulname='$modulname'), $user_id, $public)";
 } else {
     echo "Kein Fragendeckname angegeben.";
 }
