@@ -18,7 +18,7 @@ if ($conn->connect_error) {
 $fragendeck_id = $_POST['fragendeck_id'];
 $fragentext = $_POST['fragentext'];
 $antwortEins = $_POST['Antwort1'];
-$antwortzwei = $_POST['Antwort2'];
+$antwortZwei = $_POST['Antwort2'];
 $antwortDrei = $_POST['Antwort3'];
 $antwortVier = $_POST['Antwort4'];
 $richtigkeit = $_POST['richtigkeit'];
@@ -31,7 +31,7 @@ if(isset($fragendeck_id)) {
 }
 
 if ($conn->query($sql) === TRUE) {
-  header("Refresh: 0,1; URL=../addQuestion.php");
+  header("Refresh: 0,1; URL=../../fragenUebersicht.php");
   echo "Neues Fragendeck erfolgreich angelegt. In 5 Sekunden geht es zum Login.";
 } else {
   echo "Error: " . $sql . "<br>" . $conn->error;
