@@ -106,7 +106,7 @@ include('lib/getFragenAnzahl.php');
             </div>
             <div class="mb-3">
                 <label class="form-check-label" for="public">Willst du das Kartendeck für alle spielbar machen?</label>
-                <input type="radio" name="public" value="TRUE"> Ja </input>
+                <input type="radio" name="public" value="TRUE" required> Ja </input>
                 <input type="radio" name="public" value="FALSE"> Nein </input>
             </div>
             <div class="mb-3">
