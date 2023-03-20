@@ -9,7 +9,7 @@
 </head>
 <body>
 <?php
-			include('navbar2.php')
+			include('navbar.php')
 		?>	
 	<h1> Hier können Einstellungen, wie die Änderung des Benutzernamens getätigt werden</h1>	
 		

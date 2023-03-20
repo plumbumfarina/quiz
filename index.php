@@ -23,7 +23,7 @@ if(!isset($_SESSION['userid'])) {
   <body>
 	<div class="container">
 		<?php
-			include('navbar2.php')
+			include('navbar.php')
 		?>
 
 			<div id="start_screen" class="jumbotren quiz_start" >

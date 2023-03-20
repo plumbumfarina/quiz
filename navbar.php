@@ -1,19 +1,14 @@
 <?php
-	include('lib/getNickname.php');
+        include('lib/getNickname.php');
 ?> 
+    <nav class="navMenu">
+        <ul>
+            <li><a href="index.php">Startseite</a></li>
+            <li><a href="decks.php">Meine Kartendecks</a></li>
+            <li><a href="startGame.php">Neues Spiel</a></li>
+            <li><a href="fragenUebersicht.php">Fragenübersicht</a></li>
+            <a class="navMenu-logout" href="lib/logout.php">LOGOUT</a>
 
-<nav class="navbar navbar-default">
-	<div class="container-fluid">
-		<div class="navbar-header">
-			
-			<a href="index.php">Startseite</a>
-			<a href="decks.php">Meine Kartendecks</a>
-			<a href="startGame.php">Neues Spiel</a>
-			<a href="lib/logout.php">LOGOUT</a>
-			<a href="fragenUebersicht.php">fragenUebersicht.php</a>
-			<p>Hallo <b> <?php echo $nickname; ?></b>!</p>
-
-		</div>
-	</div>
-
-</nav>
+        </ul>
+        <p>Hallo <b> <?php echo $nickname; ?></b>!</p>
+    </nav>

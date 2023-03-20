@@ -25,7 +25,7 @@ include('lib/getFragenNumber.php');
 </head>
 <body>
 <?php
-    include('navbar2.php')
+    include('navbar.php')
 ?>
 
 

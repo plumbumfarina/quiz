@@ -1,5 +1,5 @@
 <?php
-			include('navbar2.php')
+			include('navbar.php')
 ?>	
 <!DOCTYPE html>
 <html lang="en">

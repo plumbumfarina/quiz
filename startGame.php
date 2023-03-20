@@ -16,7 +16,7 @@
   <body>
 	<div class="container">
 	<?php
-			include('navbar2.php')
+			include('navbar.php')
 		?>	
 	
 				</div>
