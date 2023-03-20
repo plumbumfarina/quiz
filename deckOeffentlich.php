@@ -32,7 +32,7 @@ include('lib/getFragenAnzahl.php');
     <div class="container mt-3">
         <h1 class="form__title">Kartendecks</h1>
         <div class="btn-group">
-            <button type='button' class='btn btn-outline-success' onlick="window.location.href = 'deckOeffentlich.php';"> Öffentliche Kartendecks spielen </button>
+            <button type='button' class='btn btn-outline-success' onlick="window.location.href = 'deckAuswaehlen.php';"> Nur eigene Kartendecks spielen </button>
             <button type='button' class='btn btn-outline-success'> Neues Kartendeck hinzufügen </button>
         </div>
             <table class="table table-striped">
@@ -60,7 +60,7 @@ include('lib/getFragenAnzahl.php');
                             die("Connection failed: " . $conn->connect_error);
                         }
 
-                        $sql = "SELECT fragendeck_id, fragendeck_name, fragendeck.modul_id, public, modulkuerzel, modulname FROM fragendeck JOIN modul WHERE (fragendeck.modul_id = modul.modul_id) AND (user_id = $user_id)";
+                        $sql = "SELECT fragendeck_id, fragendeck_name, fragendeck.modul_id, public, modulkuerzel, modulname FROM fragendeck JOIN modul WHERE (fragendeck.modul_id = modul.modul_id) AND (public = TRUE)";
                         $result = $conn->query($sql);
 
                         if ($result->num_rows > 0) {
