@@ -27,7 +27,6 @@ include('lib/getFragenNumber.php');
     include('navbar2.php')
 ?>
 
-
 <div>
     <div class="container mt-3">
         <h1 class="form__title">Fragendecks</h1>
@@ -83,7 +82,7 @@ include('lib/getFragenNumber.php');
 <div>
     <div class="container mt-3">
         <h1 class="form__title">Fragendeck hinzufügen</h1>
-        <form>
+        <form action="addFragendeck.php" method="post">
             <div class="mb-3">
                 <label for="deckName">Fragendeckname:</label>
                 <input type="text" id="deckname" name="deckname" class="form-control">
@@ -124,7 +123,7 @@ include('lib/getFragenNumber.php');
             </div>
             <div class="row">
                 <div class="col">
-                    <button type="button" class="btn btn-outline-success"> Anlegen
+                    <button type="submit" class="btn btn-outline-success"> Anlegen
                     </button>
                 </div>
                 <div class="col">
