@@ -48,7 +48,7 @@ include('lib/getFragenNumber.php');
                         die("Connection failed: " . $conn->connect_error);
                     }
 
-                    $sql = "SELECT fragen_id, fragentext, antwortEins, antwortZwei, antwortDrei, antwortVier, richtigkeit FROM new_table WHERE (fragen_id = $fragen_id)" ;
+                    $sql = "SELECT fragen_id, fragentext, antwortEins, antwortZwei, antwortDrei, antwortVier, richtigkeit FROM fragen WHERE (fragen_id = $fragen_id)" ;
                     $result = $conn->query($sql);
 
                     if ($result->num_rows > 0) {
