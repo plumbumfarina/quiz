@@ -14,14 +14,11 @@
 	<link href="css/style.css" rel="stylesheet">
   </head>
   <body>
-	<div class="container">
 	<?php
 			include('navbar.php')
-		?>	
+	?>
 	
-				</div>
-			</div>
-		</nav>
+	<div class="container">
 	
      <!-- das ist die Codierung für die "Herzlich Willkommen"-Leiste -->
 			<div id="start_screen" class="jumbotren quiz_start" >
