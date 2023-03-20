@@ -71,7 +71,7 @@ include('lib/getFragenNumber.php');
 
 <script>
 function openPageFrageAdd(id) {
-    window.location.href= "addFrage.php?fragendeck_id=" + id;
+    window.location.href= "lib/addFrage.php?fragendeck_id=" + id;
 }
 </script>
 
