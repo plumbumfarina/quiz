@@ -92,7 +92,7 @@ include('lib/getFragenNumber.php');
             </table>
             <div class="row">
                 <div class="col">
-                    <button type="button" onclick="window.location.href='addQuestion.php';" class="btn btn-outline-success"> Hinzufügen
+                    <button type="button" onclick="openPageFrageAdd(<?php echo $fragendeck_id; ?>)" class="btn btn-outline-success"> Hinzufügen
                     </button>
                 </div> 
             </div>
@@ -101,7 +101,10 @@ include('lib/getFragenNumber.php');
 
 <script>
 function openPage(id) {
-  window.location.href = "frageBearbeiten.php?fragen_id=" + id;
+    window.location.href = "frageBearbeiten.php?fragen_id=" + id;
+}
+function openPageFrageAdd(id) {
+    window.location.href='addQuestion.php?fragendeck_id=' + id;
 }
 </script>
 </body>
