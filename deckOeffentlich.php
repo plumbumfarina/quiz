@@ -35,6 +35,7 @@ include('lib/getFragenAnzahl.php');
             <button type='button' class='btn btn-outline-success' onlick="window.location.href = 'deckAuswaehlen.php';"> Nur eigene Kartendecks spielen </button>
             <button type='button' class='btn btn-outline-success'> Neues Kartendeck hinzufügen </button>
         </div>
+        <br>
             <table class="table table-striped">
                 <thead class="table-dark">
                     <tr>
