@@ -25,8 +25,8 @@ if(!isset($_SESSION['userid'])) {
 	<?php
 		include('navbar.php')
 	?>
+	
 		<div class="container">
-		
 
 			<div id="start_screen" class="jumbotren quiz_start" >
 				<h1>Herzlich Willkommen zum Quiz</h1>
@@ -74,7 +74,7 @@ if(!isset($_SESSION['userid'])) {
 					</div>
 				</div>
 			</div>
-	</div>	
+		</div>	
   
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	
