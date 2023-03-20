@@ -40,7 +40,6 @@ include('lib/getFragenAnzahl.php');
                         <th>Anazhl Fragen</th>
                         <th>öffentlich</th>
                         <th></th>
-                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -71,7 +70,7 @@ include('lib/getFragenAnzahl.php');
                                     <td>" . getFragenAnzahl($row["fragendeck_id"]). "</td>
                                     <td>" . $row["public"]. "</td>
                                     <td>
-                                        <button type='button' class='btn btn-outline-succes' value='" . $row["fragendeck_id"]. "'> Spielen </button>
+                                        <button type='button' class='btn btn-outline-success' value='" . $row["fragendeck_id"]. "'> Spielen </button>
                                     </td>
                                 </tr>";
                             }
