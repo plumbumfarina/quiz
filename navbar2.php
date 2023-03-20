@@ -20,8 +20,8 @@
             <li><a href="startGame.php">Neues Spiel</a></li>
             <li><a href="neuesDeck.html">Neues Deck</a></li>
             <li><a href="newDeck.php">Neues Deck php</a></li>
-            <li><a href="createFragendeck.html">Neues Deck create.html</a></li>
-            <li><a href="fragenUebersicht.php">fragenUebersicht.php</a></li>
+            <li><a href="createFragendeck.html">Neues Deck erstellen</a></li>
+            <li><a href="fragenUebersicht.php">Fragenübersicht</a></li>
             <a class="navMenu-logout" href="lib/logout.php">LOGOUT</a>
 
         </ul>
