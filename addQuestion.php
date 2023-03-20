@@ -38,7 +38,7 @@ include('lib/getFragenNumber.php');
         <h1> Frage hinzufügen </h1>
         <form action="lib/addFrage.php" method="post">   
             <label for='fragendeckID' class='form-label'> Fragendeck ID:</label>
-            <input type='text' class='form-control' name='fragendeck_id' value="<?php echo $fragndeck_id;?>" disabled>
+            <input type='text' class='form-control' name='fragendeck_id' value="<?php echo $fragendeck_id;?>" disabled>
 
             <label for='frage' class='form-label'> Frage:</label>
             <input type='text' class='form-control' name='fragentext'>
