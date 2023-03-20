@@ -45,7 +45,7 @@ include('lib/getFragenNumber.php');
                                 
             <label for='frage' class='form-label'> Antwort 1:</label>
             <input type='text' class='form-control' name='Antwort1'>                 
-            <input type='radio' name='richtigkeit' value='1'>
+            <input type='radio' name='richtigkeit' value='1' required>
             <label>Richtige Antwort</label><br><br>
                                 
             <label for='frage' class='form-label'> Antwort 2:</label>
