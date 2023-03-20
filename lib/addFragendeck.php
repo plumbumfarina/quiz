@@ -16,7 +16,7 @@ if ($conn->connect_error) {
 }
 
 $deckname = $_POST['deckname'];
-$modulkuerzel = $_POST['modul'];
+$modulname = $_POST['modul'];
 $public = $_POST['public'];
 
 // Prüfung ob ein Fragendeckname angegeben wurde
