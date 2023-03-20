@@ -30,7 +30,7 @@ $richtigkeit = $_POST['richtigkeit'];
 //    echo "Keine richtige Antwort angegeben.";
 //}
 
-if ($conn->query($sql) === TRUE) {
+//if ($conn->query($sql) === TRUE) {
   header("Refresh: 10; URL=../addQuestion.php");
   echo "Neues Fragendeck erfolgreich angelegt. In 5 Sekunden geht es zum Login.";
   echo $fragentext ;
@@ -40,9 +40,9 @@ if ($conn->query($sql) === TRUE) {
   echo $antwortDrei ;
   echo $antwortVier ;
   echo $richtigkeit ;
-} else {
-  echo "Error: " . $sql . "<br>" . $conn->error;
-}
+//} else {
+ // echo "Error: " . $sql . "<br>" . $conn->error;
+//}
 
 
 ?>
