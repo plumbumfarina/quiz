@@ -18,7 +18,7 @@
             <li><a href="index.php">Startseite</a></li>
             <li><a href="decks.php">Meine Kartendecks</a></li>
             <li><a href="startGame.php">Neues Spiel</a></li>
-            <li><a href="newDeck.php">Neues Deck</a></li>
+            <li><a href="createNewDeck.php">Neues Deck</a></li>
             <li><a href="fragenUebersicht.php">Fragenübersicht</a></li>
             <a class="navMenu-logout" href="lib/logout.php">LOGOUT</a>
 
