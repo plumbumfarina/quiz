@@ -85,7 +85,7 @@ if($showFormular) {
         <form action="?register=1" method="post">
         <h1 class="form__title">Registrierung</h1>
                 <div class="form__input-group">
-                        <input type="email" class="form__input" maxlength="250" name="nickname" autofocus placeholder="Nickname">
+                        <input type="text" class="form__input" maxlength="250" name="nickname" autofocus placeholder="Nickname">
                 </div>
 
                 <div class="form__input-group">
