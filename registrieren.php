@@ -39,7 +39,7 @@ if(isset($_GET['register'])) {
     // Überprüfe, dass der Nickname noch nicht registriert wurde
     if(!$error) {
         $statement = $dbconnector->prepare("SELECT * FROM user WHERE nickname = :nickname");
-        $result = $statement->execute(array,('nickname' => $nickname));
+        $result = $statement->execute(array('nickname' => $nickname));
         $nick = $statement->fetch();
 
         if($nick !== false) {
