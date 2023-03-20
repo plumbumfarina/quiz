@@ -101,6 +101,10 @@ if($showFormular) {
                 </div>
 
                 <input class="form__button" type="submit" value="Abschicken">
+
+                <p class="form__text">
+                <a class="form__link" href="login.php" id="linkLogin">Zurück zum Login</a>
+            </p>
         </form>
 </div>
 <?php
