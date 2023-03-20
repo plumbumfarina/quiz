@@ -38,7 +38,6 @@ include('lib/getFragenAnzahl.php');
                         <th>Modulkürzel</th>
                         <th>Modulname</th>
                         <th>Anazhl Fragen</th>
-                        <th>öffentlich</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -57,7 +56,7 @@ include('lib/getFragenAnzahl.php');
                             die("Connection failed: " . $conn->connect_error);
                         }
 
-                        $sql = "SELECT fragendeck_id, fragendeck_name, fragendeck.modul_id, public, modulkuerzel, modulname FROM fragendeck JOIN modul WHERE (fragendeck.modul_id = modul.modul_id) AND (public = TRUE)";
+                        $sql = "SELECT fragendeck_id, fragendeck_name, fragendeck.modul_id, public, modulkuerzel, modulname FROM fragendeck JOIN modul WHERE (fragendeck.modul_id = modul.modul_id) AND ((public = TRUE) OR (user_id = $user_id))";
                         $result = $conn->query($sql);
 
                         if ($result->num_rows > 0) {
