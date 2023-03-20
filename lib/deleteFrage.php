@@ -17,15 +17,15 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-// Prüfung ob ein Fragendeckid angegeben wurde
+// Prüfung ob ein Fragenid angegeben wurde
 if(isset($fragen_id)) {
-    $sqlFragen = "DELETE FROM new_table WHERE fragen_id = $fragen_id";
+    $sqlFragen = "DELETE FROM fragen WHERE fragen_id = $fragen_id";
 } else {
     echo "Kein Frage angegeben.";
 }
 
-if ($conn->query($sqlFragenDeck) === TRUE) {
-  header("Refresh: 0.1; URL=../fragenUebersicht.php");
+if ($conn->query($sqlFragen) === TRUE) {
+  header("Refresh: 0.1; URL=../fragenUebersicht.php?fragendeck_id=$fragendeck_id");
 } else {
   echo "Error: " . $sql . "<br>" . $conn->error;
 }
