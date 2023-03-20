@@ -150,7 +150,7 @@ function openPage(id) {
   window.location.href = "fragenUebersicht.php?fragendeck_id=" + id;
 }
 function openPageDelete(id) {
-  window.location.href = "deleteFragendeck.php?fragendeck_id=" + id;
+  window.location.href = "lib/deleteFragendeck.php?fragendeck_id=" + id;
 }
 </script>
 </body>
