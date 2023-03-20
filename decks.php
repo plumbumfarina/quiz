@@ -91,15 +91,15 @@ include('lib/getFragenAnzahl.php');
 <div>
     <div class="container mt-3">
         <h1 class="form__title">Kartendeck hinzufügen</h1>
-        <form action="addFragendeck.php" method="post">
+        <form action="lib/addFragendeck.php" method="post">
             <div class="mb-3">
                 <label for="deckName">Kartendeckname:</label>
                 <input type="text" id="deckname" name="deckname" required class="form-control">
             </div>
             <div class="mb-3">
                 <label class="form-check-label" for="public">Willst du das Kartendeck für alle spielbar machen?</label>
-                <input type="radio" id="publicJa" name="public" value="TRUE"> Ja </input>
-                <input type="radio" id="publicNein" name="public" value="FALSE"> Nein </input>
+                <input type="radio" id="public" name="public" value="TRUE"> Ja </input>
+                <input type="radio" id="public" name="public" value="FALSE"> Nein </input>
             </div>
             <div class="mb-3">
             <label for="modul">Wähle ein Modul aus:</label>
