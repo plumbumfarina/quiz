@@ -79,7 +79,15 @@ include('lib/getFragenAnzahl.php');
                                 </tr>";
                             }
                         } else {
-                            echo "0 results";
+                            echo "<tr>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                </tr>";
                         }
 
                         $conn->close();
