@@ -22,10 +22,11 @@ if(!isset($_SESSION['userid'])) {
 	
   </head>
   <body>
-	<div class="container">
-		<?php
-			include('navbar.php')
-		?>
+	<?php
+		include('navbar.php')
+	?>
+		<div class="container">
+		
 
 			<div id="start_screen" class="jumbotren quiz_start" >
 				<h1>Herzlich Willkommen zum Quiz</h1>
