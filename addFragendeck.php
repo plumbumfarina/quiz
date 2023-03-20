@@ -18,7 +18,12 @@ if ($conn->connect_error) {
 $deckname = $_POST['deckname'];
 $modulkuerzel = $_POST['modul'];
 
-$sql = "INSERT INTO fragendeck (fragendeck_name, modul_id, user_id) VALUES ('$deckname', (SELECT modul_id FROM modul WHERE modulkuerzel='$modulkuerzel'), $user_id)";
+// Prüfung ob ein Fragendeckname angegeben wurde
+if(isset($deckname)) {
+    $sql = "INSERT INTO fragendeck (fragendeck_name, modul_id, user_id) VALUES ('$deckname', (SELECT modul_id FROM modul WHERE modulkuerzel='$modulkuerzel'), $user_id)";
+} else {
+    echo "Kein Fragendeckname angegeben.";
+}
 
 if ($conn->query($sql) === TRUE) {
   echo "New fragendeck created successfully";
