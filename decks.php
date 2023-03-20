@@ -85,7 +85,7 @@ include('lib/getFragenNumber.php');
         <form action="addFragendeck.php" method="post">
             <div class="mb-3">
                 <label for="deckName">Fragendeckname:</label>
-                <input type="text" id="deckname" name="deckname" class="form-control">
+                <input type="text" id="deckname" name="deckname" required class="form-control">
             </div>
             <div class="mb-3">
             <label for="modul">Wähle ein Modul aus:</label>
