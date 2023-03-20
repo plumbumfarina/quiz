@@ -15,8 +15,8 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
+$fragendeck_id = $_POST['fragendeck_id'];
 $fragentext = $_POST['fragentext'];
-$fragendeck_id = $_GET['fragendeck_id'];
 $antwortEins = $_POST['Antwort1'];
 $antwortzwei = $_POST['Antwort2'];
 $antwortDrei = $_POST['Antwort3'];
