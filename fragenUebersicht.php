@@ -40,6 +40,8 @@ include('lib/getFragenNumber.php');
                         <th>Antwort Drei</th>
                         <th>Antwort Vier</th>
                         <th>Richtige Antwort</th>
+                        <th></th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -73,7 +75,10 @@ include('lib/getFragenNumber.php');
                                     <td>". $row["antwortVier"]. "</td>
                                     <td>" . $row["richtigkeit"]. "</td>
                                     <td>
-                                        <button type='button' class='btn btn-outline-warning' value='" . $row["fragen_id"]. "' onclick='openPage(" .  $row['fragen_id']. ")'> bearbeiten </button>
+                                        <button type='button' class='btn btn-outline-warning' value='" . $row["fragen_id"]. "' onclick='openPage(" .  $row['fragen_id']. ")'> Bearbeiten </button>
+                                    </td>
+                                    <td>
+                                        <button type='button' class='btn btn-outline-danger' value='" . $row["fragendeck_id"]. "'> Löschen </button>
                                     </td>
                                 </tr>";
                             }
@@ -90,14 +95,6 @@ include('lib/getFragenNumber.php');
                     <button type="button" onclick="window.location.href='addQuestion.php';" class="btn btn-outline-success"> Hinzufügen
                     </button>
                 </div> 
-                <div class="col">
-                    <button type="button" class="btn btn-outline-warning"> Bearbeiten
-                    </button>
-                </div>
-                <div class="col">
-                    <button type="button" class="btn btn-outline-danger"> Löschen
-                    </button>
-                </div>
             </div>
     </div>
 </div>
