@@ -83,6 +83,14 @@ include('lib/getFragenNumber.php');
 
                     $conn->close();
                 ?>
+                <div>
+                    <button type="button" class="btn btn-outline-success"> 
+                        Ändern 
+                    </button>
+                    <button type="button" class="btn btn-outline-danger"> 
+                        Abbrechen 
+                    </button>
+                </div>
             </form>
     </div>
 </div>
