@@ -18,6 +18,7 @@ $showFormular = true; //Variable ob das Registrierungsformular anezeigt werden s
 
 if(isset($_GET['register'])) {
     $error = false;
+    $nickname = $_POST['nickname'];
     $email = $_POST['email'];
     $passwort = $_POST['passwort'];
     $passwort2 = $_POST['passwort2'];
@@ -33,6 +34,18 @@ if(isset($_GET['register'])) {
     if($passwort != $passwort2) {
         echo 'Die Passwörter müssen übereinstimmen<br>';
         $error = true;
+    }
+
+    // Überprüfe, dass der Nickname noch nicht registriert wurde
+    if(!$error) {
+        $statement = $dbconnector->prepare("SELECT * FROM user WHERE nickname = :nickname");
+        $result = $statement->execute(array,('nickname' => $nickname));
+        $nick = $statement->fetch();
+
+        if($nick !== false) {
+            echo 'Dieser Nickname ist bereis vergeben<br>';
+            $error = true;
+        }
     }
 
     //Überprüfe, dass die E-Mail-Adresse noch nicht registriert wurde
@@ -57,7 +70,7 @@ if(isset($_GET['register'])) {
 
         if($result) {
             header("Refresh: 5; URL=../login.php");
-            header('location: login.php');
+#            header('location: login.php');
             echo 'Du wurdest erfolgreich registriert. In 5 Sekunden geht es zum Login.';
             $showFormular = false;
         } else {
@@ -71,6 +84,10 @@ if($showFormular) {
 <div class="container__login">
         <form action="?register=1" method="post">
         <h1 class="form__title">Registrierung</h1>
+                <div class="form__input-group">
+                        <input type="email" class="form__input" maxlength="250" name="nickname" autofocus placeholder="Nickname">
+                </div>
+
                 <div class="form__input-group">
                         <input type="email" class="form__input" maxlength="250" name="email" autofocus placeholder="E-Mail">
                 </div>
