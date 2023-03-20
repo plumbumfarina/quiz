@@ -10,7 +10,6 @@
 
     <!-- Bootstrap -->
     <!-- das ist die Menüleiste -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
   </head>
   <body>
@@ -42,8 +41,8 @@
 	<script src="js/quiz.js"></script>
 
 	<?php
-			include('footer.php')
-		?>
+		include('footer.php')
+	?>
 
   </body>
 </html>
