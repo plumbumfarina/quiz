@@ -119,13 +119,13 @@ include('lib/getFragenAnzahl.php');
                             die("Connection failed: " . $conn->connect_error);
                         }
 
-                        $sql = "SELECT modulkuerzel FROM modul" ;
+                        $sql = "SELECT modulname FROM modul" ;
                         $result = $conn->query($sql);
 
                         if ($result->num_rows > 0) {
                             // output data of each row
                             while($row = $result->fetch_assoc()) {
-                                echo "<option>" . $row["modulkuerzel"]. "</option>";
+                                echo "<option>" . $row["modulname"]. "</option>";
                             }
                         } else {
                             echo "0 results";
