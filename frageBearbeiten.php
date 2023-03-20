@@ -92,6 +92,9 @@ include('lib/getFragenNumber.php');
                     </button>
                 </div>
             </form>
+            <?php>
+                
+            ?>
     </div>
 </div>
 </body>

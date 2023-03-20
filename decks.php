@@ -36,6 +36,9 @@ include('lib/getFragenNumber.php');
                         <th>Deckname</th>
                         <th>Modulkürzel</th>
                         <th>Modulname</th>
+                        <th>Anazhl Fragen</th>
+                        <th>öffentlich</th>
+                        <th></th>
                         <th></th>
                     </tr>
                 </thead>
@@ -54,7 +57,7 @@ include('lib/getFragenNumber.php');
                             die("Connection failed: " . $conn->connect_error);
                         }
 
-                        $sql = "SELECT fragendeck_id, fragendeck_name, fragendeck.modul_id, modulkuerzel, modulname FROM fragendeck JOIN modul WHERE (fragendeck.modul_id = modul.modul_id) AND (user_id = $user_id)" ;
+                        $sql = "SELECT fragendeck_id, fragendeck_name, fragendeck.modul_id, public, modulkuerzel, modulname FROM fragendeck JOIN modul WHERE (fragendeck.modul_id = modul.modul_id) AND (user_id = $user_id)" ;
                         $result = $conn->query($sql);
 
                         if ($result->num_rows > 0) {
@@ -64,6 +67,8 @@ include('lib/getFragenNumber.php');
                                     <td>" . $row["fragendeck_name"]. "</td>
                                     <td>" . $row["modulkuerzel"]. "</td>
                                     <td>" . $row["modulname"]. "</td>
+                                    <td></td>
+                                    <td>" . $row["public"]. "</td>
                                     <td>
                                         <button type='button' class='btn btn-outline-warning' value='" . $row["fragendeck_id"]. "' onclick='openPage(" .  $row['fragendeck_id']. ")'> Bearbeiten </button>
                                     </td>
