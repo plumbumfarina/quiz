@@ -38,25 +38,25 @@ include('lib/getFragenNumber.php');
         <h1> Frage hinzufügen </h1>
         <form action="lib/addFrage.php" method="post">                                
             <label for='frage' class='form-label'> Frage:</label>
-            <input type='text' class='form-control' name='fragentext'></input>
+            <input type='text' class='form-control' name='fragentext'>
                                 
             <label for='frage' class='form-label'> Antwort 1:</label>
-            <input type='text' class='form-control' name='Antwort1'></input><br>                  
+            <input type='text' class='form-control' name='Antwort1'>                 
             <input type='radio' name='richtigkeit' value='1'>
             <label>Richtige Antwort</label><br><br>
                                 
             <label for='frage' class='form-label'> Antwort 2:</label>
-            <input type='text' class='form-control' name='Antwort2'></input><br>                  
+            <input type='text' class='form-control' name='Antwort2'>                 
             <input type='radio' name='richtigkeit' value='2'>
             <label>Richtige Antwort</label><br><br>
                                 
             <label for='frage' class='form-label'> Antwort 3:</label>
-            <input type='text' class='form-control' name='Antwort3'></input><br>
+            <input type='text' class='form-control' name='Antwort3'>
             <input type='radio' name='richtigkeit' value='3'>
             <label>Richtige Antwort</label><br><br>
                                 
             <label for='frage' class='form-label'> Antwort 4:</label>
-            <input type='text' class='form-control' name='Antwort4'></input><br>
+            <input type='text' class='form-control' name='Antwort4'>
             <input type='radio' name='richtigkeit' value='4'>
             <label>Richtige Antwort</label><br><br>
 
