@@ -19,7 +19,7 @@ if ($conn->connect_error) {
 
 // Prüfung ob ein Fragendeckid angegeben wurde
 if(isset($fragendeck_id)) {
-    $sqlFragen = "DELETE FROM new_table WHERE fragendeck_id = $fragendeck_id";
+    $sqlFragen = "DELETE FROM fragen WHERE fragendeck_id = $fragendeck_id";
     if ($conn->query($sqlFragen) === TRUE) {
         $sqlFragenDeck = "DELETE FROM fragendeck WHERE fragendeck_id = $fragendeck_id";
     }

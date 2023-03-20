@@ -25,7 +25,7 @@ $richtigkeit = $_POST['richtigkeit'];
 
 // Prüfung ob ein Fragendeckname angegeben wurde
 if(isset($fragendeck_id)) {
-    $sql = "INSERT INTO new_table (fragentext, fragendeck_id, antwortEins, antwortZwei, antwortDrei, antwortVier, richtigkeit) VALUES ('$fragentext', '$fragendeck_id', '$antwortEins', '$antwortZwei', '$antwortDrei', '$antwortVier', '$richtigkeit')";
+    $sql = "INSERT INTO fragen (fragentext, fragendeck_id, antwortEins, antwortZwei, antwortDrei, antwortVier, richtigkeit) VALUES ('$fragentext', '$fragendeck_id', '$antwortEins', '$antwortZwei', '$antwortDrei', '$antwortVier', '$richtigkeit')";
 } else {
     echo "Keine richtige Antwort angegeben.";
 }
