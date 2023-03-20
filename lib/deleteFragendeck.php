@@ -19,12 +19,15 @@ if ($conn->connect_error) {
 
 // Prüfung ob ein Fragendeckid angegeben wurde
 if(isset($fragendeck_id)) {
-    $sql = "DELETE FROM fragen JOIN fragendeck WHERE fragendeck_id = $fragendeck_id";
+    $sqlFragen = "DELETE FROM fragen WHERE fragendeck_id = $fragendeck_id";
+    if ($conn->query($sqlFragen) === TRUE) {
+        $sqlFragenDeck = "DELETE FROM fragendeck WHERE fragendeck_id = $fragendeck_id";
+    }
 } else {
     echo "Kein Fragendeckname angegeben.";
 }
 
-if ($conn->query($sql) === TRUE) {
+if ($conn->query($sqlFragenDeck) === TRUE) {
   header("Refresh: 0.1; URL=../decks.php");
 } else {
   echo "Error: " . $sql . "<br>" . $conn->error;
