@@ -1,7 +1,7 @@
 <?php
         include('lib/getNickname.php');
 ?> 
-    <nav class="navMenu">
+    <nav class="navbar">
         <ul>
             <li><a href="index.php">Startseite</a></li>
             <li><a href="decks.php">Meine Kartendecks</a></li>
