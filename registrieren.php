@@ -65,7 +65,7 @@ if(isset($_GET['register'])) {
 #        $passwort_hash = password_hash($passwort, PASSWORD_DEFAULT);
 
         $statement = $dbconnector->prepare("INSERT INTO user (nickname, email, passwort) VALUES (:nickname, :email, :passwort)");
-        $result = $statement->execute(array('nickname' => $nichname, 'email' => $email, 'passwort' => $passwort));
+        $result = $statement->execute(array('nickname' => $nickname, 'email' => $email, 'passwort' => $passwort));
 #        $result = $statement->execute(array('email' => $email, 'passwort' => $passwort_hash));
 
         if($result) {
