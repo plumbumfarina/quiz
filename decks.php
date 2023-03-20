@@ -140,10 +140,6 @@ include('lib/getFragenAnzahl.php');
                     <button type="submit" class="btn btn-outline-success"> Anlegen
                     </button>
                 </div>
-                <div class="col">
-                    <button type="button" class="btn btn-outline-danger"> Cancel
-                    </button>
-                </div>
             </div>
         </form>
     </div>
