@@ -6,7 +6,7 @@ if(!isset($_SESSION['userid'])) {
 }*/
 ?>
 
-<!Doctype html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1-transitional.dtd">
+<!Doctype html>
 
 <html cmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
@@ -15,9 +15,9 @@ if(!isset($_SESSION['userid'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Projekt</title>
 
+	<link rel="stylesheet" href="style.css" type="text/css" media="screen"/>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-	<link rel="stylesheet" href="style.css" type="text/css" media="screen"/>
 	
 	
   </head>
