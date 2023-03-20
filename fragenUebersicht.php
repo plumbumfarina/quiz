@@ -103,7 +103,7 @@ include('lib/getFragenNumber.php');
 function openPage(id) {
     window.location.href = "frageBearbeiten.php?fragen_id=" + id;
 }
-function openPageFrageDelte(id) {
+function openPageFrageDelete(id) {
     window.location.href = "lib/deleteFrage.php?fragen_id=" + id;
 }
 function openPageFrageAdd(id) {
