@@ -89,7 +89,7 @@ if($showFormular) {
                 </div>
 
                 <div class="form__input-group">
-                        <input type="email" class="form__input" maxlength="250" name="email" autofocus placeholder="E-Mail">
+                        <input type="email" class="form__input" maxlength="250" name="email" placeholder="E-Mail">
                 </div>
 
                 <div class="form__input-group">
