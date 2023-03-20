@@ -11,6 +11,6 @@
             $fragenAnzahl = $fragen['fragenAnzahl'];
 
     } else {
-        echo "ooops ... somthing went wrong ...";
+        echo "ooops ... something went wrong ...";
     }
 ?>
