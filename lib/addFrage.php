@@ -7,8 +7,6 @@ $password = "toor";
 $dbname = "quiz";
 $user_id = $_SESSION['userid'];
 
-$fragendeck_id = $_GET['fragendeck_id'];
-
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -18,6 +16,7 @@ if ($conn->connect_error) {
 }
 
 $fragentext = $_POST['fragentext'];
+$fragendeck_id = $_GET['fragendeck_id'];
 $antwortEins = $_POST['Antwort1'];
 $antwortzwei = $_POST['Antwort2'];
 $antwortDrei = $_POST['Antwort3'];
