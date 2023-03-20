@@ -2,6 +2,7 @@
 session_start();
 $dbconnector = new PDO('mysql:host=localhost;dbname=quiz', 'root', 'toor');
 
+
 if(isset($_GET['login'])) {
     $email = $_POST['email'];
     $passwort = $_POST['passwort'];
