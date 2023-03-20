@@ -36,7 +36,7 @@ include('lib/getFragenNumber.php');
                         <th>Deckname</th>
                         <th>Modulkürzel</th>
                         <th>Modulname</th>
-                        <th>Bearbeiten</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -65,7 +65,10 @@ include('lib/getFragenNumber.php');
                                     <td>" . $row["modulkuerzel"]. "</td>
                                     <td>" . $row["modulname"]. "</td>
                                     <td>
-                                        <button type='button' class='btn btn-outline-warning' value='" . $row["fragendeck_id"]. "' onclick='openPage(" .  $row['fragendeck_id']. ")'> bearbeiten </button>
+                                        <button type='button' class='btn btn-outline-warning' value='" . $row["fragendeck_id"]. "' onclick='openPage(" .  $row['fragendeck_id']. ")'> Bearbeiten </button>
+                                    </td>
+                                    <td>
+                                        <button type='button' class='btn btn-outline-danger' value='" . $row["fragendeck_id"]. "'> Löschen </button>
                                     </td>
                                 </tr>";
                             }
