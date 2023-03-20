@@ -68,7 +68,7 @@ include('lib/getFragenAnzahl.php');
                                     <td>" . $row["fragendeck_name"]. "</td>
                                     <td>" . $row["modulkuerzel"]. "</td>
                                     <td>" . $row["modulname"]. "</td>
-                                    <td>" . echo getFragenAnzahl($row["fragendeck_id"]). "</td>
+                                    <td></td>
                                     <td>" . $row["public"]. "</td>
                                     <td>
                                         <button type='button' class='btn btn-outline-warning' value='" . $row["fragendeck_id"]. "' onclick='openPage(" .  $row['fragendeck_id']. ")'> Bearbeiten </button>
