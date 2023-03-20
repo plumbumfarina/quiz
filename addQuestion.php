@@ -36,7 +36,10 @@ include('lib/getFragenNumber.php');
 <div>
     <div class="container mt-3">
         <h1> Frage hinzufügen </h1>
-        <form action="lib/addFrage.php" method="post">                                
+        <form action="lib/addFrage.php" method="post">   
+            <label for='fragendeckID' class='form-label'> Fragendeck ID:</label>
+            <input type='text' class='form-control' name='fragendeck_id' value= <?php echo $fragndeck_id;?> disabled>
+
             <label for='frage' class='form-label'> Frage:</label>
             <input type='text' class='form-control' name='fragentext'>
                                 
@@ -61,7 +64,7 @@ include('lib/getFragenNumber.php');
             <label>Richtige Antwort</label><br><br>
 
             <div class="btn-group">
-                <button type='button' class='btn btn-outline-success' onclick="openPageFrageAdd(<?php echo $fragendeck_id; ?>)"> Hinzufügen </button>
+                <button type='submit' class='btn btn-outline-success'> Hinzufügen </button>
                 <button type='button' class='btn btn-outline-info'> weitere Frage hinzufügen </button>
                 <button type='button' class='btn btn-outline-danger'> Cancle </button>
             </div>
@@ -69,11 +72,6 @@ include('lib/getFragenNumber.php');
     </div>
 </div>
 
-<script>
-function openPageFrageAdd(id) {
-    window.location.href= "lib/addFrage.php?fragendeck_id=" + id;
-}
-</script>
 
 </body>
 </html>

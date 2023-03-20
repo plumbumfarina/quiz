@@ -15,13 +15,13 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$fragentext = $_GET['fragentext'];
-$fragendeck_id = $_GET['fragendeck_id'];
-$antwortEins = $_GET['Antwort1'];
-$antwortzwei = $_GET['Antwort2'];
-$antwortDrei = $_GET['Antwort3'];
-$antwortVier = $_GET['Antwort4'];
-$richtigkeit = $_GET['richtigkeit'];
+$fragentext = $_POST['fragentext'];
+$fragendeck_id = $_POST['fragendeck_id'];
+$antwortEins = $_POST['Antwort1'];
+$antwortzwei = $_POST['Antwort2'];
+$antwortDrei = $_POST['Antwort3'];
+$antwortVier = $_POST['Antwort4'];
+$richtigkeit = $_POST['richtigkeit'];
 
 // Prüfung ob ein Fragendeckname angegeben wurde
 //if(isset($fragendeck_id)) {
