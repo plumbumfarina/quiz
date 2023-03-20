@@ -61,7 +61,7 @@ include('lib/getFragenNumber.php');
             <label>Richtige Antwort</label><br><br>
 
             <div class="btn-group">
-                <button type='button' class='btn btn-outline-success' onlick='openPageFrageAdd(<?php echo $fragendeck_id; ?>)'> Hinzufügen </button>
+                <button type='button' class='btn btn-outline-success' onclick="openPageFrageAdd(<?php echo $fragendeck_id; ?>)"> Hinzufügen </button>
                 <button type='button' class='btn btn-outline-info'> weitere Frage hinzufügen </button>
                 <button type='button' class='btn btn-outline-danger'> Cancle </button>
             </div>
