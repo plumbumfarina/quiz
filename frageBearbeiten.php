@@ -56,7 +56,7 @@ include('lib/getFragenNumber.php');
                         while($row = $result->fetch_assoc()) {
                             echo "
                                 <label for='fragenID' class='form-label'> Fragen ID:</label>
-                                <input type='text' class='form-control' value='" . $row["fragen_id"]. "'disabled></input>
+                                <input type='text' class='form-control' value='" . $row["fragen_id"]. "'readonly></input>
                                 <label for='frage' class='form-label'> Frage:</label>
                                 <input type='text' class='form-control' value='" . $row["fragentext"]. "'></input>
                                 <label for='frage' class='form-label'> Antwort 1:</label>
