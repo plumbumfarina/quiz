@@ -53,7 +53,6 @@ include('lib/getFragenNumber.php');
                         $user_id = $_SESSION['userid'];
 
                         $fragendeck_id = $_GET['fragendeck_id'];
-                        $_SESSION['fragendeck_id'] = $user['fragendeck_id'];
 
                         // Create connection
                         $conn = new mysqli($servername, $username, $password, $dbname);

@@ -8,7 +8,6 @@ $dbname = "quiz";
 $user_id = $_SESSION['userid'];
 
 $fragen_id = $_GET['fragen_id'];
-$fragendeck_id = $_SESSION['fragendeck_id'];
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
