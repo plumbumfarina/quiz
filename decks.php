@@ -29,7 +29,7 @@ include('lib/getFragenNumber.php');
 
 <div>
     <div class="container mt-3">
-        <h1 class="form__title">Fragendecks</h1>
+        <h1 class="form__title">Kartendecks</h1>
             <table class="table table-striped">
                 <thead class="table-dark">
                     <tr>
@@ -81,7 +81,7 @@ include('lib/getFragenNumber.php');
 </div>
 <div>
     <div class="container mt-3">
-        <h1 class="form__title">Fragendeck hinzufügen</h1>
+        <h1 class="form__title">Kartendeck hinzufügen</h1>
         <form action="addFragendeck.php" method="post">
             <div class="mb-3">
                 <label for="deckName">Fragendeckname:</label>
