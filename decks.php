@@ -98,8 +98,8 @@ include('lib/getFragenAnzahl.php');
             </div>
             <div class="mb-3">
                 <label class="form-check-label" for="public">Willst du das Kartendeck für alle spielbar machen?</label>
-                <input type="checkbox" id="publicJa" name="public" class="form-check-input" value="TRUE"> Ja </input>
-                <input type="checkbox" id="publicNein" name="public" class="form-check-input" value="FALSE"> Nein </input>
+                <input type="radio" id="publicJa" name="public" value="TRUE"> Ja </input>
+                <input type="radio" id="publicNein" name="public" value="FALSE"> Nein </input>
             </div>
             <div class="mb-3">
             <label for="modul">Wähle ein Modul aus:</label>
