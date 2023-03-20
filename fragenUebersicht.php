@@ -104,7 +104,7 @@ function openPage(id) {
     window.location.href = "frageBearbeiten.php?fragen_id=" + id;
 }
 function openPageFrageAdd(id) {
-    window.location.href='addQuestion.php?fragendeck_id=' + id;
+    window.location.href= "addQuestion.php?fragendeck_id=" + id;
 }
 </script>
 </body>
