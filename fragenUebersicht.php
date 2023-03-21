@@ -6,10 +6,6 @@ if(!isset($_SESSION['userid'])) {
     die('Bitte zuerst einloggen');
 }
 
-include('lib/getFragendeckname.php');
-include('lib/getModulname.php');
-include('lib/getFragenNumber.php');
-
 ?>
 
 <!DOCTYPE html>
@@ -28,10 +24,10 @@ include('lib/getFragenNumber.php');
     include('navbar.php')
 ?>
 
-
 <div>
     <div class="container mt-9">
         <h1 class="form__title">Fragen</h1>
+
             <table class="table table-hover">
                 <thead class="table-dark">
                     <tr>
