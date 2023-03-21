@@ -32,7 +32,6 @@ if(isset($fragendeck_id)) {
 
 if ($conn->query($sql) === TRUE) {
   header("Refresh: 0.1; URL=../fragenUebersicht.php?fragendeck_id=$fragendeck_id");
-  echo "Neues Fragendeck erfolgreich angelegt. In 5 Sekunden geht es zum Login.";
 } else {
   echo "Error: " . $sql . "<br>" . $conn->error;
 }
