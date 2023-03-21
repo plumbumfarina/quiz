@@ -25,14 +25,23 @@ $richtigkeit = $_POST['richtigkeit'];
 
 // Prüfung ob ein Fragendeckname angegeben wurde
 if(isset($fragen_id)) {
+  //Prüfung der Kartendeck_ID für Absprung auf Fragenübersicht
+  $sqlKartendeckID = "SELECT fragendeck_id FROM fragen WHERE fragen_id = $fragen_id;";
+  $result = $conn->query($sqlKartendeckID);
+    if ($result->num_rows > 0) {
+    // Ausgabe des Tabelleninhaltes
+      while($row = $result->fetch_assoc()) {
+        $fragendeck_id = $row['fragendeck_id'];
+      }
+    }  
+  //Update der entsprechenden Frage
     $sql = "UPDATE fragen SET fragentext = '$fragentext', antwortEins = '$antwortEins', antwortZwei = '$antwortZwei', antwortDrei = '$antwortDrei', antwortVier = '$antwortVier', richtigkeit = '$richtigkeit' WHERE fragen_id = '$fragen_id'";
 } else {
     echo "Keine richtige Antwort angegeben.";
 }
 
 if ($conn->query($sql) === TRUE) {
-  header("Refresh: 0.1; URL=../fragenUebersicht.php");
-  echo "Neues Fragendeck erfolgreich angelegt. In 5 Sekunden geht es zum Login.";
+  header("Refresh: 0.1; URL=../fragenUebersicht.php?fragendeck_id=$fragendeck_id");
 } else {
   echo "Error: " . $sql . "<br>" . $conn->error;
 }
