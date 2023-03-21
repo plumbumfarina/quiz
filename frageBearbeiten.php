@@ -47,13 +47,14 @@ include('lib/getFragenNumber.php');
                     if ($conn->connect_error) {
                         die("Connection failed: " . $conn->connect_error);
                     }
-
+                    // SQL Abfrage der entsprechenden Frage anhand der Fragen_ID
                     $sql = "SELECT fragen_id, fragentext, antwortEins, antwortZwei, antwortDrei, antwortVier, richtigkeit FROM fragen WHERE (fragen_id = $fragen_id)" ;
                     $result = $conn->query($sql);
 
                     if ($result->num_rows > 0) {
-                        // output data of each row
+                        // Ausgabe der SQL Abfrage in das Formular
                         while($row = $result->fetch_assoc()) {
+                            // Erstellen eines Formulares
                             echo "
                                 <label for='fragenID' class='form-label'> Fragen ID:</label>
                                 <input type='text' class='form-control' name='fragenID' value='" . $row["fragen_id"]. "'readonly></input>
@@ -78,6 +79,7 @@ include('lib/getFragenNumber.php');
                             ";
                         }
                     } else {
+                        // Ansicht falls die Frage nicht gefunden wird
                         echo "0 results";
                     }
 

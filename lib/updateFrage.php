@@ -39,8 +39,9 @@ if(isset($fragen_id)) {
 } else {
     echo "Keine richtige Antwort angegeben.";
 }
-
+// Prüfung ob Update der Frage erfolgreich war
 if ($conn->query($sql) === TRUE) {
+  // Absprung auf die Übersciht der Fragen mit Übergabe der Kartendeck_ID
   header("Refresh: 0.1; URL=../fragenUebersicht.php?fragendeck_id=$fragendeck_id");
 } else {
   echo "Error: " . $sql . "<br>" . $conn->error;
