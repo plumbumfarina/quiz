@@ -6,9 +6,6 @@ session_start();
     die('Bitte zuerst einloggen');
 } */
 
-include('lib/getFragendeckname.php');
-include('lib/getModulname.php');
-include('lib/getFragenNumber.php');
 include('lib/getFragenAnzahl.php');
 ?>
 
@@ -60,12 +57,12 @@ include('lib/getFragenAnzahl.php');
                         if ($conn->connect_error) {
                             die("Connection failed: " . $conn->connect_error);
                         }
-
+                        // SQL Abfrage um die öffentlichen Kartendecks zu ermitteln
                         $sql = "SELECT fragendeck_id, fragendeck_name, fragendeck.modul_id, public, modulkuerzel, modulname FROM fragendeck JOIN modul WHERE (fragendeck.modul_id = modul.modul_id) AND (public = TRUE)";
                         $result = $conn->query($sql);
 
                         if ($result->num_rows > 0) {
-                            // output data of each row
+                            // Ausgabe der SQL Abfrage 
                             while($row = $result->fetch_assoc()) {
                                 echo "<tr>
                                     <td>" . $row["fragendeck_name"]. "</td>
@@ -78,6 +75,7 @@ include('lib/getFragenAnzahl.php');
                                 </tr>";
                             }
                         } else {
+                            //Ausgabe bei leerer Abfrage
                             echo "<tr>
                                     <td>-</td>
                                     <td>-</td>
