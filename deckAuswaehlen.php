@@ -42,7 +42,7 @@ include('lib/getFragenAnzahl.php');
                         <th>Deckname</th>
                         <th>Modulkürzel</th>
                         <th>Modulname</th>
-                        <th>Anazhl Fragen</th>
+                        <th>Anazahl Fragen</th>
                         <th></th>
                     </tr>
                 </thead>

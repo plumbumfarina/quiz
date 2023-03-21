@@ -21,7 +21,6 @@ body {
 }
 
 footer {
-
   background: #ff8c00;
   position: fixed;
   bottom: 0px;
@@ -255,7 +254,7 @@ input:checked + .slider:before {
   transform: translateX(26px);
 }
 
-/* Navbar2: */
+/* Navbar2: 
 
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
 * 
