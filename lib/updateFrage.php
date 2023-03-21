@@ -24,7 +24,7 @@ $antwortVier = $_POST['Antwort4'];
 $richtigkeit = $_POST['richtigkeit'];
 
 // Prüfung ob ein Fragendeckname angegeben wurde
-if(isset($fragendeck_id)) {
+if(isset($fragen_id)) {
     $sql = "UPDATE fragen SET fragentext = '$fragentext', antwortEins = '$antwortEins', antwortZwei = '$antwortZwei', antwortDrei = '$antwortDrei', antwortVier = '$antwortVier', richtigkeit = '$richtigkeit' WHERE fragen_id = '$fragen_id'";
 } else {
     echo "Keine richtige Antwort angegeben.";
