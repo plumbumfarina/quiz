@@ -1,3 +1,11 @@
+<?php
+session_start();
+if(!isset($_SESSION['userid'])) {
+    header('location: login.php');
+    die('Bitte zuerst einloggen');
+}
+?>
+
 <!DOCTYPE html>
 <!-- das ist die Codierung für den Tab bei der Internetseite des Quizes -->
 <html lang="en">
