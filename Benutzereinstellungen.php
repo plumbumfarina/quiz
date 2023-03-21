@@ -9,18 +9,14 @@
 </head>
 <body>
 <?php
-			include('navbar.php')
-		?>	
-	<h1> Hier können Einstellungen, wie die Änderung des Benutzernamens getätigt werden</h1>	
-		
-		
-		
-		
+	include('navbar.php')
+?>	
+	<h1> Hier können Einstellungen, wie die Änderung des Benutzernamens getätigt werden</h1>		
 		
 
-	<?php
-			include('footer.php')
-		?>
+<?php
+	include('footer.php')
+?>
 		
 
 
