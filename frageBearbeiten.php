@@ -32,7 +32,7 @@ include('lib/getFragenNumber.php');
 <div>
     <div class="container mt-9">
         <h1 class="form__title">Frage bearbeiten</h1>
-            <form>
+            <form action="lib/updateFrage.php" method="post">
                 <?php
                     $fragen_id = $_GET['fragen_id'];
 
@@ -56,25 +56,25 @@ include('lib/getFragenNumber.php');
                         while($row = $result->fetch_assoc()) {
                             echo "
                                 <label for='fragenID' class='form-label'> Fragen ID:</label>
-                                <input type='text' class='form-control' value='" . $row["fragen_id"]. "'readonly></input>
+                                <input type='text' class='form-control' name='fragenID' value='" . $row["fragen_id"]. "'readonly></input>
                                 <label for='frage' class='form-label'> Frage:</label>
-                                <input type='text' class='form-control' value='" . $row["fragentext"]. "'></input>
+                                <input type='text' class='form-control' name='fragentext' value='" . $row["fragentext"]. "'></input>
                                 <label for='frage' class='form-label'> Antwort 1:</label>
-                                <input type='text' class='form-control' value='" . $row["antwortEins"]. "'></input><br>
-                                <input type='radio' id='richtigkeitEins' name='richtigkeit' value='RichtigeAntwort'>
-                                <label for='richtigkeitEins'>Richtige Antwort</label><br><br>
+                                <input type='text' class='form-control' name='antwortEins' value='" . $row["antwortEins"]. "'></input><br>
+                                <input type='radio' name='richtigkeit' value='1'>
+                                <label>Richtige Antwort</label><br><br>
                                 <label for='frage' class='form-label'> Antwort 2:</label>
-                                <input type='text' class='form-control' value='" . $row["antwortZwei"]. "'></input><br>
-                                <input type='radio' id='richtigkeitZwei' name='richtigkeit' value='RichtigeAntwort'>
-                                <label for='richtigkeitZwei'>Richtige Antwort</label><br><br>
+                                <input type='text' class='form-control' name='antwortZwei' value='" . $row["antwortZwei"]. "'></input><br>
+                                <input type='radio' name='richtigkeit' value='2'>
+                                <label>Richtige Antwort</label><br><br>
                                 <label for='frage' class='form-label'> Antwort 3:</label>
-                                <input type='text' class='form-control' value='" . $row["antwortDrei"]. "'></input><br>
-                                <input type='radio' id='richtigkeitDrei' name='richtigkeit' value='RichtigeAntwort'>
-                                <label for='richtigkeitDrei'>Richtige Antwort</label><br><br>
+                                <input type='text' class='form-control' name='antwortDrei' value='" . $row["antwortDrei"]. "'></input><br>
+                                <input type='radio' name='richtigkeit' value='3'>
+                                <label>Richtige Antwort</label><br><br>
                                 <label for='frage' class='form-label'> Antwort 4:</label>
-                                <input type='text' class='form-control' value='" . $row["antwortVier"]. "'></input><br>
-                                <input type='radio' id='richtigkeitVier' name='richtigkeit' value='RichtigeAntwort'>
-                                <label for='richtigkeitVier'>Richtige Antwort</label><br><br>
+                                <input type='text' class='form-control' name='antwortVier' value='" . $row["antwortVier"]. "'></input><br>
+                                <input type='radio' name='richtigkeit' value='4'>
+                                <label>Richtige Antwort</label><br><br>
                             ";
                         }
                     } else {
@@ -84,7 +84,7 @@ include('lib/getFragenNumber.php');
                     $conn->close();
                 ?>
                 <div>
-                    <button type="button" class="btn btn-outline-success"> 
+                    <button type="submit" class="btn btn-outline-success"> 
                         Ändern 
                     </button>
                     <button type="button" class="btn btn-outline-danger"> 
