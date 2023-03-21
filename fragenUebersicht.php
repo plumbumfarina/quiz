@@ -10,6 +10,8 @@ include('lib/getFragendeckname.php');
 include('lib/getModulname.php');
 include('lib/getFragenNumber.php');
 
+$fragendeck_id = $_GET['fragendeck_id'];
+setcookie('fragendeck_id_cookie', $fragendeck_id);
 ?>
 
 <!DOCTYPE html>
@@ -52,9 +54,6 @@ include('lib/getFragenNumber.php');
                         $password = "toor";
                         $dbname = "quiz";
                         $user_id = $_SESSION['userid'];
-
-                        setcookie('fragendeck_id_cookie', $_GET['fragendeck_id'], 0);
-                        //$fragendeck_id = $_GET['fragendeck_id'];
 
                         // Create connection
                         $conn = new mysqli($servername, $username, $password, $dbname);
