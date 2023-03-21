@@ -21,7 +21,12 @@ if ($conn->connect_error) {
 if(isset($fragen_id)) {
     //Prüfung der Kartendeck_ID für Absprung auf Fragenübersicht
     $sqlKartendeckID = "SELECT fragendeck_id FROM fragen WHERE fragen_id = $fragen_id;";
-    $fragendeck_id = $conn->query($sqlKartendeckID);
+    $result = $conn->query($sqlKartendeckID);
+      if ($result->num_rows > 0) {
+      // Ausgabe des Tabelleninhaltes
+        while($row = $result->fetch_assoc()) {
+          $fragendeck_id = $row['fragendeck_id'];
+        }
     //Löschen der entsprechenden Frage
     $sqlFragen = "DELETE FROM fragen WHERE fragen_id = $fragen_id";
     
