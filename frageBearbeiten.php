@@ -60,19 +60,19 @@ include('lib/getFragenNumber.php');
                                 <label for='frage' class='form-label'> Frage:</label>
                                 <input type='text' class='form-control' name='fragentext' value='" . $row["fragentext"]. "'></input>
                                 <label for='frage' class='form-label'> Antwort 1:</label>
-                                <input type='text' class='form-control' name='antwortEins' value='" . $row["antwortEins"]. "'></input><br>
+                                <input type='text' class='form-control' name='Antwort1' value='" . $row["antwortEins"]. "'></input><br>
                                 <input type='radio' name='richtigkeit' value='1'>
                                 <label>Richtige Antwort</label><br><br>
                                 <label for='frage' class='form-label'> Antwort 2:</label>
-                                <input type='text' class='form-control' name='antwortZwei' value='" . $row["antwortZwei"]. "'></input><br>
+                                <input type='text' class='form-control' name='Antwort2' value='" . $row["antwortZwei"]. "'></input><br>
                                 <input type='radio' name='richtigkeit' value='2'>
                                 <label>Richtige Antwort</label><br><br>
                                 <label for='frage' class='form-label'> Antwort 3:</label>
-                                <input type='text' class='form-control' name='antwortDrei' value='" . $row["antwortDrei"]. "'></input><br>
+                                <input type='text' class='form-control' name='Antwort3' value='" . $row["antwortDrei"]. "'></input><br>
                                 <input type='radio' name='richtigkeit' value='3'>
                                 <label>Richtige Antwort</label><br><br>
                                 <label for='frage' class='form-label'> Antwort 4:</label>
-                                <input type='text' class='form-control' name='antwortVier' value='" . $row["antwortVier"]. "'></input><br>
+                                <input type='text' class='form-control' name='Antwort4' value='" . $row["antwortVier"]. "'></input><br>
                                 <input type='radio' name='richtigkeit' value='4'>
                                 <label>Richtige Antwort</label><br><br>
                             ";
