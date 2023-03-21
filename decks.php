@@ -6,9 +6,6 @@ session_start();
     die('Bitte zuerst einloggen');
 } */
 
-include('lib/getFragendeckname.php');
-include('lib/getModulname.php');
-include('lib/getFragenNumber.php');
 include('lib/getFragenAnzahl.php');
 ?>
 
@@ -71,10 +68,10 @@ include('lib/getFragenAnzahl.php');
                                     <td>" . getFragenAnzahl($row["fragendeck_id"]). "</td>
                                     <td>" . $row["public"]. "</td>
                                     <td>
-                                        <button type='button' class='btn btn-outline-warning' value='" . $row["fragendeck_id"]. "' onclick='openPage(" .  $row['fragendeck_id']. ")'> Bearbeiten </button>
+                                        <button type='button' class='btn btn-outline-warning' value='" . $row["fragendeck_id"]. "' onclick='openBearbeiteKartendeck(" .  $row['fragendeck_id']. ")'> Bearbeiten </button>
                                     </td>
                                     <td>
-                                        <button type='button' class='btn btn-outline-danger' value='" . $row["fragendeck_id"]. "' onclick='openPageDelete(" .  $row['fragendeck_id']. ")'> Löschen </button>
+                                        <button type='button' class='btn btn-outline-danger' value='" . $row["fragendeck_id"]. "' onclick='openLoescheKartendeck(" .  $row['fragendeck_id']. ")'> Löschen </button>
                                     </td>
                                 </tr>";
                             }
@@ -154,10 +151,10 @@ include('lib/getFragenAnzahl.php');
 </div>
 
 <script>
-function openPage(id) {
+function openBearbeiteKartendeck(id) {
   window.location.href = "fragenUebersicht.php?fragendeck_id=" + id;
 }
-function openPageDelete(id) {
+function openLoescheKartendeck(id) {
   window.location.href = "lib/deleteFragendeck.php?fragendeck_id=" + id;
 }
 </script>
