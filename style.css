@@ -22,8 +22,10 @@ body {
 
 footer {
   background: #ff8c00;
-  position: fixed;
-  bottom: 0px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right:0;
   width: 100%;
   left: 0;
   padding-left: 15px;
@@ -166,7 +168,7 @@ a {
 
 }
 
-button {
+.button {
   display: inline-block;
   background-color: #fffbfb;
   border-radius: 8px;
@@ -182,18 +184,18 @@ button {
   transition: all 0.5s;
   cursor: pointer;
   margin: 5px;
-  }
+}
 
   button:hover {
     background-color: #ff8c00;
-    }
+  }
 
     /* The switch container */
 
   .switch-container {
     display: flex;
-  align-items: center;
-  margin-bottom: 10px;
+    align-items: center;
+    margin-bottom: 10px;
   }
 
   .label-text {

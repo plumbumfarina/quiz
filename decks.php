@@ -147,5 +147,9 @@ function openLoescheKartendeck(id) {
   window.location.href = "lib/deleteFragendeck.php?fragendeck_id=" + id;
 }
 </script>
+
+<?php
+	include('footer.php')
+?>
 </body>
 </html>
