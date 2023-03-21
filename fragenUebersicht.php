@@ -9,6 +9,7 @@ if(!isset($_SESSION['userid'])) {
 include('lib/getFragendeckname.php');
 include('lib/getModulname.php');
 include('lib/getFragenNumber.php');
+
 ?>
 
 <!DOCTYPE html>
@@ -52,7 +53,8 @@ include('lib/getFragenNumber.php');
                         $dbname = "quiz";
                         $user_id = $_SESSION['userid'];
 
-                        $fragendeck_id = $_GET['fragendeck_id'];
+                        setcookie('fragendeck_id_cookie', $_GET['fragendeck_id'], 0);
+                        //$fragendeck_id = $_GET['fragendeck_id'];
 
                         // Create connection
                         $conn = new mysqli($servername, $username, $password, $dbname);
@@ -61,7 +63,7 @@ include('lib/getFragenNumber.php');
                             die("Connection failed: " . $conn->connect_error);
                         }
 
-                        $sql = "SELECT fragen_id, fragentext, antwortEins, antwortZwei, antwortDrei, antwortVier, richtigkeit FROM fragen WHERE (fragendeck_id = $fragendeck_id)" ;
+                        $sql = "SELECT fragen_id, fragentext, antwortEins, antwortZwei, antwortDrei, antwortVier, richtigkeit FROM fragen WHERE (fragendeck_id = $_COOKIE['fragendeck_id_cookie'])" ;
                         $result = $conn->query($sql);
 
                         if ($result->num_rows > 0) {
@@ -92,7 +94,7 @@ include('lib/getFragenNumber.php');
             </table>
             <div class="row">
                 <div class="col">
-                    <button type="button" onclick="openPageFrageAdd(<?php echo $fragendeck_id; ?>)" class="btn btn-outline-success"> Hinzufügen
+                    <button type="button" onclick="openPageFrageAdd(<?php echo $_COOKIE['fragendeck_id_cookie']; ?>)" class="btn btn-outline-success"> Hinzufügen
                     </button>
                 </div> 
             </div>
