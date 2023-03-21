@@ -10,18 +10,14 @@
 
     <!-- Bootstrap -->
     <!-- das ist die Menüleiste -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
   </head>
   <body>
-	<div class="container">
 	<?php
 			include('navbar.php')
-		?>	
+	?>
 	
-				</div>
-			</div>
-		</nav>
+	<div class="container">
 	
      <!-- das ist die Codierung für die "Herzlich Willkommen"-Leiste -->
 			<div id="start_screen" class="jumbotren quiz_start" >
@@ -30,7 +26,7 @@
 				<br>
 				<br>
         <!-- das ist der "Jetzt starten"-Button-->
-				<p style="text-align:center"><button id="start_btn" onclick="window.location.href='decks.php';" class="btn btn-primary btn-lg" role="button">Einzelspiel</button></p>
+				<p style="text-align:center"><button id="start_btn" onclick="window.location.href='deckAuswaehlen.php';" class="btn btn-primary btn-lg" role="button">Einzelspiel</button></p>
 				<p style="text-align:center"><button id="start_btn" class="btn btn-primary btn-lg start" role="button">Mehrspieler</button></p>	<!-- Hier muss noch die Klasse für die Mehrspieler rein -->
 				
 
@@ -45,8 +41,8 @@
 	<script src="js/quiz.js"></script>
 
 	<?php
-			include('footer.php')
-		?>
+		include('footer.php')
+	?>
 
   </body>
 </html>

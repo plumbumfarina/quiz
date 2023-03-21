@@ -23,61 +23,50 @@ include('lib/getFragenNumber.php');
     <title>Decks</title>
 </head>
 <body>
+<div>
 <?php
     include('navbar.php')
 ?>
+</div>
 
-<div class=container__login>
+<?php 
+    $fragendeck_id = $_GET['fragendeck_id'];
+?>
+
+<div>
     <div class="container mt-3">
         <h1> Frage hinzufügen </h1>
-        <form>
-            <div class="mb-3">
-                <label for="deckName">Fragendeckname:</label>
-                <input type="text" id="deckname" name="deckname" class="form-control">
-            </div>
-            <div class="mb-3">
-            <label for="modul">Wähle ein Modul aus:</label>
-                <select id="modul" name="modul" class="form-select">
+        <form action="lib/addFrage.php" method="post">   
+            <label for='fragendeckID' class='form-label'> Fragendeck ID:</label>
+            <input type='text' class='form-control' name='fragendeck_id' value="<?php echo $fragendeck_id;?>" readonly>
 
-                <?php
-                        $servername = "localhost";
-                        $username = "root";
-                        $password = "toor";
-                        $dbname = "quiz";
-                        $user_id = $_SESSION['userid'];
+            <label for='frage' class='form-label'> Frage:</label>
+            <input type='text' class='form-control' name='fragentext'>
+                                
+            <label for='frage' class='form-label'> Antwort 1:</label>
+            <input type='text' class='form-control' name='Antwort1'>                 
+            <input type='radio' name='richtigkeit' value='1' required>
+            <label>Richtige Antwort</label><br><br>
+                                
+            <label for='frage' class='form-label'> Antwort 2:</label>
+            <input type='text' class='form-control' name='Antwort2'>                 
+            <input type='radio' name='richtigkeit' value='2'>
+            <label>Richtige Antwort</label><br><br>
+                                
+            <label for='frage' class='form-label'> Antwort 3:</label>
+            <input type='text' class='form-control' name='Antwort3'>
+            <input type='radio' name='richtigkeit' value='3'>
+            <label>Richtige Antwort</label><br><br>
+                                
+            <label for='frage' class='form-label'> Antwort 4:</label>
+            <input type='text' class='form-control' name='Antwort4'>
+            <input type='radio' name='richtigkeit' value='4'>
+            <label>Richtige Antwort</label><br><br>
 
-                        // Create connection
-                        $conn = new mysqli($servername, $username, $password, $dbname);
-                        // Check connection
-                        if ($conn->connect_error) {
-                            die("Connection failed: " . $conn->connect_error);
-                        }
-
-                        $sql = "SELECT modulkuerzel FROM modul" ;
-                        $result = $conn->query($sql);
-
-                        if ($result->num_rows > 0) {
-                            // output data of each row
-                            while($row = $result->fetch_assoc()) {
-                                echo "<option>" . $row["modulkuerzel"]. "</option>";
-                            }
-                        } else {
-                            echo "0 results";
-                        }
-
-                        $conn->close();
-                    ?>
-                </select>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <button type="button" class="btn btn-outline-success"> Hinzufügen
-                    </button>
-                </div>
-                <div class="col">
-                    <button type="button" class="btn btn-outline-danger"> Cancel
-                    </button>
-                </div>
+            <div class="btn-group">
+                <button type='submit' class='btn btn-outline-success'> Hinzufügen </button>
+                <button type='button' class='btn btn-outline-info'> weitere Frage hinzufügen </button>
+                <button type='button' class='btn btn-outline-danger'> Cancle </button>
             </div>
         </form>
     </div>

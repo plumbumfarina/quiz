@@ -7,6 +7,8 @@ $password = "toor";
 $dbname = "quiz";
 $user_id = $_SESSION['userid'];
 
+$fragen_id = $_GET['fragen_id'];
+
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -15,16 +17,17 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$deckname = $_POST['deckname'];
-$modulkuerzel = $_POST['modul'];
+// Prüfung ob ein Fragenid angegeben wurde
+if(isset($fragen_id)) {
+    $sqlFragen = "DELETE FROM fragen WHERE fragen_id = $fragen_id";
+} else {
+    echo "Kein Frage angegeben.";
+}
 
-$sql = "INSERT INTO fragendeck (fragendeck_name, modul_id, user_id) VALUES ('$deckname', (SELECT modul_id FROM modul WHERE modulkuerzel='$modulkuerzel'), $user_id)";
-
-if ($conn->query($sql) === TRUE) {
-  echo "New fragendeck created successfully";
+if ($conn->query($sqlFragen) === TRUE) {
+  header("Refresh: 0.1; URL=../fragenUebersicht.php?fragendeck_id=$fragendeck_id");
 } else {
   echo "Error: " . $sql . "<br>" . $conn->error;
 }
-
 
 ?>

@@ -1,14 +1,15 @@
 <?php
 // check if user is logged in, if not redirect to login page
 session_start();
-if(!isset($_SESSION['userid'])) {
+/* if(!isset($_SESSION['userid'])) {
     header('location: login.php');
     die('Bitte zuerst einloggen');
-}
+} */
 
 include('lib/getFragendeckname.php');
 include('lib/getModulname.php');
 include('lib/getFragenNumber.php');
+include('lib/getFragenAnzahl.php');
 ?>
 
 <!DOCTYPE html>
@@ -27,20 +28,21 @@ include('lib/getFragenNumber.php');
     include('navbar.php')
 ?>
 
-
 <div>
-    <div class="container mt-9">
-        <h1 class="form__title">Fragen</h1>
-            <table class="table table-hover">
+    <div class="container mt-3">
+        <h1 class="form__title">Kartendecks</h1>
+        <div class="btn-group">
+            <button type='button' class='btn btn-outline-info' onclick="window.location.href = 'deckAuswaehlen.php';"> Nur eigene Kartendecks spielen </button>
+            <button type='button' class='btn btn-outline-info'> Neues Kartendeck hinzufügen </button>
+        </div>
+        <br>
+            <table class="table table-striped">
                 <thead class="table-dark">
                     <tr>
-                        <th>Frage</th>
-                        <th>Antwort Eins</th>
-                        <th>Antwort Zwei</th>
-                        <th>Antwort Drei</th>
-                        <th>Antwort Vier</th>
-                        <th>Richtige Antwort</th>
-                        <th></th>
+                        <th>Deckname</th>
+                        <th>Modulkürzel</th>
+                        <th>Modulname</th>
+                        <th>Anazhl Fragen</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -52,8 +54,6 @@ include('lib/getFragenNumber.php');
                         $dbname = "quiz";
                         $user_id = $_SESSION['userid'];
 
-                        $fragendeck_id = $_GET['fragendeck_id'];
-
                         // Create connection
                         $conn = new mysqli($servername, $username, $password, $dbname);
                         // Check connection
@@ -61,54 +61,38 @@ include('lib/getFragenNumber.php');
                             die("Connection failed: " . $conn->connect_error);
                         }
 
-                        $sql = "SELECT fragen_id, fragentext, antwortEins, antwortZwei, antwortDrei, antwortVier, richtigkeit FROM fragen WHERE (fragendeck_id = $fragendeck_id)" ;
+                        $sql = "SELECT fragendeck_id, fragendeck_name, fragendeck.modul_id, public, modulkuerzel, modulname FROM fragendeck JOIN modul WHERE (fragendeck.modul_id = modul.modul_id) AND (public = TRUE)";
                         $result = $conn->query($sql);
 
                         if ($result->num_rows > 0) {
                             // output data of each row
                             while($row = $result->fetch_assoc()) {
                                 echo "<tr>
-                                    <td>" . $row["fragentext"]. "</td>
-                                    <td>" . $row["antwortEins"]. "</td>
-                                    <td>". $row["antwortZwei"]. "</td>
-                                    <td>". $row["antwortDrei"]. "</td>
-                                    <td>". $row["antwortVier"]. "</td>
-                                    <td>" . $row["richtigkeit"]. "</td>
+                                    <td>" . $row["fragendeck_name"]. "</td>
+                                    <td>" . $row["modulkuerzel"]. "</td>
+                                    <td>" . $row["modulname"]. "</td>
+                                    <td>" . getFragenAnzahl($row["fragendeck_id"]). "</td>
                                     <td>
-                                        <button type='button' class='btn btn-outline-warning' value='" . $row["fragen_id"]. "' onclick='openPage(" .  $row['fragen_id']. ")'> Bearbeiten </button>
-                                    </td>
-                                    <td>
-                                        <button type='button' class='btn btn-outline-danger' value='" . $row["fragen_id"]. "' onclick='openPageFrageDelete(" . $row['fragen_id']. ")'> Löschen </button>
+                                        <button type='button' class='btn btn-outline-success' value='" . $row["fragendeck_id"]. "'> Spielen </button>
                                     </td>
                                 </tr>";
                             }
                         } else {
-                            echo "0 results";
+                            echo "<tr>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                </tr>";
                         }
 
                         $conn->close();
                     ?>
                 </tbody>
             </table>
-            <div class="row">
-                <div class="col">
-                    <button type="button" onclick="openPageFrageAdd(<?php echo $fragendeck_id; ?>)" class="btn btn-outline-success"> Hinzufügen
-                    </button>
-                </div> 
-            </div>
     </div>
 </div>
 
-<script>
-function openPage(id) {
-    window.location.href = "frageBearbeiten.php?fragen_id=" + id;
-}
-function openPageFrageDelete(id) {
-    window.location.href = "lib/deleteFrage.php?fragen_id=" + id;
-}
-function openPageFrageAdd(id) {
-    window.location.href= "addQuestion.php?fragendeck_id=" + id;
-}
-</script>
 </body>
 </html>
