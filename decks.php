@@ -148,9 +148,8 @@ function openLoescheKartendeck(id) {
 }
 </script>
 
-
-</body>
 <?php
 	include('footer.php')
 ?>
+</body>
 </html>
