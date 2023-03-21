@@ -1,14 +1,15 @@
 <?php
 // check if user is logged in, if not redirect to login page
 session_start();
-if(!isset($_SESSION['userid'])) {
+/* if(!isset($_SESSION['userid'])) {
     header('location: login.php');
     die('Bitte zuerst einloggen');
-}
+} */
 
 include('lib/getFragendeckname.php');
 include('lib/getModulname.php');
 include('lib/getFragenNumber.php');
+include('lib/getFragenAnzahl.php');
 ?>
 
 <!DOCTYPE html>
@@ -27,16 +28,19 @@ include('lib/getFragenNumber.php');
     include('navbar.php')
 ?>
 
-
-<div class=container__login>
+<div>
     <div class="container mt-3">
-        <h1 class="form__title">Fragendecks</h1>
-            <table class="table table-hover">
+        <h1 class="form__title">Kartendecks</h1>
+            <table class="table table-striped">
                 <thead class="table-dark">
                     <tr>
                         <th>Deckname</th>
                         <th>Modulkürzel</th>
                         <th>Modulname</th>
+                        <th>Anazhl Fragen</th>
+                        <th>öffentlich</th>
+                        <th></th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -54,44 +58,56 @@ include('lib/getFragenNumber.php');
                             die("Connection failed: " . $conn->connect_error);
                         }
 
-                        $sql = "SELECT fragendeck_name, fragendeck.modul_id, modulkuerzel, modulname FROM fragendeck JOIN modul WHERE (fragendeck.modul_id = modul.modul_id) AND (user_id = $user_id)" ;
+                        $sql = "SELECT fragendeck_id, fragendeck_name, fragendeck.modul_id, public, modulkuerzel, modulname FROM fragendeck JOIN modul WHERE (fragendeck.modul_id = modul.modul_id) AND (user_id = $user_id) ORDER BY modulkuerzel ASC";
                         $result = $conn->query($sql);
 
                         if ($result->num_rows > 0) {
                             // output data of each row
                             while($row = $result->fetch_assoc()) {
-                                echo "<tr><td>" . $row["fragendeck_name"]. "</td><td>" . $row["modulkuerzel"]. "</td><td>" . $row["modulname"]. "</td></tr>";
+                                echo "<tr>
+                                    <td>" . $row["fragendeck_name"]. "</td>
+                                    <td>" . $row["modulkuerzel"]. "</td>
+                                    <td>" . $row["modulname"]. "</td>
+                                    <td>" . getFragenAnzahl($row["fragendeck_id"]). "</td>
+                                    <td>" . $row["public"]. "</td>
+                                    <td>
+                                        <button type='button' class='btn btn-outline-warning' value='" . $row["fragendeck_id"]. "' onclick='openPage(" .  $row['fragendeck_id']. ")'> Bearbeiten </button>
+                                    </td>
+                                    <td>
+                                        <button type='button' class='btn btn-outline-danger' value='" . $row["fragendeck_id"]. "' onclick='openPageDelete(" .  $row['fragendeck_id']. ")'> Löschen </button>
+                                    </td>
+                                </tr>";
                             }
                         } else {
-                            echo "0 results";
+                            echo "<tr>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                </tr>";
                         }
 
                         $conn->close();
                     ?>
                 </tbody>
             </table>
-            <div class="row">
-                <div class="col">
-                    <button type="button" class="btn btn-outline-success"> Hinzufügen
-                    </button>
-                </div>
-                <div class="col">
-                    <button type="button" class="btn btn-outline-warning"> Bearbeiten
-                    </button>
-                </div>
-                <div class="col">
-                    <button type="button" class="btn btn-outline-danger"> Löschen
-                    </button>
-                </div>
-            </div>
     </div>
 </div>
-<div class=container__login>
+<div>
     <div class="container mt-3">
-        <form>
+        <h1 class="form__title">Kartendeck hinzufügen</h1>
+        <form action="lib/addFragendeck.php" method="post">
             <div class="mb-3">
-                <label for="deckName">Fragendeckname:</label>
-                <input type="text" id="deckname" name="deckname" class="form-control">
+                <label for="deckName">Kartendeckname:</label>
+                <input type="text" id="deckname" name="deckname" required class="form-control">
+            </div>
+            <div class="mb-3">
+                <label class="form-check-label" for="public">Willst du das Kartendeck für alle spielbar machen?</label>
+                <input type="radio" name="public" value="TRUE" required> Ja </input>
+                <input type="radio" name="public" value="FALSE"> Nein </input>
             </div>
             <div class="mb-3">
             <label for="modul">Wähle ein Modul aus:</label>
@@ -111,13 +127,13 @@ include('lib/getFragenNumber.php');
                             die("Connection failed: " . $conn->connect_error);
                         }
 
-                        $sql = "SELECT modulkuerzel FROM modul" ;
+                        $sql = "SELECT modulname FROM modul" ;
                         $result = $conn->query($sql);
 
                         if ($result->num_rows > 0) {
                             // output data of each row
                             while($row = $result->fetch_assoc()) {
-                                echo "<option>" . $row["modulkuerzel"]. "</option>";
+                                echo "<option>" . $row["modulname"]. "</option>";
                             }
                         } else {
                             echo "0 results";
@@ -129,21 +145,21 @@ include('lib/getFragenNumber.php');
             </div>
             <div class="row">
                 <div class="col">
-                    <button type="button" class="btn btn-outline-success"> Anlegen
-                    </button>
-                </div>
-                <div class="col">
-                    <button type="button" class="btn btn-outline-danger"> Cancel
+                    <button type="submit" class="btn btn-outline-success"> Anlegen
                     </button>
                 </div>
             </div>
         </form>
     </div>
 </div>
-<footer>
-<?php
-    include('footer.php')
-?>
-</footer>
+
+<script>
+function openPage(id) {
+  window.location.href = "fragenUebersicht.php?fragendeck_id=" + id;
+}
+function openPageDelete(id) {
+  window.location.href = "lib/deleteFragendeck.php?fragendeck_id=" + id;
+}
+</script>
 </body>
 </html>

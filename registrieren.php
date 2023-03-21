@@ -3,6 +3,7 @@ session_start();
 $dbconnector = new PDO('mysql:host=localhost;dbname=quiz', 'root', 'toor');
 ?>
 
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,6 +18,7 @@ $showFormular = true; //Variable ob das Registrierungsformular anezeigt werden s
 
 if(isset($_GET['register'])) {
     $error = false;
+    $nickname = $_POST['nickname'];
     $email = $_POST['email'];
     $passwort = $_POST['passwort'];
     $passwort2 = $_POST['passwort2'];
@@ -32,6 +34,18 @@ if(isset($_GET['register'])) {
     if($passwort != $passwort2) {
         echo 'Die Passwörter müssen übereinstimmen<br>';
         $error = true;
+    }
+
+    // Überprüfe, dass der Nickname noch nicht registriert wurde
+    if(!$error) {
+        $statement = $dbconnector->prepare("SELECT * FROM user WHERE nickname = :nickname");
+        $result = $statement->execute(array('nickname' => $nickname));
+        $nick = $statement->fetch();
+
+        if($nick !== false) {
+            echo 'Dieser Nickname ist bereis vergeben<br>';
+            $error = true;
+        }
     }
 
     //Überprüfe, dass die E-Mail-Adresse noch nicht registriert wurde
@@ -50,13 +64,13 @@ if(isset($_GET['register'])) {
     if(!$error) {
 #        $passwort_hash = password_hash($passwort, PASSWORD_DEFAULT);
 
-        $statement = $dbconnector->prepare("INSERT INTO user (email, passwort) VALUES (:email, :passwort)");
-        $result = $statement->execute(array('email' => $email, 'passwort' => $passwort));
+        $statement = $dbconnector->prepare("INSERT INTO user (nickname, email, passwort) VALUES (:nickname, :email, :passwort)");
+        $result = $statement->execute(array('nickname' => $nickname, 'email' => $email, 'passwort' => $passwort));
 #        $result = $statement->execute(array('email' => $email, 'passwort' => $passwort_hash));
 
         if($result) {
-            header("Refresh: 5; URL=../login.php");
-            header('location: login.php');
+            header("Refresh: 0.1; URL=../login.php");
+#            header('location: login.php');
             echo 'Du wurdest erfolgreich registriert. In 5 Sekunden geht es zum Login.';
             $showFormular = false;
         } else {
@@ -71,7 +85,11 @@ if($showFormular) {
         <form action="?register=1" method="post">
         <h1 class="form__title">Registrierung</h1>
                 <div class="form__input-group">
-                        <input type="email" class="form__input" maxlength="250" name="email" autofocus placeholder="E-Mail">
+                        <input type="text" class="form__input" maxlength="250" name="nickname" autofocus placeholder="Nickname">
+                </div>
+
+                <div class="form__input-group">
+                        <input type="email" class="form__input" maxlength="250" name="email" placeholder="E-Mail">
                 </div>
 
                 <div class="form__input-group">
@@ -83,6 +101,10 @@ if($showFormular) {
                 </div>
 
                 <input class="form__button" type="submit" value="Abschicken">
+
+                <p class="form__text">
+                <a class="form__link" href="login.php" id="linkLogin">Zurück zum Login</a>
+            </p>
         </form>
 </div>
 <?php

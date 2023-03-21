@@ -1,5 +1,6 @@
 <?php
-    include('getFragendeckname.php');
+
+function getFragenAnzahl($fragendeck_id){
 
     if(isset($_SESSION['userid'])) {
 
@@ -10,7 +11,12 @@
             $fragen = $statement->fetch();
             $fragenAnzahl = $fragen['fragenAnzahl'];
 
+            return $fragenAnzahl;
+
     } else {
         echo "ooops ... something went wrong ...";
     }
+
+}
+
 ?>

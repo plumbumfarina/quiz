@@ -33,7 +33,7 @@
 				<div class="row">
 	<!-- das hier ist die Antwort A -->
            				<div class="col-md-6">
-						<p><button id="answer"_a_btn" class="answer btn btn-default btn-lg btn-black" role="button">
+						<p><button id="answer_a_btn" class="answer btn btn-default btn-lg btn-black" role="button">
 						A: <span id="answer_a">Antwort</span></button></p>
 					</div>
         <!-- das hier ist Antwort B -->
