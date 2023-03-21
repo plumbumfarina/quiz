@@ -27,9 +27,9 @@ if(isset($fragen_id)) {
         while($row = $result->fetch_assoc()) {
           $fragendeck_id = $row['fragendeck_id'];
         }
+      }  
     //Löschen der entsprechenden Frage
     $sqlFragen = "DELETE FROM fragen WHERE fragen_id = $fragen_id";
-    
 } else {
     echo "Kein Frage gefunden.";
 }
