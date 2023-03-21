@@ -9,6 +9,6 @@
             $nickname = $user['nickname'];
             $_SESSION['nickname'] = $user['nickname'];
     } else {
-        echo "ooops ... somthing went wrong ...";
+        echo "ooops ... something went wrong ...";
     }
 ?>
