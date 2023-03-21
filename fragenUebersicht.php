@@ -55,6 +55,8 @@ setcookie('fragendeck_id_cookie', $fragendeck_id);
                         $dbname = "quiz";
                         $user_id = $_SESSION['userid'];
 
+                        $testVariable = $_COOKIE['fragendeck_id_cookie'];
+
                         // Create connection
                         $conn = new mysqli($servername, $username, $password, $dbname);
                         // Check connection
@@ -62,7 +64,7 @@ setcookie('fragendeck_id_cookie', $fragendeck_id);
                             die("Connection failed: " . $conn->connect_error);
                         }
 
-                        $sql = "SELECT fragen_id, fragentext, antwortEins, antwortZwei, antwortDrei, antwortVier, richtigkeit FROM fragen WHERE (fragendeck_id = $_COOKIE['fragendeck_id_cookie'])" ;
+                        $sql = "SELECT fragen_id, fragentext, antwortEins, antwortZwei, antwortDrei, antwortVier, richtigkeit FROM fragen WHERE (fragendeck_id = $testVariable)" ;
                         $result = $conn->query($sql);
 
                         if ($result->num_rows > 0) {
@@ -93,7 +95,7 @@ setcookie('fragendeck_id_cookie', $fragendeck_id);
             </table>
             <div class="row">
                 <div class="col">
-                    <button type="button" onclick="openPageFrageAdd(<?php echo $_COOKIE['fragendeck_id_cookie']; ?>)" class="btn btn-outline-success"> Hinzufügen
+                    <button type="button" onclick="openPageFrageAdd(<?php echo $testVariable ?>)" class="btn btn-outline-success"> Hinzufügen
                     </button>
                 </div> 
             </div>
