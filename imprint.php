@@ -17,7 +17,7 @@
 		?>	
 		
 		<h1>Impressum</h1>
-		<p>Prototy-Quiz Unternehmen</p>
+		<p>Prototyp-Quiz Unternehmen</p>
     	<p>Musterstraße 1. 12345 Musterstadt</p>
     	<p>0123-4245624</p>
     	<p>max.mustermann@quiz.de</p>
