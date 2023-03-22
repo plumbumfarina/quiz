@@ -36,7 +36,7 @@ include('lib/getFragenNumber.php');
 <div>
     <div class="container mt-3">
         <h1> Frage hinzufügen </h1>
-        <form action="lib/addFrage.php" method="post">   
+        <form id="frageHinzufuegen" method="post">   
             <label for='fragendeckID' class='form-label'> Fragendeck ID:</label>
             <input type='text' class='form-control' name='fragendeck_id' value="<?php echo $fragendeck_id;?>" readonly>
 
@@ -64,14 +64,20 @@ include('lib/getFragenNumber.php');
             <label>Richtige Antwort</label><br><br>
 
             <div>
-                <button type='submit' class='buttonHinzufuegen'> Hinzufügen </button>
-                <button type='button' class='buttonHinzufuegenSpeziell'> weitere Frage hinzufügen </button>
+                <button type='submit' class='buttonHinzufuegen' onclick="submitForm('lib/addFrage.php')"> Hinzufügen </button>
+                <button type='button' class='buttonHinzufuegenSpeziell' onclick="submitForm('lib/addFrageAndBack.php')"> weitere Frage hinzufügen </button>
                 <button type='button' class='buttonLoeschen' onclick="window.location.href='decks.php';" href="decks.php"> Abbrechen </button>
             </div>
         </form>
     </div>
 </div>
 
+<script>
+  function submitForm(action) {
+    document.getElementById('frageHinzufuegen').setAttribute('action', action);
+    document.getElementById('frageHinzufuegen').submit();
+  }
+</script>
 
 </body>
 </html>
