@@ -66,7 +66,7 @@ include('lib/getFragenNumber.php');
             <div>
                 <button type='submit' class='buttonHinzufuegen' onclick="submitForm('lib/addFrage.php')"> Hinzufügen </button>
                 <button type='submit' class='buttonHinzufuegenSpeziell' onclick="submitForm('lib/addFrageAndBack.php')"> weitere Frage hinzufügen </button>
-                <button type='button' class='buttonLoeschen' onclick="window.location.href='fragenUebersicht.php?fragendeck_id=<?php echo $fragendeck_id;?>;'" > Abbrechen </button>
+                <button type='button' class='buttonLoeschen' onclick="openPage(<?php echo $fragendeck_id ?>)"> Abbrechen </button>
             </div>
         </form>
     </div>
@@ -76,6 +76,9 @@ include('lib/getFragenNumber.php');
   function submitForm(action) {
     document.getElementById('frageHinzufuegen').setAttribute('action', action);
     document.getElementById('frageHinzufuegen').submit();
+  }
+  function openPage(id) {
+    window.location.href = "fragenUebersicht.php?fragendeck_id=" + id;
   }
 </script>
 
