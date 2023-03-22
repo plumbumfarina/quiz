@@ -63,10 +63,10 @@ include('lib/getFragenNumber.php');
             <input type='radio' name='richtigkeit' value='4'>
             <label>Richtige Antwort</label><br><br>
 
-            <div class="btn-group">
-                <button type='submit' class='btn btn-outline-success'> Hinzufügen </button>
-                <button type='button' class='btn btn-outline-info'> weitere Frage hinzufügen </button>
-                <button type='button' class='btn btn-outline-danger' onclick="window.location.href='decks.php';" href="decks.php"> Abbrechen </button>
+            <div>
+                <button type='submit' class='buttonHinzufuegen'> Hinzufügen </button>
+                <button type='button' class='buttonHinzufuegenSpeziell'> weitere Frage hinzufügen </button>
+                <button type='button' class='buttonLoeschen' onclick="window.location.href='decks.php';" href="decks.php"> Abbrechen </button>
             </div>
         </form>
     </div>
