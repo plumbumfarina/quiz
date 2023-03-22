@@ -44,7 +44,7 @@ if(!isset($_SESSION['userid'])) {
                         die("Connection failed: " . $conn->connect_error);
                     }
                     // SQL Abfrage der entsprechenden Frage anhand der Fragen_ID
-                    $sql = "SELECT fragen_id, fragentext, antwortEins, antwortZwei, antwortDrei, antwortVier, richtigkeit FROM fragen WHERE (fragen_id = $fragen_id)" ;
+                    $sql = "SELECT fragen_id, fragentext, fragendeck_id antwortEins, antwortZwei, antwortDrei, antwortVier, richtigkeit FROM fragen WHERE (fragen_id = $fragen_id)" ;
                     $result = $conn->query($sql);
 
                     if ($result->num_rows > 0) {
@@ -53,6 +53,7 @@ if(!isset($_SESSION['userid'])) {
                             // SQL Abfrage in Variablen schreiben
                             $fragen_id = $row['fragen_id'];
                             $fragentext = $row['fragentext'];
+                            $fragendeck_id = $row['fragendeck_id'];
                             $antwortEins = $row['antwortEins'];
                             $antwortZwei = $row['antwortZwei'];
                             $antwortDrei = $row['antwortDrei'];
@@ -93,15 +94,18 @@ if(!isset($_SESSION['userid'])) {
                 <label>Richtige Antwort</label><br><br>
                 
                 <div>
-                    <button type="submit" class="buttonHinzufuegen"> 
-                        Speichern 
-                    </button>
-                    <button type="button" class="buttonLoeschen"> 
-                        Abbrechen 
-                    </button>
+                    <button type="submit" class="buttonHinzufuegen"> Speichern </button>
+                    <button type="button" class="buttonLoeschen" onclick="openPage(<?php echo $fragendeck_id ?>)">Abbrechen</button>
                 </div>
             </form>
     </div>
 </div>
+
+<script>
+  function openPage(id) {
+    window.location.href = "fragenUebersicht.php?fragendeck_id=" + id;
+  }
+</script>
+
 </body>
 </html>
