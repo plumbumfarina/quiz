@@ -37,11 +37,11 @@ if(isset($_GET['login'])) {
 
 <body>
 
-    <div class="container__login">
+    <div class="containerLogin">
 
         <form action="?login=1" method="post">
-            <h1 class="form__title">Login</h1>
-            <div class="form__message form__message--error"></div>
+            <h1 class="formTitle">Login</h1>
+            <div class="formMessage formMessage--error"></div>
 
             <div class="form__input-group">
                 <input type="email" class="form__input" maxlength="250" name="email" autofocus placeholder="E-Mail">
@@ -53,10 +53,10 @@ if(isset($_GET['login'])) {
                 <div class="form__input-error-message"></div>
             </div>
 
-            <input class="form__button" type="submit" value="Einloggen">
+            <input class="formButton" type="submit" value="Einloggen">
             
-            <p class="form__text">
-                <a class="form__link" href="registrieren.php" id="linkCreateAccount">Kein Account? Registrieren</a>
+            <p class="formText">
+                <a class="formLink" href="registrieren.php" id="linkCreateAccount">Kein Account? Registrieren</a>
             </p>
         </form>
         

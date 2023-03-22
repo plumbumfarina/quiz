@@ -4,7 +4,7 @@ session_start();
 if(!isset($_SESSION['userid'])) {
     header('location: login.php');
     die('Bitte zuerst einloggen');
-} 
+}
 
 include('lib/getFragenAnzahl.php');
 ?>
@@ -17,6 +17,7 @@ include('lib/getFragenAnzahl.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css" type="text/css" media="screen"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <title>Decks</title>
 </head>
@@ -27,7 +28,7 @@ include('lib/getFragenAnzahl.php');
 
 <div>
     <div class="container mt-3">
-        <h1 class="form__title">Kartendecks</h1>
+        <h1 class="formTitle">Kartendecks</h1>
             <table class="table table-striped">
                 <thead class="table-dark">
                     <tr>
@@ -84,7 +85,7 @@ include('lib/getFragenAnzahl.php');
 </div>
 <div>
     <div class="container mt-3">
-        <h1 class="form__title">Kartendeck hinzufügen</h1>
+        <h1 class="formTitle">Kartendeck hinzufügen</h1>
         <form action="lib/addFragendeck.php" method="post">
             <div class="mb-3">
                 <label for="deckName">Kartendeckname:</label>

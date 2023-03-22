@@ -81,9 +81,9 @@ if(isset($_GET['register'])) {
 
 if($showFormular) {
 ?>
-<div class="container__login">
+<div class="containerLogin">
         <form action="?register=1" method="post">
-        <h1 class="form__title">Registrierung</h1>
+        <h1 class="formTitle">Registrierung</h1>
                 <div class="form__input-group">
                         <input type="text" class="form__input" maxlength="250" name="nickname" autofocus placeholder="Nickname">
                 </div>
@@ -100,10 +100,10 @@ if($showFormular) {
                         <input type="password" class="form__input" maxlength="250" name="passwort2" placeholder="Passwort wiederholen">
                 </div>
 
-                <input class="form__button" type="submit" value="Abschicken">
+                <input class="formButton" type="submit" value="Abschicken">
 
-                <p class="form__text">
-                <a class="form__link" href="login.php" id="linkLogin">Zurück zum Login</a>
+                <p class="formText">
+                <a class="formLink" href="login.php" id="linkLogin">Zurück zum Login</a>
             </p>
         </form>
 </div>

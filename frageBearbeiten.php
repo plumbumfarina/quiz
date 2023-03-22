@@ -27,7 +27,7 @@ if(!isset($_SESSION['userid'])) {
 
 <div>
     <div class="container mt-9">
-        <h1 class="form__title">Frage bearbeiten</h1>
+        <h1 class="formTitle">Frage bearbeiten</h1>
             <form action="lib/updateFrage.php" method="post">
                 <?php
                     $fragen_id = $_GET['fragen_id'];

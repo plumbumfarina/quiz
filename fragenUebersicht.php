@@ -26,7 +26,7 @@ if(!isset($_SESSION['userid'])) {
 
 <div>
     <div class="container mt-9">
-        <h1 class="form__title">Fragen</h1>
+        <h1 class="formTitle">Fragen</h1>
 
             <table class="table table-hover">
                 <thead class="table-dark">

@@ -23,7 +23,7 @@ include('lib/getFragenAnzahl.php');
 ?>
 
 <div>
-    <div class="button-container">
+    <div class="buttonContainer">
         <h1>Freies Spiel eröffnen</h1>
     </div>
 </div>
