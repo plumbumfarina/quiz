@@ -256,6 +256,21 @@ button:hover {
   background-color: #ff8c00;
 }
 
+.buttonHinzufuegen {
+  display: inline-block;
+  background-color: #fffbfb;
+  border-radius: 8px;
+  border: 2px solid #00CD66;
+  color: #000000;
+  width: 150px;
+  padding: 10px;
+}
+
+.buttonHinzufuegen:hover {
+  background-color: #00CD66;
+  color: #fffbfb;
+}
+
 .buttonBearbeiten {
   display: inline-block;
   background-color: #fffbfb;
@@ -278,6 +293,7 @@ button:hover {
   border: 2px solid #FF3030;
   color: #000000;
   width: 100px;
+  padding: 10px;
 }
 
 .buttonLoeschen:hover {
