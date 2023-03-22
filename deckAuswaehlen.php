@@ -28,9 +28,8 @@ include('lib/getFragenAnzahl.php');
 <div>
     <div class="container mt-3">
         <h1 class="formTitle">Kartendecks</h1>
-        <div class="btn-group">
-            <button type='button' class='btn btn-outline-info' onclick="window.location.href = 'deckOeffentlich.php';"> Öffentliche Kartendecks spielen </button>
-            <button type='button' class='btn btn-outline-info'> Neues Kartendeck hinzufügen </button>
+        <div>
+            <button type='button' class='button' onclick="window.location.href = 'deckOeffentlich.php';"> Öffentliche Kartendecks spielen </button>
         </div>
         <br>
             <table class="table table-striped">
@@ -70,7 +69,7 @@ include('lib/getFragenAnzahl.php');
                                     <td>" . $row["modulname"]. "</td>
                                     <td>" . getFragenAnzahl($row["fragendeck_id"]). "</td>
                                     <td>
-                                        <button type='button' class='btn btn-outline-success' value='" . $row["fragendeck_id"]. "'> Spielen </button>
+                                        <button type='button' class='buttonSpielen' value='" . $row["fragendeck_id"]. "'> Spielen </button>
                                     </td>
                                 </tr>";
                             }

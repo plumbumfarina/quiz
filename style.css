@@ -300,3 +300,18 @@ button:hover {
   background-color: #FF3030;
   color: #fffbfb;
 }
+
+.buttonSpielen {
+  display: inline-block;
+  background-color: #fffbfb;
+  border-radius: 8px;
+  border: 2px solid #1E90FF;
+  color: #000000;
+  width: 100px;
+  padding: 10px;
+}
+
+.buttonSpielen:hover {
+  background-color: #1E90FF;
+  color: #fffbfb;
+}
