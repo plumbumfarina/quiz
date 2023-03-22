@@ -66,7 +66,7 @@ include('lib/getFragenNumber.php');
             <div>
                 <button type='submit' class='buttonHinzufuegen' onclick="submitForm('lib/addFrage.php')"> Hinzufügen </button>
                 <button type='submit' class='buttonHinzufuegenSpeziell' onclick="submitForm('lib/addFrageAndBack.php')"> weitere Frage hinzufügen </button>
-                <button type='button' class='buttonLoeschen' onclick="window.location.href='frageUebersicht.php?fragendeck_id=<?php echo $fragendeck_id?>;'" > Abbrechen </button>
+                <button type='button' class='buttonLoeschen' onclick="window.location.href='fragenUebersicht.php?fragendeck_id=<?php echo $fragendeck_id?>;'" > Abbrechen </button>
             </div>
         </form>
     </div>
