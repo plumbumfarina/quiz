@@ -72,10 +72,10 @@ if(!isset($_SESSION['userid'])) {
                                     <td>". $row["antwortVier"]. "</td>
                                     <td>" . $row["richtigkeit"]. "</td>
                                     <td>
-                                        <button type='button' class='btn btn-outline-warning' value='" . $row["fragen_id"]. "' onclick='openPage(" .  $row['fragen_id']. ")'> Bearbeiten </button>
+                                        <button type='button' class='buttonBearbeiten' value='" . $row["fragen_id"]. "' onclick='openPage(" .  $row['fragen_id']. ")'> Bearbeiten </button>
                                     </td>
                                     <td>
-                                        <button type='button' class='btn btn-outline-danger' value='" . $row["fragen_id"]. "' onclick='openPageFrageDelete(" . $row['fragen_id']. ")'> Löschen </button>
+                                        <button type='button' class='buttonLoeschen' value='" . $row["fragen_id"]. "' onclick='openPageFrageDelete(" . $row['fragen_id']. ")'> Löschen </button>
                                     </td>
                                 </tr>";
                             }
@@ -98,7 +98,7 @@ if(!isset($_SESSION['userid'])) {
             </table>
             <div class="row">
                 <div class="col">
-                    <button type="button" onclick="openPageFrageAdd(<?php echo $fragendeck_id ?>)" class="btn btn-outline-success"> Hinzufügen
+                    <button type="button" onclick="openPageFrageAdd(<?php echo $fragendeck_id ?>)" class="buttonHinzufuegen"> Hinzufügen
                     </button>
                 </div> 
             </div>
