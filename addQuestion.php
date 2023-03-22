@@ -66,7 +66,7 @@ include('lib/getFragenNumber.php');
             <div class="btn-group">
                 <button type='submit' class='btn btn-outline-success'> Hinzufügen </button>
                 <button type='button' class='btn btn-outline-info'> weitere Frage hinzufügen </button>
-                <button type='button' class='btn btn-outline-danger'> Cancle </button>
+                <button type='button' class='btn btn-outline-danger'> Abbrechen </button>
             </div>
         </form>
     </div>

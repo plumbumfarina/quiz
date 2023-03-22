@@ -53,7 +53,7 @@ if(isset($_GET['login'])) {
                 <div class="form__input-error-message"></div>
             </div>
 
-            <input class="form__button" type="submit" value="Abschicken">
+            <input class="form__button" type="submit" value="Einloggen">
             
             <p class="form__text">
                 <a class="form__link" href="registrieren.php" id="linkCreateAccount">Kein Account? Registrieren</a>
