@@ -56,7 +56,7 @@ if(!isset($_SESSION['userid'])) {
                             $antwortEins = $row['antwortEins'];
                             $antwortZwei = $row['antwortZwei'];
                             $antwortDrei = $row['antwortDrei'];
-                            $antwotrVier = $row['antwortVier'];
+                            $antwortVier = $row['antwortVier'];
                             $richtigkeit = $row['richtigkeit'];
                         }
                     } else {
