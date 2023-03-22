@@ -58,10 +58,10 @@ include('lib/getFragenAnzahl.php');
                                     <td>" . getFragenAnzahl($row["fragendeck_id"]). "</td>
                                     <td>" . $row["public"]. "</td>
                                     <td>
-                                        <button type='button' class='btn btn-outline-warning' value='" . $row["fragendeck_id"]. "' onclick='openBearbeiteKartendeck(" .  $row['fragendeck_id']. ")'> Bearbeiten </button>
+                                        <button type='button' class='buttonBearbeiten' value='" . $row["fragendeck_id"]. "' onclick='openBearbeiteKartendeck(" .  $row['fragendeck_id']. ")'> Bearbeiten </button>
                                     </td>
                                     <td>
-                                        <button type='button' class='btn btn-outline-danger' value='" . $row["fragendeck_id"]. "' onclick='openLoescheKartendeck(" .  $row['fragendeck_id']. ")'> Löschen </button>
+                                        <button type='button' class='buttonLöschen' value='" . $row["fragendeck_id"]. "' onclick='openLoescheKartendeck(" .  $row['fragendeck_id']. ")'> Löschen </button>
                                     </td>
                                 </tr>";
                             }
