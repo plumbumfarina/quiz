@@ -261,11 +261,11 @@ nav {
   display: inline-block;
   background-color: #fffbfb;
   border-radius: 8px;
-  border: 1px solid #dda50a;
+  border: 1px solid #FFC125;
   color: #000000;
-  width: 40px;
+  width: 100px;
 }
 
   .buttonBearbeiten:hover {
-    background-color: #dda50a;
+    background-color: #FFC125;
   }
