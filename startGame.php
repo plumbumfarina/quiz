@@ -35,7 +35,7 @@ if(!isset($_SESSION['userid'])) {
 				<br>
         <!-- das ist der "Jetzt starten"-Button-->
 				<p style="text-align:center"><button id="start_btn" onclick="window.location.href='deckAuswaehlen.php';" class="btn btn-primary btn-lg" role="button">Einzelspiel</button></p>
-				<p style="text-align:center"><button id="start_btn" class="btn btn-primary btn-lg start" role="button">Mehrspieler</button></p>	<!-- Hier muss noch die Klasse für die Mehrspieler rein -->
+				<p style="text-align:center"><button id="start_btn" onclick="window.location.href='multiPlayer.php';" class="btn btn-primary btn-lg start" role="button">Mehrspieler</button></p>	<!-- Hier muss noch die Klasse für die Mehrspieler rein -->
 				
 
 
