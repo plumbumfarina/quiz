@@ -101,29 +101,6 @@ a {
   margin-top: 40px;
 
 }
-
-button {
-  display: inline-block;
-  background-color: #fffbfb;
-  border-radius: 8px;
-  border: 1px solid #000000;
-  color: #000000;
-  text-align: center;
-  font-size: 24px;
-  padding: 20px;
-  width: 400px;
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  transition: all 0.5s;
-  cursor: pointer;
-  margin: 5px;
-}
-
-  button:hover {
-    background-color: #ff8c00;
-  }
-
     /* The switch container */
 
   .switch-container {
@@ -257,6 +234,28 @@ nav {
   right: 10px;
 }
 
+button {
+  display: inline-block;
+  background-color: #fffbfb;
+  border-radius: 8px;
+  border: 1px solid #000000;
+  color: #000000;
+  text-align: center;
+  font-size: 24px;
+  padding: 20px;
+  width: 400px;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+button:hover {
+  background-color: #ff8c00;
+}
+
 .buttonBearbeiten {
   display: inline-block;
   background-color: #fffbfb;
@@ -264,6 +263,7 @@ nav {
   border: 2px solid #FFC125;
   color: #000000;
   width: 100px;
+  padding: 10px;
 }
 
 .buttonBearbeiten:hover {
