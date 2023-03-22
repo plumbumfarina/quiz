@@ -93,10 +93,10 @@ if(!isset($_SESSION['userid'])) {
                 <label>Richtige Antwort</label><br><br>
                 
                 <div>
-                    <button type="submit" class="btn btn-outline-success"> 
-                        Ändern 
+                    <button type="submit" class="buttonHinzufuegen"> 
+                        Speichern 
                     </button>
-                    <button type="button" class="btn btn-outline-danger"> 
+                    <button type="button" class="buttonLoeschen"> 
                         Abbrechen 
                     </button>
                 </div>
