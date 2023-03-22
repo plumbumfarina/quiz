@@ -61,7 +61,7 @@ include('lib/getFragenAnzahl.php');
                                         <button type='button' class='buttonBearbeiten' value='" . $row["fragendeck_id"]. "' onclick='openBearbeiteKartendeck(" .  $row['fragendeck_id']. ")'> Bearbeiten </button>
                                     </td>
                                     <td>
-                                        <button type='button' class='buttonLöschen' value='" . $row["fragendeck_id"]. "' onclick='openLoescheKartendeck(" .  $row['fragendeck_id']. ")'> Löschen </button>
+                                        <button type='button' class='buttonLoeschen' value='" . $row["fragendeck_id"]. "' onclick='openLoescheKartendeck(" .  $row['fragendeck_id']. ")'> Löschen </button>
                                     </td>
                                 </tr>";
                             }
