@@ -293,7 +293,7 @@ button:hover {
   color: #fffbfb;
 }
 
-.buttonHinzufuegenSpeziall {
+.buttonHinzufuegenSpeziell {
   display: inline-block;
   background-color: #fffbfb;
   border-radius: 8px;
@@ -303,7 +303,7 @@ button:hover {
   padding: 10px;
 }
 
-.buttonHinzufuegen:hover {
+.buttonHinzufuegenSpeziell:hover {
   background-color: #00CD66;
   color: #fffbfb;
 }
