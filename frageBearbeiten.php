@@ -50,29 +50,14 @@ if(!isset($_SESSION['userid'])) {
                     if ($result->num_rows > 0) {
                         // Ausgabe der SQL Abfrage in das Formular
                         while($row = $result->fetch_assoc()) {
-                            // Erstellen eines Formulares
-                            echo "
-                                <label for='fragenID' class='form-label'> Fragen ID:</label>
-                                <input type='text' class='form-control' name='fragenID' value='" . $row["fragen_id"]. "'readonly></input>
-                                <label for='frage' class='form-label'> Frage:</label>
-                                <input type='text' class='form-control' name='fragentext' value='" . $row["fragentext"]. "'></input>
-                                <label for='frage' class='form-label'> Antwort 1:</label>
-                                <input type='text' class='form-control' name='Antwort1' value='" . $row["antwortEins"]. "'></input><br>
-                                <input type='radio' name='richtigkeit' value='1'>
-                                <label>Richtige Antwort</label><br><br>
-                                <label for='frage' class='form-label'> Antwort 2:</label>
-                                <input type='text' class='form-control' name='Antwort2' value='" . $row["antwortZwei"]. "'></input><br>
-                                <input type='radio' name='richtigkeit' value='2'>
-                                <label>Richtige Antwort</label><br><br>
-                                <label for='frage' class='form-label'> Antwort 3:</label>
-                                <input type='text' class='form-control' name='Antwort3' value='" . $row["antwortDrei"]. "'></input><br>
-                                <input type='radio' name='richtigkeit' value='3'>
-                                <label>Richtige Antwort</label><br><br>
-                                <label for='frage' class='form-label'> Antwort 4:</label>
-                                <input type='text' class='form-control' name='Antwort4' value='" . $row["antwortVier"]. "'></input><br>
-                                <input type='radio' name='richtigkeit' value='4'>
-                                <label>Richtige Antwort</label><br><br>
-                            ";
+                            // SQL Abfrage in Variablen schreiben
+                            $fragen_id = $row['fragen_id'];
+                            $fragentext = $row['fragentext'];
+                            $antwortEins = $row['antwortEins'];
+                            $antwortZwei = $row['antwortZwei'];
+                            $antwortDrei = $row['antwortDrei'];
+                            $antwotrVier = $row['antwortVier'];
+                            $richtigkeit = $row['richtigkeit'];
                         }
                     } else {
                         // Ansicht falls die Frage nicht gefunden wird
@@ -81,6 +66,32 @@ if(!isset($_SESSION['userid'])) {
 
                     $conn->close();
                 ?>
+                <label for='fragenID' class='form-label'> Fragen ID:</label>
+                <input type='text' class='form-control' name='fragenID' value='<?php echo $fragen_id; ?>'readonly></input>
+                
+                <label for='frage' class='form-label'> Frage:</label>
+                <input type='text' class='form-control' name='fragentext' value='<?php echo $fragentext; ?>'></input>
+                
+                <label for='frage' class='form-label'> Antwort 1:</label>
+                <input type='text' class='form-control' name='Antwort1' value='<?php echo $antwortEins; ?>'></input><br>
+                <input type='radio' name='richtigkeit' value='1' <?php if($richtigkeit == '1') echo 'checked'; ?>>
+                <label>Richtige Antwort</label><br><br>
+                
+                <label for='frage' class='form-label'> Antwort 2:</label>
+                <input type='text' class='form-control' name='Antwort2' value='<?php echo $antwortZwei; ?>'></input><br>
+                <input type='radio' name='richtigkeit' value='2' <?php if($richtigkeit == '2') echo 'checked'; ?>>
+                <label>Richtige Antwort</label><br><br>
+                
+                <label for='frage' class='form-label'> Antwort 3:</label>
+                <input type='text' class='form-control' name='Antwort3' value='<?php echo $antwortDrei; ?>'></input><br>
+                <input type='radio' name='richtigkeit' value='3' <?php if($richtigkeit == '3') echo 'checked'; ?>>
+                <label>Richtige Antwort</label><br><br>
+                
+                <label for='frage' class='form-label'> Antwort 4:</label>
+                <input type='text' class='form-control' name='Antwort4' value='<?php echo $antwortVier; ?>'></input><br>
+                <input type='radio' name='richtigkeit' value='4' <?php if($richtigkeit == '4') echo 'checked'; ?>>
+                <label>Richtige Antwort</label><br><br>
+                
                 <div>
                     <button type="submit" class="btn btn-outline-success"> 
                         Ändern 
