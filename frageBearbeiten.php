@@ -44,7 +44,7 @@ if(!isset($_SESSION['userid'])) {
                         die("Connection failed: " . $conn->connect_error);
                     }
                     // SQL Abfrage der entsprechenden Frage anhand der Fragen_ID
-                    $sql = "SELECT fragen_id, fragentext, fragendeck_id, antwortEins, antwortZwei, antwortDrei, antwortVier, richtigkeit FROM fragen WHERE (fragen_id = $fragen_id)" ;
+                    $sql = "SELECT fragen_id, fragentext, fragendeck_id, antwortEins, antwortZwei, antwortDrei, antwortVier, richtigkeit FROM fragen WHERE fragen_id = $fragen_id" ;
                     $result = $conn->query($sql);
 
                     if ($result->num_rows > 0) {
