@@ -24,11 +24,7 @@ include('lib/getFragenAnzahl.php');
 
 <div>
     <div class="button-container">
-        <h1>Mehrspieler Modus</h1>
-			<p style="text-align:center"><button id="start_btn" onclick="window.location.href='createGame.php';" class="btn btn-primary btn-lg" role="button">Freies Spiel eröffnen</button></p>
-            <p style="text-align:center"><button id="start_btn"  onclick="window.location.href='findFriends.php';" class="btn btn-primary btn-lg" role="button">Freund/in finden</button></p>
-            <p style="text-align:center"><button id="start_btn" onclick="window.location.href='joinGame.php';" class="btn btn-primary btn-lg" role="button">Freiem Spiel beitreten</button></p>
-				        
+        <h1>Freiem Spiel beitreten</h1>
     </div>
 </div>
 
