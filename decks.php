@@ -97,7 +97,18 @@ include('lib/getFragenAnzahl.php');
                 <select id="modul" name="modul" class="form-select">
                 <?php
                     
-                    include_once('lib/dbConnectorMYSQLI.php');
+                    $servername = "localhost";
+                    $username = "root";
+                    $password = "toor";
+                    $dbname = "ProjektQuiz";
+                    $user_id = $_SESSION['userid'];
+
+                    // Create connection
+                    $conn = new mysqli($servername, $username, $password, $dbname);
+                    // Check connection
+                    if ($conn->connect_error) {
+                        die("Connection failed: " . $conn->connect_error);
+                    }
 
                     $sql1 = "SELECT modulname FROM modul" ;
                     $result1 = $conn->query($sql1);
