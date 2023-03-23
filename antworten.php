@@ -25,22 +25,12 @@ if(!isset($_SESSION['userid'])) {
     <div class="container mt-3">
         <h1 class="form__title">Frage</h1>
         <?php
-            $servername = "localhost";
-            $username = "root";
-            $password = "toor";
-            $dbname = "ProjektQuiz";
-            $user_id = $_SESSION['userid'];
-        
-            // Create connection
-            $conn = new mysqli($servername, $username, $password, $dbname);
-            // Check connection
-            if ($conn->connect_error) {
-                die("Connection failed: " . $conn->connect_error);
-            }
+            include_once('lib/dbConnectorMYSQLI.php')
+            include_once('lib/getFrage.php')
+            include_once('lib/getAntworten.php')
 
             $kartendeck_id = $_GET['kartendeck_id'];
 
-            $user_id = $_SESSION['userid'];
             $sql = "SELECT fragen_id FROM fragen WHERE kartendeck_id = $kartendeck_id";
             $result = $conn->query($sql);
 
@@ -54,40 +44,7 @@ if(!isset($_SESSION['userid'])) {
                 }
             } else {
                 echo "";
-            }
-
-            function getAntworten($fragen_id){
-                global $conn;
-                // Prüfung ob eine angegeben wurde 
-                  if(isset($fragen_id)) {
-                // Abfrage aller Informationen einer Frage
-                    $sqlAntwort = "SELECT antwortEins, antwortZwei, antwortDrei, antwortVier FROM fragen WHERE fragen_id = $fragen_id";
-                    $resultAntwort = $conn->query($sqlAntwort);
-                      if ($resultAntwort->num_rows > 0) {
-                // Ausgabe des Tabelleninhaltes
-                        while($rowAntwort = $resultAntwort->fetch_assoc()) {
-                            $antwortEins = $rowAntwort['AntwortEins'];
-                            $antwortZwei = $rowAntwort['AntwortZwei'];
-                            $antwortDrei = $rowAntwort['AntwortDrei'];
-                            $antwortVier = $rowAntwort['AntwortVier'];
-                        } 
-                      } else {
-                        echo "Keine Antorten gefunden.";
-                      }
-                  } else {
-                    echo "Keine Frage angegeben.";
-                  }
-                
-                // Mischen der Antworten
-                  $antwortenArray = array($antwortEins, $antwortZwei, $antwortDrei, $antwortVier);
-                  shuffle($antwortenArray);
-                
-                  return $antwortenArray;
-                
-                }
-            
-
-            
+            }       
 
 			foreach($fragenListe as $fL){
 			    echo $fL;
