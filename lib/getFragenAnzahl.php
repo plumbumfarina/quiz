@@ -26,7 +26,9 @@ function getFragenAnzahl($kartendeck_id){
             return $fragenAnzahl;
 
     } else {
-        echo "ooops ... something went wrong ...";
+        $fragenAnzahl = 'ERROR';
+
+        return $fragenAnzahl;
     }
 
 }
