@@ -1,5 +1,17 @@
 <?php
 session_start();
+$servername = "localhost";
+$username = "root";
+$password = "toor";
+$dbname = "ProjektQuiz";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
 ?>
 
 
@@ -15,17 +27,6 @@ session_start();
 <?php
 $showFormular = true; //Variable ob das Registrierungsformular anezeigt werden soll
 
-$servername = "localhost";
-$username = "root";
-$password = "toor";
-$dbname = "ProjektQuiz";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
 
 if(isset($_GET['register'])) {
     $error = false;
