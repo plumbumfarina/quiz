@@ -2,8 +2,8 @@
     $servername = "localhost";
     $username = "root";
     $password = "toor";
-    $dbname = "quiz";
-    $user_id = $_SESSION['userid'];
+    $dbname = "ProjektQuiz";
+    # $user_id = $_SESSION['userid'];
 
     // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
