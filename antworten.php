@@ -107,6 +107,7 @@ if(!isset($_SESSION['userid'])) {
             echo $anzahlFragen;
             
 			$currentFrage = getFrage($fragenListe[$currentIndex]);
+            getFrage(4);
 			echo $currentFrage; 
             $currentAntwort = getAntwort(4);
 			foreach($currentAntwort as $cA){
