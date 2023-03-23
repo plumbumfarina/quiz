@@ -127,8 +127,8 @@ if(!isset($_SESSION['userid'])) {
             $currentFrage = getFrage($conn, $fragenListe[$currentIndex]);
             echo $currentFrage;
 // Aktuelle Antworten
-            $currentAntwort = getAntwort($conn, $fragenListe[$currentIndex]);
-			foreach($currentAntwort as $cA){
+            $currentAntworten = getAntworten($conn, $fragenListe[$currentIndex]);
+			foreach($currentAntworten as $cA){
 				echo $cA;
 			}
 
