@@ -23,7 +23,7 @@ if(!isset($_SESSION['userid'])) {
   </head>
   <body>
 	<?php
-		include('navbar.php')
+		include('navbar.php');
 	?>	
   
   	<div id="start_screen" class="jumbotren quiz_start" >
@@ -44,7 +44,7 @@ if(!isset($_SESSION['userid'])) {
 	<script src="js/script.js"></script>
 
 	<?php
-			include('footer.php')
+			include('footer.php');
 	?>
 
   </body>
