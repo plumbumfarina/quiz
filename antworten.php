@@ -89,7 +89,7 @@ if(!isset($_SESSION['userid'])) {
             echo $anzahlFragen;
 
 // Aktuelle Frage 
-			$currentFrage = getFrage($fragenListe[$currentIndex]);
+			$currentFrage = getFrage($conn, $fragenListe[$currentIndex]);
 			echo $currentFrage; 
 
 // Aktuelle Antworten
