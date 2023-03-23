@@ -76,7 +76,7 @@ if(!isset($_SESSION['userid'])) {
             echo $fragenListe[$currentIndex];
 			getFrage($fragenListe[$currentIndex]);
 			//$currentAntwort = getAntwort($fragenListe[$currentIndex]);
-			//echo $currentFrage; 
+			echo "TEST"; 
 			//foreach($currentAntwort as $cA){
 			//	echo $cA;
 			//}
