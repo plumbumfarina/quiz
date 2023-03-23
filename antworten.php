@@ -47,8 +47,36 @@ if(!isset($_SESSION['userid'])) {
               }
             
               return $fragentext;
-            
             }
+            function getAntworten($fragen_id){
+                global $conn;
+                // Prüfung ob eine angegeben wurde 
+                  if(isset($fragen_id)) {
+                // Abfrage aller Informationen einer Frage
+                    $sqlAntwort = "SELECT antwortEins, antwortZwei, antwortDrei, antwortVier FROM fragen WHERE fragen_id = $fragen_id";
+                    $resultAntwort = $conn->query($sqlAntwort);
+                      if ($resultAntwort->num_rows > 0) {
+                // Ausgabe des Tabelleninhaltes
+                        while($rowAntwort = $resultAntwort->fetch_assoc()) {
+                            $antwortEins = $rowAntwort['AntwortEins'];
+                            $antwortZwei = $rowAntwort['AntwortZwei'];
+                            $antwortDrei = $rowAntwort['AntwortDrei'];
+                            $antwortVier = $rowAntwort['AntwortVier'];
+                        } 
+                      } else {
+                        echo "Keine Antorten gefunden.";
+                      }
+                  } else {
+                    echo "Keine Frage angegeben.";
+                  }
+                
+                // Mischen der Antworten
+                  $antwortenArray = array($antwortEins, $antwortZwei, $antwortDrei, $antwortVier);
+                  shuffle($antwortenArray);
+                
+                  return $antwortenArray;
+                
+                }
             
 
             $kartendeck_id = 6; //$_GET['kartendeck_id'];
@@ -74,13 +102,14 @@ if(!isset($_SESSION['userid'])) {
 			}
 			//shuffle($fragenListe);
 			$anzahlFragen = count($fragenListe);
-            echo $fragenListe[$currentIndex];
+            echo $anzahlFragen;
+            
 			$currentFrage = getFrage($fragenListe[$currentIndex]);
-			//$currentAntwort = getAntwort($fragenListe[$currentIndex]);
 			echo $currentFrage; 
-			//foreach($currentAntwort as $cA){
-			//	echo $cA;
-			//}
+            $currentAntwort = getAntwort($fragenListe[$currentIndex]);
+			foreach($currentAntwort as $cA){
+				echo $cA;
+			}
 			$conn->close();
                         
         ?>
