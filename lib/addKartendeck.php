@@ -4,7 +4,7 @@ session_start();
 $servername = "localhost";
 $username = "root";
 $password = "toor";
-$dbname = "quiz";
+$dbname = "ProjektQuiz";
 $user_id = $_SESSION['userid'];
 
 // Create connection
