@@ -80,7 +80,7 @@ if(!isset($_SESSION['userid'])) {
                             </tr>";
                     }
 
-                    $conn->close();
+                    
                 ?>
             </tbody>
         </table>
