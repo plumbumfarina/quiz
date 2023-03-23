@@ -1,6 +1,6 @@
 <?php
 
-/*
+
 function getFragenAnzahl($kartendeck_id){
 
    if(isset($kartendeck_id)) {
@@ -16,27 +16,5 @@ function getFragenAnzahl($kartendeck_id){
     }
 }
 
-*/
-?>
-
-
-<?php
-
-function getFragenAnzahl($kartendeck_id){
-
-    if(isset($kartendeck_id)) {
-        include_once('lib/dbConnectorMYSQLI.php');
-        $statement = $conn->prepare("SELECT COUNT(*) as fragenAnzahl FROM fragen WHERE kartendeck_id = ?");
-        $statement->bind_param("i", $kartendeck_id);
-        $statement->execute();
-        $result = $statement->get_result();
-
-        $fragen = $result->fetch_assoc();
-        $fragenAnzahl = $fragen['fragenAnzahl'];
-        return $fragenAnzahl;
-    } else {
-       echo "ooops ... something went wrong ...";
-    }
-}
 
 ?>
