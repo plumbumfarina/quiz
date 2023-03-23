@@ -34,6 +34,8 @@ if(!isset($_SESSION['userid'])) {
             // Abfrage aller Informationen einer Frage
                 $sqlFrage = "SELECT fragentext FROM fragen WHERE fragen_id = $fragen_id";
                 $resultFrage = $conn->query($sqlFragen);
+                $num_rows = $result->num_rows;
+                echo $num_rows;
                   if ($resultFrage->num_rows > 0) {
             // Ausgabe des Tabelleninhaltes
                     while($rowFrage = $resultFrage->fetch_assoc()) {
