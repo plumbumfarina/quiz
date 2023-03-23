@@ -20,7 +20,7 @@ $public = $_POST['public'];
 
 // Prüfung ob ein Fragendeckname angegeben wurde
 if(isset($deckname)) {
-    $sql = "INSERT INTO kartendeck (karendeck_name, modul_id, user_id, public) VALUES ('$deckname', (SELECT modul_id FROM modul WHERE modulname='$modulname'), $user_id, $public)";
+    $sql = "INSERT INTO kartendeck (kartendeck_name, modul_id, user_id, public) VALUES ('$deckname', (SELECT modul_id FROM modul WHERE modulname='$modulname'), $user_id, $public)";
 } else {
     echo "Kein Kartendeckname angegeben.";
 }
