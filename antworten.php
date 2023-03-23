@@ -27,10 +27,10 @@ if(!isset($_SESSION['userid'])) {
         <?php
             include_once('lib/dbConnectorMYSQLI.php');
 
-            //$kartendeck_id = 5 //$_GET['kartendeck_id'];
+            $kartendeck_id = 5; //$_GET['kartendeck_id'];
 
             $user_id = $_SESSION['userid'];
-            $sql = "SELECT fragen_id FROM fragen WHERE kartendeck_id = 5";
+            $sql = "SELECT fragen_id FROM fragen WHERE kartendeck_id = $kartendeck_id";
             $result = $conn->query($sql);
 
             //$fragenListe = array();
