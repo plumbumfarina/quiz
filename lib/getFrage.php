@@ -2,7 +2,7 @@
 
 
 function getFrage($fragen_id){
-    global $conn;
+    include_once('lib/dbConnectorMYSQLI.php');
 // Prüfung ob eine angegeben wurde 
   if(isset($fragen_id)) {
 // Abfrage aller Informationen einer Frage
