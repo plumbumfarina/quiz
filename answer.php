@@ -6,9 +6,9 @@ if(!isset($_SESSION['userid'])) {
     die('Bitte zuerst einloggen');
 } 
 
-include_once('lib/getFragenListe.php');
-include_once('lib/getFrage.php');
-include_once('lib/getAntworten.php');
+//include('lib/getFragenListe.php');
+include('lib/getFrage.php');
+include('lib/getAntworten.php');
 
 ?>
 
@@ -23,31 +23,41 @@ include_once('lib/getAntworten.php');
 </head>
 <body>
 	<?php
-		include_once('navbar.php');
+		include('navbar.php');
 	?>
 
 	<div>
 		<h1> Frage </h1>
-		<form>
 		<?php 
-			include_once('lib/dbConnectorMYSQLI');
+			include('lib/dbConnectorMYSQLI');
 
 			$kartendeck_id = $_GET['kartendeck_id'];
 
 			$fragenListe = array();
-				
+			$currentIndex = 0;
+			$currentFrage = "Das ist ein Test!";
+			$currentAntwort = array();
+							
 			$abfrageEins = "SELECT fragen_id FROM fragen WHERE kartendeck_id = $kartendeck_id;";
 			$resultEins = mysqli_query($conn, $abfrageEins);
 
 			while($row = mysqli_fetch_assoc($resultEins)) {
-				$fragenListe[] = $row['fragn_id'];
+				$fragenListe[] = $row['fragen_id'];
 			}
 
 			shuffle($fragenListe);
+			$anzahlFragen = count($frageListe);
+
+			$currentFrage = getFrage($fragenListe[$currentIndex]);
+			$currentAntwort[] = getAntwort($fragenListe[$currentIndex]);
+
+			echo $currentFrage; 
+			
+			foreach($currentAntwort as $cA){
+				echo $cA;
+			}
 
 
-
-	
 		?>
 
 	</div>
