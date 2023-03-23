@@ -1,5 +1,5 @@
 <?php
-    include('getFragendeckname.php');
+    include('getKartendeckname.php');
     
     $servername = "localhost";
     $username = "root";
@@ -16,8 +16,8 @@
 
     if(isset($_SESSION['userid'])) {
 
-            $statement = $conn->prepare("SELECT COUNT(*) as fragenAnzahl FROM fragen WHERE fragendeck_id = :fragendeck_id");
-            $result = $statement->execute(array('fragendeck_id' => $fragendeck_id));
+            $statement = $conn->prepare("SELECT COUNT(*) as fragenAnzahl FROM fragen WHERE kartendeck_id = :kartendeck_id");
+            $result = $statement->execute(array('kartendeck_id' => $kartendeck_id));
 
             $fragen = $statement->fetch();
             $fragenAnzahl = $fragen['fragenAnzahl'];

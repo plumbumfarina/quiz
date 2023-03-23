@@ -47,7 +47,7 @@ if(!isset($_SESSION['userid'])) {
                     $dbname = "quiz";
                     $user_id = $_SESSION['userid'];
 
-                    $fragendeck_id = $_GET['fragendeck_id'];
+                    $kartendeck_id = $_GET['kartendeck_id'];
 
                     // Create connection
                     $conn = new mysqli($servername, $username, $password, $dbname);
@@ -96,7 +96,7 @@ if(!isset($_SESSION['userid'])) {
         </table>
         <div class="row">
             <div class="col">
-                <button type="button" onclick="openPageFrageAdd(<?php echo $fragendeck_id ?>)" class="buttonHinzufuegen"> Hinzufügen
+                <button type="button" onclick="openPageFrageAdd(<?php echo $kartendeck_id ?>)" class="buttonHinzufuegen"> Hinzufügen
                 </button>
             </div> 
         </div>
@@ -110,7 +110,7 @@ function openPageFrageDelete(id) {
     window.location.href = "lib/deleteFrage.php?fragen_id=" + id;
 }
 function openPageFrageAdd(id) {
-    window.location.href= "addQuestion.php?fragendeck_id=" + id;
+    window.location.href= "addQuestion.php?kartendeck_id=" + id;
 }
 </script>
 </body>

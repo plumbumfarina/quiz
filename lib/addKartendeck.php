@@ -20,14 +20,14 @@ $public = $_POST['public'];
 
 // Prüfung ob ein Fragendeckname angegeben wurde
 if(isset($deckname)) {
-    $sql = "INSERT INTO fragendeck (fragendeck_name, modul_id, user_id, public) VALUES ('$deckname', (SELECT modul_id FROM modul WHERE modulname='$modulname'), $user_id, $public)";
+    $sql = "INSERT INTO kartendeck (karendeck_name, modul_id, user_id, public) VALUES ('$deckname', (SELECT modul_id FROM modul WHERE modulname='$modulname'), $user_id, $public)";
 } else {
-    echo "Kein Fragendeckname angegeben.";
+    echo "Kein Kartendeckname angegeben.";
 }
 
 if ($conn->query($sql) === TRUE) {
   header("Refresh: 0.1; URL=../decks.php");
-  echo "Neues Fragendeck erfolgreich angelegt. In 5 Sekunden geht es zum Login.";
+  echo "Neues Kartendeck erfolgreich angelegt. In 5 Sekunden geht es zum Login.";
 } else {
   echo "Error: " . $sql . "<br>" . $conn->error;
 }

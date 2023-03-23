@@ -17,7 +17,7 @@ if(!isset($_SESSION['userid'])) {
     <link rel="stylesheet" href="style.css" type="text/css" media="screen"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <title>Frage</title>
+    <title>Update Frage</title>
 </head>
 <body>
 <?php
@@ -44,7 +44,7 @@ if(!isset($_SESSION['userid'])) {
                         die("Connection failed: " . $conn->connect_error);
                     }
                     // SQL Abfrage der entsprechenden Frage anhand der Fragen_ID
-                    $sql = "SELECT fragen_id, fragentext, fragendeck_id, antwortEins, antwortZwei, antwortDrei, antwortVier, richtigkeit FROM fragen WHERE fragen_id = $fragen_id" ;
+                    $sql = "SELECT fragen_id, fragentext, kartendeck_id, antwortEins, antwortZwei, antwortDrei, antwortVier, richtigkeit FROM fragen WHERE fragen_id = $fragen_id" ;
                     $result = $conn->query($sql);
 
                     if ($result->num_rows > 0) {
@@ -53,7 +53,7 @@ if(!isset($_SESSION['userid'])) {
                             // SQL Abfrage in Variablen schreiben
                             $fragen_id = $row['fragen_id'];
                             $fragentext = $row['fragentext'];
-                            $fragendeck_id = $row['fragendeck_id'];
+                            $kartendeck_id = $row['kartendeck_id'];
                             $antwortEins = $row['antwortEins'];
                             $antwortZwei = $row['antwortZwei'];
                             $antwortDrei = $row['antwortDrei'];
@@ -95,7 +95,7 @@ if(!isset($_SESSION['userid'])) {
                 
                 <div>
                     <button type="submit" class="buttonHinzufuegen"> Speichern </button>
-                    <button type="button" class="buttonLoeschen" onclick="openPage(<?php echo $fragendeck_id ?>)">Abbrechen</button>
+                    <button type="button" class="buttonLoeschen" onclick="openPage(<?php echo $kartendeck_id ?>)">Abbrechen</button>
                 </div>
             </form>
     </div>
@@ -103,7 +103,7 @@ if(!isset($_SESSION['userid'])) {
 
 <script>
   function openPage(id) {
-    window.location.href = "fragenUebersicht.php?fragendeck_id=" + id;
+    window.location.href = "fragenUebersicht.php?kartendeck_id=" + id;
   }
 </script>
 

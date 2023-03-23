@@ -1,5 +1,5 @@
 <?php
-    include('getFragendeckname.php');
+    include('getKartendeckname.php');
     
     $servername = "localhost";
     $username = "root";

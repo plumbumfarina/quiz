@@ -6,7 +6,7 @@ if(!isset($_SESSION['userid'])) {
     die('Bitte zuerst einloggen');
 }
 
-include('lib/getFragendeckname.php');
+include('lib/getKartendeckname.php');
 include('lib/getModulname.php');
 include('lib/getFragenNumber.php');
 ?>
@@ -20,7 +20,7 @@ include('lib/getFragenNumber.php');
     <link rel="stylesheet" href="style.css" type="text/css" media="screen"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <title>Decks</title>
+    <title>Neue Frage</title>
 </head>
 <body>
 <div>
@@ -30,15 +30,15 @@ include('lib/getFragenNumber.php');
 </div>
 
 <?php 
-    $fragendeck_id = $_GET['fragendeck_id'];
+    $kartendeck_id = $_GET['kartendeck_id'];
 ?>
 
 <div>
     <div class="container mt-3">
         <h1> Frage hinzufügen </h1>
         <form id="frageHinzufuegen" method="post">   
-            <label for='fragendeckID' class='form-label'> Fragendeck ID:</label>
-            <input type='text' class='form-control' name='fragendeck_id' value="<?php echo $fragendeck_id;?>" readonly>
+            <label for='kartendeckID' class='form-label'> Kartendeck ID:</label>
+            <input type='text' class='form-control' name='kartendeck_id' value="<?php echo $kartendeck_id;?>" readonly>
 
             <label for='frage' class='form-label'> Frage:</label>
             <input type='text' class='form-control' name='fragentext'>
@@ -66,7 +66,7 @@ include('lib/getFragenNumber.php');
             <div>
                 <button type='submit' class='buttonHinzufuegen' onclick="submitForm('lib/addFrage.php')"> Hinzufügen </button>
                 <button type='submit' class='buttonHinzufuegenSpeziell' onclick="submitForm('lib/addFrageAndBack.php')"> weitere Frage hinzufügen </button>
-                <button type='button' class='buttonLoeschen' onclick="openPage(<?php echo $fragendeck_id ?>)"> Abbrechen </button>
+                <button type='button' class='buttonLoeschen' onclick="openPage(<?php echo $kartendeck_id ?>)"> Abbrechen </button>
             </div>
         </form>
     </div>
@@ -78,7 +78,7 @@ include('lib/getFragenNumber.php');
     document.getElementById('frageHinzufuegen').submit();
   }
   function openPage(id) {
-    window.location.href = "fragenUebersicht.php?fragendeck_id=" + id;
+    window.location.href = "fragenUebersicht.php?kartendeck_id=" + id;
   }
 </script>
 

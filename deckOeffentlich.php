@@ -18,7 +18,7 @@ include('lib/getFragenAnzahl.php');
     <link rel="stylesheet" href="style.css" type="text/css" media="screen"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <title>Decks</title>
+    <title>Einzelspieler</title>
 </head>
 <body>
 <?php
@@ -58,7 +58,7 @@ include('lib/getFragenAnzahl.php');
                             die("Connection failed: " . $conn->connect_error);
                         }
                         // SQL Abfrage um die öffentlichen Kartendecks zu ermitteln
-                        $sql = "SELECT fragendeck_id, fragendeck_name, fragendeck.modul_id, public, modulkuerzel, modulname FROM fragendeck JOIN modul WHERE (fragendeck.modul_id = modul.modul_id) AND (public = TRUE)";
+                        $sql = "SELECT kartendeck_id, kartendeck_name, kartendeck.modul_id, public, modulkuerzel, modulname FROM kartendeck JOIN modul WHERE (kartendeck.modul_id = modul.modul_id) AND (public = TRUE)";
                         $result = $conn->query($sql);
 
                         if ($result->num_rows > 0) {
@@ -68,9 +68,9 @@ include('lib/getFragenAnzahl.php');
                                     <td>" . $row["fragendeck_name"]. "</td>
                                     <td>" . $row["modulkuerzel"]. "</td>
                                     <td>" . $row["modulname"]. "</td>
-                                    <td>" . getFragenAnzahl($row["fragendeck_id"]). "</td>
+                                    <td>" . getFragenAnzahl($row["kartendeck_id"]). "</td>
                                     <td>
-                                        <button type='button' class='btn btn-outline-success' value='" . $row["fragendeck_id"]. "'> Spielen </button>
+                                        <button type='button' class='btn btn-outline-success' value='" . $row["kartendeck_id"]. "'> Spielen </button>
                                     </td>
                                 </tr>";
                             }
