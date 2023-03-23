@@ -1,22 +1,28 @@
 <?php
+$servername = "localhost";
+$username = "root";
+$password = "toor";
+$dbname = "quiz";
+$user_id = $_SESSION['userid'];
 
-include("lib/dbConnector.php");
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
 
 function getFragenAnzahl($kartendeck_id){
 
-    if(isset($kartendeck_id)) {
+    if(isset($_SESSION['userid'])) {
+        $statement = $conn->prepare("SELECT COUNT(*) as fragenAnzahl FROM fragen WHERE kartendeck_id = :kartendeck_id");
+        $result = $statement->execute(array('kartendeck_id' => $kartendeck_id));
 
-        $result = mysqli_query($conn, "SELECT * FROM fragen WHERE kartendeck_id = $kartendeck_id");
-
-        $num_rows = mysqli_num_rows($result);
-
-        mysqli_close($conn);
-
+        $fragen = $statement->fetch();
+        $fragenAnzahl = $fragen['fragenAnzahl'];
+        return $fragenAnzahl;
     } else {
-        $num_rows = 'ERROR';
+        echo "ooops ... something went wrong ...";
     }
-
-    return $num_rows;
 }
-
 ?>
