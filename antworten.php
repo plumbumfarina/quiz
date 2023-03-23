@@ -48,6 +48,7 @@ if(!isset($_SESSION['userid'])) {
             
               return $fragentext;
             }
+            
             function getAntworten($fragen_id){
                 global $conn;
                 // Prüfung ob eine angegeben wurde 
