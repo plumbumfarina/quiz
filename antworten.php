@@ -28,6 +28,7 @@ if(!isset($_SESSION['userid'])) {
             include_once('lib/dbConnectorMYSQLI.php');
 
             function getFrage($fragen_id){
+                global $conn;
             // Prüfung ob eine angegeben wurde 
               if(isset($fragen_id)) {
             // Abfrage aller Informationen einer Frage
@@ -45,7 +46,7 @@ if(!isset($_SESSION['userid'])) {
                 echo "Keine Frage angegeben.";
               }
             
-              echo $fragentext;
+              return $fragentext;
             
             }
             
@@ -74,9 +75,9 @@ if(!isset($_SESSION['userid'])) {
 			//shuffle($fragenListe);
 			$anzahlFragen = count($fragenListe);
             echo $fragenListe[$currentIndex];
-			getFrage($fragenListe[$currentIndex]);
+			$currentFrage = getFrage(4);
 			//$currentAntwort = getAntwort($fragenListe[$currentIndex]);
-			echo "TEST"; 
+			echo $currentFrage; 
 			//foreach($currentAntwort as $cA){
 			//	echo $cA;
 			//}
