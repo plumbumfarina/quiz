@@ -44,6 +44,9 @@ include('lib/getAntworten.php');
 			while($row = mysqli_fetch_assoc($resultEins)) {
 				$fragenListe[] = $row['fragen_id'];
 			}
+			foreach($fragenListe as $fL){
+				echo $fL;
+			}
 
 			shuffle($fragenListe);
 			$anzahlFragen = count($frageListe);
@@ -52,7 +55,7 @@ include('lib/getAntworten.php');
 			$currentAntwort[] = getAntwort($fragenListe[$currentIndex]);
 
 			echo $currentFrage; 
-			
+
 			foreach($currentAntwort as $cA){
 				echo $cA;
 			}
