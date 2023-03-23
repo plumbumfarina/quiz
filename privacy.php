@@ -1,5 +1,5 @@
 <?php
-			include('navbar.php')
+			include_once('navbar.php')
 ?>	
 <!DOCTYPE html>
 <html lang="en">
@@ -88,7 +88,7 @@
         </p>
     <footer>
         <?php
-			include('footer.php')?>
+			include_once('footer.php')?>
     </footer>
 </body>
 </html>

@@ -9,21 +9,21 @@
 </head>
 <body>
     <?php
-			include('navbar.php')
-		?>	
-		<h1>Unsere Kontaktdaten</h1>
+        include_once('navbar.php')
+    ?>	
+    <h1>Unsere Kontaktdaten</h1>
 
-        <p>Du erreichst uns per E-Mail unter max.mustermann@quiz.de</p>
-        <p>Alternativ auch gern von Montags bis Freitags von 8:00 Uhr bis 15:00 Uhr unter 0123-1312465</p>
-		
-		
-		
-		
-		
+    <p>Du erreichst uns per E-Mail unter max.mustermann@quiz.de</p>
+    <p>Alternativ auch gern von Montags bis Freitags von 8:00 Uhr bis 15:00 Uhr unter 0123-1312465</p>
+        
+        
+        
+        
+        
 
-	<?php
-			include('footer.php')
-		?>
+    <?php
+        include_once('footer.php')
+    ?>
     
     
 

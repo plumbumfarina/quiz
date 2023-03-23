@@ -20,7 +20,7 @@ include('lib/getFragenAnzahl.php');
 </head>
 <body>
 <?php
-    include('navbar.php')
+    include_once('navbar.php')
 ?>
 <div>
     <div class="container mt-3">
@@ -39,7 +39,7 @@ include('lib/getFragenAnzahl.php');
                 </thead>
                 <tbody>
                     <?php
-                        include('lib/dbConnectorMYSQLI.php');
+                        include_once('lib/dbConnectorMYSQLI.php');
 
                         $user_id = $_SESSION['userid'];
                         $sql = "SELECT kartendeck_id, kartendeck_name, kartendeck.modul_id, public, modulkuerzel, modulname FROM kartendeck JOIN modul WHERE (kartendeck.modul_id = modul.modul_id) AND (user_id = $user_id) ORDER BY modulkuerzel ASC";
@@ -95,7 +95,7 @@ include('lib/getFragenAnzahl.php');
             <label for="modul">Wähle ein Modul aus:</label>
                 <select id="modul" name="modul" class="form-select">
                 <?php
-                        include('lib/dbConnectorMYSQLI.php');
+                        include_once('lib/dbConnectorMYSQLI.php');
                         
                         $sql = "SELECT modulname FROM modul" ;
                         $result = $conn->query($sql);
@@ -130,7 +130,7 @@ function openLoescheKartendeck(id) {
 </script>
 
 <?php
-	include('footer.php')
+	include_once('footer.php')
 ?>
 </body>
 </html>

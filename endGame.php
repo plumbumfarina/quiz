@@ -16,7 +16,7 @@
   <body>
 	<div class="container">
   <?php
-			include('navbar.php')
+			include_once('navbar.php')
 		?>	
 		<nav class="navbar navbar-default">
 			<div class="container-fluid">
@@ -45,7 +45,7 @@
 
 
   <?php
-			include('footer.php')
+			include_once('footer.php')
 		?> 
   </body>
 </html>

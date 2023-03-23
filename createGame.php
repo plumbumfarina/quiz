@@ -6,7 +6,7 @@
     die('Bitte zuerst einloggen');
 }*/
 
-include('lib/getFragenAnzahl.php');
+include_once('lib/getFragenAnzahl.php');
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +19,7 @@ include('lib/getFragenAnzahl.php');
 </head>
 <body>
 <?php
-    include('navbar.php')
+    include_once('navbar.php')
 ?>
 
 <div>
@@ -29,7 +29,7 @@ include('lib/getFragenAnzahl.php');
 </div>
 
 <?php
-			include('footer.php')
-	?>
+    include_once('footer.php')
+?>
 </body>
 </html>

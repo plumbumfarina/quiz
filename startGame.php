@@ -22,7 +22,7 @@ if(!isset($_SESSION['userid'])) {
   </head>
   <body>
 	<?php
-			include('navbar.php')
+			include_once('navbar.php')
 	?>
 	
 	<div class="container">
@@ -49,7 +49,7 @@ if(!isset($_SESSION['userid'])) {
 	<script src="js/quiz.js"></script>
 
 	<?php
-		include('footer.php')
+		include_once('footer.php')
 	?>
 
   </body>

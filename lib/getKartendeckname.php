@@ -1,6 +1,6 @@
 <?php
 
-include('lib/dbConnectorMYSQLI.php');
+include_once('lib/dbConnectorMYSQLI.php');
 
     if(isset($_SESSION['userid'])) {
             $user_id = $_SESSION['userid'];

@@ -21,7 +21,7 @@ if(!isset($_SESSION['userid'])) {
 </head>
 <body>
 <?php
-    include('navbar.php')
+    include_once('navbar.php')
 ?>
 
 <div>
@@ -41,7 +41,7 @@ if(!isset($_SESSION['userid'])) {
             </thead>
             <tbody>
                 <?php
-                    include('lib/dbConnectorMYSQLI.php');
+                    include_once('lib/dbConnectorMYSQLI.php');
 
                     $kartendeck_id = $_GET['kartendeck_id'];
 
@@ -49,7 +49,7 @@ if(!isset($_SESSION['userid'])) {
                     $result = $conn->query($sql);
 
                     if ($result->num_rows > 0) {
-                        include('lib/dbConnectorMYSQLI.php');
+                        include_once('lib/dbConnectorMYSQLI.php');
                         // output data of each row
                         while($row = $result->fetch_assoc()) {
                             echo "<tr>

@@ -6,7 +6,7 @@ session_start();
     die('Bitte zuerst einloggen');
 } */
 
-include('lib/getFragenAnzahl.php');
+include_once('lib/getFragenAnzahl.php');
 ?>
 
 <!DOCTYPE html>
@@ -22,7 +22,7 @@ include('lib/getFragenAnzahl.php');
 </head>
 <body>
 <?php
-    include('navbar.php')
+    include_once('navbar.php')
 ?>
 
 <div>
@@ -45,7 +45,7 @@ include('lib/getFragenAnzahl.php');
                 <tbody>
                     <?php
                         
-                        include('lib/dbConnectorMYSQLI.php');
+                        include_once('lib/dbConnectorMYSQLI.php');
 
                         // SQL Abfrage um die eigenen Kartendecks zu ermitteln
                         $sql = "SELECT kartendeck_id, kartendeck_name, kartendeck.modul_id, public, modulkuerzel, modulname FROM kartendeck JOIN modul WHERE (kartendeck.modul_id = modul.modul_id) AND (user_id = $user_id)";

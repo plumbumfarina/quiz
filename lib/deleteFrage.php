@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include('lib/dbConnectorMYSQLI.php');
+include_once('lib/dbConnectorMYSQLI.php');
 
 $fragen_id = $_GET['fragen_id'];
 

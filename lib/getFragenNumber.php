@@ -1,7 +1,7 @@
 <?php
-    include('getKartendeckname.php');
+    include_once('getKartendeckname.php');
     
-    include('lib/dbConnectorMYSQLI.php');
+    include_once('lib/dbConnectorMYSQLI.php');
 
     if(isset($_SESSION['userid'])) {
 

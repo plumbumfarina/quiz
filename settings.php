@@ -17,7 +17,7 @@ if(!isset($_SESSION['userid'])) {
 </head>
 <body>
 <?php
-    include('navbar.php')
+    include_once('navbar.php')
 ?>	
 		
     <h1>Hier kannst Du Einstellungen vornehmen</h1>
@@ -54,7 +54,7 @@ if(!isset($_SESSION['userid'])) {
 
 
 <?php
-    include('footer.php')
+    include_once('footer.php')
 ?>
 		
 		

@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include('lib/dbConnectorPDO.php');
+include_once('lib/dbConnectorPDO.php');
 
 if(isset($_GET['login'])) {
     $email = $_POST['email'];
@@ -64,7 +64,7 @@ if(isset($_GET['login'])) {
     </div>
 
 	<?php
-		include('footer.php')
+		include_once('footer.php')
 	?>
 		    
 </body>

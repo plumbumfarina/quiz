@@ -22,7 +22,7 @@ if(!isset($_SESSION['userid'])) {
 <body>
 <div>
 <?php
-    include('navbar.php')
+    include_once('navbar.php')
 ?>
 </div>
 

@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('lib/dbConnectorPDO.php')
+include_once('lib/dbConnectorPDO.php')
 ?>
 
 
@@ -113,7 +113,7 @@ if($showFormular) {
 ?>
 
 <?php
-   include('footer.php')
+   include_once('footer.php')
 ?>
 
 </body>
