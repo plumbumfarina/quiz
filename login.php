@@ -16,7 +16,9 @@ if(isset($_GET['login'])) {
     //Passwort überprüfen
     if ($user !== false && ($passwort == $user['passwort'])) {
         $_SESSION['userid'] = $user['user_id'];
-        header('location: index.php');
+        header("Refresh: 5; URL=../login.php");
+        echo 'Hallo ' . $_SESSION['userid'];
+        #header('location: index.php');
         die('Login erfolgreich. Weiter zur Startseite.');
     } else {
         $errorMessage = "E-Mail oder Passwort inkorrekt<br>";
