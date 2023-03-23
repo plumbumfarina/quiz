@@ -17,45 +17,45 @@ if(!isset($_SESSION['userid'])) {
 </head>
 <body>
 <?php
-			include('navbar.php')
-		?>	
+    include('navbar.php')
+?>	
 		
-        <h1>Hier kannst Du Einstellungen vornehmen</h1>
-		
-        <div class="switch-container">
-            <label class="switch">
-                <input type="checkbox">
-                <span class="slider"></span>
-            </label>
-            <span class="label-text">Dark-Modus aktivieren</span>
-        </div>
-        <div class="switch-container">
-            <label class="switch">
-                <input type="checkbox">
-                <span class="slider"></span>
-            </label>
-            <span class="label-text">Töne aktivieren</span>
-        </div>
-        <div class="switch-container">
-            <label class="switch">
-                <input type="checkbox">
-                <span class="slider"></span>
-            </label>
-            <span class="label-text">Benachrichtigungen aktivieren</span>
-        </div>
-        <div class="switch-container">
-            <label class="switch">
-                <input type="checkbox">
-                <span class="slider"></span>
-            </label>
-            <span class="label-text">Automatische Posts auf Instagram</span>
-        </div>
+    <h1>Hier kannst Du Einstellungen vornehmen</h1>
+    
+    <div class="switch-container">
+        <label class="switch">
+            <input type="checkbox">
+            <span class="slider"></span>
+        </label>
+        <span class="label-text">Dark-Modus aktivieren</span>
+    </div>
+    <div class="switch-container">
+        <label class="switch">
+            <input type="checkbox">
+            <span class="slider"></span>
+        </label>
+        <span class="label-text">Töne aktivieren</span>
+    </div>
+    <div class="switch-container">
+        <label class="switch">
+            <input type="checkbox">
+            <span class="slider"></span>
+        </label>
+        <span class="label-text">Benachrichtigungen aktivieren</span>
+    </div>
+    <div class="switch-container">
+        <label class="switch">
+            <input type="checkbox">
+            <span class="slider"></span>
+        </label>
+        <span class="label-text">Automatische Posts auf Instagram</span>
+    </div>
 
 
 
-	<?php
-			include('footer.php')
-		?>
+<?php
+    include('footer.php')
+?>
 		
 		
 		   
