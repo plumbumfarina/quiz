@@ -44,19 +44,20 @@ if(!isset($_SESSION['userid'])) {
                 </thead>
                 <tbody>
                     <?php
-                        #include('lib/dbConnector.php');
-                        $servername = "localhost";
-                        $username = "root";
-                        $password = "toor";
-                        $dbname = "quiz";
+                        include('lib/dbConnector.php');
+                        
+                        #$servername = "localhost";
+                        #$username = "root";
+                        #$password = "toor";
+                        #$dbname = "quiz";
                         $user_id = $_SESSION['userid'];
 
                         // Create connection
-                        $conn = new mysqli($servername, $username, $password, $dbname);
+                        #$conn = new mysqli($servername, $username, $password, $dbname);
                         // Check connection
-                        if ($conn->connect_error) {
-                            die("Connection failed: " . $conn->connect_error);
-                        }
+                        #if ($conn->connect_error) {
+                        #    die("Connection failed: " . $conn->connect_error);
+                        #}
 
                         $sql = "SELECT kartendeck_id, kartendeck_name, kartendeck.modul_id, public, modulkuerzel, modulname FROM kartendeck JOIN modul WHERE (kartendeck.modul_id = modul.modul_id) AND (user_id = $user_id) ORDER BY modulkuerzel ASC";
                         $result = $conn->query($sql);
@@ -114,20 +115,20 @@ if(!isset($_SESSION['userid'])) {
                 <select id="modul" name="modul" class="form-select">
 
                 <?php
-                    #include('lib/dbConnector.php');
+                    include('lib/dbConnector.php');
                     
-                    $servername = "localhost";
-                    $username = "root";
-                    $password = "toor";
-                    $dbname = "quiz";
-                    $user_id = $_SESSION['userid'];
+                    #$servername = "localhost";
+                    #$username = "root";
+                    #$password = "toor";
+                    #$dbname = "quiz";
+                    #$user_id = $_SESSION['userid'];
 
                     // Create connection
-                    $conn = new mysqli($servername, $username, $password, $dbname);
+                    #$conn = new mysqli($servername, $username, $password, $dbname);
                     // Check connection
-                    if ($conn->connect_error) {
-                        die("Connection failed: " . $conn->connect_error);
-                    }
+                    #if ($conn->connect_error) {
+                    #    die("Connection failed: " . $conn->connect_error);
+                    #}
 
                     $sql = "SELECT modulname FROM modul" ;
                     $result = $conn->query($sql);
@@ -170,17 +171,4 @@ function openLoescheKartendeck(id) {
 
 </body>
 </html>
-Footer
-© 2023 GitHub, Inc.
-Footer navigation
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
+
