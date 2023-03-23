@@ -43,7 +43,7 @@ if(!isset($_SESSION['userid'])) {
                 <?php
                     include('lib/dbConnector.php');
 
-                    $sql = "SELECT fragen_id, fragentext, antwortEins, antwortZwei, antwortDrei, antwortVier, richtigkeit FROM fragen WHERE (fragendeck_id = $fragendeck_id)" ;
+                    $sql = "SELECT fragen_id, fragentext, antwortEins, antwortZwei, antwortDrei, antwortVier, richtigkeit FROM fragen WHERE (kartendeckdeck_id = $kartendeck_id)" ;
                     $result = $conn->query($sql);
 
                     if ($result->num_rows > 0) {

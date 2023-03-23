@@ -1,68 +1,80 @@
-<!DOCTYPE html>
-<!-- hier ist die Codierung für die Benennung des Tabs bei einer Internetseite -->
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="style.css" type="text/css" media="screen"/>
-    <title>Projekt</title>
+<?php
+// check if user is logged in, if not redirect to login page
+session_start();
+if(!isset($_SESSION['userid'])) {
+    header('location: login.php');
+    die('Bitte zuerst einloggen');
+} 
 
-    <!-- Bootstrap -->
-    <!-- hier ist die Codierung für das Menü-Band oben -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-	<link href="css/style.css" rel="stylesheet">
-  </head>
-  <body>
-	<div class="container">
-		<nav class="navbar navbar-default">
-			<div class="container-fluid">
-				<div class="navbar-header">
-					<a class="navbar-brand" href="#">Quiz</a>
-					<p>Menü</p>
-				</div>
-			</div>
-		</nav>
-    
+include('lib/getFragenListe.php');
+include('lib/getFrage.php');
+include('lib/getAntworten.php');
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/style.css">
+	<title>Projekt</title>
+</head>
+<body>
+	<?php
+		include('navbar.php');
+	?>
+
+	<div>
+		<h1> Frage </h1>
+		<form>
+		<?php 
+			$kartendeck_id = $_GET['kartendeck_id'];
+				
+			
+		?>
+
+	</div>
     <!-- hier ist die Codierung für den Fragebalken -->	
-			<div id="question" class="jumbotren">
-				<h2>Frage <span id="qra">0</h2>
+			<div id="question">
+				<h2>Frage</h2>
 				<p id="question_text">Dies ist die Frage.</p>
         
-        <!-- hier ist die Codierung für die 4 Antwort-Möglichkeiten-->
+    <!-- hier ist die Codierung für die 4 Antwort-Möglichkeiten-->
 				<div class="row">
 	<!-- das hier ist die Antwort A -->
-           				<div class="col-md-6">
+           			<div class="col-md-6">
 						<p><button id="answer_a_btn" class="answer btn btn-default btn-lg btn-black" role="button">
 						A: <span id="answer_a">Antwort</span></button></p>
 					</div>
-        <!-- das hier ist Antwort B -->
+    <!-- das hier ist Antwort B -->
 					<div class="col-md-6">
 						<p><button id="answer_a_btn" class="answer btn btn-default btn-lg btn-black" role="button">
 						B: <span id="answer_a">Antwort</span></button></p>
 					</div>
-        			</div>
+        		</div>
 	<!-- das hier ist Antwort C -->			
 				<div class="row">
 					<div class="col-md-6">
 						<p><button id="answer_a_btn" class="answer btn btn-default btn-lg btn-black" role="button">
 						C: <span id="answer_a">Antwort</span></button></p>
 					</div>
-          <!-- das hier ist Antwort D -->
+    <!-- das hier ist Antwort D -->
 					<div class="col-md-6">
 						<p><button id="answer_a_btn" class="answer btn btn-default btn-lg btn-black" role="button">
 						D: <span id="answer_a">Antwort</span></button></p>
 					</div>
 				</div>
-        <!-- das hier ist der Antwort-Button -->
+    <!-- das hier ist der Antwort-Button -->
 				<div class="row">
 					<div class="col-md-10">
 					</div>
 					<div class="col-md-2">
 						<p><button id="answer_commit_btn" class="btn btn-primary btn-lg btn-black" role="button">
-							<span id="commit_text">Antworten</span><button></p>
-              <!-- das hier ist der Weiter-Button -->
-						<p><button id="answer_commit_btn" class="btn btn-primary btn-lg btn-black" role="button"><span>Weiter</span><button></p>
+							<span id="commit_text">Antworten</span></button></p>
+    <!-- das hier ist der Weiter-Button -->
+						<p><button id="answer_commit_btn" class="btn btn-primary btn-lg btn-black" role="button"><span>Weiter</span></button></p>
 					</div>
 				</div>
 			</div>

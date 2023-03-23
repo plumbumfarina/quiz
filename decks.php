@@ -71,6 +71,7 @@ include('lib/getFragenAnzahl.php');
                                     <td>-</td>
                                 </tr>";
                         }
+                        echo "das auch ?";
                         $conn->close();
                     ?>
                 </tbody>
