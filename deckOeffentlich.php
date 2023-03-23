@@ -44,18 +44,8 @@ include('lib/getFragenAnzahl.php');
                 </thead>
                 <tbody>
                     <?php
-                        $servername = "localhost";
-                        $username = "root";
-                        $password = "toor";
-                        $dbname = "quiz";
-                        $user_id = $_SESSION['userid'];
-
-                        // Create connection
-                        $conn = new mysqli($servername, $username, $password, $dbname);
-                        // Check connection
-                        if ($conn->connect_error) {
-                            die("Connection failed: " . $conn->connect_error);
-                        }
+                        include('lib/dbConnector.php');
+                        
                         // SQL Abfrage um die öffentlichen Kartendecks zu ermitteln
                         $sql = "SELECT kartendeck_id, kartendeck_name, kartendeck.modul_id, public, modulkuerzel, modulname FROM kartendeck JOIN modul WHERE (kartendeck.modul_id = modul.modul_id) AND (public = TRUE)";
                         $result = $conn->query($sql);

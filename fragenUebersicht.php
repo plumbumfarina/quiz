@@ -41,20 +41,7 @@ if(!isset($_SESSION['userid'])) {
             </thead>
             <tbody>
                 <?php
-                    $servername = "localhost";
-                    $username = "root";
-                    $password = "toor";
-                    $dbname = "quiz";
-                    $user_id = $_SESSION['userid'];
-
-                    $kartendeck_id = $_GET['kartendeck_id'];
-
-                    // Create connection
-                    $conn = new mysqli($servername, $username, $password, $dbname);
-                    // Check connection
-                    if ($conn->connect_error) {
-                        die("Connection failed: " . $conn->connect_error);
-                    }
+                    include('lib/dbConnector.php');
 
                     $sql = "SELECT fragen_id, fragentext, antwortEins, antwortZwei, antwortDrei, antwortVier, richtigkeit FROM fragen WHERE (fragendeck_id = $fragendeck_id)" ;
                     $result = $conn->query($sql);

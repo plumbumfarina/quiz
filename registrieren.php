@@ -1,6 +1,6 @@
 <?php
 session_start();
-$dbconnector = new PDO('mysql:host=localhost;dbname=quiz', 'root', 'toor');
+include('lib/dbConnector.php');
 ?>
 
 
@@ -38,7 +38,7 @@ if(isset($_GET['register'])) {
 
     // Überprüfe, dass der Nickname noch nicht registriert wurde
     if(!$error) {
-        $statement = $dbconnector->prepare("SELECT * FROM user WHERE nickname = :nickname");
+        $statement = $conn->prepare("SELECT * FROM user WHERE nickname = :nickname");
         $result = $statement->execute(array('nickname' => $nickname));
         $nick = $statement->fetch();
 
@@ -50,7 +50,7 @@ if(isset($_GET['register'])) {
 
     //Überprüfe, dass die E-Mail-Adresse noch nicht registriert wurde
     if(!$error) {
-        $statement = $dbconnector->prepare("SELECT * FROM user WHERE email = :email");
+        $statement = $conn->prepare("SELECT * FROM user WHERE email = :email");
         $result = $statement->execute(array('email' => $email));
         $user = $statement->fetch();
 
@@ -64,7 +64,7 @@ if(isset($_GET['register'])) {
     if(!$error) {
 #        $passwort_hash = password_hash($passwort, PASSWORD_DEFAULT);
 
-        $statement = $dbconnector->prepare("INSERT INTO user (nickname, email, passwort) VALUES (:nickname, :email, :passwort)");
+        $statement = $conn->prepare("INSERT INTO user (nickname, email, passwort) VALUES (:nickname, :email, :passwort)");
         $result = $statement->execute(array('nickname' => $nickname, 'email' => $email, 'passwort' => $passwort));
 #        $result = $statement->execute(array('email' => $email, 'passwort' => $passwort_hash));
 

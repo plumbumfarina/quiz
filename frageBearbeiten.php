@@ -32,17 +32,8 @@ if(!isset($_SESSION['userid'])) {
                 <?php
                     $fragen_id = $_GET['fragen_id'];
 
-                    $servername = "localhost";
-                    $username = "root";
-                    $password = "toor";
-                    $dbname = "quiz";
-
-                    // Create connection
-                    $conn = new mysqli($servername, $username, $password, $dbname);
-                    // Check connection
-                    if ($conn->connect_error) {
-                        die("Connection failed: " . $conn->connect_error);
-                    }
+                    include('lib/dbConnector.php');
+                    
                     // SQL Abfrage der entsprechenden Frage anhand der Fragen_ID
                     $sql = "SELECT fragen_id, fragentext, kartendeck_id, antwortEins, antwortZwei, antwortDrei, antwortVier, richtigkeit FROM fragen WHERE fragen_id = $fragen_id" ;
                     $result = $conn->query($sql);
