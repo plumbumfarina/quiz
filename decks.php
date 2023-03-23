@@ -99,7 +99,7 @@ include('lib/getFragenAnzahl.php');
                         
                         $sql1 = "SELECT modulname FROM modul" ;
                         $result1 = $conn->query($sql1);
-                        echo "<option> hier</option>";
+                    
                         if ($result1->num_rows > 0) {
                             // output data of each row
                             while($row1 = $result1->fetch_assoc()) {
@@ -108,6 +108,7 @@ include('lib/getFragenAnzahl.php');
                         } else {
                             echo "<option> keine Module </option>";
                         }
+                        echo "<option> keine Module </option>";
                         $conn->close();
                     ?>
                 </select>
