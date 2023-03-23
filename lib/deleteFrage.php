@@ -3,6 +3,8 @@ session_start();
 
 include_once('lib/dbConnectorMYSQLI.php');
 
+$user_id = $_SESSION['userid'];
+
 $fragen_id = $_GET['fragen_id'];
 
 // Prüfung ob ein Fragenid angegeben wurde
