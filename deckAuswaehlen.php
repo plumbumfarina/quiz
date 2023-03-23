@@ -6,7 +6,7 @@ session_start();
     die('Bitte zuerst einloggen');
 } */
 
-include('lib/getFragenAnzahl.php');
+//include('lib/getFragenAnzahl.php');
 ?>
 
 <!DOCTYPE html>
@@ -59,6 +59,21 @@ include('lib/getFragenAnzahl.php');
                         // SQL Abfrage um die eigenen Kartendecks zu ermitteln
                         $sql = "SELECT kartendeck_id, kartendeck_name, kartendeck.modul_id, public, modulkuerzel, modulname FROM kartendeck JOIN modul WHERE (kartendeck.modul_id = modul.modul_id) AND (user_id = $user_id)";
                         $result = $conn->query($sql);
+
+                        function getFragenAnzahl($kartendeck_id){
+
+                            if(isset($kartendeck_id)) {
+                        
+                                $anzahl = mysqli_query($conn, "SELECT * FROM fragen WHERE kartendeck_id = $kartendeck_id");
+                        
+                                $num_rows = mysqli_num_rows($anzahl);
+                        
+                            } else {
+                                $num_rows = 'ERROR';
+                            }
+                        
+                            return $num_rows;
+                        }
 
                         if ($result->num_rows > 0) {
                             // Ausgabe der SQL Abfrage
