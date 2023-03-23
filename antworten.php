@@ -32,11 +32,11 @@ if(!isset($_SESSION['userid'])) {
               if(isset($fragen_id)) {
             // Abfrage aller Informationen einer Frage
                 $sqlFrage = "SELECT fragentext FROM fragen WHERE fragen_id = $fragen_id";
-                $result = $conn->query($sqlFragen);
-                  if ($result->num_rows > 0) {
+                $resultFrage = $conn->query($sqlFragen);
+                  if ($resultFrage->num_rows > 0) {
             // Ausgabe des Tabelleninhaltes
-                    while($row = $result->fetch_assoc()) {
-                        $fragentext = $row['fragentext'];
+                    while($rowFrage = $resultFrage->fetch_assoc()) {
+                        $fragentext = $rowFrage['fragentext'];
                     } 
                   } else {
                     echo "Kein Fragentext gefunden.";
