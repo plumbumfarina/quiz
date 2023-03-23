@@ -353,3 +353,8 @@ button:hover {
   background-color: #1E90FF;
   color: #fffbfb;
 }
+
+.buttonSpielen:disabled {
+  background-color: #629ad3;
+  color: #fffbfb;
+}
