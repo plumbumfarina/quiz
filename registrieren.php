@@ -1,6 +1,5 @@
 <?php
 session_start();
-include('lib/dbConnector.php');
 ?>
 
 
@@ -15,6 +14,8 @@ include('lib/dbConnector.php');
 
 <?php
 $showFormular = true; //Variable ob das Registrierungsformular anezeigt werden soll
+
+include('lib/dbConnector.php');
 
 if(isset($_GET['register'])) {
     $error = false;
