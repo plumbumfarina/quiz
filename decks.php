@@ -6,7 +6,7 @@ if(!isset($_SESSION['userid'])) {
     die('Bitte zuerst einloggen');
 }
 
-include('lib/getFragenAnzahl.php');
+//include('lib/getFragenAnzahl.php');
 ?>
 
 <!DOCTYPE html>
@@ -56,6 +56,26 @@ include('lib/getFragenAnzahl.php');
                         // Check connection
                         if ($conn->connect_error) {
                             die("Connection failed: " . $conn->connect_error);
+                        }
+
+                        function getFragenAnzahl($id){
+
+                            if(isset($_SESSION['userid'])) {
+                        
+                                    $statement = $conn->prepare("SELECT COUNT(*) as fragenAnzahl FROM fragen WHERE kartendeck_id = :id");
+                                    $result = $statement->execute(array('kartendeck_id' => $id));
+                        
+                                    $fragen = $statement->fetch();
+                                    $fragenAnzahl = $fragen['fragenAnzahl'];
+                        
+                                    return $fragenAnzahl;
+                        
+                            } else {
+                                $fragenAnzahl = 'ERROR';
+                        
+                                return $fragenAnzahl;
+                            }
+                        
                         }
 
                         $sql = "SELECT kartendeck_id, kartendeck_name, kartendeck.modul_id, public, modulkuerzel, modulname FROM kartendeck JOIN modul WHERE (kartendeck.modul_id = modul.modul_id) AND (user_id = $user_id) ORDER BY modulkuerzel ASC";
