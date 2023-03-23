@@ -108,7 +108,7 @@ include('lib/getFragenAnzahl.php');
                         } else {
                             echo "<option> keine Module </option>";
                         }
-                        echo "<option> keine Module </option>";
+
                         $conn->close();
                     ?>
                 </select>
