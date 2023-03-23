@@ -67,7 +67,7 @@ if(!isset($_SESSION['userid'])) {
 
                 $rowFrage = $resultFrage->fetch_assoc();
                 $fragentext = $rowFrage['fragentext']; 
-                
+
             } else {
                 echo "Keine Frage angegeben.";
             }
@@ -87,7 +87,7 @@ if(!isset($_SESSION['userid'])) {
             echo $anzahlFragen;
 
 // Aktuelle Frage 
-			$currentFrage = getFrage($conn, $fragenListe[$currentIndex]);
+			$currentFrage = getFrage($conn, 10);
 			echo $currentFrage; 
 
 // Aktuelle Antworten
