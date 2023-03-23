@@ -43,6 +43,8 @@ if(!isset($_SESSION['userid'])) {
                 <?php
                     include('lib/dbConnector.php');
 
+                    $kartendeck_id = $_GET['kartendeck_id'];
+
                     $sql = "SELECT fragen_id, fragentext, antwortEins, antwortZwei, antwortDrei, antwortVier, richtigkeit FROM fragen WHERE (kartendeckdeck_id = $kartendeck_id)" ;
                     $result = $conn->query($sql);
 

@@ -6,9 +6,6 @@ if(!isset($_SESSION['userid'])) {
     die('Bitte zuerst einloggen');
 }
 
-include('lib/getKartendeckname.php');
-include('lib/getModulname.php');
-include('lib/getFragenNumber.php');
 ?>
 
 <!DOCTYPE html>
