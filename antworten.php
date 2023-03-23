@@ -38,6 +38,24 @@ if(!isset($_SESSION['userid'])) {
                 die("Connection failed: " . $conn->connect_error);
             }
 
+            $kartendeck_id = $_GET['kartendeck_id'];
+
+            $user_id = $_SESSION['userid'];
+            $sql = "SELECT fragen_id FROM fragen WHERE kartendeck_id = $kartendeck_id";
+            $result = $conn->query($sql);
+
+            $fragenListe = array();
+			$currentIndex = 0;
+
+            if ($result->num_rows > 0) {
+                // output data of each row
+                while($row = $result->fetch_assoc()) {
+                    $fragenListe[] = $row['fragen_id'];
+                }
+            } else {
+                echo "";
+            }
+
             function getAntworten($fragen_id){
                 global $conn;
                 // Prüfung ob eine angegeben wurde 
@@ -69,23 +87,7 @@ if(!isset($_SESSION['userid'])) {
                 }
             
 
-            $kartendeck_id = $_GET['kartendeck_id'];
-
-            $user_id = $_SESSION['userid'];
-            $sql = "SELECT fragen_id FROM fragen WHERE kartendeck_id = $kartendeck_id";
-            $result = $conn->query($sql);
-
-            $fragenListe = array();
-			$currentIndex = 0;
-
-            if ($result->num_rows > 0) {
-    // output data of each row
-                while($row = $result->fetch_assoc()) {
-                    $fragenListe[] = $row['fragen_id'];
-                }
-            } else {
-                echo "";
-            }
+            
 
 			foreach($fragenListe as $fL){
 			    echo $fL;
