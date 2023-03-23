@@ -97,12 +97,12 @@ include('lib/getFragenAnzahl.php');
                 <?php
                         include_once('lib/dbConnectorMYSQLI.php');
                         
-                        $sql = "SELECT modulname FROM modul" ;
-                        $result = $conn->query($sql);
-                        if ($result->num_rows > 0) {
+                        $sql1 = "SELECT modulname FROM modul" ;
+                        $result1 = $conn->query($sql1);
+                        if ($result1->num_rows > 0) {
                             // output data of each row
-                            while($row = $result->fetch_assoc()) {
-                                echo "<option>" . $row["modulname"]. "</option>";
+                            while($row1 = $result1->fetch_assoc()) {
+                                echo "<option>" . $row1["modulname"]. "</option>";
                             }
                         } else {
                             echo "0 results";
