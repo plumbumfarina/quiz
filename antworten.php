@@ -15,7 +15,7 @@ if(!isset($_SESSION['userid'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css" type="text/css" media="screen"/>
     
-    <title>Decks</title>
+    <title>Frage</title>
 </head>
 <body>
 <?php
@@ -27,9 +27,14 @@ if(!isset($_SESSION['userid'])) {
         <?php
             include_once('lib/dbConnectorMYSQLI.php');
 
+            $kartendeck_id = 5 //$_GET['kartendeck_id'];
+
             $user_id = $_SESSION['userid'];
             $sql = "SELECT fragen_id FROM fragen WHERE kartendeck_id = $kartendeck_id";
             $result = $conn->query($sql);
+
+            //$fragenListe = array();
+			//$currentIndex = 0;
 
             if ($result->num_rows > 0) {
     // output data of each row
@@ -39,6 +44,22 @@ if(!isset($_SESSION['userid'])) {
             } else {
                 echo "";
             }
+
+            while($row = $resultEins->fetch_assoc()) {
+				echo $row['fragen_id'];
+			}
+			//foreach($fragenListe as $fL){
+			//	echo $fL;
+			//}
+			//shuffle($fragenListe);
+			//$anzahlFragen = count($fragenListe);
+			//$currentFrage = getFrage($fragenListe[$currentIndex]);
+			//$currentAntwort = getAntwort($fragenListe[$currentIndex]);
+			//echo $currentFrage; 
+			//foreach($currentAntwort as $cA){
+			//	echo $cA;
+			//}
+			$conn->close();
                         
         ?>
     </div>
