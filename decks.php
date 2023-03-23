@@ -40,6 +40,7 @@ include('lib/getFragenAnzahl.php');
                 <tbody>
                     <?php
                         include('lib/dbConnector.php');
+                        $user_id = $_SESSION['userid'];
                         $sql = "SELECT kartendeck_id, kartendeck_name, kartendeck.modul_id, public, modulkuerzel, modulname FROM kartendeck JOIN modul WHERE (kartendeck.modul_id = modul.modul_id) AND (user_id = $user_id) ORDER BY modulkuerzel ASC";
                         $result = $conn->query($sql);
                         if ($result->num_rows > 0) {
@@ -93,17 +94,7 @@ include('lib/getFragenAnzahl.php');
             <label for="modul">Wähle ein Modul aus:</label>
                 <select id="modul" name="modul" class="form-select">
                 <?php
-                        $servername = "localhost";
-                        $username = "root";
-                        $password = "toor";
-                        $dbname = "ProjektQuiz";
-                        $user_id = $_SESSION['userid'];
-                        // Create connection
-                        $conn = new mysqli($servername, $username, $password, $dbname);
-                        // Check connection
-                        if ($conn->connect_error) {
-                            die("Connection failed: " . $conn->connect_error);
-                        }
+                        include('lib/dbConnector.php');
                         $sql = "SELECT modulname FROM modul" ;
                         $result = $conn->query($sql);
                         if ($result->num_rows > 0) {
