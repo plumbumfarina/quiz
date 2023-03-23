@@ -46,8 +46,7 @@ include('lib/getAntworten.php');
 
 			$fragenListe = array();
 			$currentIndex = 0;
-
-							
+				
 			$abfrageEins = "SELECT fragen_id FROM fragen WHERE kartendeck_id = $kartendeck_id;";
 			$resultEins = $conn->query($abfrageEins);
 
@@ -59,7 +58,7 @@ include('lib/getAntworten.php');
 			}
 
 			shuffle($fragenListe);
-			$anzahlFragen = count($frageListe);
+			$anzahlFragen = count($fragenListe);
 
 			$currentFrage = getFrage($fragenListe[$currentIndex]);
 			$currentAntwort = getAntwort($fragenListe[$currentIndex]);
