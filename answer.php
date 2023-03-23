@@ -7,8 +7,8 @@ session_start();
 } */
 
 //include('lib/getFragenListe.php');
-include('lib/getFrage.php');
-include('lib/getAntworten.php');
+//include('lib/getFrage.php');
+//include('lib/getAntworten.php');
 
 ?>
 
