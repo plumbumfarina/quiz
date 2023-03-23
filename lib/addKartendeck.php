@@ -26,7 +26,7 @@ if(isset($deckname)) {
 }
 
 if ($conn->query($sql) === TRUE) {
-  header("Refresh: 0,01; URL=../decks.php");
+  header("Refresh: 0.01; URL=../decks.php");
 } else {
   echo "Error: " . $sql . "<br>" . $conn->error;
 }
