@@ -131,6 +131,28 @@ if(!isset($_SESSION['userid'])) {
 			foreach($currentAntworten as $cA){
 				echo $cA;
 			}
+            echo "<br> <br>";
+// Anzeiger des Formulars
+            foreach ($fragenListe as $index => $fragen_id) {
+                // Generate the form for this question
+                echo "<form method='POST' action='antworten.php?kartendeck_id=$kartendeck_id'>";
+                echo "<h2>Frage " . ($index+1) . ":</h2>";
+                echo "<p>" . getFrage($conn, $fragen_id) . "</p>";
+                $antworten = getAntworten($conn, $fragen_id);
+                foreach ($antworten as $antwort) {
+                  echo "<input type='Button' class='button 'name='antwort' value='$antwort'>" . $antwort . "<br>";
+                }
+                // Add a hidden input field to keep track of the current question index
+                echo "<input type='hidden' name='current_index' value='$index'>";
+                // Add a submit button
+                echo "<input type='submit' value='Antworten'>";
+                echo "</form>";
+              
+                // Check if the form has been submitted and update the current question index
+                if (isset($_POST['current_index']) && $_POST['current_index'] == $index) {
+                  $currentIndex++;
+                }
+              }
 
 			$conn->close();
                         
