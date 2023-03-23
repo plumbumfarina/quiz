@@ -22,10 +22,10 @@ if(!isset($_SESSION['userid'])) {
     include_once('navbar.php')
 ?>
 <div>
-    <div class="container mt-3">
+    <div>
         <h1 class="form__title">Kartendecks</h1>
-            <table class="table table-striped">
-                <thead class="table-dark">
+            <table class="tableDecks">
+                <thead>
                     <tr>
                         <th>Deckname</th>
                         <th>Modulkürzel</th>
@@ -64,10 +64,10 @@ if(!isset($_SESSION['userid'])) {
                                     <td>" . getFragenAnzahl($row["kartendeck_id"]) . "</td>
                                     <td>" . $row["public"]. "</td>
                                     <td>
-                                        <button type='button' class='btn btn-outline-warning' value='" . $row["kartendeck_id"]. "' onclick='openBearbeiteKartendeck(" .  $row['kartendeck_id']. ")'> Bearbeiten </button>
+                                        <button type='button' class='buttonBearbeiten' value='" . $row["kartendeck_id"]. "' onclick='openBearbeiteKartendeck(" .  $row['kartendeck_id']. ")'> Bearbeiten </button>
                                     </td>
                                     <td>
-                                        <button type='button' class='btn btn-outline-danger' value='" . $row["kartendeck_id"]. "' onclick='openLoescheKartendeck(" .  $row['kartendeck_id']. ")'> Löschen </button>
+                                        <button type='button' class='buttonLoeschen' value='" . $row["kartendeck_id"]. "' onclick='openLoescheKartendeck(" .  $row['kartendeck_id']. ")'> Löschen </button>
                                     </td>
                                 </tr>";
                             }
@@ -136,7 +136,7 @@ if(!isset($_SESSION['userid'])) {
             </div>
             <div class="row">
                 <div class="col">
-                    <button type="submit" class="btn btn-outline-success"> Anlegen
+                    <button type="submit" class="buttonHinzufuegen"> Hinzufügen
                     </button>
                 </div>
             </div>
