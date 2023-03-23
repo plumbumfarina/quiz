@@ -48,7 +48,7 @@ if(!isset($_SESSION['userid'])) {
             
               return $fragentext;
             }
-            
+
             function getAntworten($fragen_id){
                 global $conn;
                 // Prüfung ob eine angegeben wurde 
@@ -107,7 +107,7 @@ if(!isset($_SESSION['userid'])) {
             
 			$currentFrage = getFrage($fragenListe[$currentIndex]);
 			echo $currentFrage; 
-            $currentAntwort = getAntwort($fragenListe[$currentIndex]);
+            $currentAntwort = getAntwort(4);
 			foreach($currentAntwort as $cA){
 				echo $cA;
 			}
