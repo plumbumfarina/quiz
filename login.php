@@ -16,8 +16,9 @@ if(isset($_GET['login'])) {
     //Passwort überprüfen
     if ($user !== false && ($passwort == $user['passwort'])) {
         $_SESSION['userid'] = $user['user_id'];
+        $_SESSION['nickname'] = $user['nickname'];
         header("Refresh: 5; URL=index.php");
-        echo 'Hallo ' . $_SESSION['userid'];
+        echo 'Hallo ' . $_SESSION['userid'] . $_SESSION['nickname'];
         #header('location: index.php');
         die('Login erfolgreich. Weiter zur Startseite.');
     } else {

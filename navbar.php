@@ -1,6 +1,6 @@
 <?php
-session_start();
-include('lib/getNickname.php');
+#session_start();
+#include('lib/getNickname.php');
 ?> 
 <nav class="navMenu">
     <ul>
