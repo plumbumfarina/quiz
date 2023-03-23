@@ -61,34 +61,73 @@ if(!isset($_SESSION['userid'])) {
 // Funktion um die aktuelle Frage herauszufinden
             function getFrage($conn, $fragen_id){
             // Prüfung ob eine Fragen-ID angegeben wurde 
-            //if(isset($fragen_id)) {
-                $sqlFrage = "SELECT fragentext FROM fragen WHERE fragen_id = $fragen_id";
-                $resultFrage = $conn->query($sqlFrage);
+                if(isset($fragen_id)) {
+                    $sqlFrage = "SELECT fragentext FROM fragen WHERE fragen_id = $fragen_id";
+                    $resultFrage = $conn->query($sqlFrage);
 
-                $rowFrage = $resultFrage->fetch_assoc();
-                $fragentext = $rowFrage['fragentext']; 
+                    if (!$resultFrage) {
+                        printf("Error: %s\n", mysqli_error($conn));
+                        exit();
+                    }
 
-            //} else {
-            //    echo "Keine Frage angegeben.";
-            //}
+                    if($resultFrage->num_rows == 1){
+                        $rowFrage = $resultFrage->fetch_assoc();
+                        $fragentext = $rowFrage['fragentext']; 
+                    } else {
+                        echo "Fehler: Die Abfrage gibt das falsche Ergebnis zurück!";
+                    }
+                } else {
+                    echo "Keine Frage angegeben.";
+                }
 
-            return $fragentext;
+                return $fragentext;
+            }
+
+// Funktion um die aktuellen Antworten herauszufinden
+            function getAntworten($conn, $fragen_id){
+            // Prüfung ob eine Fragen-ID angegeben wurde 
+                if(isset($fragen_id)) {
+                    $sqlAntwort = "SELECT antwortEins, antwortZwei, antwortDrei, antwortVier FROM fragen WHERE fragen_id = $fragen_id";
+                    $resultAntwort = $conn->query($sqlAntwort);
+
+                    if (!$resultAntwort) {
+                        printf("Error: %s\n", mysqli_error($conn));
+                        exit();
+                    }
+
+                    if($resultAntwort->num_rows == 1){
+                        $rowAntwort = $resultAntwort->fetch_assoc();
+                        $antwort1 = $rowAntwort['antwortEins']; 
+                        $antwort2 = $rowAntwort['antwortZwei']; 
+                        $antwort3 = $rowAntwort['antwortDrei']; 
+                        $antwort4 = $rowAntwort['antwortVier']; 
+                    } else {
+                        echo "Fehler: Die Abfrage gibt das falsche Ergebnis zurück!";
+                    }
+                } else {
+                    echo "Keine Frage angegeben.";
+                }
+
+                // Mischen der Antworten
+                $antwortenArray = array($antwort1, $antwort2, $antwort3, $antwort4);
+                shuffle($antwortenArray);
+
+                return $antwortenArray;
             }
             
-
 // Ausgabe aller Fragen-IDs
 			foreach($fragenListe as $fL){
-			    $currentFrage = getFrage($conn, $fL);
-                echo $currentFrage;
+                echo $fL;
 			}
 // Zufällige Reihenfolge der Fragen-IDs
 			shuffle($fragenListe);
 // Länge des Array = Anzahl der Fragen-IDs
 			$anzahlFragen = count($fragenListe);
-            echo $anzahlFragen;
-
 // Aktuelle Antworten
-            $currentAntwort = getAntwort(4);
+            $currentFrage = getFrage($conn, $fragenListe[$currentIndex]);
+            echo $currentFrage;
+// Aktuelle Antworten
+            $currentAntwort = getAntwort($conn, $fragenListe[$currentIndex]);
 			foreach($currentAntwort as $cA){
 				echo $cA;
 			}
