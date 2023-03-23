@@ -118,8 +118,17 @@ if(!isset($_SESSION['userid'])) {
 			shuffle($fragenListe);
 // Länge des Array = Anzahl der Fragen-IDs
 			$anzahlFragen = count($fragenListe);
-            echo "<br> <br>";
-// Anzeige des Formulars
+
+// Aktuelle Inhalte
+            foreach($fragenListe as $id){
+                $currentFrage = getFrage($conn, $id);
+                $currentAntworten = getAntworten($conn, $id);
+                foreach($fragenListe as $id){
+                    
+                }
+            }
+            
+/*// Anzeige des Formulars
                 foreach ($fragenListe as $index => $fragen_id) {
                 // Generate the form for this question
                 echo "<form method='POST' action='antworten.php?kartendeck_id=$kartendeck_id'>";
@@ -140,12 +149,27 @@ if(!isset($_SESSION['userid'])) {
                   $currentIndex++;
                 }
               }
-
+*/
 
 
 			$conn->close();
                         
         ?>
+
+        <form action="anworten.php" method="post">
+            <p><?php echo $currentFrage; ?></p>
+            <input type="hidden" name="question_id" value="<?php echo $fragen_id; ?>">
+        <?php
+            echo"  
+                <button type='submit' name='answer' value='1'>" . $antwortenArray[0] . "</button>
+                <button type='submit' name='answer' value='2'>" . $antwortenArray[1] . "</button>
+                <button type='submit' name='answer' value='3'>" . $antwortenArray[2] . "</button>
+                <button type='submit' name='answer' value='4'>" . $antwortenArray[3] . "</button>
+            ";
+        ?>  
+            <button type="submit" name="next_question">Nächste Frage</button>
+        </form>
+
     </div>
 </div>
 
@@ -154,6 +178,17 @@ if(!isset($_SESSION['userid'])) {
 	include_once('footer.php')
 ?>
 
+<script>
+    document.querySelectorAll('button[name="answer"]').forEach((button) => {
+  button.addEventListener('click', () => {
+    document.querySelector('input[name="answer"]').value = button.value;
+  });
+});
+
+document.querySelector('button[name="next_question"]').addEventListener('click', () => {
+  document.querySelector('form').submit();
+});
+</script>
 
 </body>
 </html>
