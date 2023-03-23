@@ -26,7 +26,7 @@ if(isset($deckname)) {
 }
 
 if ($conn->query($sql) === TRUE) {
-  header("Refresh: 0.1; URL=../decks.php");
+  header("Location: URL=../decks.php");
   echo "Neues Kartendeck erfolgreich angelegt. In 5 Sekunden geht es zum Login.";
 } else {
   echo "Error: " . $sql . "<br>" . $conn->error;
