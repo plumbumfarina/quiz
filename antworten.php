@@ -75,11 +75,11 @@ if(!isset($_SESSION['userid'])) {
 			$anzahlFragen = count($fragenListe);
             echo $fragenListe[$currentIndex];
 			$currentFrage = getFrage($fragenListe[$currentIndex]);
-			$currentAntwort = getAntwort($fragenListe[$currentIndex]);
+			//$currentAntwort = getAntwort($fragenListe[$currentIndex]);
 			echo $currentFrage; 
-			foreach($currentAntwort as $cA){
-				echo $cA;
-			}
+			//foreach($currentAntwort as $cA){
+			//	echo $cA;
+			//}
 			$conn->close();
                         
         ?>
