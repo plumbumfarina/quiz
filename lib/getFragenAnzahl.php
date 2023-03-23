@@ -14,4 +14,6 @@ function getFragenAnzahl($kartendeck_id){
        echo "ooops ... something went wrong ...";
     }
 }
+
+$conn->close();
 ?>
