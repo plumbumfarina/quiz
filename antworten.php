@@ -45,7 +45,7 @@ if(!isset($_SESSION['userid'])) {
                 echo "Keine Frage angegeben.";
               }
             
-              return $fragentext;
+              echo $fragentext;
             
             }
             
@@ -74,9 +74,9 @@ if(!isset($_SESSION['userid'])) {
 			//shuffle($fragenListe);
 			$anzahlFragen = count($fragenListe);
             echo $fragenListe[$currentIndex];
-			$currentFrage = getFrage($fragenListe[$currentIndex]);
+			getFrage($fragenListe[$currentIndex]);
 			//$currentAntwort = getAntwort($fragenListe[$currentIndex]);
-			echo $currentFrage; 
+			//echo $currentFrage; 
 			//foreach($currentAntwort as $cA){
 			//	echo $cA;
 			//}
