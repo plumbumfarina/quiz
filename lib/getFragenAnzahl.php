@@ -1,5 +1,5 @@
 <?php
-include('lib/dbConnector.php');
+include('lib/dbConnectorLogin.php');
 
 function getFragenAnzahl($kartendeck_id){
 
