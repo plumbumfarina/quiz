@@ -1,9 +1,9 @@
 <?php
-/*session_start();
+session_start();
 if(!isset($_SESSION['userid'])) {
     header('location: login.php');
     die('Bitte zuerst einloggen');
-}*/
+}
 ?>
 
 <!Doctype html>
