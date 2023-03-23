@@ -79,7 +79,7 @@ if(!isset($_SESSION['userid'])) {
 // Ausgabe aller Fragen-IDs
 			foreach($fragenListe as $fL){
 			    $currentFrage = getFrage($conn, $fL);
-                echo $currentFrage
+                echo $currentFrage;
 			}
 // Zufällige Reihenfolge der Fragen-IDs
 			shuffle($fragenListe);
