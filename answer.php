@@ -41,6 +41,7 @@ session_start();
             // output data of each row
                 while($row = $result->fetch_assoc()) {
 					echo $row['fragen_id'];
+				}
 			}
 
 			//$fragenListe = array();
