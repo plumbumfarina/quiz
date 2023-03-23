@@ -22,9 +22,9 @@ if(!isset($_SESSION['userid'])) {
 	
   </head>
   <body>
-	<!-- <?php
+	<?php
 		include('navbar.php');
-	?>	-->
+	?>
   
   	<div id="start_screen" class="jumbotren quiz_start" >
 		<h1>Herzlich Willkommen zum Quiz</h1>
@@ -43,9 +43,9 @@ if(!isset($_SESSION['userid'])) {
 	<script src="js/quiz.js" type="text/javascript"></script>
 	<script src="js/script.js"></script>
 
-	<!-- <?php
+	<?php
 		include('footer.php');
-	?> -->
+	?>
 
   </body>
 

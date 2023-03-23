@@ -1,13 +1,15 @@
 <?php
 session_start();
-$dbconnector = new PDO('mysql:host=localhost;dbname=quiz', 'root', 'toor');
+
+include('lib/dbConnector.php');
+# $dbconnector = new PDO('mysql:host=localhost;dbname=quiz', 'root', 'toor');
 
 
 if(isset($_GET['login'])) {
     $email = $_POST['email'];
     $passwort = $_POST['passwort'];
 
-    $statement = $dbconnector->prepare("SELECT * FROM user WHERE email = :email");
+    $statement = $conn->prepare("SELECT * FROM user WHERE email = :email");
     $result = $statement->execute(array('email' => $email));
     $user = $statement->fetch();
 
@@ -63,8 +65,8 @@ if(isset($_GET['login'])) {
     </div>
 
 	<?php
-			include('footer.php')
-		?>
+		include('footer.php')
+	?>
 		    
 </body>
 
