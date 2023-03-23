@@ -19,9 +19,9 @@ if ($conn->connect_error) {
 
 // Prüfung ob eine Kartendeck_ID angegeben wurde
 if(isset($fragendeck_id)) {
-    // Löschen aller Fragen des Kartendecks bezüglich Abhängigkeit der Tabelle
+    // Statement zum löschen aller Fragen des Kartendecks bezüglich Abhängigkeit der Tabelle
     $sqlFragen = "DELETE FROM fragen WHERE fragendeck_id = $fragendeck_id";
-    // Prüfung ob Löschung der Fragen erfolgreich war
+    // Ausführung Löschung und Prüfung, ob Löschung der Fragen erfolgreich war
     if ($conn->query($sqlFragen) === TRUE) {
         // Löschen des entsprechenden Kartendecks
         $sqlFragenDeck = "DELETE FROM fragendeck WHERE fragendeck_id = $fragendeck_id";
@@ -30,7 +30,7 @@ if(isset($fragendeck_id)) {
     echo "Kein Fragendeckname angegeben.";
 }
 
-// Prüfung ob Löschung des Kartendecks erfolgreich war
+// Ausführung Löschung und Prüfung, ob Löschung des Kartendecks erfolgreich war
 if ($conn->query($sqlFragenDeck) === TRUE) {
   // Absprung auf Kartendeckübersicht
   header("Refresh: 0.1; URL=../decks.php");
