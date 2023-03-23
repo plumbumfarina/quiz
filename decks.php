@@ -63,7 +63,7 @@ if(!isset($_SESSION['userid'])) {
                             if(isset($_SESSION['userid'])) {
                         
                                     $statement = $conn->prepare("SELECT COUNT(*) as fragenAnzahl FROM fragen WHERE kartendeck_id = :id");
-                                    $result = $statement->execute(array('kartendeck_id' => $id));
+                                    $resultAnzahl = $statement->execute(array('kartendeck_id' => $id));
                         
                                     $fragen = $statement->fetch();
                                     $fragenAnzahl = $fragen['fragenAnzahl'];
