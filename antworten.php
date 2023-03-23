@@ -63,7 +63,7 @@ if(!isset($_SESSION['userid'])) {
             // Prüfung ob eine Fragen-ID angegeben wurde 
             //if(isset($fragen_id)) {
                 $sqlFrage = "SELECT fragentext FROM fragen WHERE fragen_id = $fragen_id";
-                $resultFrage = $conn->query($sqlFragen);
+                $resultFrage = $conn->query($sqlFrage);
 
                 $rowFrage = $resultFrage->fetch_assoc();
                 $fragentext = $rowFrage['fragentext']; 
