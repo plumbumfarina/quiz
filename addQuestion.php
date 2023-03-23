@@ -38,26 +38,26 @@ if(!isset($_SESSION['userid'])) {
             <input type='text' class='form-control' name='kartendeck_id' value="<?php echo $kartendeck_id;?>" readonly>
 
             <label for='frage' class='form-label'> Frage:</label>
-            <input type='text' class='form-control' name='fragentext'>
+            <input type='text' class='form-control' name='fragentext'></input>
                                 
             <label for='frage' class='form-label'> Antwort 1:</label>
-            <input type='text' class='form-control' name='Antwort1'>                 
-            <input type='radio' name='richtigkeit' value='1' >
+            <input type='text' class='form-control' name='Antwort1'></input>                 
+            <input type='radio' name='richtigkeit' value='1' required></input>
             <label>Richtige Antwort</label><br><br>
                                 
             <label for='frage' class='form-label'> Antwort 2:</label>
-            <input type='text' class='form-control' name='Antwort2'>                 
-            <input type='radio' name='richtigkeit' value='2'>
+            <input type='text' class='form-control' name='Antwort2'></input>                 
+            <input type='radio' name='richtigkeit' value='2'></input>
             <label>Richtige Antwort</label><br><br>
                                 
             <label for='frage' class='form-label'> Antwort 3:</label>
-            <input type='text' class='form-control' name='Antwort3'>
-            <input type='radio' name='richtigkeit' value='3'>
+            <input type='text' class='form-control' name='Antwort3'></input>
+            <input type='radio' name='richtigkeit' value='3'></input>
             <label>Richtige Antwort</label><br><br>
                                 
             <label for='frage' class='form-label'> Antwort 4:</label>
-            <input type='text' class='form-control' name='Antwort4'>
-            <input type='radio' name='richtigkeit' value='4' required>
+            <input type='text' class='form-control' name='Antwort4'></input>
+            <input type='radio' name='richtigkeit' value='4'></input>
             <label>Richtige Antwort</label><br><br>
 
             <div>
