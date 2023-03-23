@@ -35,7 +35,7 @@ echo 'Hallo ' . $_SESSION['userid'];
 		<div class="buttonContainer">
 			<p style="text-align:center"><button id="start_btn" onclick="window.location.href='startGame.php';" href="startGame.php" class="btn btn-primary btn-lg start" role="button">Neues Spiel starten</button></p>	  
 			<p style="text-align:center"><button id="kartendecks_btn" onclick="window.location.href='decks.php';" href="decks.php" class="btn btn-primary btn-lg kartendeck" role="button">Kartendecks</button></p>	
-			<p style="text-align:center"><button id="einstellungen_btn" onclick="window.location.href='settings.php';" class="btn btn-primary btn-lg einstellungen" role="button">Benutzereinstellungen</button></p>	
+			<p style="text-align:center"><button id="einstellungen_btn" onclick="window.location.href='settings.php';" class="btn btn-primary btn-lg einstellungen" role="button">Einstellungen</button></p>	
 		</div>
 	</div>
 
