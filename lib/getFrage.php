@@ -1,8 +1,8 @@
 <?php
 
-include_once('lib/dbConnectorMYSQLI.php');
 
 function getFrage($fragen_id){
+    include_once('lib/dbConnectorMYSQLI.php');
 
 // Prüfung ob eine angegeben wurde 
   if(isset($fragen_id)) {
