@@ -69,7 +69,7 @@ if(!isset($_SESSION['userid'])) {
                 }
             
 
-            $kartendeck_id = 6; //$_GET['kartendeck_id'];
+            $kartendeck_id = $_GET['kartendeck_id'];
 
             $user_id = $_SESSION['userid'];
             $sql = "SELECT fragen_id FROM fragen WHERE kartendeck_id = $kartendeck_id";
