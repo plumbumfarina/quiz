@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include('lib/dbConnector.php');
+include('lib/dbConnectorLogin.php');
 
 if(isset($_GET['login'])) {
     $email = $_POST['email'];
@@ -15,9 +15,7 @@ if(isset($_GET['login'])) {
     if ($user !== false && ($passwort == $user['passwort'])) {
         $_SESSION['userid'] = $user['user_id'];
         $_SESSION['nickname'] = $user['nickname'];
-        header("Refresh: 5; URL=index.php");
-        echo 'Hallo ' . $_SESSION['userid'] . $_SESSION['nickname'];
-        #header('location: index.php');
+        header('location: index.php');
         die('Login erfolgreich. Weiter zur Startseite.');
     } else {
         $errorMessage = "E-Mail oder Passwort inkorrekt<br>";
