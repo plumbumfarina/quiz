@@ -1,19 +1,8 @@
 <?php
-session_start();
-    #include('lib/dbConnector.php');
+    session_start();
+    include('lib/dbConnector.php');
 
-    $servername = "localhost";
-    $username = "root";
-    $password = "toor";
-    $dbname = "quiz";
     $user_id = $_SESSION['userid'];
-
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
 
     if(isset($_SESSION['userid'])) {
             #$user_id = $_SESSION['userid'];
