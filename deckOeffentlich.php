@@ -29,7 +29,7 @@ include('lib/getFragenAnzahl.php');
     <div class="container mt-3">
         <h1 class="formTitle">Kartendecks</h1>
         <div>
-            <button type='button' class='btn btn-outline-info' onclick="window.location.href = 'deckAuswaehlen.php';"> Nur eigene Kartendecks spielen </button>
+            <button type='button' class='button' onclick="window.location.href = 'deckAuswaehlen.php';"> Nur eigene Kartendecks spielen </button>
         </div>
         <br>
             <table class="table table-striped">
