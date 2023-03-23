@@ -29,7 +29,7 @@ if(!isset($_SESSION['userid'])) {
             include_once('lib/getFrage.php');
             include_once('lib/getAntworten');
 
-            $kartendeck_id = 5; //$_GET['kartendeck_id'];
+            $kartendeck_id = 6; //$_GET['kartendeck_id'];
 
             $user_id = $_SESSION['userid'];
             $sql = "SELECT fragen_id FROM fragen WHERE kartendeck_id = $kartendeck_id";
