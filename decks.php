@@ -45,9 +45,6 @@ include('lib/getFragenAnzahl.php');
                         $sql = "SELECT kartendeck_id, kartendeck_name, kartendeck.modul_id, public, modulkuerzel, modulname FROM kartendeck JOIN modul WHERE (kartendeck.modul_id = modul.modul_id) AND (user_id = $user_id) ORDER BY modulkuerzel ASC";
                         $result = $conn->query($sql);
 
-                        $sql1 = "SELECT modulname FROM modul" ;
-                        $result1 = $conn->query($sql1);
-
                         if ($result->num_rows > 0) {
                             // output data of each row
                             while($row = $result->fetch_assoc()) {
@@ -76,7 +73,7 @@ include('lib/getFragenAnzahl.php');
                                     <td>-</td>
                                 </tr>";
                         }
-                        $conn->close();
+
                     ?>
                 </tbody>
             </table>
@@ -99,6 +96,10 @@ include('lib/getFragenAnzahl.php');
             <label for="modul">Wähle ein Modul aus:</label>
                 <select id="modul" name="modul" class="form-select">
                 <?php
+                    
+                    $sql1 = "SELECT modulname FROM modul" ;
+                    $result1 = $conn->query($sql1);
+                    
                         if ($result1->num_rows > 0) {
                             // output data of each row
                             while($row1 = $result1->fetch_assoc()) {
