@@ -30,7 +30,7 @@ include('lib/getAntworten.php');
 		<h1> Frage </h1>
 		<form>
 		<?php 
-			include('lib/dbConnectormysqli');
+			include('lib/dbConnectorMYSQLI');
 
 			$kartendeck_id = $_GET['kartendeck_id'];
 
