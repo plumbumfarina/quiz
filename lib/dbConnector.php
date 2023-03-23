@@ -2,7 +2,7 @@
     $servername = "localhost";
     $username = "root";
     $password = "toor";
-    $dbname = "ProjektQuiz";
+    $dbname = "quiz";
     $user_id = $_SESSION['userid'];
 
     // Create connection
