@@ -23,6 +23,10 @@ include('lib/getFragenAnzahl.php');
 </head>
 <body>
 
+<?php
+	include('navbar.php');
+?>
+
 <div>
     <div class="container mt-3">
         <h1 class="formTitle">Kartendecks</h1>
@@ -134,6 +138,10 @@ function openLoescheKartendeck(id) {
   window.location.href = "lib/deleteFragendeck.php?fragendeck_id=" + id;
 }
 </script>
+
+<?php
+	include('footer.php');
+?>
 
 </body>
 </html>
