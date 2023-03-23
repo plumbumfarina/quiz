@@ -26,6 +26,8 @@ if(!isset($_SESSION['userid'])) {
         <h1 class="form__title">Frage</h1>
         <?php
             include_once('lib/dbConnectorMYSQLI.php');
+            include_once('lib/getFrage.php');
+            include_once('lib/getAntworten');
 
             $kartendeck_id = 5; //$_GET['kartendeck_id'];
 
@@ -49,13 +51,13 @@ if(!isset($_SESSION['userid'])) {
 			    echo $fL;
 			}
 			//shuffle($fragenListe);
-			//$anzahlFragen = count($fragenListe);
-			//$currentFrage = getFrage($fragenListe[$currentIndex]);
-			//$currentAntwort = getAntwort($fragenListe[$currentIndex]);
-			//echo $currentFrage; 
-			//foreach($currentAntwort as $cA){
-			//	echo $cA;
-			//}
+			$anzahlFragen = count($fragenListe);
+			$currentFrage = getFrage($fragenListe[$currentIndex]);
+			$currentAntwort = getAntwort($fragenListe[$currentIndex]);
+			echo $currentFrage; 
+			foreach($currentAntwort as $cA){
+				echo $cA;
+			}
 			$conn->close();
                         
         ?>
