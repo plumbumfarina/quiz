@@ -49,6 +49,7 @@ if(!isset($_SESSION['userid'])) {
                     $result = $conn->query($sql);
 
                     if ($result->num_rows > 0) {
+                        include('lib/dbConnectorMYSQLI.php');
                         // output data of each row
                         while($row = $result->fetch_assoc()) {
                             echo "<tr>
