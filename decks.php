@@ -22,9 +22,6 @@ include('lib/getFragenAnzahl.php');
     <title>Decks</title>
 </head>
 <body>
-<?php
-    include('navbar.php')
-?>
 
 <div>
     <div class="container mt-3">
@@ -138,8 +135,5 @@ function openLoescheKartendeck(id) {
 }
 </script>
 
-<?php
-	include('footer.php')
-?>
 </body>
 </html>
