@@ -23,60 +23,10 @@ session_start();
 </head>
 <body>
 	<?php
-		include('navbar.php');
+		include('navbar.php')
 	?>
 
-	<div>
-		<h1> Frage </h1>
-		<?php 
-			
-			$servername = "localhost";
-    $username = "root";
-    $password = "toor";
-    $dbname = "ProjektQuiz";
-    $user_id = $_SESSION['userid'];
-
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-
-			$kartendeck_id = 5 //$_GET['kartendeck_id'];
-
-			$sql = "SELECT fragen_id FROM fragen WHERE kartendeck_id = $kartendeck_id";
-            $result = $conn->query($sql);
-
-            if ($result->num_rows > 0) {
-            // output data of each row
-                while($row = $result->fetch_assoc()) {
-					echo $row['fragen_id'];
-				}
-			}
-
-			//$fragenListe = array();
-			//$currentIndex = 0;
-				
-			//foreach($fragenListe as $fL){
-			//	echo $fL;
-			//}
-
-			//shuffle($fragenListe);
-			//$anzahlFragen = count($fragenListe);
-
-			//$currentFrage = getFrage($fragenListe[$currentIndex]);
-			//$currentAntwort = getAntwort($fragenListe[$currentIndex]);
-
-			//echo $currentFrage; 
-
-			//foreach($currentAntwort as $cA){
-			//	echo $cA;
-			//}
-
-			$conn->close();
-		?>
-
+	
 	</div>
     <!-- hier ist die Codierung für den Fragebalken -->	
 				<p id="question_text">Dies ist die Frage.</p>
