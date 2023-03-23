@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+global $conn;
 include_once('lib/dbConnectorMYSQLI.php');
 
 $fragen_id = $_GET['fragen_id'];
