@@ -59,8 +59,6 @@ include('lib/getFragenAnzahl.php');
                         // SQL Abfrage um die eigenen Kartendecks zu ermitteln
                         $sql = "SELECT kartendeck_id, kartendeck_name, kartendeck.modul_id, public, modulkuerzel, modulname FROM kartendeck JOIN modul WHERE (kartendeck.modul_id = modul.modul_id) AND (user_id = $user_id)";
                         $result = $conn->query($sql);
-                        
-echo getFragenAnzahl(25);
 
                         if ($result->num_rows > 0) {
                             // Ausgabe der SQL Abfrage
