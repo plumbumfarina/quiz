@@ -19,7 +19,7 @@ include('lib/getFragenAnzahl.php');
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <title>Decks</title>
+    <title>Kartendeckübersicht</title>
 </head>
 <body>
 
@@ -59,23 +59,23 @@ include('lib/getFragenAnzahl.php');
                             die("Connection failed: " . $conn->connect_error);
                         }
 
-                        $sql = "SELECT fragendeck_id, fragendeck_name, fragendeck.modul_id, public, modulkuerzel, modulname FROM fragendeck JOIN modul WHERE (fragendeck.modul_id = modul.modul_id) AND (user_id = $user_id) ORDER BY modulkuerzel ASC";
+                        $sql = "SELECT kartendeck_id, kartendeck_name, kartendeck.modul_id, public, modulkuerzel, modulname FROM kartendeck JOIN modul WHERE (kartendeck.modul_id = modul.modul_id) AND (user_id = $user_id) ORDER BY modulkuerzel ASC";
                         $result = $conn->query($sql);
 
                         if ($result->num_rows > 0) {
                             // output data of each row
                             while($row = $result->fetch_assoc()) {
                                 echo "<tr>
-                                    <td>" . $row["fragendeck_name"]. "</td>
+                                    <td>" . $row["kartendeck_name"]. "</td>
                                     <td>" . $row["modulkuerzel"]. "</td>
                                     <td>" . $row["modulname"]. "</td>
-                                    <td>" . getFragenAnzahl($row["fragendeck_id"]). "</td>
+                                    <td>" . getFragenAnzahl($row["kartendeck_id"]). "</td>
                                     <td>" . $row["public"]. "</td>
                                     <td>
-                                        <button type='button' class='buttonBearbeiten' value='" . $row["fragendeck_id"]. "' onclick='openBearbeiteKartendeck(" .  $row['fragendeck_id']. ")'> Bearbeiten </button>
+                                        <button type='button' class='buttonBearbeiten' value='" . $row["kartendeck_id"]. "' onclick='openBearbeiteKartendeck(" .  $row['kartendeck_id']. ")'> Bearbeiten </button>
                                     </td>
                                     <td>
-                                        <button type='button' class='buttonLoeschen' value='" . $row["fragendeck_id"]. "' onclick='openLoescheKartendeck(" .  $row['fragendeck_id']. ")'> Löschen </button>
+                                        <button type='button' class='buttonLoeschen' value='" . $row["kartendeck_id"]. "' onclick='openLoescheKartendeck(" .  $row['kartendeck_id']. ")'> Löschen </button>
                                     </td>
                                 </tr>";
                             }
@@ -100,7 +100,7 @@ include('lib/getFragenAnzahl.php');
 <div>
     <div class="container mt-3">
         <h1 class="formTitle">Kartendeck hinzufügen</h1>
-        <form action="lib/addFragendeck.php" method="post">
+        <form action="lib/addKartendeck.php" method="post">
             <div class="mb-3">
                 <label for="deckName">Kartendeckname:</label>
                 <input type="text" id="deckname" name="deckname" required class="form-control">
@@ -158,10 +158,10 @@ include('lib/getFragenAnzahl.php');
 
 <script>
 function openBearbeiteKartendeck(id) {
-  window.location.href = "fragenUebersicht.php?fragendeck_id=" + id;
+  window.location.href = "fragenUebersicht.php?kartendeck_id=" + id;
 }
 function openLoescheKartendeck(id) {
-  window.location.href = "lib/deleteFragendeck.php?fragendeck_id=" + id;
+  window.location.href = "lib/deleteFragendeck.php?kartendeck_id=" + id;
 }
 </script>
 
