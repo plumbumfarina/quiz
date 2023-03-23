@@ -6,7 +6,7 @@ if(!isset($_SESSION['userid'])) {
     die('Bitte zuerst einloggen');
 }
 
-//include('lib/getFragenAnzahl.php');
+include('lib/getFragenAnzahl.php');
 ?>
 
 <!DOCTYPE html>
@@ -45,7 +45,6 @@ if(!isset($_SESSION['userid'])) {
                 <tbody>
                     <?php
                         #include('lib/dbConnector.php');
-                        include('lib/getFragenAnzahl');
                         
                         $servername = "localhost";
                         $username = "root";
