@@ -51,6 +51,15 @@ include_once('lib/getFragenAnzahl.php');
                         $sql = "SELECT kartendeck_id, kartendeck_name, kartendeck.modul_id, public, modulkuerzel, modulname FROM kartendeck JOIN modul WHERE (kartendeck.modul_id = modul.modul_id) AND (user_id = $user_id)";
                         $result = $conn->query($sql);
 
+                        function getFragenAnzahl($kartendeck_id){
+                            global $conn;
+                            $result1 = $conn->query("SELECT * FROM fragen WHERE kartendeck_id = $kartendeck_id");
+                            // Anzahl der Zeilen in der Ergebnismenge abrufen
+                            $anzahlFragen = $result1->num_rows;
+
+                            return $anzahlFragen;
+                        }
+
                         if ($result->num_rows > 0) {
                             // Ausgabe der SQL Abfrage
                             while($row = $result->fetch_assoc()) {

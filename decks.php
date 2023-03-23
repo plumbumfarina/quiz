@@ -5,7 +5,6 @@ if(!isset($_SESSION['userid'])) {
     header('location: login.php');
     die('Bitte zuerst einloggen');
 } 
-//include('lib/getFragenAnzahl.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
