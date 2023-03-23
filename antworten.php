@@ -61,19 +61,15 @@ if(!isset($_SESSION['userid'])) {
 // Funktion um die aktuelle Frage herauszufinden
             function getFrage($conn, $fragen_id){
             // Prüfung ob eine Fragen-ID angegeben wurde 
-                if(isset($fragen_id)) {
+            if(isset($fragen_id)) {
                 $sqlFrage = "SELECT fragentext FROM fragen WHERE fragen_id = $fragen_id";
                 $stmtFrage = $conn->prepare($sql);
                 $stmtFrage->bind_param("i", $fragen_id);
                 $stmtFrage->execute();
                 $resultFrage = $stmtFrage->get_result();
-                if ($resultFrage->num_rows > 0) {
-                    while($rowFrage = $resultFrage->fetch_assoc()) {
+                while($rowFrage = $resultFrage->fetch_assoc()) {
                         $fragentext = $rowFrage['fragentext'];
                     } 
-                } else {
-                    echo "Kein Fragentext gefunden.";
-                }
             } else {
                 echo "Keine Frage angegeben.";
             }
