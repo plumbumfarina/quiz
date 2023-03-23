@@ -5,7 +5,7 @@ if(!isset($_SESSION['userid'])) {
     header('location: login.php');
     die('Bitte zuerst einloggen');
 } 
-include('lib/getFragenAnzahl.php');
+//include('lib/getFragenAnzahl.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -45,6 +45,11 @@ include('lib/getFragenAnzahl.php');
                         $sql = "SELECT kartendeck_id, kartendeck_name, kartendeck.modul_id, public, modulkuerzel, modulname FROM kartendeck JOIN modul WHERE (kartendeck.modul_id = modul.modul_id) AND (user_id = $user_id) ORDER BY modulkuerzel ASC";
                         $result = $conn->query($sql);
 
+                        $result1 = $conn->query("SELECT * FROM fragen WHERE kartendeck_id = $row["kartendeck_id"]");
+
+                        // Anzahl der Zeilen in der Ergebnismenge abrufen
+                        $anzahlFragen = $result1->num_rows;
+
                         if ($result->num_rows > 0) {
                             // output data of each row
                             while($row = $result->fetch_assoc()) {
@@ -52,7 +57,7 @@ include('lib/getFragenAnzahl.php');
                                     <td>" . $row["kartendeck_name"]. "</td>
                                     <td>" . $row["modulkuerzel"]. "</td>
                                     <td>" . $row["modulname"]. "</td>
-                                    <td>" . getFragenAnzahl($row["kartendeck_id"]). "</td>
+                                    <td>" . $anzahlFragen . "</td>
                                     <td>" . $row["public"]. "</td>
                                     <td>
                                         <button type='button' class='btn btn-outline-warning' value='" . $row["kartendeck_id"]. "' onclick='openBearbeiteKartendeck(" .  $row['kartendeck_id']. ")'> Bearbeiten </button>
