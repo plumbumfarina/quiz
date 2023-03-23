@@ -64,6 +64,7 @@ echo "ich";
 echo "hab";
                         if ($result->num_rows > 0) {
                             // output data of each row
+                            echo "den";
                             while($row = $result->fetch_assoc()) {
                                 echo "<tr>
                                     <td>" . $row["kartendeck_name"]. "</td>
@@ -78,6 +79,7 @@ echo "hab";
                                         <button type='button' class='buttonLoeschen' value='" . $row["kartendeck_id"]. "' onclick='openLoescheKartendeck(" .  $row['kartendeck_id']. ")'> Löschen </button>
                                     </td>
                                 </tr>";
+                                echo "fehler";
                             }
                         } else {
                             echo "<tr>
@@ -89,9 +91,11 @@ echo "hab";
                                     <td>-</td>
                                     <td>-</td>
                                 </tr>";
+                                echo "gefunden";
                         }
 
                         $conn->close();
+                        echo"!";
                     ?>
                 </tbody>
             </table>
