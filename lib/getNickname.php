@@ -1,5 +1,4 @@
 <?php
-    session_start();
     include('lib/dbConnector.php');
 
     $user_id = $_SESSION['userid'];
