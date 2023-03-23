@@ -23,7 +23,7 @@ if(isset($kartendeck_id)) {
     // Ausführung Löschung und Prüfung, ob Löschung der Fragen erfolgreich war
     if ($conn->query($sqlFragen) === TRUE) {
         // Statement tum Löschen des entsprechenden Kartendecks
-        $sqlFragenDeck = "DELETE FROM kartendeck WHERE kartendeck_id = $kartendeck_id";
+        $sqlKartenDeck = "DELETE FROM kartendeck WHERE kartendeck_id = $kartendeck_id";
     }
 } else {
     echo "Kein Kartendeckname angegeben.";
