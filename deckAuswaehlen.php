@@ -69,7 +69,7 @@ include_once('lib/getFragenAnzahl.php');
                                     <td>" . $row["modulname"]. "</td>
                                     <td>" . getFragenAnzahl($row["kartendeck_id"]). "</td>
                                     <td>
-                                        <button type='button' class='buttonSpielen' value='" . $row["kartendeck_id"]. "'> Spielen </button>
+                                        <button type='button' class='buttonSpielen' value='" . $row["kartendeck_id"]. "' onclick='openPageGame(" .  $row['kartendeck_id']. ")'> Spielen </button>
                                     </td>
                                 </tr>";
                             }
@@ -90,6 +90,11 @@ include_once('lib/getFragenAnzahl.php');
             </table>
     </div>
 </div>
+<script>
+    function openPageGame(id) {
+    window.location.href = "antworten.php?kartendeck_id=" + id;
+    }
+</script>
 
 </body>
 </html>
