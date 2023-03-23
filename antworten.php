@@ -75,7 +75,7 @@ if(!isset($_SESSION['userid'])) {
 			//shuffle($fragenListe);
 			$anzahlFragen = count($fragenListe);
             echo $fragenListe[$currentIndex];
-			$currentFrage = getFrage(4);
+			$currentFrage = getFrage($fragenListe[$currentIndex]);
 			//$currentAntwort = getAntwort($fragenListe[$currentIndex]);
 			echo $currentFrage; 
 			//foreach($currentAntwort as $cA){
