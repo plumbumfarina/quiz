@@ -44,7 +44,7 @@ include('lib/getFragenAnzahl.php');
                 </thead>
                 <tbody>
                     <?php
-                        include('lib/dbConnector.php');
+                        include('lib/dbConnectorMYSQLI.php');
                         
                         // SQL Abfrage um die öffentlichen Kartendecks zu ermitteln
                         $sql = "SELECT kartendeck_id, kartendeck_name, kartendeck.modul_id, public, modulkuerzel, modulname FROM kartendeck JOIN modul WHERE (kartendeck.modul_id = modul.modul_id) AND (public = TRUE)";

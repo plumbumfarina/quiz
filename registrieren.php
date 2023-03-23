@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('lib/dbConnectorLogin.php')
+include('lib/dbConnectorPDO.php')
 ?>
 
 

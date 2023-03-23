@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include('lib/dbConnector.php');
+include('lib/dbConnectorMYSQLI.php');
 
 $kartendeck_id = $_GET['kartendeck_id'];
 

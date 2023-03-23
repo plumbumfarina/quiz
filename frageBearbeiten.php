@@ -32,7 +32,7 @@ if(!isset($_SESSION['userid'])) {
                 <?php
                     $fragen_id = $_GET['fragen_id'];
 
-                    include('lib/dbConnector.php');
+                    include('lib/dbConnectorMYSQLI.php');
                     
                     // SQL Abfrage der entsprechenden Frage anhand der Fragen_ID
                     $sql = "SELECT fragen_id, fragentext, kartendeck_id, antwortEins, antwortZwei, antwortDrei, antwortVier, richtigkeit FROM fragen WHERE fragen_id = $fragen_id" ;

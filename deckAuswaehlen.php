@@ -45,7 +45,7 @@ include('lib/getFragenAnzahl.php');
                 <tbody>
                     <?php
                         
-                        include('lib/dbConnector.php');
+                        include('lib/dbConnectorMYSQLI.php');
 
                         // SQL Abfrage um die eigenen Kartendecks zu ermitteln
                         $sql = "SELECT kartendeck_id, kartendeck_name, kartendeck.modul_id, public, modulkuerzel, modulname FROM kartendeck JOIN modul WHERE (kartendeck.modul_id = modul.modul_id) AND (user_id = $user_id)";

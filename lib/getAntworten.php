@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include('lib/dbConnector.php');
+include('lib/dbConnectorMYSQLI.php');
 
 function getAntworten($fragen_id){
 

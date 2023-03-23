@@ -41,7 +41,7 @@ if(!isset($_SESSION['userid'])) {
             </thead>
             <tbody>
                 <?php
-                    include('lib/dbConnector.php');
+                    include('lib/dbConnectorMYSQLI.php');
 
                     $kartendeck_id = $_GET['kartendeck_id'];
 

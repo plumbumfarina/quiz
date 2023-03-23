@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include('lib/dbConnectorLogin.php');
+include('lib/dbConnectorPDO.php');
 
 if(isset($_GET['login'])) {
     $email = $_POST['email'];

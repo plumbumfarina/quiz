@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include('lib/dbConnector.php');
+include('lib/dbConnectorMYSQLI.php');
 
 $fragendeck_id = $_POST['kartendeck_id'];
 $fragentext = $_POST['fragentext'];
