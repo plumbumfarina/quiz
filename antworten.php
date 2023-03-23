@@ -78,17 +78,14 @@ if(!isset($_SESSION['userid'])) {
 
 // Ausgabe aller Fragen-IDs
 			foreach($fragenListe as $fL){
-			    echo $fL;
+			    $currentFrage = getFrage($conn, $fL);
+                echo $currentFrage
 			}
 // Zufällige Reihenfolge der Fragen-IDs
 			shuffle($fragenListe);
 // Länge des Array = Anzahl der Fragen-IDs
 			$anzahlFragen = count($fragenListe);
             echo $anzahlFragen;
-
-// Aktuelle Frage 
-			$currentFrage = getFrage($conn, 10);
-			echo $currentFrage; 
 
 // Aktuelle Antworten
             $currentAntwort = getAntwort(4);
