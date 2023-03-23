@@ -63,13 +63,11 @@ if(!isset($_SESSION['userid'])) {
             // Prüfung ob eine Fragen-ID angegeben wurde 
             if(isset($fragen_id)) {
                 $sqlFrage = "SELECT fragentext FROM fragen WHERE fragen_id = $fragen_id";
-                $stmtFrage = $conn->prepare($sql);
-                $stmtFrage->bind_param("i", $fragen_id);
-                $stmtFrage->execute();
-                $resultFrage = $stmtFrage->get_result();
-                while($rowFrage = $resultFrage->fetch_assoc()) {
-                        $fragentext = $rowFrage['fragentext'];
-                    } 
+                $resultFrage = $conn->query($sqlFragen);
+
+                $rowFrage = $resultFrage->fetch_assoc();
+                $fragentext = $rowFrage['fragentext']; 
+                
             } else {
                 echo "Keine Frage angegeben.";
             }
