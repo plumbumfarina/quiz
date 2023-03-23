@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include('lib/dbConnectorMYSQLI');
+require_once('lib/dbConnectorMYSQLI');
 
 $deckname = $_POST['deckname'];
 $modulname = $_POST['modul'];
