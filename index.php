@@ -1,13 +1,13 @@
 <?php
 session_start();
-/*if(!isset($_SESSION['userid'])) {
+if(!isset($_SESSION['userid'])) {
     header('location: login.php');
     die('Bitte zuerst einloggen');
-}*/
+}
 
 echo 'Hallo ' . $_SESSION['userid'];
 ?>
-<!--
+
 <!Doctype html>
 
 <html cmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
@@ -52,4 +52,3 @@ echo 'Hallo ' . $_SESSION['userid'];
   </body>
 
 </html>
--->
