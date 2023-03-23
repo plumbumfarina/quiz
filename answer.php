@@ -30,13 +30,13 @@ include('lib/getAntworten.php');
 		<h1> Frage </h1>
 		<?php 
 			include_once('lib/dbConnectorMYSQLI.php');
-			
+
 			$kartendeck_id = 5 //$_GET['kartendeck_id'];
 
 			//$fragenListe = array();
 			//$currentIndex = 0;
 				
-			$abfrageEins = "SELECT fragen_id FROM fragen WHERE kartendeck_id = $kartendeck_id;";
+			$abfrageEins = "SELECT fragen_id FROM fragen WHERE kartendeck_id = $kartendeck_id";
 			$resultEins = $conn->query($abfrageEins);
 
 			while($row = $resultEins->fetch_assoc()) {

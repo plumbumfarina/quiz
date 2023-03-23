@@ -1,6 +1,6 @@
 <?php
 
-
+include_once('lib/dbConnectorMYSQLI.php');
 
 function getFragenListe($kartendeck_id){
 
@@ -10,7 +10,7 @@ function getFragenListe($kartendeck_id){
 // Prüfung ob eine angegeben wurde 
   if(isset($kartendeck_id)) {
 //Abfrage aller Fragen_IDs des Fragendecks
-    $sqlFragen = "SELECT fragen_id FROM fragen WHERE kartendeck_id = $kartendeck_id;";
+    $sqlFragen = "SELECT fragen_id FROM fragen WHERE kartendeck_id = $kartendeck_id";
     $result = $conn->query($sqlFragen);
       if ($result->num_rows > 0) {
 // Ausgabe des Tabelleninhaltes
