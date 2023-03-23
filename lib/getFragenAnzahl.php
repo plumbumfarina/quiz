@@ -14,7 +14,7 @@ if ($conn->connect_error) {
 
 function getFragenAnzahl($kartendeck_id){
 
-    if(isset($_SESSION['userid'])) {
+    if(isset($kartendeck_id)) {
         $statement = $conn->prepare("SELECT COUNT(*) as fragenAnzahl FROM fragen WHERE kartendeck_id = :kartendeck_id");
         $result = $statement->execute(array('kartendeck_id' => $kartendeck_id));
 
