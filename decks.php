@@ -40,22 +40,22 @@ include('lib/getFragenAnzahl.php');
                 <tbody>
                     <?php
                         include('lib/dbConnector.php');
-                        $sql = "SELECT fragendeck_id, fragendeck_name, fragendeck.modul_id, public, modulkuerzel, modulname FROM fragendeck JOIN modul WHERE (fragendeck.modul_id = modul.modul_id) AND (user_id = $user_id) ORDER BY modulkuerzel ASC";
+                        $sql = "SELECT kartendeck_id, kartendeck_name, kartendeck.modul_id, public, modulkuerzel, modulname FROM kartendeck JOIN modul WHERE (kartendeck.modul_id = modul.modul_id) AND (user_id = $user_id) ORDER BY modulkuerzel ASC";
                         $result = $conn->query($sql);
                         if ($result->num_rows > 0) {
                             // output data of each row
                             while($row = $result->fetch_assoc()) {
                                 echo "<tr>
-                                    <td>" . $row["fragendeck_name"]. "</td>
+                                    <td>" . $row["kartendeck_name"]. "</td>
                                     <td>" . $row["modulkuerzel"]. "</td>
                                     <td>" . $row["modulname"]. "</td>
-                                    <td>" . getFragenAnzahl($row["fragendeck_id"]). "</td>
+                                    <td>" . getFragenAnzahl($row["kartendeck_id"]). "</td>
                                     <td>" . $row["public"]. "</td>
                                     <td>
-                                        <button type='button' class='btn btn-outline-warning' value='" . $row["fragendeck_id"]. "' onclick='openBearbeiteKartendeck(" .  $row['fragendeck_id']. ")'> Bearbeiten </button>
+                                        <button type='button' class='btn btn-outline-warning' value='" . $row["kartendeck_id"]. "' onclick='openBearbeiteKartendeck(" .  $row['kartendeck_id']. ")'> Bearbeiten </button>
                                     </td>
                                     <td>
-                                        <button type='button' class='btn btn-outline-danger' value='" . $row["fragendeck_id"]. "' onclick='openLoescheKartendeck(" .  $row['fragendeck_id']. ")'> Löschen </button>
+                                        <button type='button' class='btn btn-outline-danger' value='" . $row["kartendeck_id"]. "' onclick='openLoescheKartendeck(" .  $row['kartendeck_id']. ")'> Löschen </button>
                                     </td>
                                 </tr>";
                             }
@@ -79,7 +79,7 @@ include('lib/getFragenAnzahl.php');
 <div>
     <div class="container mt-3">
         <h1 class="form__title">Kartendeck hinzufügen</h1>
-        <form action="lib/addFragendeck.php" method="post">
+        <form action="lib/addkartendeck.php" method="post">
             <div class="mb-3">
                 <label for="deckName">Kartendeckname:</label>
                 <input type="text" id="deckname" name="deckname" required class="form-control">
@@ -129,10 +129,10 @@ include('lib/getFragenAnzahl.php');
 </div>
 <script>
 function openBearbeiteKartendeck(id) {
-  window.location.href = "fragenUebersicht.php?fragendeck_id=" + id;
+  window.location.href = "fragenUebersicht.php?kartendeck_id=" + id;
 }
 function openLoescheKartendeck(id) {
-  window.location.href = "lib/deleteFragendeck.php?fragendeck_id=" + id;
+  window.location.href = "lib/deletekartendeck.php?kartendeck_id=" + id;
 }
 </script>
 
