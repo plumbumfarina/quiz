@@ -44,30 +44,30 @@ include('lib/getAntworten.php');
 
 			$kartendeck_id = 5 //$_GET['kartendeck_id'];
 
-			$fragenListe = array();
-			$currentIndex = 0;
+			//$fragenListe = array();
+			//$currentIndex = 0;
 				
 			$abfrageEins = "SELECT fragen_id FROM fragen WHERE kartendeck_id = $kartendeck_id;";
 			$resultEins = $conn->query($abfrageEins);
 
 			while($row = $resultEins->fetch_assoc()) {
-				$fragenListe[] = $row['fragen_id'];
+				echo $row['fragen_id'];
 			}
-			foreach($fragenListe as $fL){
-				echo $fL;
-			}
+			//foreach($fragenListe as $fL){
+			//	echo $fL;
+			//}
 
-			shuffle($fragenListe);
-			$anzahlFragen = count($fragenListe);
+			//shuffle($fragenListe);
+			//$anzahlFragen = count($fragenListe);
 
-			$currentFrage = getFrage($fragenListe[$currentIndex]);
-			$currentAntwort = getAntwort($fragenListe[$currentIndex]);
+			//$currentFrage = getFrage($fragenListe[$currentIndex]);
+			//$currentAntwort = getAntwort($fragenListe[$currentIndex]);
 
-			echo $currentFrage; 
+			//echo $currentFrage; 
 
-			foreach($currentAntwort as $cA){
-				echo $cA;
-			}
+			//foreach($currentAntwort as $cA){
+			//	echo $cA;
+			//}
 
 			$conn->close();
 		?>
