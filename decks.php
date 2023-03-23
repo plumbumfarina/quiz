@@ -72,7 +72,6 @@ include('lib/getFragenAnzahl.php');
                                 </tr>";
                         }
                         $conn->close();
-                        echo "was ist hier?";
                     ?>
                 </tbody>
             </table>
