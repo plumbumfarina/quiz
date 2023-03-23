@@ -46,13 +46,12 @@ include('lib/getAntworten.php');
 
 			$fragenListe = array();
 			$currentIndex = 0;
-			$currentFrage = "Das ist ein Test!";
-			$currentAntwort = array();
+
 							
 			$abfrageEins = "SELECT fragen_id FROM fragen WHERE kartendeck_id = $kartendeck_id;";
-			$resultEins = mysqli_query($conn, $abfrageEins);
+			$resultEins = $conn->query($abfrageEins);
 
-			while($row = mysqli_fetch_assoc($resultEins)) {
+			while($row = $resultEins->fetch_assoc()) {
 				$fragenListe[] = $row['fragen_id'];
 			}
 			foreach($fragenListe as $fL){
@@ -63,7 +62,7 @@ include('lib/getAntworten.php');
 			$anzahlFragen = count($frageListe);
 
 			$currentFrage = getFrage($fragenListe[$currentIndex]);
-			$currentAntwort[] = getAntwort($fragenListe[$currentIndex]);
+			$currentAntwort = getAntwort($fragenListe[$currentIndex]);
 
 			echo $currentFrage; 
 
