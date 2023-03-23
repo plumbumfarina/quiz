@@ -38,6 +38,7 @@ if(!isset($_SESSION['userid'])) {
             // Ausgabe des Tabelleninhaltes
                     while($rowFrage = $resultFrage->fetch_assoc()) {
                         $fragentext = $rowFrage['fragentext'];
+                        echo "Test";
                     } 
                   } else {
                     echo "Kein Fragentext gefunden.";
