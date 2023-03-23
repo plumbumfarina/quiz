@@ -1,10 +1,10 @@
 <?php
     include('getFragendeckname.php');
+    include('lib/dbConnector.php');
 
     if(isset($_SESSION['userid'])) {
 
-            $dbconnector = new PDO('mysql:host=localhost;dbname=quiz', 'root', 'toor');
-            $statement = $dbconnector->prepare("SELECT modulname, modulkuerzel FROM modul WHERE modul_id = :modul_id");
+            $statement = $conn->prepare("SELECT modulname, modulkuerzel FROM modul WHERE modul_id = :modul_id");
             $result = $statement->execute(array('modul_id' => $modul_id));
 
             $modul = $statement->fetch();

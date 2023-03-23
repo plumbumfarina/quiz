@@ -1,21 +1,9 @@
 <?php
 session_start();
 
-$servername = "localhost";
-$username = "root";
-$password = "toor";
-$dbname = "quiz";
-$user_id = $_SESSION['userid'];
+include('lib/dbConnector.php');
 
 $fragen_id = $_GET['fragen_id'];
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
 
 // Prüfung ob ein Fragenid angegeben wurde
 if(isset($fragen_id)) {
