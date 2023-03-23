@@ -123,9 +123,6 @@ if(!isset($_SESSION['userid'])) {
             foreach($fragenListe as $id){
                 $currentFrage = getFrage($conn, $id);
                 $currentAntworten = getAntworten($conn, $id);
-                foreach($fragenListe as $id){
-                    
-                }
             }
             
 /*// Anzeige des Formulars
@@ -161,10 +158,10 @@ if(!isset($_SESSION['userid'])) {
             <input type="hidden" name="question_id" value="<?php echo $fragen_id; ?>">
         <?php
             echo"  
-                <button type='submit' name='answer' value='1'>" . $antwortenArray[0] . "</button>
-                <button type='submit' name='answer' value='2'>" . $antwortenArray[1] . "</button>
-                <button type='submit' name='answer' value='3'>" . $antwortenArray[2] . "</button>
-                <button type='submit' name='answer' value='4'>" . $antwortenArray[3] . "</button>
+                <button type='submit' name='answer' value='1'>" . $currentAntworten[0] . "</button>
+                <button type='submit' name='answer' value='2'>" . $currentAntworten[1] . "</button>
+                <button type='submit' name='answer' value='3'>" . $currentAntworten[2] . "</button>
+                <button type='submit' name='answer' value='4'>" . $currentAntworten[3] . "</button>
             ";
         ?>  
             <button type="submit" name="next_question">Nächste Frage</button>
