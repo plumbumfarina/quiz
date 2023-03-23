@@ -45,23 +45,23 @@ include('lib/getFragenAnzahl.php');
                 <tbody>
                     <?php
                         #include('lib/dbConnector.php');
-
+echo "Hallo";
                         $servername = "localhost";
                         $username = "root";
                         $password = "toor";
                         $dbname = "quiz";
                         $user_id = $_SESSION['userid'];
-
+echo "du";
                         // Create connection
                         $conn = new mysqli($servername, $username, $password, $dbname);
                         // Check connection
                         if ($conn->connect_error) {
                             die("Connection failed: " . $conn->connect_error);
                         }
-
+echo "ich";
                         $sql = "SELECT kartendeck_id, kartendeck_name, kartendeck.modul_id, public, modulkuerzel, modulname FROM kartendeck JOIN modul WHERE (kartendeck.modul_id = modul.modul_id) AND (user_id = $user_id) ORDER BY modulkuerzel ASC";
                         $result = $conn->query($sql);
-
+echo "hab";
                         if ($result->num_rows > 0) {
                             // output data of each row
                             while($row = $result->fetch_assoc()) {
