@@ -70,7 +70,7 @@ echo "hab";
                                     <td>" . $row["kartendeck_name"]. "</td>
                                     <td>" . $row["modulkuerzel"]. "</td>
                                     <td>" . $row["modulname"]. "</td>
-                                    <td>" . getFragenAnzahl($row["kartendeck_id"]). "</td>
+                                    <td>234"/* . getFragenAnzahl($row["kartendeck_id"]). */"</td>
                                     <td>" . $row["public"]. "</td>
                                     <td>
                                         <button type='button' class='buttonBearbeiten' value='" . $row["kartendeck_id"]. "' onclick='openBearbeiteKartendeck(" .  $row['kartendeck_id']. ")'> Bearbeiten </button>
