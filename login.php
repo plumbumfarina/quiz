@@ -19,7 +19,7 @@ if(isset($_GET['login'])) {
         header("Refresh: 5; URL=index.php");
         echo 'Hallo ' . $_SESSION['userid'];
         #header('location: index.php');
-        die('Login erfolgreich. Weiter zur Startseite.');
+        #die('Login erfolgreich. Weiter zur Startseite.');
     } else {
         $errorMessage = "E-Mail oder Passwort inkorrekt<br>";
     }
