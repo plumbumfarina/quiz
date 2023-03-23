@@ -52,8 +52,6 @@ include('lib/getAntworten.php');
 
 	</div>
     <!-- hier ist die Codierung für den Fragebalken -->	
-			<div id="question">
-				<h2>Frage</h2>
 				<p id="question_text">Dies ist die Frage.</p>
         
     <!-- hier ist die Codierung für die 4 Antwort-Möglichkeiten-->
