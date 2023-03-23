@@ -3,6 +3,7 @@ session_start();
 
 include('lib/dbConnector.php');
 
+$user_id = $_SESSION['userid'];
 $deckname = $_POST['deckname'];
 $modulname = $_POST['modul'];
 $public = $_POST['public'];
