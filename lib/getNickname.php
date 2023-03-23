@@ -16,7 +16,7 @@ session_start();
     }
 
     if(isset($_SESSION['userid'])) {
-            $user_id = $_SESSION['userid'];
+            #$user_id = $_SESSION['userid'];
             
             $statement = $conn->prepare("SELECT nickname FROM user WHERE user_id = :user_id");
             $result = $statement->execute(array('user_id' => $user_id));
