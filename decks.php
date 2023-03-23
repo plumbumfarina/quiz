@@ -128,7 +128,7 @@ function openBearbeiteKartendeck(id) {
   window.location.href = "fragenUebersicht.php?kartendeck_id=" + id;
 }
 function openLoescheKartendeck(id) {
-  window.location.href = "lib/deletekartendeck.php?kartendeck_id=" + id;
+  window.location.href = "lib/deleteKartendeck.php?kartendeck_id=" + id;
 }
 </script>
 
