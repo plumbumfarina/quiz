@@ -30,9 +30,24 @@ include('lib/getAntworten.php');
 		<h1> Frage </h1>
 		<form>
 		<?php 
+			include('lib/dbConnectormysqli');
+
 			$kartendeck_id = $_GET['kartendeck_id'];
+
+			$fragenListe = array();
 				
-			
+			$abfrageEins = "SELECT fragen_id FROM fragen WHERE kartendeck_id = $kartendeck_id;";
+			$resultEins = mysqli_query($conn, $abfrageEins);
+
+			while($row = mysqli_fetch_assoc($resultEins)) {
+				$fragenListe[] = $row['fragn_id'];
+			}
+
+			shuffle($fragenListe);
+
+
+
+	
 		?>
 
 	</div>
