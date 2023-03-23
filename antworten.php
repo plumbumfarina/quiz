@@ -120,7 +120,7 @@ if(!isset($_SESSION['userid'])) {
 			$anzahlFragen = count($fragenListe);
             echo "<br> <br>";
 // Anzeige des Formulars
-/*            foreach ($fragenListe as $index => $fragen_id) {
+                foreach ($fragenListe as $index => $fragen_id) {
                 // Generate the form for this question
                 echo "<form method='POST' action='antworten.php?kartendeck_id=$kartendeck_id'>";
                 echo "<h2>Frage " . ($index+1) . ":</h2>";
@@ -140,19 +140,8 @@ if(!isset($_SESSION['userid'])) {
                   $currentIndex++;
                 }
               }
-*/
-for ($i = 0; $i < count($fragenListe); $i++) {
-    $frageId = $fragenListe[$i];
-    $frage = getFrage($conn, $frageId);
-    $antworten = getAntworten($conn, $frageId);
-    echo "<form id='form$i' style='display: " . ($i == 0 ? "block" : "none") . ";'>";
-    echo "<label for='frage$i'>$frage</label>";
-    echo "<input type='text' id='frage$i' name='frage' value='$frage'>";
-    foreach ($antworten as $antwort) {
-        echo "<button type='button' onclick='switchForm($i)'>$antwort</button>";
-    }
-    echo "</form>";
-}
+
+
 
 			$conn->close();
                         
@@ -165,13 +154,6 @@ for ($i = 0; $i < count($fragenListe); $i++) {
 	include_once('footer.php')
 ?>
 
-<script>
-function switchForm(index) {
-    for (var i = 0; i < <?php echo $anzahlFragen; ?>; i++) {
-        document.getElementById("form" + i).style.display = "none";
-    }
-    document.getElementById("form" + index).style.display = "block";
-}
-</script>
+
 </body>
 </html>
