@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-
+include_once('lib/dbConnectorMYSQLI');
 
 $deckname = $_POST['deckname'];
 $modulname = $_POST['modul'];
@@ -9,7 +9,6 @@ $public = $_POST['public'];
 
 // Prüfung ob ein Fragendeckname angegeben wurde
 if(isset($deckname)) {
-  include_once('lib/dbConnectorMYSQLI');
     $sql = "INSERT INTO kartendeck (kartendeck_name, modul_id, user_id, public) VALUES ('$deckname', (SELECT modul_id FROM modul WHERE modulname='$modulname'), $user_id, $public)";
 } else {
     echo "Kein Kartendeckname angegeben.";
