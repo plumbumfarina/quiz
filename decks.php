@@ -24,7 +24,7 @@ if(!isset($_SESSION['userid'])) {
 <div>
     <div>
         <h1 class="form__title">Kartendecks</h1>
-            <table class="tableDecks">
+            <table class="table-striped">
                 <thead>
                     <tr>
                         <th>Deckname</th>
