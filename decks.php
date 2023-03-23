@@ -45,10 +45,14 @@ if(!isset($_SESSION['userid'])) {
                         $sql = "SELECT kartendeck_id, kartendeck_name, kartendeck.modul_id, public, modulkuerzel, modulname FROM kartendeck JOIN modul WHERE (kartendeck.modul_id = modul.modul_id) AND (user_id = $user_id) ORDER BY modulkuerzel ASC";
                         $result = $conn->query($sql);
 
-                        $result1 = $conn->query("SELECT * FROM fragen WHERE kartendeck_id = $row["kartendeck_id"]");
+                        function getFragenAnzahl($kartendeck_id){
+                            $result1 = $conn->query("SELECT * FROM fragen WHERE kartendeck_id = $kartendeck_id");
+                            // Anzahl der Zeilen in der Ergebnismenge abrufen
+                            $anzahlFragen = $result1->num_rows;
 
-                        // Anzahl der Zeilen in der Ergebnismenge abrufen
-                        $anzahlFragen = $result1->num_rows;
+                            return $anzahlFragen;
+                        }
+                        
 
                         if ($result->num_rows > 0) {
                             // output data of each row
@@ -57,7 +61,7 @@ if(!isset($_SESSION['userid'])) {
                                     <td>" . $row["kartendeck_name"]. "</td>
                                     <td>" . $row["modulkuerzel"]. "</td>
                                     <td>" . $row["modulname"]. "</td>
-                                    <td>" . $anzahlFragen . "</td>
+                                    <td>" . getFragenAnzahl($row["kartendeck_id"]) . "</td>
                                     <td>" . $row["public"]. "</td>
                                     <td>
                                         <button type='button' class='btn btn-outline-warning' value='" . $row["kartendeck_id"]. "' onclick='openBearbeiteKartendeck(" .  $row['kartendeck_id']. ")'> Bearbeiten </button>
