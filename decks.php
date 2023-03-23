@@ -96,7 +96,7 @@ include('lib/getFragenAnzahl.php');
                         $servername = "localhost";
                         $username = "root";
                         $password = "toor";
-                        $dbname = "quiz";
+                        $dbname = "ProjektQuiz";
                         $user_id = $_SESSION['userid'];
                         // Create connection
                         $conn = new mysqli($servername, $username, $password, $dbname);
