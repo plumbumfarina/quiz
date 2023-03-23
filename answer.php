@@ -29,19 +29,8 @@ include('lib/getAntworten.php');
 	<div>
 		<h1> Frage </h1>
 		<?php 
-			$servername = "localhost";
-			$username = "root";
-			$password = "toor";
-			$dbname = "ProjektQuiz";
-			$user_id = $_SESSION['userid'];
-		
-			// Create connection
-			$conn = new mysqli($servername, $username, $password, $dbname);
-			// Check connection
-			if ($conn->connect_error) {
-				die("Connection failed: " . $conn->connect_error);
-			}
-
+			include_once('lib/dbConnectorMYSQLI.php');
+			
 			$kartendeck_id = 5 //$_GET['kartendeck_id'];
 
 			//$fragenListe = array();

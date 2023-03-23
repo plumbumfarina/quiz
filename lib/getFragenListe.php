@@ -1,6 +1,6 @@
 <?php
 
-include_once('lib/dbConnectorMYSQLI.php');
+
 
 function getFragenListe($kartendeck_id){
 
