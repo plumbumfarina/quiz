@@ -5,8 +5,9 @@ function getFragenAnzahl($kartendeck_id){
 
    if(isset($kartendeck_id)) {
       include_once('lib/dbConnectorPDO.php');
-        $statement = $conn->prepare("SELECT COUNT(*) as fragenAnzahl FROM fragen WHERE kartendeck_id = :kartendeck_id");
-        $result = $statement->execute(array('kartendeck_id' => $kartendeck_id));
+        $sql = "SELECT COUNT(*) as fragenAnzahl FROM fragen WHERE kartendeck_id = :kartendeck_id";
+        
+        $result = $conn->query($sql);
 
         $fragen = $statement->fetch();
         $fragenAnzahl = $fragen['fragenAnzahl'];
