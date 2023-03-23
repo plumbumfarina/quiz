@@ -1,7 +1,3 @@
-<?php
-#session_start();
-#include('lib/getNickname.php');
-?> 
 <nav class="navMenu">
     <ul>
         <li><a href="index.php">Startseite</a></li>
