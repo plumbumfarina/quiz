@@ -39,7 +39,20 @@ include('lib/getFragenAnzahl.php');
                 </thead>
                 <tbody>
                     <?php
-                        include('lib/dbConnector.php');
+                        #include('lib/dbConnector.php');
+                        $servername = "localhost";
+                        $username = "root";
+                        $password = "toor";
+                        $dbname = "ProjektQuiz";
+                        $user_id = $_SESSION['userid'];
+
+                        // Create connection
+                        $conn = new mysqli($servername, $username, $password, $dbname);
+                        // Check connection
+                        if ($conn->connect_error) {
+                            die("Connection failed: " . $conn->connect_error);
+                        }
+                        
                         $user_id = $_SESSION['userid'];
                         $sql = "SELECT kartendeck_id, kartendeck_name, kartendeck.modul_id, public, modulkuerzel, modulname FROM kartendeck JOIN modul WHERE (kartendeck.modul_id = modul.modul_id) AND (user_id = $user_id) ORDER BY modulkuerzel ASC";
                         $result = $conn->query($sql);
