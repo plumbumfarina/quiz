@@ -56,7 +56,7 @@ if(!isset($_SESSION['userid'])) {
                         echo "0 results";
                     }
 
-                    $conn->close();
+                    
                 ?>
                 <label for='fragenID' class='form-label'> Fragen ID:</label>
                 <input type='text' class='form-control' name='fragenID' value='<?php echo $fragen_id; ?>'readonly></input>
