@@ -45,7 +45,7 @@ if(!isset($_SESSION['userid'])) {
 
                     $kartendeck_id = $_GET['kartendeck_id'];
 
-                    $sql = "SELECT fragen_id, fragentext, antwortEins, antwortZwei, antwortDrei, antwortVier, richtigkeit FROM fragen WHERE (kartendeckdeck_id = $kartendeck_id)" ;
+                    $sql = "SELECT fragen_id, fragentext, antwortEins, antwortZwei, antwortDrei, antwortVier, richtigkeit FROM fragen WHERE (kartendeck_id = $kartendeck_id)" ;
                     $result = $conn->query($sql);
 
                     if ($result->num_rows > 0) {
