@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('lib/dbConnector.php');
+$conn = new PDO('mysql:host=localhost;dbname=ProjektQuiz', 'root', 'toor');
 ?>
 
 
