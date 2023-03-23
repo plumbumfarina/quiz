@@ -1,4 +1,5 @@
 <?php
+session_start();
     include('lib/getNickname.php');
 ?> 
 <nav class="navMenu">
