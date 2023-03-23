@@ -82,7 +82,7 @@ include('lib/getFragenAnzahl.php');
         <h1 class="form__title">Kartendeck hinzufügen</h1>
         <form action="lib/addKartendeck.php" method="post">
             <div class="mb-3">
-                <label for="deckName">Kartendeckname:</label>
+                <label for="deckname">Kartendeckname:</label>
                 <input type="text" id="deckname" name="deckname" required class="form-control">
             </div>
             <div class="mb-3">
