@@ -73,7 +73,7 @@ include('lib/getFragenAnzahl.php');
                                     <td>-</td>
                                 </tr>";
                         }
-                        $conn->close();
+                        
                     ?>
                 </tbody>
             </table>
