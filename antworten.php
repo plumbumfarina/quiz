@@ -25,41 +25,83 @@ if(!isset($_SESSION['userid'])) {
     <div class="container mt-3">
         <h1 class="form__title">Frage</h1>
         <?php
-            include_once('lib/dbConnectorMYSQLI.php')
-            include_once('lib/getFrage.php')
-            include_once('lib/getAntworten.php')
-
+// Datenbank-Verbindung
+            $servername = "localhost";
+            $username = "root";
+            $password = "toor";
+            $dbname = "ProjektQuiz";
+        
+            // Create connection
+            $conn = new mysqli($servername, $username, $password, $dbname);
+            // Check connection
+            if ($conn->connect_error) {
+                die("Connection failed: " . $conn->connect_error);
+            }
+// wichtige Variablen 
             $kartendeck_id = $_GET['kartendeck_id'];
-
-            $sql = "SELECT fragen_id FROM fragen WHERE kartendeck_id = $kartendeck_id";
-            $result = $conn->query($sql);
-
+            $user_id = $_SESSION['userid'];
             $fragenListe = array();
 			$currentIndex = 0;
 
+//SQL Abfrage für alle Fragen-IDs
+            $sql = "SELECT fragen_id FROM fragen WHERE kartendeck_id = $kartendeck_id";
+            $stmt = $conn->prepare($sql);
+            $stmt->bind_param("i", $kartendeck_id);
+            $stmt->execute();
+            $result = $stmt->get_result();
             if ($result->num_rows > 0) {
                 // output data of each row
                 while($row = $result->fetch_assoc()) {
                     $fragenListe[] = $row['fragen_id'];
                 }
             } else {
-                echo "";
-            }       
+                echo "Keine Fragen gefunden!";
+            }    
 
+// Funktion um die aktuelle Frage herauszufinden
+            function getFrage($conn, $fragen_id){
+            // Prüfung ob eine Fragen-ID angegeben wurde 
+                if(isset($fragen_id)) {
+                $sqlFrage = "SELECT fragentext FROM fragen WHERE fragen_id = $fragen_id";
+                $stmtFrage = $conn->prepare($sql);
+                $stmtFrage->bind_param("i", $fragen_id);
+                $stmtFrage->execute();
+                $resultFrage = $stmtFrage->get_result();
+                if ($resultFrage->num_rows > 0) {
+                    while($rowFrage = $resultFrage->fetch_assoc()) {
+                        $fragentext = $rowFrage['fragentext'];
+                    } 
+                } else {
+                    echo "Kein Fragentext gefunden.";
+                }
+            } else {
+                echo "Keine Frage angegeben.";
+            }
+
+            return $fragentext;
+            }
+            
+
+// Ausgabe aller Fragen-IDs
 			foreach($fragenListe as $fL){
 			    echo $fL;
 			}
-			//shuffle($fragenListe);
+// Zufällige Reihenfolge der Fragen-IDs
+			shuffle($fragenListe);
+// Länge des Array = Anzahl der Fragen-IDs
 			$anzahlFragen = count($fragenListe);
             echo $anzahlFragen;
-            
+
+// Aktuelle Frage 
 			$currentFrage = getFrage($fragenListe[$currentIndex]);
-            getFrage(4);
 			echo $currentFrage; 
+
+// Aktuelle Antworten
             $currentAntwort = getAntwort(4);
 			foreach($currentAntwort as $cA){
 				echo $cA;
 			}
+
 			$conn->close();
                         
         ?>
