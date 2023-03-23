@@ -96,6 +96,7 @@ include('lib/getFragenAnzahl.php');
             <label for="modul">Wähle ein Modul aus:</label>
                 <select id="modul" name="modul" class="form-select">
                 <?php
+                    global $conn;
                     include_once('lib/dbConnectorMYSQLI.php');
 
                     $sql1 = "SELECT modulname FROM modul" ;
