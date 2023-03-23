@@ -46,6 +46,7 @@ if(!isset($_SESSION['userid'])) {
                         $result = $conn->query($sql);
 
                         function getFragenAnzahl($kartendeck_id){
+                            global $conn;
                             $result1 = $conn->query("SELECT * FROM fragen WHERE kartendeck_id = $kartendeck_id");
                             // Anzahl der Zeilen in der Ergebnismenge abrufen
                             $anzahlFragen = $result1->num_rows;
