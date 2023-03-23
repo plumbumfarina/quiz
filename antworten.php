@@ -33,24 +33,21 @@ if(!isset($_SESSION['userid'])) {
             $sql = "SELECT fragen_id FROM fragen WHERE kartendeck_id = $kartendeck_id";
             $result = $conn->query($sql);
 
-            //$fragenListe = array();
-			//$currentIndex = 0;
+            $fragenListe = array();
+			$currentIndex = 0;
 
             if ($result->num_rows > 0) {
     // output data of each row
                 while($row = $result->fetch_assoc()) {
-                    echo $row['fragen_id'];
+                    $fragenListe[] = $row['fragen_id'];
                 }
             } else {
                 echo "";
             }
 
-            while($row = $resultEins->fetch_assoc()) {
-				echo $row['fragen_id'];
+			foreach($fragenListe as $fL){
+			    echo $fL;
 			}
-			//foreach($fragenListe as $fL){
-			//	echo $fL;
-			//}
 			//shuffle($fragenListe);
 			//$anzahlFragen = count($fragenListe);
 			//$currentFrage = getFrage($fragenListe[$currentIndex]);
