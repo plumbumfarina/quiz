@@ -73,7 +73,7 @@ include('lib/getFragenAnzahl.php');
                                     <td>-</td>
                                 </tr>";
                         }
-
+                        $conn->close();
                     ?>
                 </tbody>
             </table>
@@ -96,16 +96,16 @@ include('lib/getFragenAnzahl.php');
             <label for="modul">Wähle ein Modul aus:</label>
                 <select id="modul" name="modul" class="form-select">
                 <?php
-                   
+                    
                     include_once('lib/dbConnectorMYSQLI.php');
 
-                    $sql = "SELECT modulname FROM modul" ;
-                    $result = $conn->query($sql1);
+                    $sql1 = "SELECT modulname FROM modul" ;
+                    $result1 = $conn->query($sql1);
                     
-                        if ($result->num_rows > 0) {
+                        if ($result1->num_rows > 0) {
                             // output data of each row
-                            while($row1 = $result->fetch_assoc()) {
-                                echo "<option>" . $row["modulname"]. "</option>";
+                            while($row1 = $result1->fetch_assoc()) {
+                                echo "<option>" . $row1["modulname"]. "</option>";
                             }
                         } else {
                             echo "<option> keine Module </option>";
