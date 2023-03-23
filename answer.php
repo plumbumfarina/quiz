@@ -29,19 +29,23 @@ include('lib/getAntworten.php');
 	<div>
 		<h1> Frage </h1>
 		<?php 
+			
 			include_once('lib/dbConnectorMYSQLI.php');
 
 			$kartendeck_id = 5 //$_GET['kartendeck_id'];
 
+			$sql = "SELECT fragen_id FROM fragen WHERE kartendeck_id = $kartendeck_id";
+            $result = $conn->query($sql);
+
+            if ($result->num_rows > 0) {
+            // output data of each row
+                while($row = $result->fetch_assoc()) {
+					echo $row['fragen_id'];
+			}
+
 			//$fragenListe = array();
 			//$currentIndex = 0;
 				
-			$abfrageEins = "SELECT fragen_id FROM fragen WHERE kartendeck_id = $kartendeck_id";
-			$resultEins = $conn->query($abfrageEins);
-
-			while($row = $resultEins->fetch_assoc()) {
-				echo $row['fragen_id'];
-			}
 			//foreach($fragenListe as $fL){
 			//	echo $fL;
 			//}
