@@ -78,7 +78,6 @@ session_start();
 //Tabelle erstellen mit Fragen IDs und der Antworten
                         for($i = 0; $i < count($fragenListe); $i++) {
                             $antworten[$i] = '0';
-                            echo $fragenListe[$currentIndex];
                             echo "<tr>
                                 <td>Frage " . ($i + 1) . "</td>
                                 <td>";
@@ -102,7 +101,7 @@ session_start();
                 </tbody>
             </table>
             <div>
-                <button type="button" class="buttonSpielen" onclick='openStart(10)'> Quiz beginnen! </button>
+                <button type="button" class="buttonSpielen" onclick="openStart(<?php $fragenListe[$currentIndex] ?>)"> Quiz beginnen! </button>
             </div>
     </div>
 </div>
