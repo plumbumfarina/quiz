@@ -6,5 +6,9 @@
         <a class="navMenu-logout" href="lib/logout.php">LOGOUT</a>
 
     </ul>
-    <p>Hallo <b> <?php echo $_SESSION['nickname']; ?></b>!</p>
+    <?php 
+        if(isset($_SESSION['userid'])) {
+            echo " <p>Hallo <b> <?php echo $_SESSION['nickname']; ?></b>!</p>";
+        } 
+    ?>
 </nav>
