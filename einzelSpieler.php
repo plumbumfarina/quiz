@@ -58,7 +58,6 @@ session_start();
                         $fragenListe = array();
                         $antworten = array();
                         $currentIndex = 0;
-                        $_SESSION['currentIndex'] = $currentIndex;
 
 //SQL Abfrage für alle Fragen-IDs
                         $sql = "SELECT fragen_id FROM fragen WHERE kartendeck_id = $kartendeck_id";
@@ -104,7 +103,7 @@ session_start();
                 </tbody>
             </table>
             <div>
-            <button type="button" class="buttonSpielen" onclick="openStart('<?php echo $fragenListe[$currentIndex]; ?>')"> Quiz beginnen! </button>
+            <button type="button" class="buttonSpielen" onclick="openStart('<?php echo $fragenListe[0]; ?>')"> Quiz beginnen! </button>
         </div>
     </div>
 </div>
