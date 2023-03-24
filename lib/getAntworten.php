@@ -1,8 +1,8 @@
 <?php
 
 
-
-function getAntworten($fragen_id){
+// AKTUELL UNBENUTZT
+/*function getAntworten($fragen_id){
   include_once('lib/dbConnectorMYSQLI.php');
 // Prüfung ob eine angegeben wurde 
   if(isset($fragen_id)) {
@@ -31,5 +31,5 @@ function getAntworten($fragen_id){
   return $antwortenArray;
 
 }
-
+*/
 ?>

@@ -1,6 +1,7 @@
 <?php
 
-
+// AKTUELL UNBENUTZT
+/*
 function getFrage($fragen_id){
     include_once('lib/dbConnectorMYSQLI.php');
 // Prüfung ob eine angegeben wurde 
@@ -25,4 +26,5 @@ function getFrage($fragen_id){
 
   return $fragentext;
 }
+*/
 ?>
