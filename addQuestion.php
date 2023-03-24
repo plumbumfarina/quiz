@@ -74,7 +74,6 @@ if(!isset($_SESSION['userid'])) {
             }
         }
         if(!hasChecked) {
-            alert("Bitte wählen Sie die richtige Antwort aus.");
             return false;
         }
         return true;
