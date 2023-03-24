@@ -31,7 +31,7 @@ if(!isset($_SESSION['userid'])) {
 <div>
     <div class="container mt-3">
         <h1> Frage hinzufügen </h1>
-        <form id="frageHinzufuegen" method="post">   
+        <form id="frageHinzufuegen" method="post" onsubmit="return checkForm()">   
             <label for='kartendeckID' class='form-label'> Kartendeck ID:</label>
             <input type='text' class='form-control' name='kartendeck_id' value="<?php echo $kartendeck_id;?>" readonly>
 
@@ -64,13 +64,32 @@ if(!isset($_SESSION['userid'])) {
 </div>
 
 <script>
-  function submitForm(action) {
-    document.getElementById('frageHinzufuegen').setAttribute('action', action);
-    document.getElementById('frageHinzufuegen').submit();
-  }
-  function openPage(id) {
-    window.location.href = "fragenUebersicht.php?kartendeck_id=" + id;
-  }
+    function checkForm() {
+        var antworten = document.getElementsByName("richtigkeit");
+        var hasChecked = false;
+        for(var i=0; i < antworten.length; i++) {
+            if(antworten[i].checked) {
+                hasChecked = true;
+                break;
+            }
+        }
+        if(!hasChecked) {
+            alert("Bitte wählen Sie die richtige Antwort aus.");
+            return false;
+        }
+        return true;
+    }
+
+    function submitForm(action) {
+        if(checkForm()) {
+            document.getElementById('frageHinzufuegen').setAttribute('action', action);
+            document.getElementById('frageHinzufuegen').submit();
+        }
+    }
+
+    function openPage(id) {
+        window.location.href = "fragenUebersicht.php?kartendeck_id=" + id;
+    }
 </script>
 
 </body>
