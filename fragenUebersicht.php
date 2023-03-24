@@ -90,6 +90,11 @@ if(!isset($_SESSION['userid'])) {
         </div>
 </div>
 
+<?php
+	include_once('footer.php')
+?>
+
+
 <script>
 function openPage(id) {
     window.location.href = "frageBearbeiten.php?fragen_id=" + id;
