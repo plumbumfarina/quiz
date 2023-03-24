@@ -143,7 +143,9 @@ if(!isset($_SESSION['userid'])) {
                 <button type='submit' name='answer' value='4'>" . $currentAntworten[3] . "</button>
             ";
         ?>  
+        <?php if (!isset($_POST['next_question'])): ?>
             <button type="submit" name="next_question">Nächste Frage</button>
+        <?php endif; ?>
         </form>
 
     </div>
