@@ -93,7 +93,7 @@ include_once('lib/getFragenAnzahl.php');
 </div>
 <script>
     function openPageGame(id) {
-    window.location.href = "antworten.php?kartendeck_id=" + id;
+    window.location.href = "einzelSpieler.php?kartendeck_id=" + id;
     }
 </script>
 
