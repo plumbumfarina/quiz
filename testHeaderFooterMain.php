@@ -39,9 +39,7 @@
 </head>
 <body>
     <header>
-        <?php   
-            include_once('navbar.php');
-        ?>
+        <h1> Das ist einTst </h1>
     </header>
   
     <main>
@@ -98,8 +96,11 @@
         <p>Suspendisse non semper nisl. Duis ullamcorper urna eget risus molestie, ut dignissim nibh malesuada. Suspendisse ut bibendum ex. Praesent auctor tortor ut augue interdum imperdiet. Proin sed aliquet ante. Duis pulvinar felis non sapien mattis blandit. Praesent maximus nulla in congue tincidunt. Vestibulum bibendum eros vel tempor vulputate.</p>
     </main>
     <footer>
-        <?php   
-            include_once('footer.php');
-        ?>
+    <a href="settings.php">Allgemeine Einstellungen</a><br>
+	<a href="cookies.php">Cookie Einstellungen</a><br>
+	<a href="contact.php">Kontakt</a><br>
+	<a href="privacy.php">Privatsphäre-Einstellungen</a><br>
+	<a href="imprint.php">Impressum</a><br>
+	<br>
     </footer>
 <body>
