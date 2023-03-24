@@ -8,6 +8,16 @@ if(!isset($_SESSION['userid'])) {
 
 ?>
 
+<?php
+    if(isset($_GET['antworten'])) {
+        $fragenIndex = $_SESSION['fragenListe'];
+        unset($fragenIndex[0]);
+        $_SESSION['fragenListe'] = $fragenIndex;
+    }
+    header("Refresh: 0.1; URL=antworten.php");
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -127,16 +137,6 @@ if(!isset($_SESSION['userid'])) {
 
 			$conn->close();
                         
-        ?>
-
-        <?php
-            if(isset($_GET['antworten'])) {
-                $fragenIndex = $_SESSION['fragenListe'];
-                unset($fragenIndex[0]);
-                $_SESSION['fragenListe'] = $fragenIndex;
-            }
-            header("Refresh: 0.1; URL=antworten.php");
-
         ?>
 
         <form action="?antworten=1" method="post">
