@@ -7,7 +7,7 @@
 
     </ul>
     <?php 
-        if(isset($_SESSION['userid'])) {
+        if(isset($_SESSION['nickname'])) {
             echo " <p>Hallo <b> <?php echo $_SESSION['nickname']; ?></b>!</p>";
         } 
     ?>
