@@ -117,29 +117,7 @@ if(!isset($_SESSION['userid'])) {
 
                 return $antwortenArray;
             }
-            
-/*// Anzeige des Formulars
-                foreach ($fragenListe as $index => $fragen_id) {
-                // Generate the form for this question
-                echo "<form method='POST' action='antworten.php?kartendeck_id=$kartendeck_id'>";
-                echo "<h2>Frage " . ($index+1) . ":</h2>";
-                echo "<p>" . getFrage($conn, $fragen_id) . "</p>";
-                $antworten = getAntworten($conn, $fragen_id);
-                foreach ($antworten as $antwort) {
-                  echo "<input type='Button' class='button 'name='antwort' value='$antwort'>" . $antwort . "<br>";
-                }
-                // Add a hidden input field to keep track of the current question index
-                echo "<input type='hidden' name='current_index' value='$index'>";
-                // Add a submit button
-                echo "<input type='submit' value='Antworten'>";
-                echo "</form>";
-              
-                // Check if the form has been submitted and update the current question index
-                if (isset($_POST['current_index']) && $_POST['current_index'] == $index) {
-                  $currentIndex++;
-                }
-              }
-*/
+
               $currentFrage = getFrage($conn, $_GET['fragen_id']);
               $currentAntworten = getAntworten($conn, $_GET['fragen_id']);
 
@@ -172,10 +150,15 @@ if(!isset($_SESSION['userid'])) {
 ?>
 
 <script>
-    document.querySelectorAll('button[name="answer"]').forEach((button) => {
+document.querySelectorAll('button[name="answer"]').forEach((button) => {
     button.addEventListener('click', () => {
-    button.classList.add('selected');
-  });
+        // Entfernt die class "selected" von allen Buttons
+        document.querySelectorAll('button[name="answer"]').forEach((btn)) => {
+            btn.classList.remove('selected');
+        });
+        // Fügt dem aktuell ausgewählten Button die class "selected" hinzu
+        button.classList.add('selected');
+    });
 });
 
 document.querySelector('button[name="next_question"]').addEventListener('click', () => {
