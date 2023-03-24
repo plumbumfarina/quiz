@@ -10,16 +10,6 @@ if(!isset($_SESSION['userid'])) {
 
 <?php
 
-// wichtige Variablen 
-$kartendeck_id = $_GET['kartendeck_id'];
-$user_id = $_SESSION['userid'];
-$fragenIndex = $_SESSION['fragenListe'];
-$fragen_id = $fragenIndex[0];
-?>
-
-<?php
-
-
     if(isset($_GET['weiter'])) {
         $fragenIndex = $_SESSION['fragenListe'];
         array_shift($fragenIndex);
@@ -27,7 +17,7 @@ $fragen_id = $fragenIndex[0];
         if(!empty($fragenIndex)) {
             header("Location: antworten.php?fragen_id=" . $fragenIndex[0]);
         } else {
-            header("Location: finaleUebersicht.php?kartendeck_id=" . $kartendeck_id);
+            header("Location: finaleUebersicht.php");
             exit();
         }
     }
@@ -64,7 +54,11 @@ $fragen_id = $fragenIndex[0];
             if ($conn->connect_error) {
                 die("Connection failed: " . $conn->connect_error);
             }
-
+// wichtige Variablen 
+            $kartendeck_id = $_GET['kartendeck_id'];
+            $user_id = $_SESSION['userid'];
+            $fragenIndex = $_SESSION['fragenListe'];
+            $fragen_id = $fragenIndex[0];
             //$fragen_id = $_GET['fragen_id'];
 
 // Funktion um die aktuelle Frage herauszufinden
