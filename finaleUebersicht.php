@@ -84,8 +84,9 @@ session_start();
                             echo $frage['fragentext'];
 
                             echo "<tr>";
-                            echo "<td>Frage $frage_id</td>";
-                            echo "<td>Frage $fragentext</td>";
+                            echo "<td>Frage " . $frage['fragen_id'] . "</td>";
+                            echo "<td>Frage " . $frage['fragentext'] . "</td>";
+                            echo "</tr>";
                         }
 
                         #for($i = 0; $i < count($fragenListe); $i++) {
