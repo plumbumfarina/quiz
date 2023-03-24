@@ -40,23 +40,7 @@ if(!isset($_SESSION['userid'])) {
 // wichtige Variablen 
             $kartendeck_id = $_GET['kartendeck_id'];
             $user_id = $_SESSION['userid'];
-            $fragenListe = array();
-			$currentIndex = 0;
-
-//SQL Abfrage für alle Fragen-IDs
-            $sql = "SELECT fragen_id FROM fragen WHERE kartendeck_id = $kartendeck_id";
-            $stmt = $conn->prepare($sql);
-            $stmt->bind_param("i", $kartendeck_id);
-            $stmt->execute();
-            $result = $stmt->get_result();
-            if ($result->num_rows > 0) {
-                // output data of each row
-                while($row = $result->fetch_assoc()) {
-                    $fragenListe[] = $row['fragen_id'];
-                }
-            } else {
-                echo "Keine Fragen gefunden!";
-            }    
+            $fragen_id = $_GET['fragen_id'];
 
 // Funktion um die aktuelle Frage herauszufinden
             function getFrage($conn, $fragen_id){
@@ -114,16 +98,6 @@ if(!isset($_SESSION['userid'])) {
 
                 return $antwortenArray;
             }
-// Zufällige Reihenfolge der Fragen-IDs
-			shuffle($fragenListe);
-// Länge des Array = Anzahl der Fragen-IDs
-			$anzahlFragen = count($fragenListe);
-
-// Aktuelle Inhalte
-            foreach($fragenListe as $id){
-                $currentFrage = getFrage($conn, $id);
-                $currentAntworten = getAntworten($conn, $id);
-            }
             
 /*// Anzeige des Formulars
                 foreach ($fragenListe as $index => $fragen_id) {
@@ -147,13 +121,15 @@ if(!isset($_SESSION['userid'])) {
                 }
               }
 */
-
+              $currentFrage = getFrage($conn, $_GET['fragen_id']);
+              $currentAntworten = getAntworten($conn, $_GET['fragen_id']);
 
 			$conn->close();
                         
         ?>
 
-        <form action="anworten.php" method="post">
+        <form action="antworten.php" method="post">
+            <p><?php foreach ($_SESSION['fragenListe'] as $fragen_id) {echo $fragen_id . " ";} ?></p>
             <p><?php echo $currentFrage; ?></p>
             <input type="hidden" name="question_id" value="<?php echo $fragen_id; ?>">
         <?php
