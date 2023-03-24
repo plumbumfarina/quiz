@@ -129,7 +129,7 @@ if(!isset($_SESSION['userid'])) {
         ?>
 
         <form action="antworten.php" method="post">
-            <p><?php echo $_SESSION['fragenListe']; ?></p>
+            <p><?php foreach ($_SESSION['fragenListe'] as $fragen_id) {echo $fragen_id . " ";} ?></p>
             <p><?php echo $currentFrage; ?></p>
             <input type="hidden" name="question_id" value="<?php echo $fragen_id; ?>">
         <?php
