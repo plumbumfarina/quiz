@@ -58,6 +58,7 @@ session_start();
                         $fragenListe = array();
                         $antworten = array();
                         $currentIndex = 0;
+                        $_SESSION['currentIndex'] = $currentIndex;
 
 //SQL Abfrage für alle Fragen-IDs
                         $sql = "SELECT fragen_id FROM fragen WHERE kartendeck_id = $kartendeck_id";
@@ -102,11 +103,7 @@ session_start();
                 </tbody>
             </table>
             <div>
-            <form method="POST" action="antworten.php?fragen_id=<?php echo $fragenListe[$currentIndex]; ?>">
-                <input type="hidden" name="currentIndex" value="<?php echo $currentIndex; ?>">
-                <button type="submit" class="buttonSpielen" onclick="openStart">Quiz beginnen!</button>
-            </form>
-            <!-- <button type="button" class="buttonSpielen" onclick="openStart('<?php echo $fragenListe[$currentIndex]; ?>')"> Quiz beginnen! </button> -->
+            <button type="button" class="buttonSpielen" onclick="openStart('<?php echo $fragenListe[$currentIndex]; ?>')"> Quiz beginnen! </button>
         </div>
     </div>
 </div>

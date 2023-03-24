@@ -122,14 +122,13 @@ if(!isset($_SESSION['userid'])) {
 */
               $currentFrage = getFrage($conn, $_GET['fragen_id']);
               $currentAntworten = getAntworten($conn, $_GET['fragen_id']);
-              $currentIndex = $_GET[$currentIndex];
 
 			$conn->close();
                         
         ?>
 
         <form action="anworten.php" method="post">
-            <p><?php echo $currentIndex; ?></p>
+            <p><?php echo $_SESSION['currentIndex']; ?></p>
             <p><?php echo $currentFrage; ?></p>
             <input type="hidden" name="question_id" value="<?php echo $fragen_id; ?>">
         <?php
