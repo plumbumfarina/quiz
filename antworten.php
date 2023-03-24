@@ -40,6 +40,7 @@ if(!isset($_SESSION['userid'])) {
 // wichtige Variablen 
             $kartendeck_id = $_GET['kartendeck_id'];
             $user_id = $_SESSION['userid'];
+            $fragen_id = $_GET['fragen_id'];
 
 // Funktion um die aktuelle Frage herauszufinden
             function getFrage($conn, $fragen_id){
@@ -127,8 +128,8 @@ if(!isset($_SESSION['userid'])) {
                         
         ?>
 
-        <form action="anworten.php" method="post">
-            <p><?php echo $_SESSION['currentIndex']; ?></p>
+        <form action="antworten.php" method="post">
+            <p><?php echo $_SESSION['fragenListe']; ?></p>
             <p><?php echo $currentFrage; ?></p>
             <input type="hidden" name="question_id" value="<?php echo $fragen_id; ?>">
         <?php

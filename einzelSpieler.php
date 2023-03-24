@@ -76,6 +76,7 @@ session_start();
                         }    
 
 			            shuffle($fragenListe);
+                        $_SESSION['fragenListe'] = $fragenListe;
 
 //Tabelle erstellen mit Fragen IDs und der Antworten
                         for($i = 0; $i < count($fragenListe); $i++) {
