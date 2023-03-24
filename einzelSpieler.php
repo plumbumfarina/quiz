@@ -54,6 +54,7 @@ session_start();
                         }
 // wichtige Variablen 
                         $kartendeck_id = $_GET['kartendeck_id'];
+                        $_SESSION['kartendeck_id'] = $kartendeck_id;
                         $user_id = $_SESSION['userid'];
                         $fragenListe = array();
                         $antworten = array();

@@ -53,7 +53,7 @@ session_start();
                             die("Connection failed: " . $conn->connect_error);
                         }
 // wichtige Variablen 
-                        $kartendeck_id = $_GET['kartendeck_id'];
+                        $kartendeck_id = $_SESSION['kartendeck_id'];
                         $user_id = $_SESSION['userid'];
                         $fragenListe = array();
                         $antworten = array();
