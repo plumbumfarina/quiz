@@ -131,7 +131,7 @@ if(!isset($_SESSION['userid'])) {
                         
         ?>
 
-        <form action="?weiter=1" method="post">
+        <form action="?weiter=1" method="post" onsubmit="return false;">
             <p><?php foreach ($_SESSION['fragenListe'] as $fragen_id) {echo $fragen_id . " ";} ?></p>
             <p><?php echo $currentFrage; ?></p>
             <input type="hidden" name="question_id" value="<?php echo $fragen_id; ?>">
@@ -143,9 +143,7 @@ if(!isset($_SESSION['userid'])) {
                 <button type='submit' name='answer' value='4'>" . $currentAntworten[3] . "</button>
             ";
         ?>  
-        <?php if (!isset($_POST['next_question'])): ?>
             <button type="submit" name="next_question">Nächste Frage</button>
-        <?php endif; ?>
         </form>
 
     </div>
