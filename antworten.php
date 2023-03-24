@@ -155,7 +155,7 @@ if(!isset($_SESSION['userid'])) {
         unset($fragenIndex[0]);
         $_SESSION['fragenListe'] = $fragenIndex;
     }
-    header("Refresh: 0.1; URL=antworten.php");
+    header("Refresh: 5; URL=antworten.php");
 
 ?>
 
