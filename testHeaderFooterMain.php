@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Meine Seite</title>
+  <link rel="stylesheet" href="style.css" type="text/css" media="screen"/>
   <style>
     /* Stil für den Header */
     header {
@@ -39,7 +40,9 @@
 </head>
 <body>
     <header>
-        <h1> Das ist einTst </h1>
+    <?php
+    include_once('navbar.php')
+?>
     </header>
   
     <main>
