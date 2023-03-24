@@ -7,6 +7,7 @@ if(!isset($_SESSION['userid'])) {
 } 
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -128,7 +129,17 @@ if(!isset($_SESSION['userid'])) {
                         
         ?>
 
-        <form action="antworten.php" method="post">
+        <?php
+            if(isset($_GET['antworten'])) {
+                $fragenIndex = $_SESSION['fragenListe'];
+                unset($fragenIndex[0]);
+                $_SESSION['fragenListe'] = $fragenIndex;
+            }
+            header("Refresh: 0.1; URL=antworten.php");
+
+        ?>
+
+        <form action="?antworten=1" method="post">
             <p><?php foreach ($_SESSION['fragenListe'] as $fragen_id) {echo $fragen_id . " ";} ?></p>
             <p><?php echo $currentFrage; ?></p>
             <input type="hidden" name="question_id" value="<?php echo $fragen_id; ?>">
@@ -158,9 +169,9 @@ if(!isset($_SESSION['userid'])) {
   });
 });
 
-document.querySelector('button[name="next_question"]').addEventListener('click', () => {
-  document.querySelector('form').submit();
-});
+//document.querySelector('button[name="next_question"]').addEventListener('click', () => {
+//  document.querySelector('form').submit();
+//});
 </script>
 
 </body>
