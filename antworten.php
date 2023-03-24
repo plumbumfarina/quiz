@@ -41,7 +41,8 @@ if(!isset($_SESSION['userid'])) {
 // wichtige Variablen 
             $kartendeck_id = $_GET['kartendeck_id'];
             $user_id = $_SESSION['userid'];
-            $fragen_id = $_GET['fragen_id'];
+            $fragen_id = $_SESSION[0];
+            //$fragen_id = $_GET['fragen_id'];
 
 // Funktion um die aktuelle Frage herauszufinden
             function getFrage($conn, $fragen_id){
