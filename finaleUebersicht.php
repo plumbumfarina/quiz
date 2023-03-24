@@ -74,14 +74,18 @@ session_start();
                             echo "Keine Fragen gefunden!";
                         }    
 
-			            shuffle($fragenListe);
-                        $_SESSION['fragenListe'] = $fragenListe;
+			            #shuffle($fragenListe);
+                        #$_SESSION['fragenListe'] = $fragenListe;
 
 //Tabelle erstellen mit Fragen IDs und der Antworten
 
                         foreach($fragenListe as $frage) {
                             echo $frage['fragen_id'];
                             echo $frage['fragentext'];
+
+                            echo "<tr>";
+                            echo "<td>Frage $frage_id</td>";
+                            echo "<td>Frage $fragentext</td>";
                         }
 
                         #for($i = 0; $i < count($fragenListe); $i++) {
