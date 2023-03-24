@@ -15,9 +15,9 @@ if(!isset($_SESSION['userid'])) {
         array_shift($fragenIndex);
         $_SESSION['fragenListe'] = $fragenIndex;
         if(!empty($fragenIndex)) {
-            header("Refresh: 0.01; URL=antworten.php?fragen_id=" . $fragenIndex[0]);
+            header("URL=antworten.php?fragen_id=" . $fragenIndex[0]);
         } else {
-            header("Refresh: 0.01; URL=endGame.php");
+            header("URL=endGame.php");
         }
     }
 
