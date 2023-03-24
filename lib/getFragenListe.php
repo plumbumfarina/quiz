@@ -1,5 +1,6 @@
 <?php
-
+// AKTUELL UNBENUTZT
+/*
 include_once('lib/dbConnectorMYSQLI.php');
 
 function getFragenListe($kartendeck_id){
@@ -29,5 +30,5 @@ function getFragenListe($kartendeck_id){
   return $fragenIDArray;
 
 }
-
+*/
 ?>
