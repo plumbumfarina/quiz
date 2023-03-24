@@ -40,7 +40,6 @@ if(!isset($_SESSION['userid'])) {
 // wichtige Variablen 
             $kartendeck_id = $_GET['kartendeck_id'];
             $user_id = $_SESSION['userid'];
-            $currentIndex = $_GET['$fragenListe[$currentIndex]'];
 
 // Funktion um die aktuelle Frage herauszufinden
             function getFrage($conn, $fragen_id){
@@ -123,6 +122,7 @@ if(!isset($_SESSION['userid'])) {
 */
               $currentFrage = getFrage($conn, $_GET['fragen_id']);
               $currentAntworten = getAntworten($conn, $_GET['fragen_id']);
+              $currentIndex = $_GET[$fragenListe[$currentIndex]];
 
 			$conn->close();
                         
