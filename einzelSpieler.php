@@ -101,7 +101,7 @@ session_start();
                 </tbody>
             </table>
             <div>
-                <button type="button" class="buttonSpielen" onclick='openStart(<?php echo $fragenliste[$currentIndex] ?>)'> Quiz beginnen! </button>
+                <button type="button" class="buttonSpielen" onclick='openStart(10)'> Quiz beginnen! </button>
             </div>
     </div>
 </div>
