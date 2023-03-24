@@ -275,6 +275,10 @@ button:hover {
   margin: 5px;
 }
 
+.selected {
+  background-color: #ff8c00;
+}
+
 .button:hover {
   background-color: #ff8c00;
 }

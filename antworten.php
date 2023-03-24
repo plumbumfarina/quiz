@@ -174,7 +174,7 @@ if(!isset($_SESSION['userid'])) {
 <script>
     document.querySelectorAll('button[name="answer"]').forEach((button) => {
     button.addEventListener('click', () => {
-    document.querySelector('input[name="answer"]').value = button.value;
+    button.classList.add('selected');
   });
 });
 
