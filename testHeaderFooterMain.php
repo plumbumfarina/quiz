@@ -98,12 +98,7 @@
         <p>Donec facilisis odio at libero faucibus, in tincidunt nunc blandit. Integer sed lacus sodales, congue magna vel, efficitur dolor. Nulla facilisi. Sed ac luctus enim. Proin dictum diam vel eleifend hendrerit. Praesent id lectus ut felis rutrum facilisis. Vivamus efficitur sit amet lectus eget volutpat. Integer sed tortor vel ex sodales venenatis ac at orci. Curabitur tincidunt magna et diam bibendum varius. Suspendisse ullamcorper lectus a orci facilisis, at dignissim metus eleifend. Nam vel efficitur nunc. Donec eu enim vitae lacus porttitor gravida.</p>
         <p>Suspendisse non semper nisl. Duis ullamcorper urna eget risus molestie, ut dignissim nibh malesuada. Suspendisse ut bibendum ex. Praesent auctor tortor ut augue interdum imperdiet. Proin sed aliquet ante. Duis pulvinar felis non sapien mattis blandit. Praesent maximus nulla in congue tincidunt. Vestibulum bibendum eros vel tempor vulputate.</p>
     </main>
-    <footer>
-    <a href="settings.php">Allgemeine Einstellungen</a><br>
-	<a href="cookies.php">Cookie Einstellungen</a><br>
-	<a href="contact.php">Kontakt</a><br>
-	<a href="privacy.php">Privatsphäre-Einstellungen</a><br>
-	<a href="imprint.php">Impressum</a><br>
-	<br>
-    </footer>
+    <?php
+	include_once('footer.php')
+?>
 <body>
