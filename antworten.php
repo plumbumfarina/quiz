@@ -152,7 +152,7 @@ if(!isset($_SESSION['userid'])) {
 <?php
     if(isset($_GET['weiter'])) {
         $fragenIndex = $_SESSION['fragenListe'];
-        unset($fragenIndex[0]);
+        array_shift($fragenIndex[0]);
         $_SESSION['fragenListe'] = $fragenIndex;
     }
     header("Refresh: 5; URL=antworten.php");
