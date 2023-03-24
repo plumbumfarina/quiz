@@ -122,7 +122,7 @@ if(!isset($_SESSION['userid'])) {
 */
               $currentFrage = getFrage($conn, $_GET['fragen_id']);
               $currentAntworten = getAntworten($conn, $_GET['fragen_id']);
-              $currentIndex = $_GET[$fragenListe[$currentIndex]];
+              $currentIndex = $_GET[$currentIndex];
 
 			$conn->close();
                         
