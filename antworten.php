@@ -17,7 +17,8 @@ if(!isset($_SESSION['userid'])) {
         if(!empty($fragenIndex)) {
             header("URL=antworten.php?fragen_id=" . $fragenIndex[0]);
         } else {
-            header("URL=endGame.php");
+            header("Location: endGame.php");
+            exit();
         }
     }
 
