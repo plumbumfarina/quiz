@@ -52,7 +52,7 @@ if(!isset($_SESSION['userid'])) {
                                 
             <label for='frage' class='form-label'> Antwort 3:</label>
             <input type='text' class='form-control' name='Antwort3'></input>
-            <input type='radio' name='richtigkeit' value='3 requiredinput>
+            <input type='radio' name='richtigkeit' value='3' required></input>
             <label>Richtige Antwort</label><br><br>
                                 
             <label for='frage' class='form-label'> Antwort 4:</label>
