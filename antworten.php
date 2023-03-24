@@ -40,8 +40,6 @@ if(!isset($_SESSION['userid'])) {
 // wichtige Variablen 
             $kartendeck_id = $_GET['kartendeck_id'];
             $user_id = $_SESSION['userid'];
-            $fragenListe = array();
-			$currentIndex = 0;
 
 // Funktion um die aktuelle Frage herauszufinden
             function getFrage($conn, $fragen_id){
@@ -99,16 +97,6 @@ if(!isset($_SESSION['userid'])) {
 
                 return $antwortenArray;
             }
-// Zufällige Reihenfolge der Fragen-IDs
-			shuffle($fragenListe);
-// Länge des Array = Anzahl der Fragen-IDs
-			$anzahlFragen = count($fragenListe);
-
-// Aktuelle Inhalte
-            foreach($fragenListe as $id){
-                $currentFrage = getFrage($conn, $id);
-                $currentAntworten = getAntworten($conn, $id);
-            }
             
 /*// Anzeige des Formulars
                 foreach ($fragenListe as $index => $fragen_id) {
@@ -132,7 +120,8 @@ if(!isset($_SESSION['userid'])) {
                 }
               }
 */
-
+              $currentFrage = getFrage($conn, $_GET['fragen_id']);
+              $currentAntworten = getAntworten($conn, $_GET['fragen_id']);
 
 			$conn->close();
                         
