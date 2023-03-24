@@ -25,44 +25,148 @@ if(!isset($_SESSION['userid'])) {
     <div class="container mt-3">
         <h1 class="form__title">Frage</h1>
         <?php
-            include_once('lib/dbConnectorMYSQLI.php')
-            include_once('lib/getFrage.php')
-            include_once('lib/getAntworten.php')
-
+// Datenbank-Verbindung
+            $servername = "localhost";
+            $username = "root";
+            $password = "toor";
+            $dbname = "ProjektQuiz";
+        
+            // Create connection
+            $conn = new mysqli($servername, $username, $password, $dbname);
+            // Check connection
+            if ($conn->connect_error) {
+                die("Connection failed: " . $conn->connect_error);
+            }
+// wichtige Variablen 
             $kartendeck_id = $_GET['kartendeck_id'];
-
-            $sql = "SELECT fragen_id FROM fragen WHERE kartendeck_id = $kartendeck_id";
-            $result = $conn->query($sql);
-
+            $user_id = $_SESSION['userid'];
             $fragenListe = array();
 			$currentIndex = 0;
 
+//SQL Abfrage für alle Fragen-IDs
+            $sql = "SELECT fragen_id FROM fragen WHERE kartendeck_id = $kartendeck_id";
+            $stmt = $conn->prepare($sql);
+            $stmt->bind_param("i", $kartendeck_id);
+            $stmt->execute();
+            $result = $stmt->get_result();
             if ($result->num_rows > 0) {
                 // output data of each row
                 while($row = $result->fetch_assoc()) {
                     $fragenListe[] = $row['fragen_id'];
                 }
             } else {
-                echo "";
-            }       
+                echo "Keine Fragen gefunden!";
+            }    
 
-			foreach($fragenListe as $fL){
-			    echo $fL;
-			}
-			//shuffle($fragenListe);
+// Funktion um die aktuelle Frage herauszufinden
+            function getFrage($conn, $fragen_id){
+            // Prüfung ob eine Fragen-ID angegeben wurde 
+                if(isset($fragen_id)) {
+                    $sqlFrage = "SELECT fragentext FROM fragen WHERE fragen_id = $fragen_id";
+                    $resultFrage = $conn->query($sqlFrage);
+
+                    if (!$resultFrage) {
+                        printf("Error: %s\n", mysqli_error($conn));
+                        exit();
+                    }
+
+                    if($resultFrage->num_rows == 1){
+                        $rowFrage = $resultFrage->fetch_assoc();
+                        $fragentext = $rowFrage['fragentext']; 
+                    } else {
+                        echo "Fehler: Die Abfrage gibt das falsche Ergebnis zurück!";
+                    }
+                } else {
+                    echo "Keine Frage angegeben.";
+                }
+
+                return $fragentext;
+            }
+
+// Funktion um die aktuellen Antworten herauszufinden
+            function getAntworten($conn, $fragen_id){
+            // Prüfung ob eine Fragen-ID angegeben wurde 
+                if(isset($fragen_id)) {
+                    $sqlAntwort = "SELECT antwortEins, antwortZwei, antwortDrei, antwortVier FROM fragen WHERE fragen_id = $fragen_id";
+                    $resultAntwort = $conn->query($sqlAntwort);
+
+                    if (!$resultAntwort) {
+                        printf("Error: %s\n", mysqli_error($conn));
+                        exit();
+                    }
+
+                    if($resultAntwort->num_rows == 1){
+                        $rowAntwort = $resultAntwort->fetch_assoc();
+                        $antwort1 = $rowAntwort['antwortEins']; 
+                        $antwort2 = $rowAntwort['antwortZwei']; 
+                        $antwort3 = $rowAntwort['antwortDrei']; 
+                        $antwort4 = $rowAntwort['antwortVier']; 
+                    } else {
+                        echo "Fehler: Die Abfrage gibt das falsche Ergebnis zurück!";
+                    }
+                } else {
+                    echo "Keine Frage angegeben.";
+                }
+
+                // Mischen der Antworten
+                $antwortenArray = array($antwort1, $antwort2, $antwort3, $antwort4);
+                shuffle($antwortenArray);
+
+                return $antwortenArray;
+            }
+// Zufällige Reihenfolge der Fragen-IDs
+			shuffle($fragenListe);
+// Länge des Array = Anzahl der Fragen-IDs
 			$anzahlFragen = count($fragenListe);
-            echo $anzahlFragen;
+
+// Aktuelle Inhalte
+            foreach($fragenListe as $id){
+                $currentFrage = getFrage($conn, $id);
+                $currentAntworten = getAntworten($conn, $id);
+            }
             
-			$currentFrage = getFrage($fragenListe[$currentIndex]);
-            getFrage(4);
-			echo $currentFrage; 
-            $currentAntwort = getAntwort(4);
-			foreach($currentAntwort as $cA){
-				echo $cA;
-			}
+/*// Anzeige des Formulars
+                foreach ($fragenListe as $index => $fragen_id) {
+                // Generate the form for this question
+                echo "<form method='POST' action='antworten.php?kartendeck_id=$kartendeck_id'>";
+                echo "<h2>Frage " . ($index+1) . ":</h2>";
+                echo "<p>" . getFrage($conn, $fragen_id) . "</p>";
+                $antworten = getAntworten($conn, $fragen_id);
+                foreach ($antworten as $antwort) {
+                  echo "<input type='Button' class='button 'name='antwort' value='$antwort'>" . $antwort . "<br>";
+                }
+                // Add a hidden input field to keep track of the current question index
+                echo "<input type='hidden' name='current_index' value='$index'>";
+                // Add a submit button
+                echo "<input type='submit' value='Antworten'>";
+                echo "</form>";
+              
+                // Check if the form has been submitted and update the current question index
+                if (isset($_POST['current_index']) && $_POST['current_index'] == $index) {
+                  $currentIndex++;
+                }
+              }
+*/
+
+
 			$conn->close();
                         
         ?>
+
+        <form action="anworten.php" method="post">
+            <p><?php echo $currentFrage; ?></p>
+            <input type="hidden" name="question_id" value="<?php echo $fragen_id; ?>">
+        <?php
+            echo"  
+                <button type='submit' name='answer' value='1'>" . $currentAntworten[0] . "</button>
+                <button type='submit' name='answer' value='2'>" . $currentAntworten[1] . "</button>
+                <button type='submit' name='answer' value='3'>" . $currentAntworten[2] . "</button>
+                <button type='submit' name='answer' value='4'>" . $currentAntworten[3] . "</button>
+            ";
+        ?>  
+            <button type="submit" name="next_question">Nächste Frage</button>
+        </form>
+
     </div>
 </div>
 
@@ -70,5 +174,18 @@ if(!isset($_SESSION['userid'])) {
 <?php
 	include_once('footer.php')
 ?>
+
+<script>
+    document.querySelectorAll('button[name="answer"]').forEach((button) => {
+  button.addEventListener('click', () => {
+    document.querySelector('input[name="answer"]').value = button.value;
+  });
+});
+
+document.querySelector('button[name="next_question"]').addEventListener('click', () => {
+  document.querySelector('form').submit();
+});
+</script>
+
 </body>
 </html>

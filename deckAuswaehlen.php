@@ -63,13 +63,14 @@ include_once('lib/getFragenAnzahl.php');
                         if ($result->num_rows > 0) {
                             // Ausgabe der SQL Abfrage
                             while($row = $result->fetch_assoc()) {
+                                $fragenAnzahl = getFragenAnzahl($row["kartendeck_id"]);
                                 echo "<tr>
                                     <td>" . $row["kartendeck_name"]. "</td>
                                     <td>" . $row["modulkuerzel"]. "</td>
                                     <td>" . $row["modulname"]. "</td>
-                                    <td>" . getFragenAnzahl($row["kartendeck_id"]). "</td>
+                                    <td>" . $fragenAnzahl. "</td>
                                     <td>
-                                        <button type='button' class='buttonSpielen' value='" . $row["kartendeck_id"]. "' onclick='openPageGame(" .  $row['kartendeck_id']. ")'> Spielen </button>
+                                        <button type='button' class='buttonSpielen' value='" . $row["kartendeck_id"]. "' onclick='openPageGame(" .  $row['kartendeck_id']. ")'". ($fragenAnzahl == 0 ? " disabled" : "") ."> Spielen </button>
                                     </td>
                                 </tr>";
                             }
