@@ -17,7 +17,7 @@ if(!isset($_SESSION['userid'])) {
         if(!empty($fragenIndex)) {
             header("Location: antworten.php?fragen_id=" . $fragenIndex[0]);
         } else {
-            header("Location: finaleUebersicht.php");
+            header("Location: finaleUebersicht.php?kartendeck_id=" . $kartendeck_id);
             exit();
         }
     }
