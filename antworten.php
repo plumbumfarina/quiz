@@ -43,21 +43,6 @@ if(!isset($_SESSION['userid'])) {
             $fragenListe = array();
 			$currentIndex = 0;
 
-//SQL Abfrage für alle Fragen-IDs
-            $sql = "SELECT fragen_id FROM fragen WHERE kartendeck_id = $kartendeck_id";
-            $stmt = $conn->prepare($sql);
-            $stmt->bind_param("i", $kartendeck_id);
-            $stmt->execute();
-            $result = $stmt->get_result();
-            if ($result->num_rows > 0) {
-                // output data of each row
-                while($row = $result->fetch_assoc()) {
-                    $fragenListe[] = $row['fragen_id'];
-                }
-            } else {
-                echo "Keine Fragen gefunden!";
-            }    
-
 // Funktion um die aktuelle Frage herauszufinden
             function getFrage($conn, $fragen_id){
             // Prüfung ob eine Fragen-ID angegeben wurde 
