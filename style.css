@@ -392,11 +392,6 @@ button:hover {
   background-color: white;
 }
 
-.table-striped tbody tr:hover {
-  background-color: #ecaa59;
-  color: white;
-}
-
 .table-striped td {
   padding: 8px;
 }
