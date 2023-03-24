@@ -33,7 +33,7 @@
       margin-top: 80px;
       margin-bottom: 80px;
       height: 100%;
-      overflow-y: scroll;
+      /*overflow-y: scroll;*/
       padding: 20px;
     }
   </style>
