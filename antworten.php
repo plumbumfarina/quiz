@@ -158,7 +158,7 @@ if(!isset($_SESSION['userid'])) {
         if(!empty($fragenIndex)) {
             header("Refresh: 0.01; URL=antworten.php?fragen_id=" . $fragenIndex[0]);
         } else {
-            header("URL=endGame.php");
+            header("Refresh: 0.01; URL=endGame.php");
         }
     }
     
