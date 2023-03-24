@@ -82,8 +82,8 @@ session_start();
                         foreach($fragenListe as $frage) {
 
                             echo "<tr>";
-                            echo "<td>Frage " . $frage['fragentext'] . "</td>";
-                            echo "<td>Frage " . $frage['fragentext'] . "</td>";
+                            echo "<td>" . $frage['fragentext'] . "</td>";
+                            echo "<td>" . $frage['fragentext'] . "</td>";
                             echo "</tr>";
                         }
 
