@@ -10,6 +10,14 @@ if(!isset($_SESSION['userid'])) {
 
 <?php
 
+// wichtige Variablen 
+            $kartendeck_id = $_GET['kartendeck_id'];
+            $user_id = $_SESSION['userid'];
+            $fragenIndex = $_SESSION['fragenListe'];
+            $fragen_id = $fragenIndex[0];
+
+
+
     if(isset($_GET['weiter'])) {
         $fragenIndex = $_SESSION['fragenListe'];
         array_shift($fragenIndex);
@@ -54,11 +62,7 @@ if(!isset($_SESSION['userid'])) {
             if ($conn->connect_error) {
                 die("Connection failed: " . $conn->connect_error);
             }
-// wichtige Variablen 
-            $kartendeck_id = $_GET['kartendeck_id'];
-            $user_id = $_SESSION['userid'];
-            $fragenIndex = $_SESSION['fragenListe'];
-            $fragen_id = $fragenIndex[0];
+
             //$fragen_id = $_GET['fragen_id'];
 
 // Funktion um die aktuelle Frage herauszufinden
