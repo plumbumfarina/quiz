@@ -78,7 +78,7 @@ session_start();
 //Tabelle erstellen mit Fragen IDs und der Antworten
                         for($i = 0; $i < count($fragenListe); $i++) {
                             $antworten[$i] = '0';
-                            echo $fragenListe[$i];
+                            echo $fragenListe[$currentIndex];
                             echo "<tr>
                                 <td>Frage " . ($i + 1) . "</td>
                                 <td>";
