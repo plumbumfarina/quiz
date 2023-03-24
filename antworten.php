@@ -8,16 +8,6 @@ if(!isset($_SESSION['userid'])) {
 
 ?>
 
-<?php
-    if(isset($_GET['antworten'])) {
-        $fragenIndex = $_SESSION['fragenListe'];
-        unset($fragenIndex[0]);
-        $_SESSION['fragenListe'] = $fragenIndex;
-    }
-    header("Refresh: 0.1; URL=antworten.php");
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -151,6 +141,15 @@ if(!isset($_SESSION['userid'])) {
                 <button type='submit' name='answer' value='4'>" . $currentAntworten[3] . "</button>
             ";
         ?>  
+        <?php
+            if(isset($_GET['antworten'])) {
+                $fragenIndex = $_SESSION['fragenListe'];
+                unset($fragenIndex[0]);
+                $_SESSION['fragenListe'] = $fragenIndex;
+            }
+            header("Refresh: 0.1; URL=antworten.php");
+
+        ?>
             <button type="submit" name="next_question">Nächste Frage</button>
         </form>
 
