@@ -47,17 +47,17 @@ if(!isset($_SESSION['userid'])) {
                                 
             <label for='frage' class='form-label'> Antwort 2:</label>
             <input type='text' class='form-control' name='Antwort2'></input>                 
-            <input type='radio' name='richtigkeit' value='2'></input>
+            <input type='radio' name='richtigkeit' value='2' required></input>
             <label>Richtige Antwort</label><br><br>
                                 
             <label for='frage' class='form-label'> Antwort 3:</label>
             <input type='text' class='form-control' name='Antwort3'></input>
-            <input type='radio' name='richtigkeit' value='3'></input>
+            <input type='radio' name='richtigkeit' value='3 requiredinput>
             <label>Richtige Antwort</label><br><br>
                                 
             <label for='frage' class='form-label'> Antwort 4:</label>
             <input type='text' class='form-control' name='Antwort4'></input>
-            <input type='radio' name='richtigkeit' value='4'></input>
+            <input type='radio' name='richtigkeit' value='4' required></input>
             <label>Richtige Antwort</label><br><br>
 
             <div>
