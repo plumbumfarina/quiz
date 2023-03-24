@@ -162,9 +162,9 @@ document.querySelectorAll('button[name="answer"]').forEach((button) => {
 });
 
 
-document.querySelector('button[name="next_question"]').addEventListener('click', () => {
-  document.querySelector('form').submit();
-});
+//document.querySelector('button[name="next_question"]').addEventListener('click', () => {
+//  document.querySelector('form').submit();
+//});
 </script>
 
 </body>
