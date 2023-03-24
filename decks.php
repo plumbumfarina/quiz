@@ -13,8 +13,6 @@ if(!isset($_SESSION['userid'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css" type="text/css" media="screen"/>
-    <!--  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script> -->
     <title>Decks</title>
 </head>
 <body>
@@ -94,7 +92,7 @@ if(!isset($_SESSION['userid'])) {
         <form action="lib/addKartendeck.php" method="post">
             <div class="mb-3">
                 <label for="deckname">Kartendeckname:</label>
-                <input type="text" name="deckname" required class="form-control">
+                <input type="text" name="deckname" class="inputDeck" required>
             </div>
             <div class="mb-3">
                 <label class="form-check-label" for="public">Willst du das Kartendeck für alle spielbar machen?</label>
@@ -103,7 +101,7 @@ if(!isset($_SESSION['userid'])) {
             </div>
             <div class="mb-3">
             <label for="modul">Wähle ein Modul aus:</label>
-                <select id="modul" name="modul" class="form-select">
+                <select id="modul" name="modul" class="inputDeck">
                 <?php
                     
                     $servername = "localhost";
@@ -143,6 +141,7 @@ if(!isset($_SESSION['userid'])) {
         </form>
     </div>
 </div>
+
 <script>
 function openBearbeiteKartendeck(id) {
   window.location.href = "fragenUebersicht.php?kartendeck_id=" + id;
