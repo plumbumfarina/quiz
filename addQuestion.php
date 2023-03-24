@@ -40,23 +40,23 @@ if(!isset($_SESSION['userid'])) {
                                 
             <label for='frage' class='form-label'> Antwort 1:</label>
             <input type='text' class='form-control' name='Antwort1'></input>                 
-            <input type='radio' name='richtigkeit' value='1' required></input>
-            <label>Richtige Antwort</label><br><br>
+            <input type='radio' name='richtigkeit' id='richtig1' value='1' required></input>
+            <label for='richtig1'>Richtige Antwort</label><br><br>
                                 
             <label for='frage' class='form-label'> Antwort 2:</label>
             <input type='text' class='form-control' name='Antwort2'></input>                 
-            <input type='radio' name='richtigkeit' value='2' required></input>
-            <label>Richtige Antwort</label><br><br>
+            <input type='radio' name='richtigkeit' id='richtig2' value='2' required></input>
+            <label for='richtig2'>Richtige Antwort</label><br><br>
                                 
             <label for='frage' class='form-label'> Antwort 3:</label>
             <input type='text' class='form-control' name='Antwort3'></input>
-            <input type='radio' name='richtigkeit' value='3' required></input>
-            <label>Richtige Antwort</label><br><br>
+            <input type='radio' name='richtigkeit' id='richtig3' value='3' required></input>
+            <label for='richtig3'>Richtige Antwort</label><br><br>
                                 
             <label for='frage' class='form-label'> Antwort 4:</label>
             <input type='text' class='form-control' name='Antwort4'></input>
-            <input type='radio' name='richtigkeit' value='4' required></input>
-            <label>Richtige Antwort</label><br><br>
+            <input type='radio' name='richtigkeit' id='richtig4' value='4' required></input>
+            <label for='richtig4'>Richtige Antwort</label><br><br>
 
             <div>
                 <button type='submit' class='buttonHinzufuegen' onclick="submitForm('lib/addFrage.php')"> Hinzufügen </button>
