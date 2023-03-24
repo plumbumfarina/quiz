@@ -129,7 +129,8 @@ if(!isset($_SESSION['userid'])) {
         ?>
 
         <form action="anworten.php" method="post">
-            <p><?php echo $currentFrage . $currentIndex; ?></p>
+            <p><?php echo $currentIndex; ?></p>
+            <p><?php echo $currentFrage; ?></p>
             <input type="hidden" name="question_id" value="<?php echo $fragen_id; ?>">
         <?php
             echo"  
