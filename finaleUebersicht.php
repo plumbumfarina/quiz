@@ -80,11 +80,9 @@ session_start();
 //Tabelle erstellen mit Fragen IDs und der Antworten
 
                         foreach($fragenListe as $frage) {
-                            echo $frage['fragen_id'];
-                            echo $frage['fragentext'];
 
                             echo "<tr>";
-                            echo "<td>Frage " . $frage['fragen_id'] . "</td>";
+                            echo "<td>Frage " . $frage['fragentext'] . "</td>";
                             echo "<td>Frage " . $frage['fragentext'] . "</td>";
                             echo "</tr>";
                         }
