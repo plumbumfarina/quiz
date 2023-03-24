@@ -8,6 +8,21 @@ if(!isset($_SESSION['userid'])) {
 
 ?>
 
+<?php
+
+    if(isset($_GET['weiter'])) {
+        $fragenIndex = $_SESSION['fragenListe'];
+        array_shift($fragenIndex);
+        $_SESSION['fragenListe'] = $fragenIndex;
+        if(!empty($fragenIndex)) {
+            header("Refresh: 0.01; URL=antworten.php?fragen_id=" . $fragenIndex[0]);
+        } else {
+            header("Refresh: 0.01; URL=endGame.php");
+        }
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -149,21 +164,7 @@ if(!isset($_SESSION['userid'])) {
     </div>
 </div>
 
-<?php
 
-    if(isset($_GET['weiter'])) {
-        $fragenIndex = $_SESSION['fragenListe'];
-        array_shift($fragenIndex);
-        $_SESSION['fragenListe'] = $fragenIndex;
-        if(!empty($fragenIndex)) {
-            header("Refresh: 0.01; URL=antworten.php?fragen_id=" . $fragenIndex[0]);
-        } else {
-            header("Refresh: 0.01; URL=endGame.php");
-        }
-    }
-    
-
-?>
 
 <?php
 	include_once('footer.php')
