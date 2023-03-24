@@ -1,10 +1,10 @@
 <?php
 // check if user is logged in, if not redirect to login page
 session_start();
-/* if(!isset($_SESSION['userid'])) {
+if(!isset($_SESSION['userid'])) {
     header('location: login.php');
     die('Bitte zuerst einloggen');
-} */
+}
 
 
 
@@ -54,13 +54,35 @@ session_start();
                         }
 // wichtige Variablen 
                         $kartendeck_id = $_SESSION['kartendeck_id'];
+                        $fragenListeUebersicht = $_SESSION['fragenListeUebersicht'];
                         $user_id = $_SESSION['userid'];
                         $fragenListe = array();
                         $antworten = array();
                         $currentIndex = 0;
 
 //SQL Abfrage für alle Fragen-IDs und Fragentexte
-                        $sql = "SELECT fragen_id, fragentext FROM fragen WHERE kartendeck_id = $kartendeck_id";
+
+
+
+                        // retrieve the fragentext and richtigkeit values for the given fragen_ids
+                        $sql = "SELECT fragentext FROM fragen WHERE kartendeck_id = $kartendeck_id AND fragen_id IN (".implode(',', $fragenListeUebersicht).")";
+                        $result = mysqli_query($conn, $sql);
+
+                        // iterate through the fragen_ids array and add a row to the table for each id
+                        foreach ($fragenListeUebersicht as $id) {
+                            // find the row in the result set with the matching id
+                            mysqli_data_seek($result, 0);
+                            while ($row = mysqli_fetch_assoc($result)) {
+                                if ($row['fragen_id'] == $id) {
+                                // add a row to the table with the fragentext and richtigkeit values
+                                echo '<tr><td>'.$id.'</td><td>'.$row['fragentext'].'</td><td>'.$row['richtigkeit'].'</td></tr>';
+                                break;
+                                }
+                            }
+                        }
+
+                        /*
+                        //$sql = "SELECT fragentext FROM fragen WHERE kartendeck_id = $kartendeck_id AND fragen_id = $fragenListeUebersicht";
                         $stmt = $conn->prepare($sql);
                         $stmt->bind_param("i", $kartendeck_id);
                         $stmt->execute();
@@ -72,10 +94,7 @@ session_start();
                             }
                         } else {
                             echo "Keine Fragen gefunden!";
-                        }    
-
-			            #shuffle($fragenListe);
-                        #$_SESSION['fragenListe'] = $fragenListe;
+                        }
 
 //Tabelle erstellen mit Fragen IDs und der Antworten
 
@@ -86,7 +105,7 @@ session_start();
                             echo "<td>" . $frage['fragentext'] . "</td>";
                             echo "</tr>";
                         }
-
+*/
                         #for($i = 0; $i < count($fragenListe); $i++) {
                         #    $antworten[$i] = '0';
                         #    echo "<tr>
