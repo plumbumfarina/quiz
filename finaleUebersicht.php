@@ -75,27 +75,12 @@ if(!isset($_SESSION['userid'])) {
                             while ($row = mysqli_fetch_assoc($result)) {
                                 if ($row['fragen_id'] == $id) {
                                 // add a row to the table with the fragentext and richtigkeit values
-                                echo '<tr><td>'.$id.'</td><td>'.$row['fragentext'].'</td><td>'.$row['richtigkeit'].'</td></tr>';
+                                echo '<tr><td>'.$row['fragentext'].'</td></tr>';
                                 break;
                                 }
                             }
                         }
-
-                        /*
-                        //$sql = "SELECT fragentext FROM fragen WHERE kartendeck_id = $kartendeck_id AND fragen_id = $fragenListeUebersicht";
-                        $stmt = $conn->prepare($sql);
-                        $stmt->bind_param("i", $kartendeck_id);
-                        $stmt->execute();
-                        $result = $stmt->get_result();
-                        if ($result->num_rows > 0) {
-                            // output data of each row
-                            while($row = $result->fetch_assoc()) {
-                                $fragenListe[] = array('fragen_id' => $row['fragen_id'], 'fragentext' => $row['fragentext']);
-                            }
-                        } else {
-                            echo "Keine Fragen gefunden!";
-                        }
-
+/*
 //Tabelle erstellen mit Fragen IDs und der Antworten
 
                         foreach($fragenListe as $frage) {
