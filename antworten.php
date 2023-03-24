@@ -134,12 +134,12 @@ if(!isset($_SESSION['userid'])) {
             <p><?php echo $currentFrage; ?></p>
             <input type="hidden" name="question_id" value="<?php echo $fragen_id; ?>">
         <?php
-            echo"  
-                <button type='submit' name='answer' value='1'>" . $currentAntworten[0] . "</button>
-                <button type='submit' name='answer' value='2'>" . $currentAntworten[1] . "</button>
-                <button type='submit' name='answer' value='3'>" . $currentAntworten[2] . "</button>
-                <button type='submit' name='answer' value='4'>" . $currentAntworten[3] . "</button>
-            ";
+            #echo"  
+            #    <button type='submit' name='answer' value='1'>" . $currentAntworten[0] . "</button>
+            #    <button type='submit' name='answer' value='2'>" . $currentAntworten[1] . "</button>
+            #    <button type='submit' name='answer' value='3'>" . $currentAntworten[2] . "</button>
+            #    <button type='submit' name='answer' value='4'>" . $currentAntworten[3] . "</button>
+            #";
         ?>  
             <button type="submit" name="next_question">Nächste Frage</button>
         </form>
