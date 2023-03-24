@@ -150,14 +150,12 @@ if(!isset($_SESSION['userid'])) {
 </div>
 
 <?php
-    #if(isset($_POST['next_question'])) {
 
-    #}
     if(isset($_GET['weiter'])) {
         $fragenIndex = $_SESSION['fragenListe'];
         array_shift($fragenIndex[0]);
         $_SESSION['fragenListe'] = $fragenIndex;
-        header("Refresh: 5; URL=antworten.php");
+        header("Refresh: 5; URL=antworten.php?fragen_id=" . $fragenIndex[0]);
     }
     
 
