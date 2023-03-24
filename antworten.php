@@ -131,16 +131,16 @@ if(!isset($_SESSION['userid'])) {
                         
         ?>
 
-        <form action="?weiter=1" method="post" onsubmit="return false;">
+        <form action="?weiter=1" method="post">
             <p><?php foreach ($_SESSION['fragenListe'] as $fragen_id) {echo $fragen_id . " ";} ?></p>
             <p><?php echo $currentFrage; ?></p>
             <input type="hidden" name="question_id" value="<?php echo $fragen_id; ?>">
         <?php
             echo"  
-                <button type='button' name='answer' value='1'>" . $currentAntworten[0] . "</button>
-                <button type='button' name='answer' value='2'>" . $currentAntworten[1] . "</button>
-                <button type='button' name='answer' value='3'>" . $currentAntworten[2] . "</button>
-                <button type='button' name='answer' value='4'>" . $currentAntworten[3] . "</button>
+                <button type='submit' name='answer' value='1'>" . $currentAntworten[0] . "</button>
+                <button type='submit' name='answer' value='2'>" . $currentAntworten[1] . "</button>
+                <button type='submit' name='answer' value='3'>" . $currentAntworten[2] . "</button>
+                <button type='submit' name='answer' value='4'>" . $currentAntworten[3] . "</button>
             ";
         ?>  
             <button type="submit" name="next_question">Nächste Frage</button>
@@ -150,12 +150,16 @@ if(!isset($_SESSION['userid'])) {
 </div>
 
 <?php
+    #if(isset($_POST['next_question'])) {
+
+    #}
     if(isset($_GET['weiter'])) {
         $fragenIndex = $_SESSION['fragenListe'];
         array_shift($fragenIndex[0]);
         $_SESSION['fragenListe'] = $fragenIndex;
+        header("Refresh: 5; URL=antworten.php");
     }
-    header("Refresh: 5; URL=antworten.php");
+    
 
 ?>
 
@@ -164,15 +168,15 @@ if(!isset($_SESSION['userid'])) {
 ?>
 
 <script>
-//    document.querySelectorAll('button[name="answer"]').forEach((button) => {
-//    button.addEventListener('click', () => {
-//    document.querySelector('input[name="answer"]').value = button.value;
-//  });
-//});
+    document.querySelectorAll('button[name="answer"]').forEach((button) => {
+    button.addEventListener('click', () => {
+    document.querySelector('input[name="answer"]').value = button.value;
+  });
+});
 
-//document.querySelector('button[name="next_question"]').addEventListener('click', () => {
-//  document.querySelector('form').submit();
-//});
+document.querySelector('button[name="next_question"]').addEventListener('click', () => {
+  document.querySelector('form').submit();
+});
 </script>
 
 </body>
