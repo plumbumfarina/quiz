@@ -151,15 +151,16 @@ if(!isset($_SESSION['userid'])) {
 
 <script>
 document.querySelectorAll('button[name="answer"]').forEach((button) => {
-    button.addEventListener('click', () => {
-        // Entfernt die class "selected" von allen Buttons
-        document.querySelectorAll('button[name="answer"]').forEach((btn)) => {
-            btn.classList.remove('selected');
-        });
-        // Fügt dem aktuell ausgewählten Button die class "selected" hinzu
-        button.classList.add('selected');
+  button.addEventListener('click', () => {
+    // Entfernt die class "selected" von allen Buttons
+    document.querySelectorAll('button[name="answer"]').forEach((btn) => {
+      btn.classList.remove('selected');
     });
+    // Fügt dem aktuell ausgewählten Button die class "selected" hinzu
+    button.classList.add('selected');
+  });
 });
+
 
 document.querySelector('button[name="next_question"]').addEventListener('click', () => {
   document.querySelector('form').submit();
