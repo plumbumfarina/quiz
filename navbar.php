@@ -5,6 +5,7 @@
         <li><a href="startGame.php">Neues Spiel</a></li>
 
         <?php 
+            session_start();
             if(isset($_SESSION['user_id'])) {
                 echo " <li>Hallo <b>" . $_SESSION['nickname']."</b>!</li>";
             } 
