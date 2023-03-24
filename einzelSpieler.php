@@ -28,6 +28,9 @@ session_start();
     <div>
         <h1 class="formTitle">Übersicht der Fragen</h1>
         <br>
+        <div>
+            <button type="button" class="buttonSpielen" onclick="openStart('<?php echo $fragenListe[$currentIndex]; ?>')"> Quiz beginnen! </button>
+        </div>
             <table class="table table-striped">
                 <thead class="table-dark">
                     <tr>
@@ -100,9 +103,7 @@ session_start();
                     ?>
                 </tbody>
             </table>
-            <div>
-                <button type="button" class="buttonSpielen" onclick="openStart('<?php echo $fragenListe[$currentIndex]; ?>')"> Quiz beginnen! </button>
-            </div>
+            
     </div>
 </div>
 <script>
