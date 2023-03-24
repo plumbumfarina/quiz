@@ -8,10 +8,7 @@
 	<link rel="stylesheet" href="style.css" type="text/css" media="screen"/>
     <title>Projekt</title>
 
-    <!-- Bootstrap -->
-    <!-- das ist die Menüleiste -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-	<link href="css/style.css" rel="stylesheet">
+
   </head>
   <body>
 	<div class="container">
