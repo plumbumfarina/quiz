@@ -371,6 +371,7 @@ button:hover {
   border-collapse: collapse;
   border-radius: 10px;
   border-color: #ff8c00;
+  margin: 0 auto;
 }
 
 .table-striped thead {
@@ -381,11 +382,10 @@ button:hover {
 .table-striped th {
   padding: 10px;
   text-align: left;
-  border: 1px solid #ddd;
 }
 
 .table-striped tbody tr:nth-child(even) {
-  background-color: #9e9e9e;
+  background-color: #e6e5e5;
 }
 
 .table-striped tbody tr:nth-child(odd) {
@@ -399,5 +399,4 @@ button:hover {
 
 .table-striped td {
   padding: 8px;
-  border: 1px solid #ddd;
 }
