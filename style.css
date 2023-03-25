@@ -470,6 +470,8 @@ td{
   text-align: center;
 }
 .formDeck{
+  width: 100%;
+  max-width: 100%;
   padding: 15px;
 }
 .labelDeck{
