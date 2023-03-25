@@ -16,12 +16,12 @@ session_start();
     <body>
         <header>
             <?php
-                include_once('lib/navbar.php')
+                include_once('navbar.php')
             ?>
         </header>
         <div class="containerLogin">
             <h1 class="formTitle">Logout</h1>
-            <p>Are you sure you want to logout?</p>
+            <h2>Willst du dich wirklich ausloggen?</h2>
             <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
                 <button type="submit">Logout</button>
             </form>
@@ -40,7 +40,7 @@ session_start();
         }
         ?>
         <?php
-            include_once('lib/footer.php')
+            include_once('footer.php')
         ?>
     </body>
 </html>
