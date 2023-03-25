@@ -416,7 +416,7 @@ button:hover {
   border: 1px solid #ff8c00;
 }
 
-/*.table-striped {
+.table-striped {
   width: 100%;
   border-collapse: collapse;
   border-radius: 10px;
@@ -448,7 +448,7 @@ button:hover {
 
 .table-striped td {
   padding: 8px;
-}*/
+}
 
 /* Input Decks */
 .inputDecks{
