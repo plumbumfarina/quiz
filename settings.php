@@ -24,7 +24,7 @@ if(!isset($_SESSION['userid'])) {
 	<main>
 		
         <h1>Hier kannst Du Einstellungen vornehmen</h1>
-        <div class="containerLogin">
+        <div class="ContainerDeck">
         <div class="switch-container">
             <label class="switch">
                 <input type="checkbox">
