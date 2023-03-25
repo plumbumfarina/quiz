@@ -123,7 +123,7 @@ session_start();
     </main>
     <script>
         function openStart(id) {
-        window.location.href = "antworten.php?fragen_id=" + id;
+        window.location.href = "answer.php?fragen_id=" + id;
         }
     </script>
     <?php
