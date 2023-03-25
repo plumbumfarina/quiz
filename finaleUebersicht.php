@@ -76,7 +76,6 @@ if(!isset($_SESSION['userid'])) {
                                 if ($row['fragen_id'] == $id) {
                                 // eine neue Zeile mit dem aktuellen Fragentext hinzufügen
                                 echo '<tr class="TRDeck"><td>'.$row['fragentext'].'</td>';
-                                }
                                 if (isset($selectedAnswer[$answer_index])) {
                                     echo '<td>' . $selectedAnswer[$answerIndex] . '</td>';
                                 } else {
@@ -84,6 +83,8 @@ if(!isset($_SESSION['userid'])) {
                                 }
                                 $answerIndex++;
                                 echo '</tr>';
+                                }
+                                
                             }
                         }
 
