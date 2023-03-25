@@ -28,11 +28,11 @@ footer {
   width: 100%;
   background-color: #ff8c00;
   color: #fff;
-  padding: 20px;
+  padding: 10px;
   display: flex;
   justify-content: center;
   padding-left: 15px;
-  padding-top: 13px;
+  padding-top: 9px;
 }
 
 .footer-list {
@@ -40,10 +40,24 @@ footer {
   margin: 0;
   padding: 0;
   text-align: left;
+  font-size: 15px;
 }
 
 .footer-list li {
   margin-bottom: 5px;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column; /* Ändert die Flexbox-Richtung von Zeile auf Spalte */
+}
+
+.footer-heading {
+  color: #000;
+  font-weight: bold;
+  margin: 0;
+  margin-bottom: 8px;
+  font-size: 17px;
 }
 
 /* Stil für den Inhalt */
