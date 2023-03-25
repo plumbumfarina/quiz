@@ -45,7 +45,7 @@ if(isset($_GET['login'])) {
             <div class="formMessage formMessage--error"></div>
 
             <div class="formInputGroup">
-                <input type="email" class="formInput" maxlength="250" name="emailNickname" autofocus placeholder="E-Mail oder Nickname">
+                <input type="text" class="formInput" maxlength="250" name="emailNickname" autofocus placeholder="E-Mail oder Nickname">
                 <div class="form__input-error-message"></div>
             </div>
 
