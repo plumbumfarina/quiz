@@ -137,7 +137,7 @@ if(!isset($_SESSION['userid'])) {
                 $conn->close();
                             
             ?>
-            <div class="ContainerDeck">
+            <div class="ContainerDeck" style="padding:20px;">
                 <form action="?weiter=1" method="post">
                 
                     <h2><?php echo $currentFrage; ?></h2>
