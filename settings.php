@@ -24,7 +24,7 @@ if(!isset($_SESSION['userid'])) {
 	<main>
 		
         <h1>Hier kannst Du Einstellungen vornehmen</h1>
-        
+        <div class="containerLogin">
         <div class="switch-container">
             <label class="switch">
                 <input type="checkbox">
@@ -52,6 +52,7 @@ if(!isset($_SESSION['userid'])) {
                 <span class="slider"></span>
             </label>
             <span class="label-text">Automatische Posts auf Instagram</span>
+        </div>
         </div>
     </main>
 
