@@ -490,7 +490,7 @@ td{
   padding: 5px;
 }
 .inputDeck{
-  width: 90%;
+  width: 100%;
   border: 2px solid #1f1f1f;
   background-color: #f2f2f2;
   border-radius: 8px; 
@@ -498,7 +498,7 @@ td{
   font-size: 16px;
 }
 .selectDeck{
-  width: 90%;
+  width: 100%;
   border: 2px solid #1f1f1f;
   background-color: #f2f2f2;
   border-radius: 8px; 
