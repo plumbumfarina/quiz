@@ -5,7 +5,7 @@ session_start();
 ?>
  <?php
         // Prüfung ob Logout geclickt wurde
-        if(isset($_POST['logout'])) {
+        if(isset($_GET['logout'])) {
             // Session zerstören
             
             session_destroy();
