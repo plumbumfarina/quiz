@@ -9,6 +9,7 @@ if(!isset($_SESSION['userid'])) {
 ?>
 
 <?php
+    $selectedAnswer = array();
 
     if(isset($_GET['weiter'])) {
         $selectedAnswer[] = $_POST['answer'];
@@ -62,7 +63,7 @@ if(!isset($_SESSION['userid'])) {
             $fragenIndex = $_SESSION['fragenListe'];
             $fragen_id = $fragenIndex[0];
             //$fragen_id = $_GET['fragen_id'];
-            $selectedAnswer = array();
+            //$selectedAnswer = array();
             
 // Funktion um die aktuelle Frage herauszufinden
             function getFrage($conn, $fragen_id){
