@@ -18,7 +18,6 @@ if(!isset($_SESSION['userid'])) {
 
     <!-- Bootstrap -->
     <!-- das ist die Menüleiste -->
-	<link href="css/style.css" rel="stylesheet">
   </head>
   <body>
   <header>
