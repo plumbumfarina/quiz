@@ -173,18 +173,20 @@ a {
   margin-top: 40px;
 
 }
-    /* The switch container */
+/* The switch container */
 
-  .switch-container {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-  }
+.switch-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
 
-  .label-text {
-    margin-top: 15px;
-    margin-left: 20px;
-  }
+.label-text {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: 20px;
+}
 
 
 .switch {
@@ -193,6 +195,7 @@ a {
   width: 50px;
   height: 24px;
   margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 /* Hide the checkbox */
