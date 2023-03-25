@@ -5,7 +5,7 @@
         <li><a href="index.php">Startseite</a></li>
         <li><a href="decks.php">Meine Kartendecks</a></li>
         <li><a href="startGame.php">Neues Spiel</a></li>        
-        <a class="navMenu-logout" href="lib/logout.php"><span class="material-icons-outlined">logout</span></a>
+        <a class="navMenu-logout" href="logout.php"><span class="material-icons-outlined">logout</span></a>
     </ul>
     <?php 
         session_start();
