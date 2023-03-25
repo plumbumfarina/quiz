@@ -32,27 +32,7 @@ if(!isset($_SESSION['userid'])) {
     }
 
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css" type="text/css" media="screen"/>
-    <title>Frage</title>
-</head>
-<body>
-<header>
-    <?php
-        include_once('lib/navbar.php')
-    ?>
-</header>
-<main>
-    <div>
-        <div class="container mt-3">
-            <h1 class="form__title">Frage</h1>
-            <?php
+<?php
     // Datenbank-Verbindung
                 $servername = "localhost";
                 $username = "root";
@@ -70,8 +50,6 @@ if(!isset($_SESSION['userid'])) {
                 $user_id = $_SESSION['userid'];
                 $fragenIndex = $_SESSION['fragenListe'];
                 $fragen_id = $fragenIndex[0];
-                
-                //$fragen_id = $_GET['fragen_id'];
                 
                 
     // Funktion um die aktuelle Frage herauszufinden
@@ -137,10 +115,31 @@ if(!isset($_SESSION['userid'])) {
                 $conn->close();
                             
             ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" type="text/css" media="screen"/>
+    <title>Frage</title>
+</head>
+<body>
+<header>
+    <?php
+        include_once('lib/navbar.php')
+    ?>
+</header>
+<main>
+    <div>
+        <div class="container mt-3">
+            <h1 class="form__title"><?php echo $currentFrage; ?></h1>
+            
             <div class="ContainerDeck" style="padding:20px;">
                 <form action="?weiter=1" method="post">
                 
-                    <h2><?php echo $currentFrage; ?></h2>
+                    
                     <input type="hidden" name="question_id" value="<?php echo $fragen_id; ?>">
 
                     <button type='submit' name='answer' value='<?php echo $currentAntworten[0]; ?>'><?php echo $currentAntworten[0]; ?></button>
@@ -173,11 +172,6 @@ document.querySelectorAll('button[name^="answer"]').forEach((button) => {
   });
 });
 
-
-//document.querySelector('button[name="next_question"]').addEventListener('click', () => {
-//    var selectedAnswer = document.querySelector('button[name="antwort"]:checked').value;
-//    <?php #echo 'selectedAnswers.push("' . $selectedAnswer . '");'; ?>
-//});
 
 </script>
 </body>
