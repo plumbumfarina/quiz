@@ -20,7 +20,7 @@ session_start();
 <body>
     <header>
         <?php
-            include_once('navbar.php')
+            include_once('lib/navbar.php')
         ?>
     </header>
 	<main>
@@ -91,7 +91,8 @@ session_start();
         window.location.href = "einzelSpieler.php?kartendeck_id=" + id;
         }
     </script>
-    <footer>
-    </footer>
+    <?php
+        include_once('lib/footer.php')
+    ?>
 </body>
 </html>

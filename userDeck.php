@@ -20,7 +20,7 @@ session_start();
     <!-- Erstellung der Navigationsleiste am Kopf der Seite-->
     <header>
         <?php
-            include_once('navbar.php')
+            include_once('lib/navbar.php')
         ?>
     </header>
     <!-- Hier wird eine Tabelle erstellt in der alle Kartendecks enthalten sind -->
@@ -96,7 +96,7 @@ session_start();
         }
     </script>
     <?php
-        include_once('footer.php')
+        include_once('lib/footer.php')
     ?>
 </body>
 </html>

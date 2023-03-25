@@ -1,12 +1,10 @@
 <?php
 // check if user is logged in, if not redirect to login page
-/*session_start();
+session_start();
     if(!isset($_SESSION['userid'])) {
     header('location: login.php');
     die('Bitte zuerst einloggen');
-}*/
-
-include_once('lib/getFragenAnzahl.php');
+}
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +18,7 @@ include_once('lib/getFragenAnzahl.php');
 <body>
     <header>
         <?php
-            include_once('navbar.php')
+            include_once('lib/navbar.php')
         ?>
     </header>
 	<main>
@@ -29,7 +27,7 @@ include_once('lib/getFragenAnzahl.php');
         </div>
     </main>
     <?php
-		include_once('footer.php')
+		include_once('lib/footer.php')
 	?>
 </body>
 </html>

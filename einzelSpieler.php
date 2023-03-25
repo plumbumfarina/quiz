@@ -1,13 +1,10 @@
 <?php
 // check if user is logged in, if not redirect to login page
 session_start();
-/* if(!isset($_SESSION['userid'])) {
+ if(!isset($_SESSION['userid'])) {
     header('location: login.php');
     die('Bitte zuerst einloggen');
-} */
-
-
-
+} 
 ?>
 
 <!DOCTYPE html>
@@ -22,7 +19,7 @@ session_start();
 <body>
     <header>
         <?php
-            include_once('navbar.php')
+            include_once('lib/navbar.php')
         ?>
     </header>
 	<main>
@@ -117,8 +114,8 @@ session_start();
         window.location.href = "antworten.php?fragen_id=" + id;
         }
     </script>
-    <footer>
-
-    </footer>
+    <?php
+        include_once('lib/footer.php')
+    ?>
 </body>
 </html>

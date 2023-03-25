@@ -45,7 +45,7 @@ if(!isset($_SESSION['userid'])) {
 <body>
 <header>
     <?php
-        include_once('navbar.php')
+        include_once('lib/navbar.php')
     ?>
 </header>
 <main>
@@ -157,7 +157,7 @@ if(!isset($_SESSION['userid'])) {
 
 
 <?php
-	include_once('footer.php')
+	include_once('lib/footer.php')
 ?>
 
 <script>

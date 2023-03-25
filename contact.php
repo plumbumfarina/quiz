@@ -10,7 +10,7 @@
 <body>
     <header>
         <?php
-            include_once('navbar.php')
+            include_once('lib/navbar.php')
         ?>
     </header>
     <main>
@@ -20,7 +20,7 @@
     </main>
     
     <?php
-        include_once('footer.php')
+        include_once('lib/footer.php')
     ?>
 </body>
 </html>

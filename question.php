@@ -9,7 +9,7 @@
 </head>
 <body>
 <?php
-	include_once('navbar.php')
+	include_once(' libnavbar.php')
 ?>	
 	<div id="start_screen" class="jumbotren quiz_start" >
 		<h1>Herzlich Willkommen zum Quiz</h1>
@@ -50,15 +50,10 @@
 				<p><button id="continue_btn" class="btn btn-primary btn-lg btn-block" role="button"><span id="commit_text" >Weiter</span></button></p>
 			</div>
 		</div>
-	</div>	
-		
-		
-		
-		
-		
+	</div>			
 
 <?php
-	include_once('footer.php')
+	include_once('libfooter.php')
 ?>
 		
 		

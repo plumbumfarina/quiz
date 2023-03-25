@@ -6,7 +6,6 @@ session_start();
     die('Bitte zuerst einloggen');
 }
 
-include_once('lib/getFragenAnzahl.php');
 ?>
 
 <!DOCTYPE html>
@@ -20,14 +19,14 @@ include_once('lib/getFragenAnzahl.php');
 <body>
     <header>
         <?php
-            include_once('navbar.php')
+            include_once('lib/navbar.php')
         ?>
     </header>
 	<main>
         <h1>Freies Spiel eröffnen</h1>
     </main>
     <?php
-        include_once('footer.php')
+        include_once('lib/.php')
     ?>
 </body>
 </html>
