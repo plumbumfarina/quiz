@@ -15,14 +15,13 @@ if(!isset($_SESSION['userid'])) {
         $selectedAnswer = $_SESSION['selectedAnswer'];
         $selectedAnswer[] = $_POST['answer'];
         $_SESSION['selectedAnswer'] = $selectedAnswer;
-        
-        var_dump($selectedAnswer);
 
         $fragenIndex = $_SESSION['fragenListe'];
         array_shift($fragenIndex);
         $_SESSION['fragenListe'] = $fragenIndex;
         if(!empty($fragenIndex)) {
-            header("Refresh: 0.1; Location: antworten.php?fragen_id=" . $fragenIndex[0]);
+            $redirectUrl = 'antworten.php?fragen_id=' . $fragenIndex[0];
+            header("Refresh: 0.1; URL=$redirectUrl");
         } else {
             header("Location: finaleUebersicht.php");
             exit();
