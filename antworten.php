@@ -12,6 +12,8 @@ if(!isset($_SESSION['userid'])) {
 
     if(isset($_GET['weiter'])) {
 
+        print_r($_POST)
+
         $selectedAnswer = $_SESSION['selectedAnswer'];
         $selectedAnswer[] = $_POST['answer'];
         $_SESSION['selectedAnswer'] = $selectedAnswer;
