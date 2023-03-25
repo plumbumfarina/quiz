@@ -59,6 +59,8 @@ if(!isset($_SESSION['userid'])) {
             $fragenIndex = $_SESSION['fragenListe'];
             $fragen_id = $fragenIndex[0];
             //$fragen_id = $_GET['fragen_id'];
+            $selectedAnswers = array();
+            $_SESSION['selecteAnswers'] = $selectedAnswers;
 
 // Funktion um die aktuelle Frage herauszufinden
             function getFrage($conn, $fragen_id){
@@ -126,6 +128,7 @@ if(!isset($_SESSION['userid'])) {
 
         <form action="?weiter=1" method="post">
             <p><?php foreach ($_SESSION['fragenListe'] as $fragen_id) {echo $fragen_id . " ";} ?></p>
+            <p><?php foreach ($_SESSION['selectedAnswers'] as $antwort_id) {echo $antwort_id . " ";} ?></p>
             <p><?php echo $currentFrage; ?></p>
             <input type="hidden" name="question_id" value="<?php echo $fragen_id; ?>">
         <?php
@@ -149,6 +152,7 @@ if(!isset($_SESSION['userid'])) {
 ?>
 
 <script>
+
 document.querySelectorAll('button[name="answer"]').forEach((button) => {
   button.addEventListener('click', () => {
     // Entfernt die class "selected" von allen Buttons
@@ -157,14 +161,14 @@ document.querySelectorAll('button[name="answer"]').forEach((button) => {
     });
     // Fügt dem aktuell ausgewählten Button die class "selected" hinzu
     button.classList.add('selected');
+    var selectedAnswer = document.querySelector('input[name="antwort"]:checked').value;
   });
 });
 
 
-//document.querySelector('button[name="next_question"]').addEventListener('click', () => {
-//  document.querySelector('form').submit();
-//});
-</script>
+document.querySelector('button[name="next_question"]').addEventListener('click', () => {
+    <?php echo 'selectedAnswers.push("' . $selectedAnswer . '");'; ?>
+});
 
 </body>
 </html>

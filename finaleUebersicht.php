@@ -62,19 +62,16 @@ if(!isset($_SESSION['userid'])) {
 
 //SQL Abfrage für alle Fragen-IDs und Fragentexte
 
-
-
-                        // retrieve the fragentext and richtigkeit values for the given fragen_ids
                         $sql = "SELECT fragen_id, fragentext FROM fragen WHERE kartendeck_id = $kartendeck_id AND fragen_id IN (".implode(',', $fragenListeUebersicht).")";
                         $result = mysqli_query($conn, $sql);
 
-                        // iterate through the fragen_ids array and add a row to the table for each id
+                        // Durch die Übergebenen fragen_ids schleifen und diese der gespielten Reihe nach ausgeben
                         foreach ($fragenListeUebersicht as $id) {
-                            // find the row in the result set with the matching id
+                            // Die passende Zeile zur aktuellen ID finden
                             mysqli_data_seek($result, 0);
                             while ($row = mysqli_fetch_assoc($result)) {
                                 if ($row['fragen_id'] == $id) {
-                                // add a row to the table with the fragentext and richtigkeit values
+                                // eine neue Zeile mit dem aktuellen Fragentext hinzufügen
                                 echo '<tr><td>'.$row['fragentext'].'</td></tr>';
                                 break;
                                 }
