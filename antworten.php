@@ -135,10 +135,7 @@ if(!isset($_SESSION['userid'])) {
         ?>
 
         <form action="?weiter=1" method="post">
-        <p>Selected answer: <?php echo !empty($selectedAnswer) ? implode(', ', $selectedAnswer) : ''; ?></p>
-
-            <p><?php foreach ($selectedAnswer as $antwort_id) {echo $antwort_id . " ";} ?></p>
-            <p><?php foreach ($_SESSION['fragenListe'] as $fragen_id) {echo $fragen_id . " ";} ?></p>
+        
             <p><?php echo $currentFrage; ?></p>
             <input type="hidden" name="question_id" value="<?php echo $fragen_id; ?>">
 
@@ -161,10 +158,10 @@ if(!isset($_SESSION['userid'])) {
 
 <script>
 
-document.querySelectorAll('button[name="answer"]').forEach((button) => {
+document.querySelectorAll('button[name^="answer"]').forEach((button) => {
   button.addEventListener('click', () => {
     // Entfernt die class "selected" von allen Buttons
-    document.querySelectorAll('button[name="answer"]').forEach((btn) => {
+    document.querySelectorAll('button[name^="answer"]').forEach((btn) => {
       btn.classList.remove('selected');
     });
     // Fügt dem aktuell ausgewählten Button die class "selected" hinzu
