@@ -75,18 +75,10 @@ if(!isset($_SESSION['userid'])) {
                                 if ($row['fragen_id'] == $id) {
                                 // eine neue Zeile mit dem aktuellen Fragentext hinzufügen
                                 echo '<tr class="TRDeck"><td>'.$row['fragentext'].'</td>';
-
-                                // antworten in zweite spalte
-                                echo '<td>';
-                                foreach ($selectedAnswer as $answer) {
-                                    echo "<tr>" . $answer . "</tr>";
-                                  }
-                                echo '</td></tr>';
-                                break;
                                 }
                             }
                         }
-
+                        
                         foreach ($selectedAnswer as $answer) {
                             echo "<tr><td>" . $answer . "</td></tr>";
                           }
