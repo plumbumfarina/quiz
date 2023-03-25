@@ -83,7 +83,7 @@ if(!isset($_SESSION['userid'])) {
                                         echo $answer['antwort'] . '<br>';
                                     }
                                   }
-                                echo '</td></tr>'
+                                echo '</td></tr>';
                                 break;
                                 }
                             }
