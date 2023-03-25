@@ -142,10 +142,14 @@ if(!isset($_SESSION['userid'])) {
                     
                     <input type="hidden" name="question_id" value="<?php echo $fragen_id; ?>">
 
-                    <button style="width:40%; height:10%;" type='submit' name='answer' value='<?php echo $currentAntworten[0]; ?>'><?php echo $currentAntworten[0]; ?></button>
-                    <button style="width:40%; height:10%;" type='submit' name='answer' value='<?php echo $currentAntworten[1]; ?>'><?php echo $currentAntworten[1]; ?></button>
-                    <button style="width:40%; height:10%;" type='submit' name='answer' value='<?php echo $currentAntworten[2]; ?>'><?php echo $currentAntworten[2]; ?></button>
-                    <button style="width:40%; height:10%;" type='submit' name='answer' value='<?php echo $currentAntworten[3]; ?>'><?php echo $currentAntworten[3]; ?></button>
+                    <div>
+                        <button style="width:40%; height:80%;" type='submit' name='answer' value='<?php echo $currentAntworten[0]; ?>'><?php echo $currentAntworten[0]; ?></button>
+                        <button style="width:40%; height:8%;" type='submit' name='answer' value='<?php echo $currentAntworten[1]; ?>'><?php echo $currentAntworten[1]; ?></button>
+                    </div>
+                    <div>
+                        <button style="width:40%; height:80%;" type='submit' name='answer' value='<?php echo $currentAntworten[2]; ?>'><?php echo $currentAntworten[2]; ?></button>
+                        <button style="width:40%; height:80%;" type='submit' name='answer' value='<?php echo $currentAntworten[3]; ?>'><?php echo $currentAntworten[3]; ?></button>
+                    </div>
 
                 <!-- <button type="submit" name="next_question">Nächste Frage</button> -->
                 </form>
