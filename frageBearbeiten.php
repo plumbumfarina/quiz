@@ -64,22 +64,22 @@ if(!isset($_SESSION['userid'])) {
                 
                 <label for='frage' class='labelDeck'> Antwort 1:</label>
                 <input type='text' class='inputDeck' name='Antwort1' value='<?php echo $antwortEins; ?>'></input><br>
-                <input type='radio' name='richtigkeit' value='1' <?php if($richtigkeit == '1') echo 'checked'; ?>>
+                <input type='radio' class='radioDeck' name='richtigkeit' value='1' <?php if($richtigkeit == '1') echo 'checked'; ?>>
                 <label>Richtige Antwort</label><br><br>
                 
                 <label for='frage' class='labelDeck'> Antwort 2:</label>
                 <input type='text' class='inputDeck' name='Antwort2' value='<?php echo $antwortZwei; ?>'></input><br>
-                <input type='radio' name='richtigkeit' value='2' <?php if($richtigkeit == '2') echo 'checked'; ?>>
+                <input type='radio' class='radioDeck' name='richtigkeit' value='2' <?php if($richtigkeit == '2') echo 'checked'; ?>>
                 <label>Richtige Antwort</label><br><br>
                 
                 <label for='frage' class='labelDeck'> Antwort 3:</label>
                 <input type='text' class='inputDeck' name='Antwort3' value='<?php echo $antwortDrei; ?>'></input><br>
-                <input type='radio' name='richtigkeit' value='3' <?php if($richtigkeit == '3') echo 'checked'; ?>>
+                <input type='radio' class='radioDeck' name='richtigkeit' value='3' <?php if($richtigkeit == '3') echo 'checked'; ?>>
                 <label>Richtige Antwort</label><br><br>
                 
                 <label for='frage' class='labelDeck'> Antwort 4:</label>
                 <input type='text' class='inputDeck' name='Antwort4' value='<?php echo $antwortVier; ?>'></input><br>
-                <input type='radio' name='richtigkeit' value='4' <?php if($richtigkeit == '4') echo 'checked'; ?>>
+                <input type='radio' class='radioDeck' name='richtigkeit' value='4' <?php if($richtigkeit == '4') echo 'checked'; ?>>
                 <label>Richtige Antwort</label><br><br>
                 
                 <button style="width:33%;" type="submit" class="buttonGreen"> Speichern </button>
