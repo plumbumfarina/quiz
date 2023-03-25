@@ -1,9 +1,9 @@
 <?php
-session_start();
-if(!isset($_SESSION['userid'])) {
-    header('location: login.php');
-    die('Bitte zuerst einloggen');
-}
+//session_start();
+//if(!isset($_SESSION['userid'])) {
+//    header('location: login.php');
+//    die('Bitte zuerst einloggen');
+//}
 ?>
 
 <!DOCTYPE html>
@@ -18,7 +18,7 @@ if(!isset($_SESSION['userid'])) {
 <body>
     <header>
         <?php
-            include_once('navbar.php')
+            //include_once('navbar.php')
         ?>
     </header>
 	<main>
@@ -57,7 +57,7 @@ if(!isset($_SESSION['userid'])) {
     </main>
 
     <?php
-        include_once('footer.php')
+        //include_once('footer.php')
     ?>
 </body>
 </html>
