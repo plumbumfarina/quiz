@@ -80,6 +80,15 @@ h2 {
   text-align: center;
 }
 
+h3 {
+  color: #ff8c00;
+  display: block;
+}
+
+h4 {
+  color:#000000;
+}
+
 /* START LOGIN / Registrierung CSS */
 
 .containerLogin {
