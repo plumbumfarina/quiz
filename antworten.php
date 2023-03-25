@@ -11,7 +11,7 @@ if(!isset($_SESSION['userid'])) {
 <?php
 
     if(isset($_GET['weiter'])) {
-        $selectedAnswer[] = $_POST['answer'];
+        $selectedAnswer[] = $_GET['answer'];
         $fragenIndex = $_SESSION['fragenListe'];
         array_shift($fragenIndex);
         $_SESSION['fragenListe'] = $fragenIndex;
