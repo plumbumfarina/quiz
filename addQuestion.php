@@ -25,36 +25,42 @@ if(!isset($_SESSION['userid'])) {
     ?>
 </header>
 <main>
-    <div class="container mt-3">
-        <h1> Frage hinzufügen </h1>
-        <form id="frageHinzufuegen" method="post" onsubmit="return checkForm()">   
-            <label for='kartendeckID' class='form-label'> Kartendeck ID:</label>
-            <input type='text' class='form-control' name='kartendeck_id' value="<?php echo $kartendeck_id;?>" readonly>
+    <h1> Frage hinzufügen </h1>
+    <div class="ContainerDeck">
+        <form id="frageHinzufuegen" method="post" onsubmit="return checkForm()" class="formDeck">   
+            <label for='kartendeckID' hidden> Kartendeck ID:</label>
+            <input type='text' class='inputDeck' name='kartendeck_id' value="<?php echo $kartendeck_id;?>" hidden>
 
-            <label for='frage' class='form-label'> Frage:</label>
-            <input type='text' class='form-control' name='fragentext'></input>
+            <label for='frage' class='labelDeck'> Frage:</label>
+            <input type='text' class='inputDeck' name='fragentext'></input>
                                 
-            <label for='frage' class='form-label'> Antwort 1:</label>
-            <input type='text' class='form-control' name='Antwort1'></input>                 
+            <label for='frage' class='labelDeck'> Antwort 1:</label>
+            <div style='display: flex; align-items: center;'>
+            <input type='text' class='inputDeck' name='Antwort1'></input>                 
             <input type='radio' name='richtigkeit' value='1' required> Richtige Antwort </input>
-                                
-            <label for='frage' class='form-label'> Antwort 2:</label>
-            <input type='text' class='form-control' name='Antwort2'></input>                 
-            <input type='radio' name='richtigkeit' value='2' required> Richtige Antwort </input>
-                                
-            <label for='frage' class='form-label'> Antwort 3:</label>
-            <input type='text' class='form-control' name='Antwort3'></input>
-            <input type='radio' name='richtigkeit' value='3' required> Richtige Antwort </input>
-                                
-            <label for='frage' class='form-label'> Antwort 4:</label>
-            <input type='text' class='form-control' name='Antwort4'></input>
-            <input type='radio' name='richtigkeit' value='4' required> Richtige Antwort </input>
-
-            <div>
-                <button type='submit' class='buttonGreen' onclick="submitForm('lib/addFrage.php')"> Hinzufügen </button>
-                <button type='submit' class='buttonGreen' onclick="submitForm('lib/addFrageAndBack.php')"> weitere Frage hinzufügen </button>
-                <button type='button' class='buttonRed' onclick="openPage(<?php echo $kartendeck_id ?>)"> Abbrechen </button>
             </div>
+            <br>                                
+            <label for='frage' class='labelDeck'> Antwort 2:</label>
+            <div style='display: flex; align-items: center;'>
+            <input type='text' class='inputDeck' name='Antwort2'></input>                 
+            <input type='radio' name='richtigkeit' value='2' required> Richtige Antwort </input>
+            </div>
+            <br>                                
+            <label for='frage' class='labelDeck'> Antwort 3:</label>
+            <div style='display: flex; align-items: center;'>
+            <input type='text' class='inputDeck' name='Antwort3'></input>
+            <input type='radio' name='richtigkeit' value='3' required> Richtige Antwort </input>
+            </div>
+            <br>
+            <label for='frage' class='labelDeck'> Antwort 4:</label>
+            <div style='display: flex; align-items: center;'>
+            <input type='text' class='inputDeck' name='Antwort4'></input>
+            <input type='radio' name='richtigkeit' value='4' required> Richtige Antwort </input>
+            </div>
+            <br>
+            <button type='submit' style="width:25%;" class='buttonGreen' onclick="submitForm('lib/addFrage.php')"> Hinzufügen </button>
+            <button type='submit' style="width:25%;" class='buttonGreen' onclick="submitForm('lib/addFrageAndBack.php')"> weitere Frage hinzufügen </button>
+            <button type='button' style="width:25%;" class='buttonRed' onclick="openPage(<?php echo $kartendeck_id ?>)"> Abbrechen </button>
         </form>
     </div>
 </main>
