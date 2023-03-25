@@ -11,6 +11,12 @@ if(!isset($_SESSION['userid'])) {
 <?php
 
     if(isset($_GET['weiter'])) {
+        if(isset($_POST['answer'])){
+            $selectedAnswerIndex = $_POST['answer']; // get the index of the selected answer
+            if(isset($currentAntworten[$selectedAnswerIndex])){ // check if the selected index exists
+            $selectedAnswer = $currentAntworten[$selectedAnswerIndex]; // assign the selected answer to the variable
+            }
+        }
         $fragenIndex = $_SESSION['fragenListe'];
         array_shift($fragenIndex);
         $_SESSION['fragenListe'] = $fragenIndex;
@@ -35,9 +41,9 @@ if(!isset($_SESSION['userid'])) {
 </head>
 <body>
 <header>
-<?php
-    include_once('navbar.php')
-?>
+    <?php
+        include_once('navbar.php')
+    ?>
 </header>
 <div>
     <div class="container mt-3">
