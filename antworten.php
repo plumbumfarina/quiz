@@ -17,13 +17,12 @@ if(!isset($_SESSION['userid'])) {
         $_SESSION['selectedAnswer'] = $selectedAnswer;
         
         var_dump($selectedAnswer);
-        sleep(5);
-        
+
         $fragenIndex = $_SESSION['fragenListe'];
         array_shift($fragenIndex);
         $_SESSION['fragenListe'] = $fragenIndex;
         if(!empty($fragenIndex)) {
-            header("Location: antworten.php?fragen_id=" . $fragenIndex[0]);
+            header("Refresh: 0.1; Location: antworten.php?fragen_id=" . $fragenIndex[0]);
         } else {
             header("Location: finaleUebersicht.php");
             exit();
