@@ -11,17 +11,13 @@ if(!isset($_SESSION['userid'])) {
 <?php
 
     if(isset($_GET['weiter'])) {
-        if(isset($_POST['answer'])){
-            $selectedAnswerIndex = $_POST['answer']; // get the index of the selected answer
-            if(isset($currentAntworten[$selectedAnswerIndex])){ // check if the selected index exists
-            $selectedAnswers = $currentAntworten[$selectedAnswerIndex]; // assign the selected answer to the variable
-            }
-        }
+        $selectedAnswer = $_POST['answer'];
+        echo $selectedAnswer;
         $fragenIndex = $_SESSION['fragenListe'];
         array_shift($fragenIndex);
         $_SESSION['fragenListe'] = $fragenIndex;
         if(!empty($fragenIndex)) {
-            header("Location: antworten.php?fragen_id=" . $fragenIndex[0]);
+            header("Refresh: 5, URL: antworten.php?fragen_id=" . $fragenIndex[0]);
         } else {
             header("Location: finaleUebersicht.php");
             exit();
