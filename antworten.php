@@ -11,9 +11,10 @@ $selectedAnswer = array();
 <?php
 
     if(isset($_GET['weiter'])) {
+        if(isset($_POST['answer'])) {
         $selAntwort = $_POST['answer'];
         $selectedAnswer[] = $selAntwort;
-
+        }
         $fragenIndex = $_SESSION['fragenListe'];
         array_shift($fragenIndex);
         $_SESSION['fragenListe'] = $fragenIndex;
