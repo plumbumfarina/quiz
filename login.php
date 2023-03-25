@@ -44,13 +44,13 @@ if(isset($_GET['login'])) {
             <h1 class="formTitle">Login</h1>
             <div class="formMessage formMessage--error"></div>
 
-            <div class="form__input-group">
-                <input type="email" class="form__input" maxlength="250" name="email" autofocus placeholder="E-Mail">
+            <div class="formInputGroup">
+                <input type="email" class="formInput" maxlength="250" name="email" autofocus placeholder="E-Mail">
                 <div class="form__input-error-message"></div>
             </div>
 
-            <div class="form__input-group">
-                <input type="password" class="form__input" maxlength="250" name="passwort" placeholder="Dein Password">
+            <div class="formInputGroup">
+                <input type="password" class="formInput" maxlength="250" name="passwort" placeholder="Dein Password">
                 <div class="form__input-error-message"></div>
             </div>
 

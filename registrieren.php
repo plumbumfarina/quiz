@@ -85,20 +85,20 @@ if($showFormular) {
 <div class="containerLogin">
         <form action="?register=1" method="post">
         <h1 class="formTitle">Registrierung</h1>
-                <div class="form__input-group">
-                        <input type="text" class="form__input" maxlength="250" name="nickname" autofocus placeholder="Nickname">
+                <div class="formInputGroup">
+                        <input type="text" class="formInput" maxlength="250" name="nickname" autofocus placeholder="Nickname">
                 </div>
 
-                <div class="form__input-group">
-                        <input type="email" class="form__input" maxlength="250" name="email" placeholder="E-Mail">
+                <div class="formInputGroup">
+                        <input type="email" class="formInput" maxlength="250" name="email" placeholder="E-Mail">
                 </div>
 
-                <div class="form__input-group">
-                        <input type="password" class="form__input" maxlength="250" name="passwort" placeholder="Dein Passwort">
+                <div class="formInputGroup">
+                        <input type="password" class="formInput" maxlength="250" name="passwort" placeholder="Dein Passwort">
                 </div>
 
-                <div class="form__input-group">
-                        <input type="password" class="form__input" maxlength="250" name="passwort2" placeholder="Passwort wiederholen">
+                <div class="formInputGroup">
+                        <input type="password" class="formInput" maxlength="250" name="passwort2" placeholder="Passwort wiederholen">
                 </div>
 
                 <input class="formButton" type="submit" value="Abschicken">
