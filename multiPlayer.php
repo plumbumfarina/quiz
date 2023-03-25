@@ -18,22 +18,21 @@ include_once('lib/getFragenAnzahl.php');
     <link rel="stylesheet" href="style.css" type="text/css" media="screen"/>
 </head>
 <body>
-<?php
-    include_once('navbar.php')
-?>
-
-<div>
-    <div class="buttonContainer">
-        <h1>Mehrspieler Modus</h1>
-			<p style="text-align:center"><button id="start_btn" onclick="window.location.href='createGame.php';" class="btn btn-primary btn-lg" role="button">Freies Spiel eröffnen</button></p>
-            <p style="text-align:center"><button id="start_btn"  onclick="window.location.href='findFriends.php';" class="btn btn-primary btn-lg" role="button">Freund/in finden</button></p>
-            <p style="text-align:center"><button id="start_btn" onclick="window.location.href='joinGame.php';" class="btn btn-primary btn-lg" role="button">Freiem Spiel beitreten</button></p>
-				        
-    </div>
-</div>
-
-<?php
-    include_once('footer.php')
-?>
+<header>
+        <?php
+            include_once('navbar.php')
+        ?>
+    </header>
+	<main>
+        <div class="buttonContainer">
+            <h1>Mehrspieler Modus</h1>
+                <p style="text-align:center"><button id="start_btn" onclick="window.location.href='createGame.php';" class="btn btn-primary btn-lg" role="button">Freies Spiel eröffnen</button></p>
+                <p style="text-align:center"><button id="start_btn"  onclick="window.location.href='findFriends.php';" class="btn btn-primary btn-lg" role="button">Freund/in finden</button></p>
+                <p style="text-align:center"><button id="start_btn" onclick="window.location.href='joinGame.php';" class="btn btn-primary btn-lg" role="button">Freiem Spiel beitreten</button></p>                 
+        </div>
+    </main>
+    <?php
+        include_once('footer.php')
+    ?>
 </body>
 </html>

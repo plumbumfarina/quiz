@@ -18,13 +18,12 @@ if(!isset($_SESSION['userid'])) {
     <title>Update Frage</title>
 </head>
 <body>
-<?php
-    include_once('navbar.php')
-?>
-
-
-<div>
-    <div class="container mt-9">
+    <header>
+        <?php
+            include_once('navbar.php')
+        ?>
+    </header>
+	<main>
         <h1 class="formTitle">Frage bearbeiten</h1>
             <form action="lib/updateFrage.php" method="post">
                 <?php
@@ -87,14 +86,14 @@ if(!isset($_SESSION['userid'])) {
                     <button type="button" class="buttonLoeschen" onclick="openPage(<?php echo $kartendeck_id ?>)">Abbrechen</button>
                 </div>
             </form>
-    </div>
-</div>
+    </main>
+    <script>
+    function openPage(id) {
+        window.location.href = "fragenUebersicht.php?kartendeck_id=" + id;
+    }
+    </script>
+    <footer>
 
-<script>
-  function openPage(id) {
-    window.location.href = "fragenUebersicht.php?kartendeck_id=" + id;
-  }
-</script>
-
+    </footer>
 </body>
 </html>

@@ -5,7 +5,6 @@ if(!isset($_SESSION['userid'])) {
     die('Bitte zuerst einloggen');
 }
 
-echo 'Hallo ' . $_SESSION['userid'];
 ?>
 
 <!Doctype html>
@@ -19,26 +18,29 @@ echo 'Hallo ' . $_SESSION['userid'];
     <title>Projekt</title>
   </head>
   <body>
-	<?php
-		include_once('navbar.php');
-	?>
-  
-  	<div id="start_screen" class="jumbotren quiz_start" >
-		<h1>Herzlich Willkommen zum Quiz</h1>
-		<br>
-		<br>
-		<div class="buttonContainer">
-			<p style="text-align:center"><button id="start_btn" onclick="window.location.href='startGame.php';" href="startGame.php" class="btn btn-primary btn-lg start" role="button">Neues Spiel starten</button></p>	  
-			<p style="text-align:center"><button id="kartendecks_btn" onclick="window.location.href='decks.php';" href="decks.php" class="btn btn-primary btn-lg kartendeck" role="button">Kartendecks</button></p>	
-			<p style="text-align:center"><button id="einstellungen_btn" onclick="window.location.href='settings.php';" class="btn btn-primary btn-lg einstellungen" role="button">Einstellungen</button></p>	
+  <header>
+        <?php
+            include_once('navbar.php')
+        ?>
+    </header>
+	<main>
+		<div id="start_screen" class="jumbotren quiz_start" >
+			<h1>Herzlich Willkommen zum Quiz</h1>
+			<br>
+			<br>
+			<div class="buttonContainer">
+				<p style="text-align:center"><button id="start_btn" onclick="window.location.href='startGame.php';" href="startGame.php" class="btn btn-primary btn-lg start" role="button">Neues Spiel starten</button></p>	  
+				<p style="text-align:center"><button id="kartendecks_btn" onclick="window.location.href='decks.php';" href="decks.php" class="btn btn-primary btn-lg kartendeck" role="button">Kartendecks</button></p>	
+				<p style="text-align:center"><button id="einstellungen_btn" onclick="window.location.href='settings.php';" class="btn btn-primary btn-lg einstellungen" role="button">Einstellungen</button></p>	
+			</div>
 		</div>
-	</div>
+	</main>
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	
-	
-	<script src="js/quiz.js" type="text/javascript"></script>
-	<script src="js/script.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		
+		
+		<script src="js/quiz.js" type="text/javascript"></script>
+		<script src="js/script.js"></script>
 
 	<?php
 		include_once('footer.php');

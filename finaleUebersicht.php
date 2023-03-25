@@ -20,12 +20,12 @@ if(!isset($_SESSION['userid'])) {
     <title>Einzelspieler</title>
 </head>
 <body>
-<?php
-    include_once('navbar.php')
-?>
-
-<div>
-    <div>
+    <header>
+        <?php
+            include_once('navbar.php')
+        ?>
+    </header>
+	<main>
         <h1 class="formTitle">Übersicht der Fragen</h1>
         <br>
         <p><?php foreach ($_SESSION['selectedAnswers'] as $antwort_id) {echo $antwort_id . " ";} ?></p>
@@ -116,13 +116,15 @@ if(!isset($_SESSION['userid'])) {
             <div>
             <button type="button" class="buttonSpielen" onclick="openStart('<?php echo $fragenListe[0]; ?>')"> Quiz beenden! </button>
         </div>
-    </div>
-</div>
-<script>
-//    function openStart(id) {
-//    window.location.href = "antworten.php?fragen_id=" + id;
-//    }
-</script>
+    </main>
+    <script>
+    //    function openStart(id) {
+    //    window.location.href = "antworten.php?fragen_id=" + id;
+    //    }
+    </script>
+    <footer>
+
+    </footer>
 
 </body>
 </html>

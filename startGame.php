@@ -21,9 +21,12 @@ if(!isset($_SESSION['userid'])) {
 	<link href="css/style.css" rel="stylesheet">
   </head>
   <body>
-	<?php
-			include_once('navbar.php')
-	?>
+  <header>
+        <?php
+            include_once('navbar.php')
+        ?>
+    </header>
+	<main>
 	
 	<div class="container">
 	
@@ -41,7 +44,7 @@ if(!isset($_SESSION['userid'])) {
 
 			</div>
 	</div>
-
+	</main>
     <!-- das ist die Codierung für die Verbindung mit Java Script -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
    

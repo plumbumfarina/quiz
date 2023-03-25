@@ -11,18 +11,12 @@
 
   </head>
   <body>
-	<div class="container">
-  <?php
-			include_once('navbar.php')
-		?>	
-		<nav class="navbar navbar-default">
-			<div class="container-fluid">
-				<div class="navbar-header">
-					<a class="navbar-brand" href="#">Quiz</a>
-					<p>Menü</p>
-				</div>
-			</div>
-		</nav>
+  	<header>
+        <?php
+            include_once('navbar.php')
+        ?>
+    </header>
+	<main>
 			
             <!-- Hier ist die "Quiz vorbei"-Leiste-->
 			<div id="over" class="jumbotren quiz_end">
@@ -32,17 +26,10 @@
                 <!-- Hier ist der "Nochmal starten"-Button-->
 				<p><button class="restart btn btn-primary btn-lg" role="button">Nochmal starten</button></p>
 			</div>
-	</div>
+	</main>
 
-    <!-- Hier ist die Verbindung zu Java Script -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-   
-    <script src="js/bootstrap.min.js"></script>
-	<script src="js/quiz.js"></script>
-
-
-  <?php
+	<?php
 			include_once('footer.php')
-		?> 
+	?> 
   </body>
 </html>

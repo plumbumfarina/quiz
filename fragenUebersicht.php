@@ -18,93 +18,92 @@ if(!isset($_SESSION['userid'])) {
     <title>Fragenübersicht</title>
 </head>
 <body>
-<?php
-    include_once('navbar.php')
-?>
-
-<div>
-    <h1 class="formTitle">Fragen</h1>
-        <table class="table table-hover">
-            <thead class="table-dark">
-                <tr>
-                    <th>Frage</th>
-                    <th>Antwort Eins</th>
-                    <th>Antwort Zwei</th>
-                    <th>Antwort Drei</th>
-                    <th>Antwort Vier</th>
-                    <th>Richtige Antwort</th>
-                    <th></th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                    include_once('lib/dbConnectorMYSQLI.php');
-
-                    $kartendeck_id = $_GET['kartendeck_id'];
-
-                    $sql = "SELECT fragen_id, fragentext, antwortEins, antwortZwei, antwortDrei, antwortVier, richtigkeit FROM fragen WHERE (kartendeck_id = $kartendeck_id)" ;
-                    $result = $conn->query($sql);
-
-                    if ($result->num_rows > 0) {
+    <header>
+        <?php
+            include_once('navbar.php')
+        ?>
+    </header>
+	<main>
+        <h1 class="formTitle">Fragen</h1>
+            <table class="table table-hover">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Frage</th>
+                        <th>Antwort Eins</th>
+                        <th>Antwort Zwei</th>
+                        <th>Antwort Drei</th>
+                        <th>Antwort Vier</th>
+                        <th>Richtige Antwort</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
                         include_once('lib/dbConnectorMYSQLI.php');
-                        // output data of each row
-                        while($row = $result->fetch_assoc()) {
+
+                        $kartendeck_id = $_GET['kartendeck_id'];
+
+                        $sql = "SELECT fragen_id, fragentext, antwortEins, antwortZwei, antwortDrei, antwortVier, richtigkeit FROM fragen WHERE (kartendeck_id = $kartendeck_id)" ;
+                        $result = $conn->query($sql);
+
+                        if ($result->num_rows > 0) {
+                            include_once('lib/dbConnectorMYSQLI.php');
+                            // output data of each row
+                            while($row = $result->fetch_assoc()) {
+                                echo "<tr>
+                                    <td>" . $row["fragentext"]. "</td>
+                                    <td>" . $row["antwortEins"]. "</td>
+                                    <td>". $row["antwortZwei"]. "</td>
+                                    <td>". $row["antwortDrei"]. "</td>
+                                    <td>". $row["antwortVier"]. "</td>
+                                    <td>" . $row["richtigkeit"]. "</td>
+                                    <td>
+                                        <button type='button' class='buttonBearbeiten' value='" . $row["fragen_id"]. "' onclick='openPage(" .  $row['fragen_id']. ")'> Bearbeiten </button>
+                                    </td>
+                                    <td>
+                                        <button type='button' class='buttonLoeschen' value='" . $row["fragen_id"]. "' onclick='openPageFrageDelete(" . $row['fragen_id']. ")'> Löschen </button>
+                                    </td>
+                                </tr>";
+                            }
+                        } else {
                             echo "<tr>
-                                <td>" . $row["fragentext"]. "</td>
-                                <td>" . $row["antwortEins"]. "</td>
-                                <td>". $row["antwortZwei"]. "</td>
-                                <td>". $row["antwortDrei"]. "</td>
-                                <td>". $row["antwortVier"]. "</td>
-                                <td>" . $row["richtigkeit"]. "</td>
-                                <td>
-                                    <button type='button' class='buttonBearbeiten' value='" . $row["fragen_id"]. "' onclick='openPage(" .  $row['fragen_id']. ")'> Bearbeiten </button>
-                                </td>
-                                <td>
-                                    <button type='button' class='buttonLoeschen' value='" . $row["fragen_id"]. "' onclick='openPageFrageDelete(" . $row['fragen_id']. ")'> Löschen </button>
-                                </td>
-                            </tr>";
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                </tr>";
                         }
-                    } else {
-                        echo "<tr>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
-                            </tr>";
-                    }
 
-                    
-                ?>
-            </tbody>
-        </table>
-        <div class="row">
-            <div class="col">
-                <button type="button" onclick="openPageFrageAdd(<?php echo $kartendeck_id ?>)" class="buttonHinzufuegen"> Hinzufügen
-                </button>
-            </div> 
-        </div>
-</div>
+                        
+                    ?>
+                </tbody>
+            </table>
+            <div class="row">
+                <div class="col">
+                    <button type="button" onclick="openPageFrageAdd(<?php echo $kartendeck_id ?>)" class="buttonHinzufuegen"> Hinzufügen
+                    </button>
+                </div> 
+            </div>
+    </main>
 
-<?php
-	include_once('footer.php')
-?>
-
-
-<script>
-function openPage(id) {
-    window.location.href = "frageBearbeiten.php?fragen_id=" + id;
-}
-function openPageFrageDelete(id) {
-    window.location.href = "lib/deleteFrage.php?fragen_id=" + id;
-}
-function openPageFrageAdd(id) {
-    window.location.href= "addQuestion.php?kartendeck_id=" + id;
-}
-</script>
+    <script>
+    function openPage(id) {
+        window.location.href = "frageBearbeiten.php?fragen_id=" + id;
+    }
+    function openPageFrageDelete(id) {
+        window.location.href = "lib/deleteFrage.php?fragen_id=" + id;
+    }
+    function openPageFrageAdd(id) {
+        window.location.href= "addQuestion.php?kartendeck_id=" + id;
+    }
+    </script>
+    <?php
+        include_once('footer.php')
+    ?>
 </body>
 </html>

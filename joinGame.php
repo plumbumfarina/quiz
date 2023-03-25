@@ -18,18 +18,18 @@ include_once('lib/getFragenAnzahl.php');
     <link rel="stylesheet" href="style.css" type="text/css" media="screen"/>
 </head>
 <body>
-<?php
-    include_once('navbar.php')
-?>
-
-<div>
-    <div class="buttonContainer">
-        <h1>Freiem Spiel beitreten</h1>
-    </div>
-</div>
-
-<?php
-    include_once('footer.php')
-?>
+    <header>
+        <?php
+            include_once('navbar.php')
+        ?>
+    </header>
+	<main>
+        <div class="buttonContainer">
+            <h1>Freiem Spiel beitreten</h1>
+        </div>
+    </main>
+    <?php
+        include_once('footer.php')
+    ?>
 </body>
 </html>

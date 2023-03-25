@@ -11,7 +11,12 @@
     <title>Datenschutzerklärung</title>
 </head>
 <body>
-
+    <header>
+        <?php
+            include_once('navbar.php')
+        ?>
+    </header>
+	<main>
 		
         <h1>Datenschutzerklärung</h1>
         <p>Datenschutzerklärung<p>
@@ -86,9 +91,9 @@
 
         Datenschutzerklärung erstellt mit dem Trusted Shops Rechtstexter in Kooperation mit Wilde Beuger Solmecke Rechtsanwälte.
         </p>
-    <footer>
-        <?php
-			include_once('footer.php')?>
-    </footer>
+    </main>
+    <?php
+		include_once('footer.php')
+    ?>
 </body>
 </html>

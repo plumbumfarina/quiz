@@ -4,5 +4,4 @@
 	<a href="contact.php">Kontakt</a><br>
 	<a href="privacy.php">Privatsphäre-Einstellungen</a><br>
 	<a href="imprint.php">Impressum</a><br>
-	<br>
 </footer>
