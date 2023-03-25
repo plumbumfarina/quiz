@@ -1,12 +1,10 @@
 <?php
 // check if user is logged in, if not redirect to login page
 session_start();
-/* if(!isset($_SESSION['userid'])) {
+ if(!isset($_SESSION['userid'])) {
     header('location: login.php');
     die('Bitte zuerst einloggen');
-} */
-
-include_once('lib/getFragenAnzahl.php');
+} 
 ?>
 
 <!DOCTYPE html>
@@ -19,13 +17,16 @@ include_once('lib/getFragenAnzahl.php');
     <title>Einzelspieler</title>
 </head>
 <body>
+    <!-- Erstellung der Navigationsleiste am Kopf der Seite-->
     <header>
         <?php
             include_once('navbar.php')
         ?>
     </header>
+    <!-- Hier wird eine Tabelle erstellt in der alle Kartendecks enthalten sind -->
 	<main>
         <h1 class="formTitle">Kartendecks</h1>
+    <!-- Mit dem Button kann man sich alle öffentlichen Kartendecks anzeigen lassen -->
         <div>
             <button type='button' class='button' onclick="window.location.href = 'deckOeffentlich.php';"> Öffentliche Kartendecks spielen </button>
         </div>
@@ -88,12 +89,14 @@ include_once('lib/getFragenAnzahl.php');
                 </tbody>
             </table>
     </main>
+    <!-- Funktion um auf die entsprechende Seite abzuspringen -->
     <script>
         function openPageGame(id) {
         window.location.href = "einzelSpieler.php?kartendeck_id=" + id;
         }
     </script>
-    <footer>
-    </footer>
+    <?php
+        include_once('footer.php')
+    ?>
 </body>
 </html>

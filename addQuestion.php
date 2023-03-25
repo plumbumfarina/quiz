@@ -97,9 +97,9 @@ if(!isset($_SESSION['userid'])) {
         }
     </script>
     <!-- Erstellung eines Footers -->
-    <footer>
-
-    </footer>
+    <?php
+        include_once('footer.php')
+    ?>
 
     </body>
 </html>
