@@ -1,10 +1,10 @@
-$selectedAnswer = array();
-
 <?php
-    $selectedAnswer = array();
+   
     if(isset($_GET['weiter'])) {
 
+        $selectedAnswer = $_SESSION['selectedAnswer'];
         $selectedAnswer[] = $_POST['answer'];
+        $_SESSION['selectedAnswer'] = $selectedAnswer;
         
         $fragenIndex = $_SESSION['fragenListe'];
         array_shift($fragenIndex);
@@ -27,9 +27,9 @@ $selectedAnswer = array();
     <p><?php echo $currentFrage; ?></p>
     <input type="hidden" name="question_id" value="<?php echo $fragen_id; ?>">
 
-    <button type='submit' name='answer' value='1'><?php echo $currentAntworten[0]; ?></button>
-    <button type='submit' name='answer' value='2'><?php echo $currentAntworten[1]; ?></button>
-    <button type='submit' name='answer' value='3'><?php echo $currentAntworten[2]; ?></button>
-    <button type='submit' name='answer' value='4'><?php echo $currentAntworten[3]; ?></button>
+    <button type='submit' name='answer' value='<?php echo $currentAntworten[0]; ?>'><?php echo $currentAntworten[0]; ?></button>
+    <button type='submit' name='answer' value='<?php echo $currentAntworten[1]; ?>'><?php echo $currentAntworten[1]; ?></button>
+    <button type='submit' name='answer' value='<?php echo $currentAntworten[2]; ?>'><?php echo $currentAntworten[2]; ?></button>
+    <button type='submit' name='answer' value='<?php echo $currentAntworten[3]; ?>'><?php echo $currentAntworten[3]; ?></button>
 
 </form>
