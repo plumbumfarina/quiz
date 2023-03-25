@@ -161,12 +161,12 @@ document.querySelectorAll('button[name="answer"]').forEach((button) => {
     });
     // Fügt dem aktuell ausgewählten Button die class "selected" hinzu
     button.classList.add('selected');
-    var selectedAnswer = document.querySelector('input[name="antwort"]:checked').value;
   });
 });
 
 
 document.querySelector('button[name="next_question"]').addEventListener('click', () => {
+    var selectedAnswer = document.querySelector('input[name="antwort"]:checked').value;
     <?php echo 'selectedAnswers.push("' . $selectedAnswer . '");'; ?>
 });
 
