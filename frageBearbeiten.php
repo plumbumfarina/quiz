@@ -25,7 +25,8 @@ if(!isset($_SESSION['userid'])) {
     </header>
 	<main>
         <h1 class="formTitle">Frage bearbeiten</h1>
-            <form action="lib/updateFrage.php" method="post">
+        <div class="ContainerDeck">
+            <form action="lib/updateFrage.php" method="post" class="FormDeck">
                 <?php
                     $fragen_id = $_GET['fragen_id'];
 
@@ -55,37 +56,36 @@ if(!isset($_SESSION['userid'])) {
 
                     
                 ?>
-                <label for='fragenID' class='form-label'> Fragen ID:</label>
-                <input type='text' class='form-control' name='fragenID' value='<?php echo $fragen_id; ?>'readonly></input>
+                <label for='fragenID' class='LabelDeck' hidden> Fragen ID:</label>
+                <input type='text' class='form-control' name='fragenID' value='<?php echo $fragen_id; ?>'hidden></input>
                 
-                <label for='frage' class='form-label'> Frage:</label>
-                <input type='text' class='form-control' name='fragentext' value='<?php echo $fragentext; ?>'></input>
+                <label for='frage' class='LabelDeck'> Frage:</label>
+                <input type='text' class='inputDeck' name='fragentext' value='<?php echo $fragentext; ?>'></input>
                 
-                <label for='frage' class='form-label'> Antwort 1:</label>
-                <input type='text' class='form-control' name='Antwort1' value='<?php echo $antwortEins; ?>'></input><br>
+                <label for='frage' class='LabelDeck'> Antwort 1:</label>
+                <input type='text' class='inputDeck' name='Antwort1' value='<?php echo $antwortEins; ?>'></input><br>
                 <input type='radio' name='richtigkeit' value='1' <?php if($richtigkeit == '1') echo 'checked'; ?>>
                 <label>Richtige Antwort</label><br><br>
                 
-                <label for='frage' class='form-label'> Antwort 2:</label>
-                <input type='text' class='form-control' name='Antwort2' value='<?php echo $antwortZwei; ?>'></input><br>
+                <label for='frage' class='LabelDeck'> Antwort 2:</label>
+                <input type='text' class='inputDeck' name='Antwort2' value='<?php echo $antwortZwei; ?>'></input><br>
                 <input type='radio' name='richtigkeit' value='2' <?php if($richtigkeit == '2') echo 'checked'; ?>>
                 <label>Richtige Antwort</label><br><br>
                 
-                <label for='frage' class='form-label'> Antwort 3:</label>
-                <input type='text' class='form-control' name='Antwort3' value='<?php echo $antwortDrei; ?>'></input><br>
+                <label for='frage' class='LabelDeck'> Antwort 3:</label>
+                <input type='text' class='inputDeck' name='Antwort3' value='<?php echo $antwortDrei; ?>'></input><br>
                 <input type='radio' name='richtigkeit' value='3' <?php if($richtigkeit == '3') echo 'checked'; ?>>
                 <label>Richtige Antwort</label><br><br>
                 
-                <label for='frage' class='form-label'> Antwort 4:</label>
-                <input type='text' class='form-control' name='Antwort4' value='<?php echo $antwortVier; ?>'></input><br>
+                <label for='frage' class='LabelDeck'> Antwort 4:</label>
+                <input type='text' class='inputDeck' name='Antwort4' value='<?php echo $antwortVier; ?>'></input><br>
                 <input type='radio' name='richtigkeit' value='4' <?php if($richtigkeit == '4') echo 'checked'; ?>>
                 <label>Richtige Antwort</label><br><br>
                 
-                <div>
-                    <button type="submit" class="buttonGreen"> Speichern </button>
-                    <button type="button" class="buttonRed" onclick="openPage(<?php echo $kartendeck_id ?>)">Abbrechen</button>
-                </div>
+                <button type="submit" class="buttonGreen"> Speichern </button>
+                <button type="button" class="buttonRed" onclick="openPage(<?php echo $kartendeck_id ?>)">Abbrechen</button>
             </form>
+        </div>
     </main>
     <script>
     function openPage(id) {
