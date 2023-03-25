@@ -79,7 +79,7 @@ if(!isset($_SESSION['userid'])) {
                                 // antworten in zweite spalte
                                 echo '<td>';
                                 foreach ($selectedAnswer as $answer) {
-                                    echo "<td>" . $answer . "</td>";
+                                    echo "<tr>" . $answer . "</tr>";
                                   }
                                 echo '</td></tr>';
                                 break;
