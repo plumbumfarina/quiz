@@ -8,6 +8,7 @@ if(!isset($_SESSION['userid'])) {
 
 <?php
 
+
 include_once('lib/dbConnectorPDO.php');
 if(isset($_GET['change-password'])) {
     if (isset($_POST['old_password']) && isset($_POST['new_password']) && isset($_POST['confirm_password'])) {
@@ -29,18 +30,19 @@ if(isset($_GET['change-password'])) {
                 $result = $statement->execute(array('passwort' => $newPassword, 'user_id' => $userId));
 
                 if ($result) {
-                    echo "Password changed successfully.";
+                    echo "Passwort erfolgreich geändert.";
                 } else {
-                    echo "Error changing password.";
+                    echo "Fehler beim Passwort ändern.";
                 }
             } else {
-                echo "New password and confirm password do not match.";
+                echo "Die neuen Passwörter müssen übereinstimmen.";
             }
         } else {
-            echo "Old password is incorrect.";
+            echo "Dein altes Passwort stimmt nicht.";
         }
     }
 }
+
 ?>
 
 
@@ -66,20 +68,21 @@ if(isset($_GET['change-password'])) {
         <h1>Passwort ändern</h1>
             <form method="post" action="?change-password=1">
                 <div class="formInputGroup">
-                <label for="old-password">Altes Passwort:</label>
-                <input type="password" class="formInput" maxlength="250" id="old-password" name="old_password">
+                <input type="password" class="formInput" maxlength="250" id="old-password" name="old_password" placeholder="Altes Passwort">
                 </div>
+
                 <div class="formInputGroup">
-                <label for="new-password">Neues Passwort:</label>
-                <input type="password" class="formInput" maxlength="250" id="new-password" name="new_password">
+                <input type="password" class="formInput" maxlength="250" id="new-password" name="new_password" placeholder="Neues Passwort">
                 </div>
+
                 <div class="formInputGroup">
-                <label for="confirm-password">Passwort wiederholen:</label>
-                <input type="password" class="formInput" maxlength="250" id="confirm-password" name="confirm_password">
+                <input type="password" class="formInput" maxlength="250" id="confirm-password" name="confirm_password" placeholder="Neues Passwort wiederholen">
                 </div>
+
                 <input class="formButton" type="submit" value="Passwort ändern">
             </form>
         </div>
+        
 
         <div class="ContainerDeck">
         <div class="switch-container">
