@@ -61,6 +61,7 @@ if(!isset($_SESSION['userid'])) {
                         $fragenListe = array();
                         $antworten = array();
                         $currentIndex = 0;
+                        $answerIndex = 0;
 
 //SQL Abfrage für alle Fragen-IDs und Fragentexte
 
@@ -76,6 +77,13 @@ if(!isset($_SESSION['userid'])) {
                                 // eine neue Zeile mit dem aktuellen Fragentext hinzufügen
                                 echo '<tr class="TRDeck"><td>'.$row['fragentext'].'</td>';
                                 }
+                                if (isset($selectedAnswer[$answer_index])) {
+                                    echo '<td>' . $selectedAnswer[$answer_index] . '</td>';
+                                } else {
+                                    echo '<td>&nbsp;</td>';
+                                }
+                                $answerIndex++;
+                                echo '</tr>';
                             }
                         }
 
