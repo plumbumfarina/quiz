@@ -460,14 +460,6 @@ button:hover {
 .TRDeck{
   text-align: center;
 }
-.TRDeckGreen{
-  text-align: center;
-  color:#329e68;
-}
-.TRDeckRed{
-  text-align: center;
-  color:#dc3545;
-}
 .TRDeck:nth-child(even) {
   background-color: #f2f2f2;
 }
