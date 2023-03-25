@@ -56,7 +56,7 @@ if(!isset($_SESSION['userid'])) {
 
                     
                 ?>
-                <label for='fragenID' class='labelDeck' hidden> Fragen ID:</label>
+                <label for='fragenID' hidden> Fragen ID:</label>
                 <input type='text' class='inputDeck' name='fragenID' value='<?php echo $fragen_id; ?>'hidden></input>
                 
                 <label for='frage' class='labelDeck'> Frage:</label>
