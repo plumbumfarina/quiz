@@ -79,9 +79,17 @@ if(!isset($_SESSION['userid'])) {
                                 }
                             }
                         }
-                        foreach ($selectedAnswer as $answer) {
-                            echo "<tr><td></td><td>" . $answer . "</td></tr>";
+
+                        // zweite spalte
+                        $index = 0;
+                        mysqli_data_seek($result, 0);
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            if ($row['fragen_id'] == $fragenListeUebersicht[$index]) {
+                                echo '<script>document.querySelector("table").rows['.($index+1).'].cells[1].innerHTML = "'.$selectedAnswer[$index].'";</script>';
+                                $index++;
+                            }
                         }
+                        
 /*
 //Tabelle erstellen mit Fragen IDs und der Antworten
 
