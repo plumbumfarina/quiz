@@ -88,59 +88,47 @@ if(!isset($_SESSION['userid'])) {
             </table>
     </div>
     <div>
-        <div class="container mt-3">
-            <h1 class="form__title">Kartendeck hinzufügen</h1>
-            <form action="lib/addKartendeck.php" method="post">
-                <div class="mb-3">
-                    <label for="deckname">Kartendeckname:</label>
-                    <input type="text" name="deckname" class="inputDeck" required>
-                </div>
-                <div class="mb-3">
-                    <label class="form-check-label" for="public">Willst du das Kartendeck für Alle spielbar machen?</label>
-                    <input type="radio" name="public" value="TRUE" required> Ja </input>
-                    <input type="radio" name="public" value="FALSE"> Nein </input>
-                </div>
-                <div class="mb-3">
-                <label for="modul">Wähle ein Modul aus:</label>
-                    <select id="modul" name="modul" class="inputDeck">
-                    <?php
-                        
-                        $servername = "localhost";
-                        $username = "root";
-                        $password = "toor";
-                        $dbname = "ProjektQuiz";
-                        $user_id = $_SESSION['userid'];
+        <h1 class="form__title">Kartendeck hinzufügen</h1>
+        <form action="lib/addKartendeck.php" method="post" class="formDeck">
+            <label for="deckname" class="labelDeck">Kartendeckname:</label>
+            <input type="text" name="deckname" class="inputDeck" required>
 
-                        // Create connection
-                        $conn = new mysqli($servername, $username, $password, $dbname);
-                        // Check connection
-                        if ($conn->connect_error) {
-                            die("Connection failed: " . $conn->connect_error);
+            <label class="labelDeck" for="public">Willst du das Kartendeck für Alle spielbar machen?</label>
+            <input type="radio" name="public" value="TRUE" required> Ja </input>
+            <input type="radio" name="public" value="FALSE"> Nein </input>
+
+            <label for="modul" class="labelDeck">Wähle ein Modul aus:</label>
+            <select id="modul" name="modul" class="selectDeck">
+                <?php
+                    $servername = "localhost";
+                    $username = "root";
+                    $password = "toor";
+                    $dbname = "ProjektQuiz";
+                    $user_id = $_SESSION['userid'];
+
+                    // Create connection
+                    $conn = new mysqli($servername, $username, $password, $dbname);
+                    // Check connection
+                    if ($conn->connect_error) {
+                        die("Connection failed: " . $conn->connect_error);
+                    }
+
+                    $sql1 = "SELECT modulname FROM modul" ;
+                    $result1 = $conn->query($sql1);
+                        
+                    if ($result1->num_rows > 0) {
+                    // output data of each row
+                        while($row1 = $result1->fetch_assoc()) {
+                            echo "<option>" . $row1["modulname"]. "</option>";
                         }
+                    } else {
+                        echo "<option> keine Module </option>";
+                    }
 
-                        $sql1 = "SELECT modulname FROM modul" ;
-                        $result1 = $conn->query($sql1);
-                        
-                            if ($result1->num_rows > 0) {
-                                // output data of each row
-                                while($row1 = $result1->fetch_assoc()) {
-                                    echo "<option>" . $row1["modulname"]. "</option>";
-                                }
-                            } else {
-                                echo "<option> keine Module </option>";
-                            }
-
-                        ?>
-                    </select>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <button type="submit" class="buttonGreen"> Hinzufügen
-                        </button>
-                    </div>
-                </div>
-            </form>
-        </div>
+                ?>
+            </select>
+            <button style="width:50%;" type="submit" class="buttonGreen"> Hinzufügen</button>    
+        </form>
     </div>
 </main>
 
