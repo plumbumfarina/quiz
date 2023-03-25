@@ -26,7 +26,7 @@ if(!isset($_SESSION['userid'])) {
         <h1 class="form__title">Kartendecks</h1>
             <table class="TabelleDeck">
                 <thead class="THeadDeck">
-                    <tr class="TRDeck">
+                    <tr>
                         <th>Deckname</th>
                         <th>Modulkürzel</th>
                         <th>Modulname</th>
