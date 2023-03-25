@@ -50,7 +50,7 @@ if(isset($_GET['login'])) {
             </div>
 
             <div class="formInputGroup">
-                <input type="password" class="formInput" maxlength="250" name="passwort" placeholder="Dein Password">
+                <input type="password" class="formInput" maxlength="250" name="passwort" placeholder="Dein Passwort">
                 <div class="form__input-error-message"></div>
             </div>
 
