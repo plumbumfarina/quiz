@@ -61,7 +61,7 @@ if(!isset($_SESSION['userid'])) {
                 
                 <label for='frage' class='labelDeck'> Frage:</label>
                 <input type='text' class='inputDeck' name='fragentext' value='<?php echo $fragentext; ?>'></input>
-                
+                <br>
                 <label for='frage' class='labelDeck'> Antwort 1:</label>
                 <div style='display: flex; align-items: center;'>
                     <input type='text' class='inputDeck' name='Antwort1' value='<?php echo $antwortEins; ?>'>
