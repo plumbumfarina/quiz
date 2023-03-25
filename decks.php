@@ -24,9 +24,9 @@ if(!isset($_SESSION['userid'])) {
 <main>
     <div>
         <h1 class="form__title">Kartendecks</h1>
-            <table class="table-striped">
-                <thead>
-                    <tr>
+            <table class="TabelleDeck">
+                <thead class="THeadDeck">
+                    <tr class="TRDeck">
                         <th>Deckname</th>
                         <th>Modulkürzel</th>
                         <th>Modulname</th>
@@ -57,7 +57,7 @@ if(!isset($_SESSION['userid'])) {
                             if ($result->num_rows > 0) {
                                 // output data of each row
                                 while($row = $result->fetch_assoc()) {
-                                    echo "<tr>
+                                    echo "<tr class="TRDeck">
                                         <td>" . $row["kartendeck_name"]. "</td>
                                         <td>" . $row["modulkuerzel"]. "</td>
                                         <td>" . $row["modulname"]. "</td>
@@ -72,7 +72,7 @@ if(!isset($_SESSION['userid'])) {
                                     </tr>";
                                 }
                             } else {
-                                echo "<tr>
+                                echo "<tr class="TRDeck">
                                         <td>-</td>
                                         <td>-</td>
                                         <td>-</td>

@@ -397,7 +397,27 @@ button:hover {
   color: #fffbfb;
 }
 /* Tabelle Decks */
-.table-striped {
+.TabelleDeck{
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+  max-width: 100%;
+  background-color: transparent;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.THeadDeck{
+  background-color: #ff8c00;
+  color: #ffffff;
+}
+.TRDeck:nth-child(even) {
+  background-color: #cfcece;
+}
+.TRDeck:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+/*.table-striped {
   width: 100%;
   border-collapse: collapse;
   border-radius: 10px;
@@ -429,7 +449,7 @@ button:hover {
 
 .table-striped td {
   padding: 8px;
-}
+}*/
 
 /* Input Decks */
 .inputDecks{
