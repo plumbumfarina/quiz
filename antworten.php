@@ -17,7 +17,8 @@ if(!isset($_SESSION['userid'])) {
         $_SESSION['selectedAnswer'] = $selectedAnswer;
         
         var_dump($selectedAnswer);
-
+        sleep(5);
+        
         $fragenIndex = $_SESSION['fragenListe'];
         array_shift($fragenIndex);
         $_SESSION['fragenListe'] = $fragenIndex;
