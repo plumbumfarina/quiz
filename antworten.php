@@ -11,7 +11,7 @@ if(!isset($_SESSION['userid'])) {
 <?php
 
     if(isset($_GET['weiter'])) {
-        $selectedAnswer[] = $_GET['answer'];
+        $selectedAnswer[] = $_POST['answer'];
         $fragenIndex = $_SESSION['fragenListe'];
         array_shift($fragenIndex);
         $_SESSION['fragenListe'] = $fragenIndex;
@@ -129,7 +129,7 @@ if(!isset($_SESSION['userid'])) {
                         
         ?>
 
-        <form action="?weiter=1" method="get">
+        <form action="?weiter=1" method="post">
         <p>Selected answer: <?php echo !empty($selectedAnswer) ? implode(', ', $selectedAnswer) : ''; ?></p>
 
             <p><?php foreach ($selectedAnswer as $antwort_id) {echo $antwort_id . " ";} ?></p>
