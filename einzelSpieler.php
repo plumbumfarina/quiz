@@ -80,35 +80,35 @@ session_start();
 
 // Funktion um die aktuelle Frage herauszufinden
                         function getFrage($conn, $fragen_id){
-                        // Prüfung ob eine Fragen-ID angegeben wurde 
-                        if(isset($fragen_id)) {
-                            $sqlFrage = "SELECT fragentext FROM fragen WHERE fragen_id = $fragen_id";
-                            $resultFrage = $conn->query($sqlFrage);
-    
-                            if (!$resultFrage) {
-                                printf("Error: %s\n", mysqli_error($conn));
-                                exit();
-                            }
-    
-                            if($resultFrage->num_rows == 1){
-                                $rowFrage = $resultFrage->fetch_assoc();
-                                $fragentext = $rowFrage['fragentext']; 
+                            // Prüfung ob eine Fragen-ID angegeben wurde 
+                            if(isset($fragen_id)) {
+                                $sqlFrage = "SELECT fragentext FROM fragen WHERE fragen_id = $fragen_id";
+                                $resultFrage = $conn->query($sqlFrage);
+        
+                                if (!$resultFrage) {
+                                    printf("Error: %s\n", mysqli_error($conn));
+                                    exit();
+                                }
+        
+                                if($resultFrage->num_rows == 1){
+                                    $rowFrage = $resultFrage->fetch_assoc();
+                                    $fragentext = $rowFrage['fragentext']; 
+                                } else {
+                                    echo "Fehler: Die Abfrage gibt das falsche Ergebnis zurück!";
+                                }
                             } else {
-                                echo "Fehler: Die Abfrage gibt das falsche Ergebnis zurück!";
+                                echo "Keine Frage angegeben.";
                             }
-                        } else {
-                            echo "Keine Frage angegeben.";
+        
+                            return $fragentext;
                         }
-    
-                        return $fragentext;
-                    }
 
 //Tabelle erstellen mit Fragen IDs und der Antworten
                         for($i = 0; $i < count($fragenListe); $i++) {
                             $antworten[$i] = '0';
                             echo "<tr class='TRDeck'>
                                 <td>Frage " . ($i + 1) . "</td>
-                                <td>" . getFrage($fragenListe[$i])."<td>
+                                <td>" . getFrage($conn, $fragenListe[$i])."<td>
                             </tr>";
                         }
 
