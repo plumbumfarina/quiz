@@ -73,6 +73,7 @@ if(!isset($_SESSION['userid'])) {
 // Funktion um die aktuelle Frage herauszufinden
             function getFrage($conn, $fragen_id){
             // Prüfung ob eine Fragen-ID angegeben wurde 
+            sleep(0.1);
                 if(isset($fragen_id)) {
                     $sqlFrage = "SELECT fragentext FROM fragen WHERE fragen_id = $fragen_id";
                     $resultFrage = $conn->query($sqlFrage);
@@ -98,6 +99,7 @@ if(!isset($_SESSION['userid'])) {
 // Funktion um die aktuellen Antworten herauszufinden
             function getAntworten($conn, $fragen_id){
             // Prüfung ob eine Fragen-ID angegeben wurde 
+            sleep(0.1);
                 if(isset($fragen_id)) {
                     $sqlAntwort = "SELECT antwortEins, antwortZwei, antwortDrei, antwortVier FROM fragen WHERE fragen_id = $fragen_id";
                     $resultAntwort = $conn->query($sqlAntwort);
