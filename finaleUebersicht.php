@@ -56,6 +56,7 @@ if(!isset($_SESSION['userid'])) {
 // wichtige Variablen 
                         $kartendeck_id = $_SESSION['kartendeck_id'];
                         $fragenListeUebersicht = $_SESSION['fragenListeUebersicht'];
+                        $selectedAnswer = $_SESSION['selectedAnswer'];
                         $user_id = $_SESSION['userid'];
                         $fragenListe = array();
                         $antworten = array();
@@ -77,6 +78,9 @@ if(!isset($_SESSION['userid'])) {
                                 break;
                                 }
                             }
+                        }
+                        foreach ($selectedAnswer as $answer) {
+                            echo "<tr><td>" . $answer . "</td></tr>";
                         }
 /*
 //Tabelle erstellen mit Fragen IDs und der Antworten
