@@ -8,7 +8,7 @@ session_start();
 <html>
 <head>
 	<title>Logout</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="style.css" type="text/css" media="screen"/>
 </head>
 <body>
 	<div class="containerLogin">
