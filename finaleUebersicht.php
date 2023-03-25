@@ -122,9 +122,10 @@ if(!isset($_SESSION['userid'])) {
                     ?>
                 </tbody>
             </table>
-            <div>
-            <button type="button" class="buttonSpielen" onclick="window.location.href='startGame.php';"> Quiz beenden! </button>
-        </div>
+            <br>
+            <div class="ContainerDeck">
+                <button type="button" class="buttonSpielen" onclick="window.location.href='startGame.php';"> Quiz beenden! </button>
+            </div>
     </main>
  
     <?php
