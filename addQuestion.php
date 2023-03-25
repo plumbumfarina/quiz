@@ -18,17 +18,13 @@ if(!isset($_SESSION['userid'])) {
     <title>Neue Frage</title>
 </head>
 <body>
-<div>
-<?php
-    include_once('navbar.php')
-?>
-</div>
-
-<?php 
-    $kartendeck_id = $_GET['kartendeck_id'];
-?>
-
-<div>
+<header>
+    <?php
+        include_once('navbar.php')
+        $kartendeck_id = $_GET['kartendeck_id'];
+    ?>
+</header>
+<main>
     <div class="container mt-3">
         <h1> Frage hinzufügen </h1>
         <form id="frageHinzufuegen" method="post" onsubmit="return checkForm()">   
@@ -61,7 +57,7 @@ if(!isset($_SESSION['userid'])) {
             </div>
         </form>
     </div>
-</div>
+</main>
 
 <script>
     function checkForm() {
@@ -90,6 +86,8 @@ if(!isset($_SESSION['userid'])) {
         window.location.href = "fragenUebersicht.php?kartendeck_id=" + id;
     }
 </script>
+<footer>
+</footer>
 
 </body>
 </html>

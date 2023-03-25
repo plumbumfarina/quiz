@@ -8,20 +8,18 @@
     <title>Cookie-Einstellungen</Cookie-Einstellungen></title>
 </head>
 <body>
-<?php
-			include_once('navbar.php')
-		?>	
-		
+	<header>
+        <?php
+            include_once('navbar.php')
+        ?>
+    </header>
+	<main>
 		<h1>Cookie-Einstellungen<h1>
 
 		<h2> --Hier können Deine Einstellungen stehen --</h2>
-		
-		
-		
-		
-
+	</main>
 	<?php
 			include_once('footer.php')
-		?>   
+	?>   
 </body>
 </html>

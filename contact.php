@@ -8,25 +8,19 @@
     <title>Kontakt</title>
 </head>
 <body>
-    <?php
-        include_once('navbar.php')
-    ?>	
-    <h1>Unsere Kontaktdaten</h1>
-
-    <p>Du erreichst uns per E-Mail unter max.mustermann@quiz.de</p>
-    <p>Alternativ auch gern von Montags bis Freitags von 8:00 Uhr bis 15:00 Uhr unter 0123-1312465</p>
-        
-        
-        
-        
-        
-
+    <header>
+        <?php
+            include_once('navbar.php')
+        ?>
+    </header>
+    <main>
+        <h1>Unsere Kontaktdaten</h1>
+        <p>Du erreichst uns per E-Mail unter max.mustermann@quiz.de</p>
+        <p>Alternativ auch gern von Montags bis Freitags von 8:00 Uhr bis 15:00 Uhr unter 0123-1312465</p>
+    </main>
+    
     <?php
         include_once('footer.php')
     ?>
-    
-    
-
-
 </body>
 </html>

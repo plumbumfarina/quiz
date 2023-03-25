@@ -19,12 +19,12 @@ include_once('lib/getFragenAnzahl.php');
     <title>Einzelspieler</title>
 </head>
 <body>
-<?php
-    include_once('navbar.php')
-?>
-
-<div>
-    <div class="container mt-3">
+    <header>
+        <?php
+            include_once('navbar.php')
+        ?>
+    </header>
+	<main>
         <h1 class="formTitle">Kartendecks</h1>
         <div>
             <button type='button' class='button' onclick="window.location.href = 'deckAuswaehlen.php';"> Nur eigene Kartendecks spielen </button>
@@ -86,13 +86,13 @@ include_once('lib/getFragenAnzahl.php');
                     ?>
                 </tbody>
             </table>
-    </div>
-</div>
-<script>
-    function openPageGame(id) {
-    window.location.href = "einzelSpieler.php?kartendeck_id=" + id;
-    }
-</script>
-
+    </main>
+    <script>
+        function openPageGame(id) {
+        window.location.href = "einzelSpieler.php?kartendeck_id=" + id;
+        }
+    </script>
+    <footer>
+    </footer>
 </body>
 </html>
