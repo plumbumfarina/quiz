@@ -65,7 +65,7 @@ if(!isset($_SESSION['userid'])) {
 
 //SQL Abfrage für alle Fragen-IDs und Fragentexte
 
-                        $sql = "SELECT fragen_id, fragentext richtigkeit, antwortEins, antwortZwei, antwortDrei, antwortVier FROM fragen WHERE kartendeck_id = $kartendeck_id AND fragen_id IN (".implode(',', $fragenListeUebersicht).")";
+                        $sql = "SELECT fragen_id, fragentext, richtigkeit, antwortEins, antwortZwei, antwortDrei, antwortVier FROM fragen WHERE kartendeck_id = $kartendeck_id AND fragen_id IN (".implode(',', $fragenListeUebersicht).")";
                         $result = mysqli_query($conn, $sql);
 
                         // Durch die Übergebenen fragen_ids schleifen und diese der gespielten Reihe nach ausgeben
@@ -102,7 +102,7 @@ if(!isset($_SESSION['userid'])) {
 
                                 // die korrekte Antwort anzeigen
                                 echo '<td>'.$antwort.'</td>';
-                                
+
                                 $answerIndex++;
                                 echo '</tr>';
                                 }
