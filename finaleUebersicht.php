@@ -35,7 +35,7 @@ if(!isset($_SESSION['userid'])) {
                     <tr>
                         <th class="THDeck">Frage</th>
                         <th class="THDeck">Beantwortet</th>
-                        <th class="THDeck"></th>
+                        <th class="THDeck">Richtig</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -80,7 +80,7 @@ if(!isset($_SESSION['userid'])) {
                             }
                         }
                         foreach ($selectedAnswer as $answer) {
-                            echo "<tr><td>" . $answer . "</td></tr>";
+                            echo "<tr><td></td><td>" . $answer . "</td></tr>";
                         }
 /*
 //Tabelle erstellen mit Fragen IDs und der Antworten
