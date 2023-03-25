@@ -3,6 +3,18 @@
 session_start();
 
 ?>
+ <?php
+        // Prüfung ob Logout geclickt wurde
+        if(isset($_POST['logout'])) {
+            // Session zerstören
+            session_start();
+            session_destroy();
+            
+            // Zur Startseite weiterleiten
+            header("Location: ../login.php");
+            exit;
+        }
+    ?>
 
 <!DOCTYPE html>
 <html>
@@ -26,18 +38,8 @@ session_start();
                 <button type="submit">Logout</button>
             </form>
         </div>
-        <?php
-        // Prüfung ob Logout geclickt wurde
-        if(isset($_POST['logout'])) {
-            // Session zerstören
-            session_start();
-            session_destroy();
-            
-            // Zur Startseite weiterleiten
-            header("Location: ../login.php");
-            exit;
-        }
-        ?>
+       
+        
         <?php
             include_once('footer.php')
         ?>
