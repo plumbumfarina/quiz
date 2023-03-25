@@ -65,7 +65,7 @@ if(!isset($_SESSION['userid'])) {
 
 //SQL Abfrage für alle Fragen-IDs und Fragentexte
 
-                        $sql = "SELECT fragen_id, fragentext FROM fragen WHERE kartendeck_id = $kartendeck_id AND fragen_id IN (".implode(',', $fragenListeUebersicht).")";
+                        $sql = "SELECT fragen_id, fragentext richtigkeit, antwortEins, antwortZwei, antwortDrei, antwortVier FROM fragen WHERE kartendeck_id = $kartendeck_id AND fragen_id IN (".implode(',', $fragenListeUebersicht).")";
                         $result = mysqli_query($conn, $sql);
 
                         // Durch die Übergebenen fragen_ids schleifen und diese der gespielten Reihe nach ausgeben
@@ -76,11 +76,33 @@ if(!isset($_SESSION['userid'])) {
                                 if ($row['fragen_id'] == $id) {
                                 // eine neue Zeile mit dem aktuellen Fragentext hinzufügen
                                 echo '<tr class="TRDeck"><td>'.$row['fragentext'].'</td>';
-                                if (isset($selectedAnswer[$answerIndex])) {
-                                    echo '<td>' . $selectedAnswer[$answerIndex] . '</td>';
-                                } else {
-                                    echo '<td>&nbsp;</td>';
+
+                                // die passende Antwort zur aktuellen ID finden
+                                $antwort = '';
+                                switch ($row['richtigkeit']) {
+                                    case 1:
+                                        $antwort = $row['antwortEins'];
+                                        break;
+                                    case 2:
+                                        $antwort = $row['antwortZwei'];
+                                        break;
+                                    case 3:
+                                        $antwort = $row['antwortDrei'];
+                                        break;
+                                    case 4:
+                                        $antwort = $row['antwortVier'];
+                                        break;
                                 }
+                                // die ausgewählte Antwort anzeigen oder eine Leerzelle, falls keine ausgewählt wurde
+                                echo '<td>';
+                                if (isset($selectedAnswer[$answerIndex])) {
+                                    echo $selectedAnswer[$answerIndex];
+                                }
+                                echo '</td>';
+
+                                // die korrekte Antwort anzeigen
+                                echo '<td>'.$antwort.'</td>';
+                                
                                 $answerIndex++;
                                 echo '</tr>';
                                 }
