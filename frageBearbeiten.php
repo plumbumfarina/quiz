@@ -97,7 +97,7 @@ if(!isset($_SESSION['userid'])) {
     </main>
     <script>
     function openPage(id) {
-        window.location.href = "fragenUebersicht.php?kartendeck_id=" + id;
+        window.location.href = "questionOverview.php?kartendeck_id=" + id;
     }
     </script>
     <?php 

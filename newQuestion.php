@@ -93,7 +93,7 @@ if(!isset($_SESSION['userid'])) {
         }
     // Funktion um auf eine ausgewählte Seite weiterzuleiten
         function openPage(id) {
-            window.location.href = "fragenUebersicht.php?kartendeck_id=" + id;
+            window.location.href = "questionOverview.php?kartendeck_id=" + id;
         }
     </script>
     <!-- Erstellung eines Footers -->

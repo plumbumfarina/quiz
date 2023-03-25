@@ -136,7 +136,7 @@ if(!isset($_SESSION['userid'])) {
 
 <script>
 function openBearbeiteKartendeck(id) {
-  window.location.href = "fragenUebersicht.php?kartendeck_id=" + id;
+  window.location.href = "questionOverview.php?kartendeck_id=" + id;
 }
 function openLoescheKartendeck(id) {
   window.location.href = "lib/deleteKartendeck.php?kartendeck_id=" + id;
