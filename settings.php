@@ -8,8 +8,8 @@ if(!isset($_SESSION['userid'])) {
 
 <?php
 
-
 include_once('lib/dbConnectorPDO.php');
+
 if(isset($_GET['change-password'])) {
     if (isset($_POST['old_password']) && isset($_POST['new_password']) && isset($_POST['confirm_password'])) {
         $oldPassword = $_POST['old_password'];
@@ -31,7 +31,7 @@ if(isset($_GET['change-password'])) {
 
                 if ($result) {
                     echo "Passwort erfolgreich geändert.";
-                    header('location: logout.php');
+                    header('location: lib/logout.php');
                 } else {
                     echo "Fehler beim Passwort ändern.";
                 }
