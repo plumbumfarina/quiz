@@ -20,7 +20,7 @@ if(!isset($_SESSION['userid'])) {
 <body>
     <header>
         <?php
-            include_once('navbar.php')
+            include_once('lib/navbar.php')
         ?>
     </header>
 	<main>
@@ -97,11 +97,11 @@ if(!isset($_SESSION['userid'])) {
         window.location.href = "lib/deleteFrage.php?fragen_id=" + id;
     }
     function openPageFrageAdd(id) {
-        window.location.href= "addQuestion.php?kartendeck_id=" + id;
+        window.location.href= "newQuestion.php?kartendeck_id=" + id;
     }
     </script>
     <?php
-        include_once('footer.php')
+        include_once('lib/footer.php')
     ?>
 </body>
 </html>

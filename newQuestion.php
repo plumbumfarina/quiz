@@ -20,7 +20,7 @@ if(!isset($_SESSION['userid'])) {
     <!-- Navigationsleiste am Kopf der Seite erstellen -->
     <header>
         <?php
-            include_once('navbar.php');
+            include_once('lib/navbar.php');
             $kartendeck_id = $_GET['kartendeck_id'];
         ?>
     </header>
@@ -98,7 +98,7 @@ if(!isset($_SESSION['userid'])) {
     </script>
     <!-- Erstellung eines Footers -->
     <?php
-        include_once('footer.php')
+        include_once('lib/footer.php')
     ?>
 
     </body>
