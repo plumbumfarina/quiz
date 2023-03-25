@@ -45,15 +45,6 @@ footer {
   text-align: center;
   padding-left: 15px;
   padding-top: 13px;
-
-  /*position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      background-color: #333;
-      color: #fff;
-      padding: 20px;
-      text-align: center;*/
 }
 
 /* Stil für den Inhalt */
@@ -61,7 +52,6 @@ main {
   margin-top: 80px;
   margin-bottom: 80px;
   height: 100%;
-  overflow-y: scroll;
   padding: 20px;
 }
 
