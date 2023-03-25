@@ -14,7 +14,7 @@ if(!isset($_SESSION['userid'])) {
         if(isset($_POST['answer'])){
             $selectedAnswerIndex = $_POST['answer']; // get the index of the selected answer
             if(isset($currentAntworten[$selectedAnswerIndex])){ // check if the selected index exists
-            $selectedAnswer = $currentAntworten[$selectedAnswerIndex]; // assign the selected answer to the variable
+            $selectedAnswers = $currentAntworten[$selectedAnswerIndex]; // assign the selected answer to the variable
             }
         }
         $fragenIndex = $_SESSION['fragenListe'];
