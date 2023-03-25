@@ -114,7 +114,7 @@ if(!isset($_SESSION['userid'])) {
                 </tbody>
             </table>
             <div>
-            <button type="button" class="buttonSpielen" onclick="openStart('<?php echo $fragenListe[0]; ?>')"> Quiz beenden! </button>
+            <button type="button" class="buttonSpielen" onclick="window.location.href='startGame.php';"> Quiz beenden! </button>
         </div>
     </main>
     <script>
