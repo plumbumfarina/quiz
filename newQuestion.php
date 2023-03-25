@@ -61,9 +61,9 @@ if(!isset($_SESSION['userid'])) {
                 </div>
                 <br>
     <!-- Erstellung der Buttons zum hinzufügen und abbrechen -->
-                <button type='submit' style="width:25%;" class='buttonGreen' onclick="submitForm('lib/addFrage.php')"> Hinzufügen </button>
-                <button type='submit' style="width:25%;" class='buttonGreen' onclick="submitForm('lib/addFrageAndBack.php')"> weitere Frage hinzufügen </button>
-                <button type='button' style="width:25%;" class='buttonRed' onclick="openPage(<?php echo $kartendeck_id ?>)"> Abbrechen </button>
+                <button type='submit' style="width:25%;" class='buttonGreen' onclick="submitForm('lib/addQuestion.php')"> Hinzufügen </button>
+                <button type='submit' style="width:25%;" class='buttonGreen' onclick="submitForm('lib/addQuestionAndBack.php')"> weitere Frage hinzufügen </button>
+                <button type='button' style="width:25%;" class='buttonRed' onclick="openQuestionOverview(<?php echo $kartendeck_id ?>)"> Abbrechen </button>
             </form>
         </div>
     </main>
@@ -92,7 +92,7 @@ if(!isset($_SESSION['userid'])) {
             }
         }
     // Funktion um auf eine ausgewählte Seite weiterzuleiten
-        function openPage(id) {
+        function openQuestionOverview(id) {
             window.location.href = "questionOverview.php?kartendeck_id=" + id;
         }
     </script>

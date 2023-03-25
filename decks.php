@@ -64,10 +64,10 @@ if(!isset($_SESSION['userid'])) {
                                         <td>" . getFragenAnzahl($row["kartendeck_id"]) . "</td>
                                         <td>" . ($row["public"] ? "Ja" : "Nein") . "</td>
                                         <td>
-                                            <button type='button' class='buttonYellow' value='" . $row["kartendeck_id"]. "' onclick='openBearbeiteKartendeck(" .  $row['kartendeck_id']. ")'> Bearbeiten </button>
+                                            <button type='button' class='buttonYellow' value='" . $row["kartendeck_id"]. "' onclick='openChangeDeck(" .  $row['kartendeck_id']. ")'> Bearbeiten </button>
                                         </td>
                                         <td>
-                                            <button type='button' class='buttonRed' value='" . $row["kartendeck_id"]. "' onclick='openLoescheKartendeck(" .  $row['kartendeck_id']. ")'> Löschen </button>
+                                            <button type='button' class='buttonRed' value='" . $row["kartendeck_id"]. "' onclick='openDeleteDeck(" .  $row['kartendeck_id']. ")'> Löschen </button>
                                         </td>
                                     </tr>";
                                 }
@@ -90,7 +90,7 @@ if(!isset($_SESSION['userid'])) {
     <div>
         <h1 class="form__title">Kartendeck hinzufügen</h1>
         <div class="ContainerDeck">
-            <form action="lib/addKartendeck.php" method="post" class="formDeck">
+            <form action="lib/addDeck.php" method="post" class="formDeck">
                 <label for="deckname" class="labelDeck">Kartendeckname:</label>
                 <input type="text" name="deckname" class="inputDeck" required>
 
@@ -135,11 +135,11 @@ if(!isset($_SESSION['userid'])) {
 </main>
 
 <script>
-function openBearbeiteKartendeck(id) {
+function openChangeDeck(id) {
   window.location.href = "questionOverview.php?kartendeck_id=" + id;
 }
-function openLoescheKartendeck(id) {
-  window.location.href = "lib/deleteKartendeck.php?kartendeck_id=" + id;
+function openDeleteDeck(id) {
+  window.location.href = "lib/deleteDeck.php?kartendeck_id=" + id;
 }
 </script>
 
