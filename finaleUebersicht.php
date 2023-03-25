@@ -84,13 +84,8 @@ if(!isset($_SESSION['userid'])) {
                                 $answerIndex++;
                                 echo '</tr>';
                                 }
-                                
                             }
                         }
-
-                        foreach ($selectedAnswer as $answer) {
-                            echo "<tr><td>" . $answer . "</td></tr>";
-                          }
 
 
 /*
