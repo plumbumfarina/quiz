@@ -11,6 +11,7 @@ if(!isset($_SESSION['userid'])) {
 <?php
 
     if(isset($_GET['weiter'])) {
+        $selectedAnswer = $_POST['answer'];
         $fragenIndex = $_SESSION['fragenListe'];
         array_shift($fragenIndex);
         $_SESSION['fragenListe'] = $fragenIndex;
@@ -61,6 +62,7 @@ if(!isset($_SESSION['userid'])) {
             $fragenIndex = $_SESSION['fragenListe'];
             $fragen_id = $fragenIndex[0];
             //$fragen_id = $_GET['fragen_id'];
+            $selectedAnswer = array();
             
 // Funktion um die aktuelle Frage herauszufinden
             function getFrage($conn, $fragen_id){
@@ -127,18 +129,19 @@ if(!isset($_SESSION['userid'])) {
         ?>
 
         <form action="?weiter=1" method="post">
+            <p><?php foreach ($selectedAnswer as $antwort_id) {echo $antwort_id . " ";} ?></p>
             <p><?php foreach ($_SESSION['fragenListe'] as $fragen_id) {echo $fragen_id . " ";} ?></p>
             <p><?php echo $currentFrage; ?></p>
             <input type="hidden" name="question_id" value="<?php echo $fragen_id; ?>">
         <?php
             echo"  
-                <button type='button' name='answer' value='1'>" . $currentAntworten[0] . "</button>
-                <button type='button' name='answer' value='2'>" . $currentAntworten[1] . "</button>
-                <button type='button' name='answer' value='3'>" . $currentAntworten[2] . "</button>
-                <button type='button' name='answer' value='4'>" . $currentAntworten[3] . "</button>
+                <button type='submit' name='answer' value='1'>" . $currentAntworten[0] . "</button>
+                <button type='submit' name='answer' value='2'>" . $currentAntworten[1] . "</button>
+                <button type='submit' name='answer' value='3'>" . $currentAntworten[2] . "</button>
+                <button type='submit' name='answer' value='4'>" . $currentAntworten[3] . "</button>
             ";
         ?>  
-            <button type="submit" name="next_question">Nächste Frage</button>
+            <!-- <button type="submit" name="next_question">Nächste Frage</button> -->
         </form>
 
     </div>
