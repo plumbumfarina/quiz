@@ -28,7 +28,7 @@ session_start();
         <h1 class="formTitle">Kartendecks</h1>
     <!-- Mit dem Button kann man sich alle öffentlichen Kartendecks anzeigen lassen -->
         <div>
-            <button type='button' class='button' onclick="window.location.href = 'deckOeffentlich.php';"> Öffentliche Kartendecks spielen </button>
+            <button type='button' class='button' onclick="window.location.href = 'publicDeck.php';"> Öffentliche Kartendecks spielen </button>
         </div>
         <br>
             <table class="TabelleDeck">

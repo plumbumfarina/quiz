@@ -1,12 +1,11 @@
 <?php
 // check if user is logged in, if not redirect to login page
 session_start();
-/* if(!isset($_SESSION['userid'])) {
+ if(!isset($_SESSION['userid'])) {
     header('location: login.php');
     die('Bitte zuerst einloggen');
-} */
+} 
 
-include_once('lib/getFragenAnzahl.php');
 ?>
 
 <!DOCTYPE html>
