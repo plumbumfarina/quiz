@@ -108,7 +108,7 @@ session_start();
                             $antworten[$i] = '0';
                             echo "<tr class='TRDeck'>
                                 <td>Frage " . ($i + 1) . "</td>
-                                <td>" . getFrage($conn, $fragenListe[$i])."<td>
+                                <td>" . getFrage($conn, $fragenListe[$i])."</td>
                             </tr>";
                         }
 
