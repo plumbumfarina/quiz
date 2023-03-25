@@ -500,7 +500,7 @@ td{
 }
 
 /* Stil der 4 Button beim Antworten */
-.ContainerDeck {
+.ContainerDeckButtons {
   width: 100%;
   max-width: 100%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);

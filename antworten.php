@@ -136,7 +136,7 @@ if(!isset($_SESSION['userid'])) {
         <div class="container mt-3">
             <h1 class="form__title"><?php echo $currentFrage; ?></h1>
             
-            <div class="ContainerDeck" style="padding:20px;">
+            <div class="ContainerDeckButtons" style="padding:20px;">
                 <form action="?weiter=1" method="post">
                 
                     
