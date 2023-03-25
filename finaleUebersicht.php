@@ -67,6 +67,26 @@ if(!isset($_SESSION['userid'])) {
                         $sql = "SELECT fragen_id, fragentext FROM fragen WHERE kartendeck_id = $kartendeck_id AND fragen_id IN (".implode(',', $fragenListeUebersicht).")";
                         $result = mysqli_query($conn, $sql);
 
+
+// Iterate over each element of the $fragenListeUebersicht array and create a new table row for each element
+foreach ($fragenListeUebersicht as $id) {
+    // Find the row in the database table that matches the current ID
+    mysqli_data_seek($result, 0);
+    while ($row = mysqli_fetch_assoc($result)) {
+        if ($row['fragen_id'] == $id) {
+            // Create a new table row with the current Fragentext in the first column and the corresponding Antwort in the second column
+            echo '<tr><td>'.$row['fragentext'].'</td><td>';
+            foreach ($selectedAnswer as $answer) {
+                if ($answer['id'] == $id) {
+                    echo $answer['antwort'];
+                }
+            }
+            echo '</td></tr>';
+            break;
+        }
+    }
+}
+
                         // Durch die Übergebenen fragen_ids schleifen und diese der gespielten Reihe nach ausgeben
                         foreach ($fragenListeUebersicht as $id) {
                             // Die passende Zeile zur aktuellen ID finden
