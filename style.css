@@ -497,6 +497,18 @@ td{
   padding: 5px;
 }
 
+/* Stil der 4 Button beim Antworten */
+.ContainerDeck {
+  width: 100%;
+  max-width: 100%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  background: #ffffff;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+}
+
 /* Stil Passwort ändern */
 .ContainerDeckPasswort {
   width: 400px;
