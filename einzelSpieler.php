@@ -29,12 +29,12 @@ session_start();
         <h1 class="formTitle">Übersicht der Fragen</h1>
         <br>
         
-            <table class="table table-striped">
-                <thead class="table-dark">
+            <table class="TabelleDeck">
+                <thead  class="THeadDeck">
                     <tr>
-                        <th>Frage</th>
-                        <th>Beantwortet</th>
-                        <th></th>
+                        <th class="THDeck">Frage</th>
+                        <th class="THDeck">Beantwortet</th>
+                        <th class="THDeck"></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -82,7 +82,7 @@ session_start();
 //Tabelle erstellen mit Fragen IDs und der Antworten
                         for($i = 0; $i < count($fragenListe); $i++) {
                             $antworten[$i] = '0';
-                            echo "<tr>
+                            echo "<tr class='TRDeck'>
                                 <td>Frage " . ($i + 1) . "</td>
                                 <td>";
                                 if ($antworten[$i] == '1') {

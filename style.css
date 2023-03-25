@@ -438,38 +438,8 @@ button:hover {
   background-color: #f2f2f2;
 }
 
-.table-striped {
-  width: 100%;
-  border-collapse: collapse;
-  border-radius: 10px;
-  border-color: #ff8c00;
-  margin: 0 auto;
-  overflow: hidden;
-}
-
-.table-striped thead {
-  background-color: #ff8c00;
-  color: black;
-  border-collapse: collapse;
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.table-striped th {
+td{
   padding: 10px;
-  text-align: left;
-}
-
-.table-striped tbody tr:nth-child(even) {
-  background-color: #e6e5e5;
-}
-
-.table-striped tbody tr:nth-child(odd) {
-  background-color: white;
-}
-
-.table-striped td {
-  padding: 8px;
 }
 
 /* Input Decks */

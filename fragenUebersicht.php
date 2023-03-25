@@ -25,17 +25,17 @@ if(!isset($_SESSION['userid'])) {
     </header>
 	<main>
         <h1 class="formTitle">Fragen</h1>
-            <table class="table table-hover">
-                <thead class="table-dark">
+            <table class="TabelleDeck">
+                <thead class="THeadDeck">
                     <tr>
-                        <th>Frage</th>
-                        <th>Antwort Eins</th>
-                        <th>Antwort Zwei</th>
-                        <th>Antwort Drei</th>
-                        <th>Antwort Vier</th>
-                        <th>Richtige Antwort</th>
-                        <th></th>
-                        <th></th>
+                        <th class="THDeck">Frage</th>
+                        <th class="THDeck">Antwort Eins</th>
+                        <th class="THDeck">Antwort Zwei</th>
+                        <th class="THDeck">Antwort Drei</th>
+                        <th class="THDeck">Antwort Vier</th>
+                        <th class="THDeck">Richtige Antwort</th>
+                        <th class="THDeck"></th>
+                        <th class="THDeck"></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -51,7 +51,7 @@ if(!isset($_SESSION['userid'])) {
                             include_once('lib/dbConnectorMYSQLI.php');
                             // output data of each row
                             while($row = $result->fetch_assoc()) {
-                                echo "<tr>
+                                echo "<tr class='TRDeck'>
                                     <td>" . $row["fragentext"]. "</td>
                                     <td>" . $row["antwortEins"]. "</td>
                                     <td>". $row["antwortZwei"]. "</td>
@@ -67,7 +67,7 @@ if(!isset($_SESSION['userid'])) {
                                 </tr>";
                             }
                         } else {
-                            echo "<tr>
+                            echo "<tr class='TRDeck'>
                                     <td>-</td>
                                     <td>-</td>
                                     <td>-</td>

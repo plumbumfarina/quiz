@@ -30,14 +30,14 @@ include_once('lib/getFragenAnzahl.php');
             <button type='button' class='button' onclick="window.location.href = 'deckAuswaehlen.php';"> Nur eigene Kartendecks spielen </button>
         </div>
         <br>
-            <table class="table table-striped">
-                <thead class="table-dark">
+            <table class="TabelleDeck">
+                <thead class="THeadDeck">
                     <tr>
-                        <th>Deckname</th>
-                        <th>Modulkürzel</th>
-                        <th>Modulname</th>
-                        <th>Anazhl Fragen</th>
-                        <th></th>
+                        <th class="THDeck">Deckname</th>
+                        <th class="THDeck">Modulkürzel</th>
+                        <th class="THDeck">Modulname</th>
+                        <th class="THDeck">Anazhl Fragen</th>
+                        <th class="THDeck"></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -61,7 +61,7 @@ include_once('lib/getFragenAnzahl.php');
                             // Ausgabe der SQL Abfrage 
                             while($row = $result->fetch_assoc()) {
                                 $fragenAnzahl = getFragenAnzahl($row["kartendeck_id"]);
-                                echo "<tr>
+                                echo "<tr class='TRDeck'>
                                     <td>" . $row["kartendeck_name"]. "</td>
                                     <td>" . $row["modulkuerzel"]. "</td>
                                     <td>" . $row["modulname"]. "</td>
@@ -73,7 +73,7 @@ include_once('lib/getFragenAnzahl.php');
                             }
                         } else {
                             //Ausgabe bei leerer Abfrage
-                            echo "<tr>
+                            echo "<tr class='TRDeck'>
                                     <td>-</td>
                                     <td>-</td>
                                     <td>-</td>

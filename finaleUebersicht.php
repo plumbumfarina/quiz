@@ -30,12 +30,12 @@ if(!isset($_SESSION['userid'])) {
         <br>
         <p><?php foreach ($_SESSION['selectedAnswers'] as $antwort_id) {echo $antwort_id . " ";} ?></p>
 
-            <table class="table table-striped">
-                <thead class="table-dark">
+            <table class="TabelleDeck">
+                <thead class="THeadDeck">
                     <tr>
-                        <th>Frage</th>
-                        <th>Beantwortet</th>
-                        <th></th>
+                        <th class="THDeck">Frage</th>
+                        <th class="THDeck">Beantwortet</th>
+                        <th class="THDeck"></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -73,7 +73,7 @@ if(!isset($_SESSION['userid'])) {
                             while ($row = mysqli_fetch_assoc($result)) {
                                 if ($row['fragen_id'] == $id) {
                                 // eine neue Zeile mit dem aktuellen Fragentext hinzufügen
-                                echo '<tr><td>'.$row['fragentext'].'</td></tr>';
+                                echo '<tr class="TRDeck"><td>'.$row['fragentext'].'</td></tr>';
                                 break;
                                 }
                             }
