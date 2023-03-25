@@ -12,10 +12,8 @@ if(!isset($_SESSION['userid'])) {
 
     if(isset($_GET['weiter'])) {
 
-        print_r($_POST);
-
         $selectedAnswer = $_SESSION['selectedAnswer'];
-        $selectedAnswer[] = $_POST['answer'];
+        $selectedAnswer[] = $_POST['answer_' . $fragen_id];
         $_SESSION['selectedAnswer'] = $selectedAnswer;
         
         $fragenIndex = $_SESSION['fragenListe'];
@@ -145,10 +143,10 @@ if(!isset($_SESSION['userid'])) {
 
             <?php echo var_dump($currentAntworten); ?>
 
-            <button type='submit' name='answer' value='<?php echo $currentAntworten[0]; ?>'><?php echo $currentAntworten[0]; ?></button>
-            <button type='submit' name='answer' value='<?php echo $currentAntworten[1]; ?>'><?php echo $currentAntworten[1]; ?></button>
-            <button type='submit' name='answer' value='<?php echo $currentAntworten[2]; ?>'><?php echo $currentAntworten[2]; ?></button>
-            <button type='submit' name='answer' value='<?php echo $currentAntworten[3]; ?>'><?php echo $currentAntworten[3]; ?></button>
+            <button type='submit' name='answer_<?php echo $fragen_id; ?>' value='<?php echo $currentAntworten[0]; ?>'><?php echo $currentAntworten[0]; ?></button>
+            <button type='submit' name='answer_<?php echo $fragen_id; ?>' value='<?php echo $currentAntworten[1]; ?>'><?php echo $currentAntworten[1]; ?></button>
+            <button type='submit' name='answer_<?php echo $fragen_id; ?>' value='<?php echo $currentAntworten[2]; ?>'><?php echo $currentAntworten[2]; ?></button>
+            <button type='submit' name='answer_<?php echo $fragen_id; ?>' value='<?php echo $currentAntworten[3]; ?>'><?php echo $currentAntworten[3]; ?></button>
 
            <!-- <button type="submit" name="next_question">Nächste Frage</button> -->
         </form>
