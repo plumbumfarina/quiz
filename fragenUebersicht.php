@@ -83,11 +83,8 @@ if(!isset($_SESSION['userid'])) {
                     ?>
                 </tbody>
             </table>
-            <div class="row">
-                <div class="col">
-                    <button type="button" onclick="openPageFrageAdd(<?php echo $kartendeck_id ?>)" class="buttonGreen"> Hinzufügen
-                    </button>
-                </div> 
+            <div stlye="text-align: center;">
+                    <button styke="width: 50%;" type="button" onclick="openPageFrageAdd(<?php echo $kartendeck_id ?>)" class="buttonGreen"> Hinzufügen </button>
             </div>
     </main>
 
