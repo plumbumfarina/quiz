@@ -27,13 +27,13 @@ if(!isset($_SESSION['userid'])) {
             <table class="TabelleDeck">
                 <thead class="THeadDeck">
                     <tr>
-                        <th>Deckname</th>
-                        <th>Modulkürzel</th>
-                        <th>Modulname</th>
-                        <th>Anazhl Fragen</th>
-                        <th>öffentlich</th>
-                        <th></th>
-                        <th></th>
+                        <th class="THDeck">Deckname</th>
+                        <th class="THDeck">Modulkürzel</th>
+                        <th class="THDeck">Modulname</th>
+                        <th class="THDeck">Anazhl Fragen</th>
+                        <th class="THDeck">öffentlich</th>
+                        <th class="THDeck"></th>
+                        <th class="THDeck"></th>
                     </tr>
                 </thead>
                 <tbody>

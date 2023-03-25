@@ -403,17 +403,24 @@ button:hover {
   width: 100%;
   max-width: 100%;
   background-color: transparent;
-  border-radius: 5px;
-  border: 1px solid #ff8c00;
+  border-radius: 10px;
   overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-spacing: 0;
 }
 .THeadDeck{
   background-color: #ff8c00;
   color: #ffffff;
 }
+.THDeck{
+  padding: 15px;
+}
+.TRDeck{
+  text-align: center;
+}
+
 .TRDeck:nth-child(even) {
   background-color: #f2f2f2;
-  border: 1px solid #ff8c00;
 }
 
 .table-striped {
