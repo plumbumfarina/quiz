@@ -123,6 +123,8 @@ if(!isset($_SESSION['userid'])) {
                             <h3>'. $totalQuestions .'</h3>
                             <h4>&nbsp; Fragen richtig beantwortet, das macht &nbsp;</h4>
                             <h3>'. round($percentage, 2) .'%</h3> 
+                            </div>
+                            <br>
                         ';
 
                         $conn->close();
