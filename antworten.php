@@ -137,20 +137,20 @@ if(!isset($_SESSION['userid'])) {
                 $conn->close();
                             
             ?>
+            <div class="ContainerDeck">
+                <form action="?weiter=1" method="post">
+                
+                    <h2><?php echo $currentFrage; ?></h2>
+                    <input type="hidden" name="question_id" value="<?php echo $fragen_id; ?>">
 
-            <form action="?weiter=1" method="post">
-            
-                <p><?php echo $currentFrage; ?></p>
-                <input type="hidden" name="question_id" value="<?php echo $fragen_id; ?>">
+                    <button type='submit' name='answer' value='<?php echo $currentAntworten[0]; ?>'><?php echo $currentAntworten[0]; ?></button>
+                    <button type='submit' name='answer' value='<?php echo $currentAntworten[1]; ?>'><?php echo $currentAntworten[1]; ?></button>
+                    <button type='submit' name='answer' value='<?php echo $currentAntworten[2]; ?>'><?php echo $currentAntworten[2]; ?></button>
+                    <button type='submit' name='answer' value='<?php echo $currentAntworten[3]; ?>'><?php echo $currentAntworten[3]; ?></button>
 
-                <button type='submit' name='answer' value='<?php echo $currentAntworten[0]; ?>'><?php echo $currentAntworten[0]; ?></button>
-                <button type='submit' name='answer' value='<?php echo $currentAntworten[1]; ?>'><?php echo $currentAntworten[1]; ?></button>
-                <button type='submit' name='answer' value='<?php echo $currentAntworten[2]; ?>'><?php echo $currentAntworten[2]; ?></button>
-                <button type='submit' name='answer' value='<?php echo $currentAntworten[3]; ?>'><?php echo $currentAntworten[3]; ?></button>
-
-            <!-- <button type="submit" name="next_question">Nächste Frage</button> -->
-            </form>
-
+                <!-- <button type="submit" name="next_question">Nächste Frage</button> -->
+                </form>
+            </div>
         </div>
     </div>
 </main>
