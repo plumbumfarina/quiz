@@ -88,7 +88,7 @@ session_start();
     </main>
     <script>
         function openPageGame(id) {
-        window.location.href = "einzelSpieler.php?kartendeck_id=" + id;
+        window.location.href = "singlePlayer.php?kartendeck_id=" + id;
         }
     </script>
     <?php
