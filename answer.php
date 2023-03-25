@@ -26,7 +26,7 @@ if(!isset($_SESSION['userid'])) {
             $redirectUrl = 'answer.php?fragen_id=' . $fragenIndex[0];
             header("Location: $redirectUrl");
         } else {
-            header("Location: finalOverviewTest.php");
+            header("Location: finalOverview.php");
             exit();
         }
     }

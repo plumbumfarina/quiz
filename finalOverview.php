@@ -76,12 +76,10 @@ if(!isset($_SESSION['userid'])) {
                             mysqli_data_seek($result, 0);
                             while ($row = mysqli_fetch_assoc($result)) {
                                 if ($row['fragen_id'] == $id) {
-                                // eine neue Zeile mit dem aktuellen Fragentext hinzufügen
-                                echo '<tr class="TRDeck"><td>'.$row['fragentext'].'</td>';
 
-                                // die passende Antwort zur aktuellen ID finden
-                                $antwort = '';
-                                switch ($row['richtigkeit']) {
+                                    // die passende Antwort zur aktuellen ID finden
+                                    $antwort = '';
+                                    switch ($row['richtigkeit']) {
                                     case 1:
                                         $antwort = $row['antwortEins'];
                                         break;
@@ -94,23 +92,33 @@ if(!isset($_SESSION['userid'])) {
                                     case 4:
                                         $antwort = $row['antwortVier'];
                                         break;
-                                }
-                                // die ausgewählte Antwort anzeigen oder eine Leerzelle, falls keine ausgewählt wurde
-                                echo '<td>';
-                                if (isset($selectedAnswer[$answerIndex])) {
-                                    echo $selectedAnswer[$answerIndex];
-                                }
-                                echo '</td>';
+                                    }
+                                    
+                                    if($selectedAnswer[$answerIndex] == $antwort){
+                                        echo '<tr class="TRDeck" style="color:green;"><td>'.$row['fragentext'].'</td>';
+                                    }elseif ($selectedAnswer[$answerIndex] != $antwort){
+                                        echo '<tr class="TRDeck" style="color:red;"><td>'.$row['fragentext'].'</td>';
+                                    }else{
+                                        // eine neue Zeile mit dem aktuellen Fragentext hinzufügen
+                                        echo '<tr class="TRDeck"><td>'.$row['fragentext'].'</td>';
+                                    }
 
-                                // die korrekte Antwort anzeigen
-                                echo '<td>'.$antwort.'</td>';
+                                    // die ausgewählte Antwort anzeigen oder eine Leerzelle, falls keine ausgewählt wurde
+                                    echo '<td>';
+                                    if (isset($selectedAnswer[$answerIndex])) {
+                                        echo $selectedAnswer[$answerIndex];
+                                    }
+                                    echo '</td>';
 
-                                if (isset($selectedAnswer[$answerIndex]) && $selectedAnswer[$answerIndex] == $antwort) {
-                                    $correctAnswers++;
-                                }
+                                    // die korrekte Antwort anzeigen
+                                    echo '<td>'.$antwort.'</td>';
 
-                                $answerIndex++;
-                                echo '</tr>';
+                                    if (isset($selectedAnswer[$answerIndex]) && $selectedAnswer[$answerIndex] == $antwort) {
+                                        $correctAnswers++;
+                                    }
+
+                                    $answerIndex++;
+                                    echo '</tr>';
                                 }
                             }
                         }
