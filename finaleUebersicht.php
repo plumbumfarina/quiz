@@ -28,7 +28,8 @@ if(!isset($_SESSION['userid'])) {
     <div>
         <h1 class="formTitle">Übersicht der Fragen</h1>
         <br>
-        
+        <p><?php foreach ($_SESSION['selectedAnswers'] as $antwort_id) {echo $antwort_id . " ";} ?></p>
+
             <table class="table table-striped">
                 <thead class="table-dark">
                     <tr>
