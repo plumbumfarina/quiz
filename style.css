@@ -403,6 +403,7 @@ button:hover {
   border-radius: 10px;
   border-color: #ff8c00;
   margin: 0 auto;
+  overflow: hidden;
 }
 
 .table-striped thead {
