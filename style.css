@@ -431,11 +431,13 @@ button:hover {
 }
 .TRDeck{
   text-align: center;
-  padding: 10px;
 }
 
 .TRDeck:nth-child(even) {
   background-color: #f2f2f2;
+}
+td{
+  padding: 10px;
 }
 
 /* Input Decks */
