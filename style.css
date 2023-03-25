@@ -412,10 +412,8 @@ button:hover {
   color: #ffffff;
 }
 .TRDeck:nth-child(even) {
-  background-color: #cfcece;
-}
-.TRDeck:nth-child(odd) {
   background-color: #f2f2f2;
+  border: 1px solid #ff8c00;
 }
 
 /*.table-striped {
