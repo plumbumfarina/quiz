@@ -61,8 +61,9 @@ if(!isset($_SESSION['userid'])) {
             $user_id = $_SESSION['userid'];
             $fragenIndex = $_SESSION['fragenListe'];
             $fragen_id = $fragenIndex[0];
-            //$fragen_id = $_GET['fragen_id'];
             $selectedAnswer = array();
+            //$fragen_id = $_GET['fragen_id'];
+            
             
 // Funktion um die aktuelle Frage herauszufinden
             function getFrage($conn, $fragen_id){
@@ -129,7 +130,8 @@ if(!isset($_SESSION['userid'])) {
         ?>
 
         <form action="?weiter=1" method="post">
-            <p>Selected answer: <?php echo isset($selectedAnswer) ? $selectedAnswer : ''; ?></p>
+        <p>Selected answer: <?php echo !empty($selectedAnswer) ? implode(', ', $selectedAnswer) : ''; ?></p>
+
             <p><?php foreach ($selectedAnswer as $antwort_id) {echo $antwort_id . " ";} ?></p>
             <p><?php foreach ($_SESSION['fragenListe'] as $fragen_id) {echo $fragen_id . " ";} ?></p>
             <p><?php echo $currentFrage; ?></p>
