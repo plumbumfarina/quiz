@@ -2,14 +2,34 @@
 // session starten
 session_start();
 
-// alle session variablen löschen
-$_SESSION = array();
-
-// session zerstören
-session_destroy();
-
-// redirect auf die Loginseite nach 10 sec
-header("Refresh: 5; URL=../login.php");
-echo "Logout erfolgreich. In 5 Sekunden wird die Login-Seite wieder angezeigt.";
-
 ?>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Logout</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="containerLogin">
+		<h1 class="formTitle">Logout</h1>
+		<p>Are you sure you want to logout?</p>
+		<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
+			<button type="submit">Logout</button>
+		</form>
+	</div>
+    <?php
+	// Prüfung ob Logout geclickt wurde
+	if(isset($_POST['logout'])) {
+		// Session zerstören
+		session_start();
+		session_destroy();
+		
+        sleep(0.1);
+		// Zur Startseite weiterleiten
+		header("Location: ../login.php");
+		exit;
+	}
+	?>
+</body>
+</html>
