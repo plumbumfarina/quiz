@@ -92,7 +92,7 @@ h2 {
   margin: 1rem;
   padding: 2rem;
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
-  border-radius: var(--border-radius);
+  border-radius: 8px;
   background: #ffffff;
 }
 
@@ -105,7 +105,7 @@ h2 {
   width: 100%;
   padding: 0.75rem;
   box-sizing: border-box;
-  border-radius: var(--border-radius);
+  border-radius: 8px;
   border: 1px solid #dddddd;
   outline: none;
   background: #eeeeee;
@@ -124,7 +124,7 @@ h2 {
   font-size: 1.1rem;
   color: #ffffff;
   border: none;
-  border-radius: var(--border-radius);
+  border-radius: 8px;
   outline: none;
   cursor: pointer;
   background: var(--color-primary);
