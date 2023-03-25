@@ -122,4 +122,16 @@ nav {
   margin-top: 0.5rem;
   font-size: 0.85rem;
   color: var(--color-error);
-}*/
+}*/footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background-color: #ff8c00;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  padding-left: 15px;
+  padding-top: 13px;
+}
