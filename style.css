@@ -80,15 +80,40 @@ h2 {
   text-align: center;
 }
 
-/* START LOGIN CSS */
+/* START LOGIN / Registrierung CSS */
 
 .containerLogin {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 400px;
   max-width: 400px;
   margin: 1rem;
   padding: 2rem;
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
   border-radius: var(--border-radius);
+  background: #ffffff;
+}
+
+.formInputGroup {
+  margin-bottom: 1rem;
+}
+
+.formInput {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  box-sizing: border-box;
+  border-radius: var(--border-radius);
+  border: 1px solid #dddddd;
+  outline: none;
+  background: #eeeeee;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.formInput:focus {
+  border-color: var(--color-primary);
   background: #ffffff;
 }
 
