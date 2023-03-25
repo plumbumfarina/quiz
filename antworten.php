@@ -5,16 +5,17 @@ if(!isset($_SESSION['userid'])) {
     header('location: login.php');
     die('Bitte zuerst einloggen');
 } 
-$selectedAnswer = array();
+
 ?>
 
 <?php
 
     if(isset($_GET['weiter'])) {
-        if(isset($_POST['answer'])) {
-        $selAntwort = $_POST['answer'];
-        $selectedAnswer[] = $selAntwort;
-        }
+
+        $selectedAnswer = $_SESSION['selectedAnswer'];
+        $selectedAnswer[] = $_POST['answer'];
+        $_SESSION['selectedAnswer'] = $selectedAnswer;
+        
         $fragenIndex = $_SESSION['fragenListe'];
         array_shift($fragenIndex);
         $_SESSION['fragenListe'] = $fragenIndex;
