@@ -62,6 +62,7 @@ if(!isset($_SESSION['userid'])) {
                         $antworten = array();
                         $currentIndex = 0;
                         $answerIndex = 0;
+                        $totalQuestions = count($fragenListeUebersicht);
                         $correctAnswers = 0;
 
 //SQL Abfrage für alle Fragen-IDs und Fragentexte
@@ -113,7 +114,10 @@ if(!isset($_SESSION['userid'])) {
                                 }
                             }
                         }
-                        
+
+                        $percentage = ($correctAnswers / $totalQuestions) * 100;
+                        echo 'Du hast ' . $correctAnswers . ' von ' . $totalQuestions . ' richtig beantwortet, das macht ' . round($percentage, 2) . '%.';
+
                         // display number of correct answers
                         echo '<tr><td colspan="3">Number of correct answers: '.$correctAnswers.'</td></tr>';
 
