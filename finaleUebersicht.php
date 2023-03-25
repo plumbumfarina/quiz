@@ -117,11 +117,11 @@ if(!isset($_SESSION['userid'])) {
                         // Berechnung der Prozentual richtig beantworteten Fragen + Ausgabe
                         $percentage = ($correctAnswers / $totalQuestions) * 100;
                         echo '<div style="display:flex;" class="ContainerDeck">
-                            <h2> Du hast </h2>
+                            <p> Du hast </p>
                             <h1>'. $correctAnswers .'</h1>
-                            <h2> von </h2>
+                            <p> von </p>
                             <h1>'. $totalQuestions .'</h1>
-                            <h2> Fragen richtig beantwortet, das macht </h2>
+                            <p> Fragen richtig beantwortet, das macht </p>
                             <h1>'. round($percentage, 2) .'%</h1> 
                         ';
                         //Du hast ' . $correctAnswers . ' von ' . $totalQuestions . ' Fragen richtig beantwortet, das macht ' . round($percentage, 2) . '%.
