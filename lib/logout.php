@@ -14,6 +14,11 @@ session_start();
 	<link rel="stylesheet" href="style.css" type="text/css" media="screen"/>
 </head>
 <body>
+    <header>
+        <?php
+            include_once('lib/navbar.php')
+        ?>
+    </header>
 	<div class="containerLogin">
 		<h1 class="formTitle">Logout</h1>
 		<p>Are you sure you want to logout?</p>
@@ -33,6 +38,9 @@ session_start();
 		header("Location: ../login.php");
 		exit;
 	}
+	?>
+    <?php
+		include_once('footer.php')
 	?>
 </body>
 </html>
