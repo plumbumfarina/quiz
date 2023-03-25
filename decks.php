@@ -96,7 +96,7 @@ if(!isset($_SESSION['userid'])) {
                     <input type="text" name="deckname" class="inputDeck" required>
                 </div>
                 <div class="mb-3">
-                    <label class="form-check-label" for="public">Willst du das Kartendeck für alle spielbar machen?</label>
+                    <label class="form-check-label" for="public">Willst du das Kartendeck für Alle spielbar machen?</label>
                     <input type="radio" name="public" value="TRUE" required> Ja </input>
                     <input type="radio" name="public" value="FALSE"> Nein </input>
                 </div>
