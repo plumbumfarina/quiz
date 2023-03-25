@@ -26,7 +26,7 @@ if(!isset($_SESSION['userid'])) {
 	<main>
         <h1 class="formTitle">Frage bearbeiten</h1>
         <div class="ContainerDeck">
-            <form action="lib/updateFrage.php" method="post" class="formDeck">
+            <form action="lib/updateQuestion.php" method="post" class="formDeck">
                 <?php
                     $fragen_id = $_GET['fragen_id'];
 
@@ -91,12 +91,12 @@ if(!isset($_SESSION['userid'])) {
                 </div>
                 <br>                
                 <button style="width:33%;" type="submit" class="buttonGreen"> Speichern </button>
-                <button style="width:33%;" type="button" class="buttonRed" onclick="openPage(<?php echo $kartendeck_id ?>)">Abbrechen</button>
+                <button style="width:33%;" type="button" class="buttonRed" onclick="openQuestionOverview(<?php echo $kartendeck_id ?>)">Abbrechen</button>
             </form>
         </div>
     </main>
     <script>
-    function openPage(id) {
+    function openQuestionOverview(id) {
         window.location.href = "questionOverview.php?kartendeck_id=" + id;
     }
     </script>

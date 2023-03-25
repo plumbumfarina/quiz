@@ -59,10 +59,10 @@ if(!isset($_SESSION['userid'])) {
                                     <td>". $row["antwortVier"]. "</td>
                                     <td>" . $row["richtigkeit"]. "</td>
                                     <td>
-                                        <button type='button' class='buttonYellow' value='" . $row["fragen_id"]. "' onclick='openPage(" .  $row['fragen_id']. ")'> Bearbeiten </button>
+                                        <button type='button' class='buttonYellow' value='" . $row["fragen_id"]. "' onclick='openChangeQuestion(" .  $row['fragen_id']. ")'> Bearbeiten </button>
                                     </td>
                                     <td>
-                                        <button type='button' class='buttonRed' value='" . $row["fragen_id"]. "' onclick='openPageFrageDelete(" . $row['fragen_id']. ")'> Löschen </button>
+                                        <button type='button' class='buttonRed' value='" . $row["fragen_id"]. "' onclick='openDeleteQuestion(" . $row['fragen_id']. ")'> Löschen </button>
                                     </td>
                                 </tr>";
                             }
@@ -85,18 +85,18 @@ if(!isset($_SESSION['userid'])) {
             </table>
             <br>
             <div class="ContainerDeck">
-                    <button style="width: 50%;" type="button" onclick="openPageFrageAdd(<?php echo $kartendeck_id ?>)" class="buttonGreen"> Hinzufügen </button>
+                    <button style="width: 50%;" type="button" onclick="openAddQuestion(<?php echo $kartendeck_id ?>)" class="buttonGreen"> Hinzufügen </button>
             </div>
     </main>
 
     <script>
-    function openPage(id) {
+    function openChangeQuestion(id) {
         window.location.href = "changeQuestion.php?fragen_id=" + id;
     }
-    function openPageFrageDelete(id) {
-        window.location.href = "lib/deleteFrage.php?fragen_id=" + id;
+    function openDeleteQuestion(id) {
+        window.location.href = "lib/deleteQuestion.php?fragen_id=" + id;
     }
-    function openPageFrageAdd(id) {
+    function openAddQuestion(id) {
         window.location.href= "newQuestion.php?kartendeck_id=" + id;
     }
     </script>
