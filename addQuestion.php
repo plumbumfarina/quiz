@@ -20,7 +20,7 @@ if(!isset($_SESSION['userid'])) {
 <body>
 <header>
     <?php
-        include_once('navbar.php')
+        include_once('navbar.php');
         $kartendeck_id = $_GET['kartendeck_id'];
     ?>
 </header>
@@ -87,6 +87,7 @@ if(!isset($_SESSION['userid'])) {
     }
 </script>
 <footer>
+
 </footer>
 
 </body>
