@@ -82,8 +82,8 @@ if(!isset($_SESSION['userid'])) {
                 <input type='radio' name='richtigkeit' value='4' <?php if($richtigkeit == '4') echo 'checked'; ?>>
                 <label>Richtige Antwort</label><br><br>
                 
-                <button type="submit" class="buttonGreen"> Speichern </button>
-                <button type="button" class="buttonRed" onclick="openPage(<?php echo $kartendeck_id ?>)">Abbrechen</button>
+                <button style="width:33%;" type="submit" class="buttonGreen"> Speichern </button>
+                <button style="width:33%;" type="button" class="buttonRed" onclick="openPage(<?php echo $kartendeck_id ?>)">Abbrechen</button>
             </form>
         </div>
     </main>
