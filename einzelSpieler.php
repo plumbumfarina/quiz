@@ -25,7 +25,7 @@ session_start();
 	<main>
         <h1 class="formTitle">Übersicht der Fragen</h1>
         <br>
-        
+        <div class="ContainerDeck">
             <table class="TabelleDeck">
                 <thead  class="THeadDeck">
                     <tr>
@@ -105,7 +105,7 @@ session_start();
                     ?>
                 </tbody>
             </table>
-            <div>
+            <br>
             <button type="button" class="buttonSpielen" onclick="openStart('<?php echo $fragenListe[0]; ?>')"> Quiz beginnen! </button>
         </div>
     </main>
