@@ -73,7 +73,7 @@ if(!isset($_SESSION['userid'])) {
                             while ($row = mysqli_fetch_assoc($result)) {
                                 if ($row['fragen_id'] == $id) {
                                 // eine neue Zeile mit dem aktuellen Fragentext hinzufügen
-                                echo '<tr class='TRDeck'><td>'.$row['fragentext'].'</td></tr>';
+                                echo '<tr class="TRDeck"><td>'.$row['fragentext'].'</td></tr>';
                                 break;
                                 }
                             }
