@@ -129,6 +129,7 @@ if(!isset($_SESSION['userid'])) {
         ?>
 
         <form action="?weiter=1" method="post">
+            <p>Selected answer: <?php echo isset($selectedAnswer) ? $selectedAnswer : ''; ?></p>
             <p><?php foreach ($selectedAnswer as $antwort_id) {echo $antwort_id . " ";} ?></p>
             <p><?php foreach ($_SESSION['fragenListe'] as $fragen_id) {echo $fragen_id . " ";} ?></p>
             <p><?php echo $currentFrage; ?></p>
