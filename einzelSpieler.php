@@ -79,6 +79,10 @@ session_start();
                         $_SESSION['fragenListe'] = $fragenListe;
                         $_SESSION['fragenListeUebersicht'] = $fragenListe;
 
+                        // Array global anlegen um die Antworten zu speichern
+                        $selectedAnswer = array();
+                        $_SESSION['selectedAnswer'] = $selectedAnswer;
+
 //Tabelle erstellen mit Fragen IDs und der Antworten
                         for($i = 0; $i < count($fragenListe); $i++) {
                             $antworten[$i] = '0';
