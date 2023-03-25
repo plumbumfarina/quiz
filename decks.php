@@ -89,46 +89,48 @@ if(!isset($_SESSION['userid'])) {
     </div>
     <div>
         <h1 class="form__title">Kartendeck hinzufügen</h1>
-        <form action="lib/addKartendeck.php" method="post" class="formDeck">
-            <label for="deckname" class="labelDeck">Kartendeckname:</label>
-            <input type="text" name="deckname" class="inputDeck" required>
+        <div class="ContainerDeck">
+            <form action="lib/addKartendeck.php" method="post" class="formDeck">
+                <label for="deckname" class="labelDeck">Kartendeckname:</label>
+                <input type="text" name="deckname" class="inputDeck" required>
 
-            <label class="labelDeck" for="public">Willst du das Kartendeck für Alle spielbar machen?</label>
-            <input type="radio" name="public" value="TRUE" required> Ja </input>
-            <input type="radio" name="public" value="FALSE"> Nein </input>
+                <label class="labelDeck" for="public">Willst du das Kartendeck für Alle spielbar machen?</label>
+                <input type="radio" name="public" value="TRUE" required> Ja </input>
+                <input type="radio" name="public" value="FALSE"> Nein </input>
 
-            <label for="modul" class="labelDeck">Wähle ein Modul aus:</label>
-            <select id="modul" name="modul" class="selectDeck">
-                <?php
-                    $servername = "localhost";
-                    $username = "root";
-                    $password = "toor";
-                    $dbname = "ProjektQuiz";
-                    $user_id = $_SESSION['userid'];
+                <label for="modul" class="labelDeck">Wähle ein Modul aus:</label>
+                <select id="modul" name="modul" class="selectDeck">
+                    <?php
+                        $servername = "localhost";
+                        $username = "root";
+                        $password = "toor";
+                        $dbname = "ProjektQuiz";
+                        $user_id = $_SESSION['userid'];
 
-                    // Create connection
-                    $conn = new mysqli($servername, $username, $password, $dbname);
-                    // Check connection
-                    if ($conn->connect_error) {
-                        die("Connection failed: " . $conn->connect_error);
-                    }
-
-                    $sql1 = "SELECT modulname FROM modul" ;
-                    $result1 = $conn->query($sql1);
-                        
-                    if ($result1->num_rows > 0) {
-                    // output data of each row
-                        while($row1 = $result1->fetch_assoc()) {
-                            echo "<option>" . $row1["modulname"]. "</option>";
+                        // Create connection
+                        $conn = new mysqli($servername, $username, $password, $dbname);
+                        // Check connection
+                        if ($conn->connect_error) {
+                            die("Connection failed: " . $conn->connect_error);
                         }
-                    } else {
-                        echo "<option> keine Module </option>";
-                    }
 
-                ?>
-            </select>
-            <button style="width:50%;" type="submit" class="buttonGreen"> Hinzufügen</button>    
-        </form>
+                        $sql1 = "SELECT modulname FROM modul" ;
+                        $result1 = $conn->query($sql1);
+                            
+                        if ($result1->num_rows > 0) {
+                        // output data of each row
+                            while($row1 = $result1->fetch_assoc()) {
+                                echo "<option>" . $row1["modulname"]. "</option>";
+                            }
+                        } else {
+                            echo "<option> keine Module </option>";
+                        }
+
+                    ?>
+                </select>
+                <button style="width:50%;" type="submit" class="buttonGreen"> Hinzufügen</button>    
+            </form>
+        </div>
     </div>
 </main>
 
