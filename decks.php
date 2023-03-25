@@ -23,21 +23,20 @@ if(!isset($_SESSION['userid'])) {
 </header>
 <main>
     <div>
-        <div>
-            <h1 class="form__title">Kartendecks</h1>
-                <table class="table-striped">
-                    <thead>
-                        <tr>
-                            <th>Deckname</th>
-                            <th>Modulkürzel</th>
-                            <th>Modulname</th>
-                            <th>Anazhl Fragen</th>
-                            <th>öffentlich</th>
-                            <th></th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
+        <h1 class="form__title">Kartendecks</h1>
+            <table class="table-striped">
+                <thead>
+                    <tr>
+                        <th>Deckname</th>
+                        <th>Modulkürzel</th>
+                        <th>Modulname</th>
+                        <th>Anazhl Fragen</th>
+                        <th>öffentlich</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
                         <?php
                             include_once('lib/dbConnectorMYSQLI.php');
 
@@ -85,9 +84,8 @@ if(!isset($_SESSION['userid'])) {
                             }
                             
                         ?>
-                    </tbody>
-                </table>
-        </div>
+                </tbody>
+            </table>
     </div>
     <div>
         <div class="container mt-3">
