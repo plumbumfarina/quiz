@@ -61,9 +61,7 @@ if(!isset($_SESSION['userid'])) {
             $fragenIndex = $_SESSION['fragenListe'];
             $fragen_id = $fragenIndex[0];
             //$fragen_id = $_GET['fragen_id'];
-            $selectedAnswers = array();
-            $_SESSION['selecteAnswers'] = $selectedAnswers;
-
+            
 // Funktion um die aktuelle Frage herauszufinden
             function getFrage($conn, $fragen_id){
             // Prüfung ob eine Fragen-ID angegeben wurde 
