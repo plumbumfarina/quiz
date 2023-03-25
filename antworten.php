@@ -9,10 +9,14 @@ $selectedAnswer = array();
 ?>
 
 <?php
-    
+    if($_SERVER['REQUEST_METHOD'] === 'POST') {
+        if (isset($_POST['answer'])) {
+            $selectedAnswer[] = $_POST['answer'];
+        }
+    }
 
     if(isset($_GET['weiter'])) {
-        $selectedAnswer[] = $_POST['answer'];
+        #$selectedAnswer[] = $_POST['answer'];
 
         $fragenIndex = $_SESSION['fragenListe'];
         array_shift($fragenIndex);
