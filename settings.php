@@ -31,6 +31,7 @@ if(isset($_GET['change-password'])) {
 
                 if ($result) {
                     echo "Passwort erfolgreich geändert.";
+                    header('location: logout.php');
                 } else {
                     echo "Fehler beim Passwort ändern.";
                 }
@@ -68,15 +69,15 @@ if(isset($_GET['change-password'])) {
         <h1>Passwort ändern</h1>
             <form method="post" action="?change-password=1">
                 <div class="formInputGroup">
-                <input type="password" class="formInput" maxlength="250" id="old-password" name="old_password" placeholder="Altes Passwort">
+                <input type="password" class="formInput" maxlength="250" id="old-password" name="old_password" required placeholder="Altes Passwort">
                 </div>
 
                 <div class="formInputGroup">
-                <input type="password" class="formInput" maxlength="250" id="new-password" name="new_password" placeholder="Neues Passwort">
+                <input type="password" class="formInput" maxlength="250" id="new-password" name="new_password" required placeholder="Neues Passwort">
                 </div>
 
                 <div class="formInputGroup">
-                <input type="password" class="formInput" maxlength="250" id="confirm-password" name="confirm_password" placeholder="Neues Passwort wiederholen">
+                <input type="password" class="formInput" maxlength="250" id="confirm-password" name="confirm_password" required placeholder="Neues Passwort wiederholen">
                 </div>
 
                 <input class="formButton" type="submit" value="Passwort ändern">
