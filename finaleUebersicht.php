@@ -78,7 +78,7 @@ if(!isset($_SESSION['userid'])) {
                                 echo '<tr class="TRDeck"><td>'.$row['fragentext'].'</td>';
                                 }
                                 if (isset($selectedAnswer[$answer_index])) {
-                                    echo '<td>' . $selectedAnswer[$answer_index] . '</td>';
+                                    echo '<td>' . $selectedAnswer[$answerIndex] . '</td>';
                                 } else {
                                     echo '<td>&nbsp;</td>';
                                 }
