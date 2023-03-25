@@ -6,6 +6,8 @@ if(!isset($_SESSION['userid'])) {
     die('Bitte zuerst einloggen');
 } 
 
+
+$selectedAnswer = array();
 ?>
 
 <?php
@@ -61,7 +63,7 @@ if(!isset($_SESSION['userid'])) {
             $user_id = $_SESSION['userid'];
             $fragenIndex = $_SESSION['fragenListe'];
             $fragen_id = $fragenIndex[0];
-            $selectedAnswer = array();
+            
             //$fragen_id = $_GET['fragen_id'];
             
             
