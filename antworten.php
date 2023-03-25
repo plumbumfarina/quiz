@@ -170,5 +170,6 @@ document.querySelector('button[name="next_question"]').addEventListener('click',
     <?php echo 'selectedAnswers.push("' . $selectedAnswer . '");'; ?>
 });
 
+</script>
 </body>
 </html>
