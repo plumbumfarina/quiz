@@ -33,7 +33,6 @@ session_start();
             session_start();
             session_destroy();
             
-            sleep(0.1);
             // Zur Startseite weiterleiten
             header("Location: ../login.php");
             exit;
