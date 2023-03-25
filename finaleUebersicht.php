@@ -80,6 +80,10 @@ if(!isset($_SESSION['userid'])) {
                             }
                         }
 
+                        foreach ($selectedAnswer as $answer) {
+                            echo "<tr><td>" . $answer . "</td></tr>";
+                          }
+
                         // zweite spalte
                         $index = 0;
                         mysqli_data_seek($result, 0);
