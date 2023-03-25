@@ -4,11 +4,11 @@ session_start();
 include_once('lib/dbConnectorPDO.php');
 
 if(isset($_GET['login'])) {
-    $email = $_POST['email'];
+    $emailNickname = $_POST['emailNickname'];
     $passwort = $_POST['passwort'];
 
-    $statement = $conn->prepare("SELECT * FROM user WHERE email = :email");
-    $result = $statement->execute(array('email' => $email));
+    $statement = $conn->prepare("SELECT * FROM user WHERE email = :email OR nickname = :nickname");
+    $result = $statement->execute(array('email' => $emailNickname, 'nickname' => $emailNickname));
     $user = $statement->fetch();
 
     //Passwort überprüfen
@@ -45,7 +45,7 @@ if(isset($_GET['login'])) {
             <div class="formMessage formMessage--error"></div>
 
             <div class="formInputGroup">
-                <input type="email" class="formInput" maxlength="250" name="email" autofocus placeholder="E-Mail">
+                <input type="email" class="formInput" maxlength="250" name="emailNickname" autofocus placeholder="E-Mail oder Nickname">
                 <div class="form__input-error-message"></div>
             </div>
 
