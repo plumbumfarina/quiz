@@ -6,12 +6,11 @@ if(!isset($_SESSION['userid'])) {
     die('Bitte zuerst einloggen');
 } 
 
-
-$selectedAnswer = array();
 ?>
 
 <?php
-
+    
+$selectedAnswer = array();
     if(isset($_GET['weiter'])) {
         $selectedAnswer[] = $_POST['answer'];
         $fragenIndex = $_SESSION['fragenListe'];
