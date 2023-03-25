@@ -11,13 +11,11 @@ if(!isset($_SESSION['userid'])) {
 <?php
 
     if(isset($_GET['weiter'])) {
-        $selectedAnswer = $_POST['answer'];
-        echo $selectedAnswer;
         $fragenIndex = $_SESSION['fragenListe'];
         array_shift($fragenIndex);
         $_SESSION['fragenListe'] = $fragenIndex;
         if(!empty($fragenIndex)) {
-            header("Refresh: 5, URL: antworten.php?fragen_id=" . $fragenIndex[0]);
+            header("Refresh: 5, Location: antworten.php?fragen_id=" . $fragenIndex[0]);
         } else {
             header("Location: finaleUebersicht.php");
             exit();
@@ -132,7 +130,6 @@ if(!isset($_SESSION['userid'])) {
 
         <form action="?weiter=1" method="post">
             <p><?php foreach ($_SESSION['fragenListe'] as $fragen_id) {echo $fragen_id . " ";} ?></p>
-            <p><?php foreach ($selectedAnswers as $antwort_id) {echo $antwort_id . " ";} ?></p>
             <p><?php echo $currentFrage; ?></p>
             <input type="hidden" name="question_id" value="<?php echo $fragen_id; ?>">
         <?php
