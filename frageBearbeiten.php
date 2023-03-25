@@ -82,8 +82,8 @@ if(!isset($_SESSION['userid'])) {
                 <label>Richtige Antwort</label><br><br>
                 
                 <div>
-                    <button type="submit" class="buttonHinzufuegen"> Speichern </button>
-                    <button type="button" class="buttonLoeschen" onclick="openPage(<?php echo $kartendeck_id ?>)">Abbrechen</button>
+                    <button type="submit" class="buttonGreen"> Speichern </button>
+                    <button type="button" class="buttonRed" onclick="openPage(<?php echo $kartendeck_id ?>)">Abbrechen</button>
                 </div>
             </form>
     </main>

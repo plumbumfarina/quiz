@@ -59,10 +59,10 @@ if(!isset($_SESSION['userid'])) {
                                     <td>". $row["antwortVier"]. "</td>
                                     <td>" . $row["richtigkeit"]. "</td>
                                     <td>
-                                        <button type='button' class='buttonBearbeiten' value='" . $row["fragen_id"]. "' onclick='openPage(" .  $row['fragen_id']. ")'> Bearbeiten </button>
+                                        <button type='button' class='buttonYellow' value='" . $row["fragen_id"]. "' onclick='openPage(" .  $row['fragen_id']. ")'> Bearbeiten </button>
                                     </td>
                                     <td>
-                                        <button type='button' class='buttonLoeschen' value='" . $row["fragen_id"]. "' onclick='openPageFrageDelete(" . $row['fragen_id']. ")'> Löschen </button>
+                                        <button type='button' class='buttonRed' value='" . $row["fragen_id"]. "' onclick='openPageFrageDelete(" . $row['fragen_id']. ")'> Löschen </button>
                                     </td>
                                 </tr>";
                             }
@@ -85,7 +85,7 @@ if(!isset($_SESSION['userid'])) {
             </table>
             <div class="row">
                 <div class="col">
-                    <button type="button" onclick="openPageFrageAdd(<?php echo $kartendeck_id ?>)" class="buttonHinzufuegen"> Hinzufügen
+                    <button type="button" onclick="openPageFrageAdd(<?php echo $kartendeck_id ?>)" class="buttonGreen"> Hinzufügen
                     </button>
                 </div> 
             </div>

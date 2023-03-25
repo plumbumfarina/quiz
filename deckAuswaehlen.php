@@ -68,7 +68,7 @@ include_once('lib/getFragenAnzahl.php');
                                     <td>" . $row["modulname"]. "</td>
                                     <td>" . $fragenAnzahl. "</td>
                                     <td>
-                                        <button type='button' class='buttonSpielen' value='" . $row["kartendeck_id"]. "' onclick='openPageGame(" .  $row['kartendeck_id']. ")'". ($fragenAnzahl == 0 ? " disabled" : "") ."> Spielen </button>
+                                        <button type='button' class='buttonBlue' value='" . $row["kartendeck_id"]. "' onclick='openPageGame(" .  $row['kartendeck_id']. ")'". ($fragenAnzahl == 0 ? " disabled" : "") ."> Spielen </button>
                                     </td>
                                 </tr>";
                             }

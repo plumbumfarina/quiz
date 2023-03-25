@@ -51,9 +51,9 @@ if(!isset($_SESSION['userid'])) {
             <input type='radio' name='richtigkeit' value='4' required> Richtige Antwort </input>
 
             <div>
-                <button type='submit' class='buttonHinzufuegen' onclick="submitForm('lib/addFrage.php')"> Hinzufügen </button>
-                <button type='submit' class='buttonHinzufuegenSpeziell' onclick="submitForm('lib/addFrageAndBack.php')"> weitere Frage hinzufügen </button>
-                <button type='button' class='buttonLoeschen' onclick="openPage(<?php echo $kartendeck_id ?>)"> Abbrechen </button>
+                <button type='submit' class='buttonGreen' onclick="submitForm('lib/addFrage.php')"> Hinzufügen </button>
+                <button type='submit' class='buttonGreen' onclick="submitForm('lib/addFrageAndBack.php')"> weitere Frage hinzufügen </button>
+                <button type='button' class='buttonRed' onclick="openPage(<?php echo $kartendeck_id ?>)"> Abbrechen </button>
             </div>
         </form>
     </div>

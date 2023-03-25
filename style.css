@@ -411,6 +411,77 @@ button:hover {
   border: 2px solid #629ad3;
   color: #fffbfb;
 }
+/* Stil der Buttons */
+.buttonGreen {
+  display: inline-block;
+  background-color: #329e6846;
+  border-radius: 8px;
+  border: 2px solid #329e68;
+  color: #000000;
+  width: auto;
+  padding: 5px;
+  font-size: 15px;
+}
+
+.buttonGreen:hover {
+  background-color: #329e68;
+  color: #ffffff;
+}
+
+.buttonBlue {
+    display: inline-block;
+    background-color: #007bff46;
+    border-radius: 8px;
+    border: 2px solid #007bff;
+    color: #000000;
+    width: auto;
+    padding: 5px;
+    font-size: 15px;
+  }
+  
+  .buttonBlue:hover {
+    background-color: #007bff;
+    color: #ffffff;
+  }
+  .buttonBlue:disabled,  
+.buttonBlue[disabled]{
+  background-color: #7ab9fd;
+  border: 2px solid #7ab9fd;
+  color: #fffbfb;
+}
+
+.buttonYellow {
+    display: inline-block;
+    background-color: #ffc10746;
+    border-radius: 8px;
+    border: 2px solid #ffc107;
+    color: #000000;
+    width: auto;
+    padding: 5px;
+    font-size: 15px;
+  }
+  
+  .buttonYellow:hover {
+    background-color: #ffc107;
+    color: #ffffff;
+  }
+
+.buttonRed {
+    display: inline-block;
+    background-color: #dc354546;
+    border-radius: 8px;
+    border: 2px solid #dc3545;
+    color: #000000;
+    width: auto;
+    padding: 5px;
+    font-size: 15px;
+}
+  
+.buttonRed:hover {
+    background-color: #dc3545;
+    color: #ffffff;
+}
+
 /* Tabelle Decks */
 .TabelleDeck{
   border-collapse: collapse;
