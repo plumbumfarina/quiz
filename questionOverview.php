@@ -91,7 +91,7 @@ if(!isset($_SESSION['userid'])) {
 
     <script>
     function openPage(id) {
-        window.location.href = "frageBearbeiten.php?fragen_id=" + id;
+        window.location.href = "changeQuestion.php?fragen_id=" + id;
     }
     function openPageFrageDelete(id) {
         window.location.href = "lib/deleteFrage.php?fragen_id=" + id;
