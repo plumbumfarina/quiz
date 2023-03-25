@@ -22,7 +22,7 @@ session_start();
         <div class="containerLogin">
             <h1 class="formTitle">Logout</h1>
             <h2>Willst du dich wirklich ausloggen?</h2>
-            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
+            <form action="?logout=1" method="post">
                 <button type="submit">Logout</button>
             </form>
         </div>
