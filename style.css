@@ -403,7 +403,8 @@ button:hover {
   width: 100%;
   max-width: 100%;
   background-color: transparent;
-  border-radius: 10px;
+  border-radius: 5px;
+  border: 1px solid #ff8c00;
   overflow: hidden;
 }
 .THeadDeck{
