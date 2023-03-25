@@ -48,111 +48,112 @@ if(!isset($_SESSION['userid'])) {
         include_once('navbar.php')
     ?>
 </header>
-<div>
-    <div class="container mt-3">
-        <h1 class="form__title">Frage</h1>
-        <?php
-// Datenbank-Verbindung
-            $servername = "localhost";
-            $username = "root";
-            $password = "toor";
-            $dbname = "ProjektQuiz";
-        
-            // Create connection
-            $conn = new mysqli($servername, $username, $password, $dbname);
-            // Check connection
-            if ($conn->connect_error) {
-                die("Connection failed: " . $conn->connect_error);
-            }
-// wichtige Variablen 
-            $kartendeck_id = $_GET['kartendeck_id'];
-            $user_id = $_SESSION['userid'];
-            $fragenIndex = $_SESSION['fragenListe'];
-            $fragen_id = $fragenIndex[0];
+<main>
+    <div>
+        <div class="container mt-3">
+            <h1 class="form__title">Frage</h1>
+            <?php
+    // Datenbank-Verbindung
+                $servername = "localhost";
+                $username = "root";
+                $password = "toor";
+                $dbname = "ProjektQuiz";
             
-            //$fragen_id = $_GET['fragen_id'];
-            
-            
-// Funktion um die aktuelle Frage herauszufinden
-            function getFrage($conn, $fragen_id){
-            // Prüfung ob eine Fragen-ID angegeben wurde 
-                if(isset($fragen_id)) {
-                    $sqlFrage = "SELECT fragentext FROM fragen WHERE fragen_id = $fragen_id";
-                    $resultFrage = $conn->query($sqlFrage);
+                // Create connection
+                $conn = new mysqli($servername, $username, $password, $dbname);
+                // Check connection
+                if ($conn->connect_error) {
+                    die("Connection failed: " . $conn->connect_error);
+                }
+    // wichtige Variablen 
+                $kartendeck_id = $_GET['kartendeck_id'];
+                $user_id = $_SESSION['userid'];
+                $fragenIndex = $_SESSION['fragenListe'];
+                $fragen_id = $fragenIndex[0];
+                
+                //$fragen_id = $_GET['fragen_id'];
+                
+                
+    // Funktion um die aktuelle Frage herauszufinden
+                function getFrage($conn, $fragen_id){
+                // Prüfung ob eine Fragen-ID angegeben wurde 
+                    if(isset($fragen_id)) {
+                        $sqlFrage = "SELECT fragentext FROM fragen WHERE fragen_id = $fragen_id";
+                        $resultFrage = $conn->query($sqlFrage);
 
-                    if (!$resultFrage) {
-                        printf("Error: %s\n", mysqli_error($conn));
-                        exit();
-                    }
+                        if (!$resultFrage) {
+                            printf("Error: %s\n", mysqli_error($conn));
+                            exit();
+                        }
 
-                    if($resultFrage->num_rows == 1){
-                        $rowFrage = $resultFrage->fetch_assoc();
-                        $fragentext = $rowFrage['fragentext']; 
+                        if($resultFrage->num_rows == 1){
+                            $rowFrage = $resultFrage->fetch_assoc();
+                            $fragentext = $rowFrage['fragentext']; 
+                        } else {
+                            echo "Fehler: Die Abfrage gibt das falsche Ergebnis zurück!";
+                        }
                     } else {
-                        echo "Fehler: Die Abfrage gibt das falsche Ergebnis zurück!";
+                        echo "Keine Frage angegeben.";
                     }
-                } else {
-                    echo "Keine Frage angegeben.";
+
+                    return $fragentext;
                 }
 
-                return $fragentext;
-            }
+    // Funktion um die aktuellen Antworten herauszufinden
+                function getAntworten($conn, $fragen_id){
+                // Prüfung ob eine Fragen-ID angegeben wurde 
+                    if(isset($fragen_id)) {
+                        $sqlAntwort = "SELECT antwortEins, antwortZwei, antwortDrei, antwortVier FROM fragen WHERE fragen_id = $fragen_id";
+                        $resultAntwort = $conn->query($sqlAntwort);
 
-// Funktion um die aktuellen Antworten herauszufinden
-            function getAntworten($conn, $fragen_id){
-            // Prüfung ob eine Fragen-ID angegeben wurde 
-                if(isset($fragen_id)) {
-                    $sqlAntwort = "SELECT antwortEins, antwortZwei, antwortDrei, antwortVier FROM fragen WHERE fragen_id = $fragen_id";
-                    $resultAntwort = $conn->query($sqlAntwort);
+                        if (!$resultAntwort) {
+                            printf("Error: %s\n", mysqli_error($conn));
+                            exit();
+                        }
 
-                    if (!$resultAntwort) {
-                        printf("Error: %s\n", mysqli_error($conn));
-                        exit();
-                    }
-
-                    if($resultAntwort->num_rows == 1){
-                        $rowAntwort = $resultAntwort->fetch_assoc();
-                        $antwort1 = $rowAntwort['antwortEins']; 
-                        $antwort2 = $rowAntwort['antwortZwei']; 
-                        $antwort3 = $rowAntwort['antwortDrei']; 
-                        $antwort4 = $rowAntwort['antwortVier']; 
+                        if($resultAntwort->num_rows == 1){
+                            $rowAntwort = $resultAntwort->fetch_assoc();
+                            $antwort1 = $rowAntwort['antwortEins']; 
+                            $antwort2 = $rowAntwort['antwortZwei']; 
+                            $antwort3 = $rowAntwort['antwortDrei']; 
+                            $antwort4 = $rowAntwort['antwortVier']; 
+                        } else {
+                            echo "Fehler: Die Abfrage gibt das falsche Ergebnis zurück!";
+                        }
                     } else {
-                        echo "Fehler: Die Abfrage gibt das falsche Ergebnis zurück!";
+                        echo "Keine Frage angegeben.";
                     }
-                } else {
-                    echo "Keine Frage angegeben.";
+
+                    // Mischen der Antworten
+                    $antwortenArray = array($antwort1, $antwort2, $antwort3, $antwort4);
+                    shuffle($antwortenArray);
+
+                    return $antwortenArray;
                 }
 
-                // Mischen der Antworten
-                $antwortenArray = array($antwort1, $antwort2, $antwort3, $antwort4);
-                shuffle($antwortenArray);
+                $currentFrage = getFrage($conn, $_GET['fragen_id']);
+                $currentAntworten = getAntworten($conn, $_GET['fragen_id']);
 
-                return $antwortenArray;
-            }
+                $conn->close();
+                            
+            ?>
 
-              $currentFrage = getFrage($conn, $_GET['fragen_id']);
-              $currentAntworten = getAntworten($conn, $_GET['fragen_id']);
+            <form action="?weiter=1" method="post">
+            
+                <p><?php echo $currentFrage; ?></p>
+                <input type="hidden" name="question_id" value="<?php echo $fragen_id; ?>">
 
-			$conn->close();
-                        
-        ?>
+                <button type='submit' name='answer' value='<?php echo $currentAntworten[0]; ?>'><?php echo $currentAntworten[0]; ?></button>
+                <button type='submit' name='answer' value='<?php echo $currentAntworten[1]; ?>'><?php echo $currentAntworten[1]; ?></button>
+                <button type='submit' name='answer' value='<?php echo $currentAntworten[2]; ?>'><?php echo $currentAntworten[2]; ?></button>
+                <button type='submit' name='answer' value='<?php echo $currentAntworten[3]; ?>'><?php echo $currentAntworten[3]; ?></button>
 
-        <form action="?weiter=1" method="post">
-        
-            <p><?php echo $currentFrage; ?></p>
-            <input type="hidden" name="question_id" value="<?php echo $fragen_id; ?>">
+            <!-- <button type="submit" name="next_question">Nächste Frage</button> -->
+            </form>
 
-            <button type='submit' name='answer' value='<?php echo $currentAntworten[0]; ?>'><?php echo $currentAntworten[0]; ?></button>
-            <button type='submit' name='answer' value='<?php echo $currentAntworten[1]; ?>'><?php echo $currentAntworten[1]; ?></button>
-            <button type='submit' name='answer' value='<?php echo $currentAntworten[2]; ?>'><?php echo $currentAntworten[2]; ?></button>
-            <button type='submit' name='answer' value='<?php echo $currentAntworten[3]; ?>'><?php echo $currentAntworten[3]; ?></button>
-
-           <!-- <button type="submit" name="next_question">Nächste Frage</button> -->
-        </form>
-
+        </div>
     </div>
-</div>
-
+</main>
 
 
 <?php
