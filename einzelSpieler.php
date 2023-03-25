@@ -30,7 +30,6 @@ session_start();
                     <tr>
                         <th class="THDeck">Frage</th>
                         <th class="THDeck">Beantwortet</th>
-                        <th class="THDeck"></th>
                     </tr>
                 </thead>
                 <tbody>
