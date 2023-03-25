@@ -95,9 +95,9 @@ if(!isset($_SESSION['userid'])) {
                                     }
                                     
                                     if($selectedAnswer[$answerIndex] == $antwort){
-                                        echo '<tr class="TRDeck style="color:green;"><td>'.$row['fragentext'].'</td>';
+                                        echo '<tr class="TRDeckGreen"><td>'.$row['fragentext'].'</td>';
                                     }elseif ($selectedAnswer[$answerIndex] != $antwort){
-                                        echo '<tr class="TRDeck style="color:red;"><td>'.$row['fragentext'].'</td>';
+                                        echo '<tr class="TRDeckRed"><td>'.$row['fragentext'].'</td>';
                                     }else{
                                         // eine neue Zeile mit dem aktuellen Fragentext hinzufügen
                                         echo '<tr class="TRDeck"><td>'.$row['fragentext'].'</td>';
