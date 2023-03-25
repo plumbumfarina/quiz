@@ -34,9 +34,11 @@ if(!isset($_SESSION['userid'])) {
     <title>Frage</title>
 </head>
 <body>
+<header>
 <?php
     include_once('navbar.php')
 ?>
+</header>
 <div>
     <div class="container mt-3">
         <h1 class="form__title">Frage</h1>
@@ -128,7 +130,7 @@ if(!isset($_SESSION['userid'])) {
 
         <form action="?weiter=1" method="post">
             <p><?php foreach ($_SESSION['fragenListe'] as $fragen_id) {echo $fragen_id . " ";} ?></p>
-            <p><?php foreach ($_SESSION['selectedAnswers'] as $antwort_id) {echo $antwort_id . " ";} ?></p>
+            <p><?php foreach ($selectedAnswers as $antwort_id) {echo $antwort_id . " ";} ?></p>
             <p><?php echo $currentFrage; ?></p>
             <input type="hidden" name="question_id" value="<?php echo $fragen_id; ?>">
         <?php
