@@ -25,7 +25,7 @@ if(isset($_GET['logout'])) {
     <body>
         <header>
             <?php
-                include_once('navbar.php')
+                include_once('lib/navbar.php')
             ?>
         </header>
         <div class="containerLogin">
@@ -37,7 +37,7 @@ if(isset($_GET['logout'])) {
         </div>
        
         <?php
-            include_once('footer.php')
+            include_once('lib/footer.php')
         ?>
     </body>
 </html>
