@@ -409,6 +409,9 @@ button:hover {
 .table-striped thead {
   background-color: #ff8c00;
   color: black;
+  border-collapse: collapse;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .table-striped th {
