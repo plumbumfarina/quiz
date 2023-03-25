@@ -13,14 +13,16 @@ if(!isset($_SESSION['userid'])) {
     if(isset($_GET['weiter'])) {
 
         $selectedAnswer = $_SESSION['selectedAnswer'];
-        $selectedAnswer[] = $_POST['answer_' . $fragen_id];
+        $selectedAnswer[] = $_POST['answer'];
         $_SESSION['selectedAnswer'] = $selectedAnswer;
         
+        var_dump($selectedAnswer);
+
         $fragenIndex = $_SESSION['fragenListe'];
         array_shift($fragenIndex);
         $_SESSION['fragenListe'] = $fragenIndex;
         if(!empty($fragenIndex)) {
-            header("Location: antworten.php?fragen_id=" . $fragenIndex[0]);
+            header("Refresh: 5; Location: antworten.php?fragen_id=" . $fragenIndex[0]);
         } else {
             header("Location: finaleUebersicht.php");
             exit();
@@ -141,12 +143,10 @@ if(!isset($_SESSION['userid'])) {
             <p><?php echo $currentFrage; ?></p>
             <input type="hidden" name="question_id" value="<?php echo $fragen_id; ?>">
 
-            <?php echo var_dump($currentAntworten); ?>
-
-            <button type='submit' name='answer_<?php echo $fragen_id; ?>' value='<?php echo $currentAntworten[0]; ?>'><?php echo $currentAntworten[0]; ?></button>
-            <button type='submit' name='answer_<?php echo $fragen_id; ?>' value='<?php echo $currentAntworten[1]; ?>'><?php echo $currentAntworten[1]; ?></button>
-            <button type='submit' name='answer_<?php echo $fragen_id; ?>' value='<?php echo $currentAntworten[2]; ?>'><?php echo $currentAntworten[2]; ?></button>
-            <button type='submit' name='answer_<?php echo $fragen_id; ?>' value='<?php echo $currentAntworten[3]; ?>'><?php echo $currentAntworten[3]; ?></button>
+            <button type='submit' name='answer' value='<?php echo $currentAntworten[0]; ?>'><?php echo $currentAntworten[0]; ?></button>
+            <button type='submit' name='answer' value='<?php echo $currentAntworten[1]; ?>'><?php echo $currentAntworten[1]; ?></button>
+            <button type='submit' name='answer' value='<?php echo $currentAntworten[2]; ?>'><?php echo $currentAntworten[2]; ?></button>
+            <button type='submit' name='answer' value='<?php echo $currentAntworten[3]; ?>'><?php echo $currentAntworten[3]; ?></button>
 
            <!-- <button type="submit" name="next_question">Nächste Frage</button> -->
         </form>
