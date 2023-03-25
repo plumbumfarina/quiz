@@ -144,7 +144,7 @@ if(!isset($_SESSION['userid'])) {
 
                     <div>
                         <button style="width:40%; height:80%;" type='submit' name='answer' value='<?php echo $currentAntworten[0]; ?>'><?php echo $currentAntworten[0]; ?></button>
-                        <button style="width:40%; height:8%;" type='submit' name='answer' value='<?php echo $currentAntworten[1]; ?>'><?php echo $currentAntworten[1]; ?></button>
+                        <button style="width:40%; height:80%;" type='submit' name='answer' value='<?php echo $currentAntworten[1]; ?>'><?php echo $currentAntworten[1]; ?></button>
                     </div>
                     <div>
                         <button style="width:40%; height:80%;" type='submit' name='answer' value='<?php echo $currentAntworten[2]; ?>'><?php echo $currentAntworten[2]; ?></button>
