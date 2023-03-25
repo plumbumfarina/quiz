@@ -431,6 +431,7 @@ button:hover {
 }
 .TRDeck{
   text-align: center;
+  padding: 10px;
 }
 
 .TRDeck:nth-child(even) {
