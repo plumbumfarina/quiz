@@ -136,16 +136,16 @@ if(!isset($_SESSION['userid'])) {
         <div class="container mt-3">
             <h1 class="form__title"><?php echo $currentFrage; ?></h1>
             
-            <div class="ContainerDeckButtons" style="padding:20px;">
+            <div class="ContainerDeck" style="padding:20px;">
                 <form action="?weiter=1" method="post">
                 
                     
                     <input type="hidden" name="question_id" value="<?php echo $fragen_id; ?>">
 
-                    <button type='submit' name='answer' value='<?php echo $currentAntworten[0]; ?>'><?php echo $currentAntworten[0]; ?></button>
-                    <button type='submit' name='answer' value='<?php echo $currentAntworten[1]; ?>'><?php echo $currentAntworten[1]; ?></button>
-                    <button type='submit' name='answer' value='<?php echo $currentAntworten[2]; ?>'><?php echo $currentAntworten[2]; ?></button>
-                    <button type='submit' name='answer' value='<?php echo $currentAntworten[3]; ?>'><?php echo $currentAntworten[3]; ?></button>
+                    <button style="width:40%;" type='submit' name='answer' value='<?php echo $currentAntworten[0]; ?>'><?php echo $currentAntworten[0]; ?></button>
+                    <button style="width:40%;" type='submit' name='answer' value='<?php echo $currentAntworten[1]; ?>'><?php echo $currentAntworten[1]; ?></button>
+                    <button style="width:40%;" type='submit' name='answer' value='<?php echo $currentAntworten[2]; ?>'><?php echo $currentAntworten[2]; ?></button>
+                    <button style="width:40%;" type='submit' name='answer' value='<?php echo $currentAntworten[3]; ?>'><?php echo $currentAntworten[3]; ?></button>
 
                 <!-- <button type="submit" name="next_question">Nächste Frage</button> -->
                 </form>
