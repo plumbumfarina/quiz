@@ -129,7 +129,7 @@ if(!isset($_SESSION['userid'])) {
                         
         ?>
 
-        <form action="?weiter=1" method="post">
+        <form action="?weiter=1" method="get">
         <p>Selected answer: <?php echo !empty($selectedAnswer) ? implode(', ', $selectedAnswer) : ''; ?></p>
 
             <p><?php foreach ($selectedAnswer as $antwort_id) {echo $antwort_id . " ";} ?></p>
