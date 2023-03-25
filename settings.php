@@ -1,9 +1,9 @@
 <?php
-//session_start();
-//if(!isset($_SESSION['userid'])) {
-//    header('location: login.php');
-//    die('Bitte zuerst einloggen');
-//}
+session_start();
+if(!isset($_SESSION['userid'])) {
+    header('location: login.php');
+    die('Bitte zuerst einloggen');
+}
 ?>
 
 <?php
@@ -56,13 +56,13 @@ if(isset($_GET['change-password'])) {
 <body>
     <header>
         <?php
-            //include_once('navbar.php')
+            include_once('navbar.php')
         ?>
     </header>
 	<main>
 		
         <h1>Hier kannst Du Einstellungen vornehmen</h1>
-        <div class="ContainerDeck">
+        <div class="ContainerDeckPasswort">
         <h1>Passwort ändern</h1>
             <form method="post" action="?change-password=1">
                 <div class="formInputGroup">
@@ -114,7 +114,7 @@ if(isset($_GET['change-password'])) {
     </main>
 
     <?php
-        //include_once('footer.php')
+        include_once('footer.php')
     ?>
 </body>
 </html>
