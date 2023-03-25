@@ -104,6 +104,7 @@ session_start();
                     ?>
                 </tbody>
             </table>
+        <br>
         <div class="ContainerDeck">
             <button type="button" class="buttonSpielen" onclick="openStart('<?php echo $fragenListe[0]; ?>')"> Quiz beginnen! </button>
         </div>
