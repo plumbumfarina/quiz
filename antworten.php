@@ -5,14 +5,14 @@ if(!isset($_SESSION['userid'])) {
     header('location: login.php');
     die('Bitte zuerst einloggen');
 } 
-
+$selectedAnswer = array();
 ?>
 
 <?php
     
 
     if(isset($_GET['weiter'])) {
-        $selectedAnswer[] = $_POST['question_id'];
+        $selectedAnswer[] = $_POST['answer'];
 
         $fragenIndex = $_SESSION['fragenListe'];
         array_shift($fragenIndex);
@@ -138,7 +138,7 @@ if(!isset($_SESSION['userid'])) {
             <p><?php foreach ($_SESSION['fragenListe'] as $fragen_id) {echo $fragen_id . " ";} ?></p>
             <p><?php echo $currentFrage; ?></p>
             <input type="hidden" name="question_id" value="<?php echo $fragen_id; ?>">
-            
+
             <button type='submit' name='answer' value='1'><?php echo $currentAntworten[0]; ?></button>
             <button type='submit' name='answer' value='2'><?php echo $currentAntworten[1]; ?></button>
             <button type='submit' name='answer' value='3'><?php echo $currentAntworten[2]; ?></button>
