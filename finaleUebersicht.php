@@ -114,13 +114,9 @@ if(!isset($_SESSION['userid'])) {
                                 }
                             }
                         }
-
+                        // Berechnung der Prozentual richtig beantworteten Fragen + Ausgabe
                         $percentage = ($correctAnswers / $totalQuestions) * 100;
-                        echo 'Du hast ' . $correctAnswers . ' von ' . $totalQuestions . ' richtig beantwortet, das macht ' . round($percentage, 2) . '%.';
-
-                        // display number of correct answers
-                        echo '<tr><td colspan="3">Number of correct answers: '.$correctAnswers.'</td></tr>';
-
+                        echo 'Du hast ' . $correctAnswers . ' von ' . $totalQuestions . ' Fragen richtig beantwortet, das macht ' . round($percentage, 2) . '%.';
 
                         $conn->close();
                     ?>
