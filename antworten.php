@@ -168,7 +168,7 @@ document.querySelectorAll('button[name="answer"]').forEach((button) => {
 
 
 document.querySelector('button[name="next_question"]').addEventListener('click', () => {
-    var selectedAnswer = document.querySelector('input[name="antwort"]:checked').value;
+    var selectedAnswer = document.querySelector('button[name="antwort"]:checked').value;
     <?php echo 'selectedAnswers.push("' . $selectedAnswer . '");'; ?>
 });
 
