@@ -62,6 +62,7 @@ if(!isset($_SESSION['userid'])) {
                         $antworten = array();
                         $currentIndex = 0;
                         $answerIndex = 0;
+                        $correctAnswers = 0;
 
 //SQL Abfrage für alle Fragen-IDs und Fragentexte
 
@@ -103,43 +104,19 @@ if(!isset($_SESSION['userid'])) {
                                 // die korrekte Antwort anzeigen
                                 echo '<td>'.$antwort.'</td>';
 
+                                if (isset($selectedAnswer[$answerIndex]) && $selectedAnswer[$answerIndex] == $antwort) {
+                                    $correctAnswers++;
+                                }
+
                                 $answerIndex++;
                                 echo '</tr>';
                                 }
                             }
                         }
+                        
+                        // display number of correct answers
+                        echo '<tr><td colspan="3">Number of correct answers: '.$correctAnswers.'</td></tr>';
 
-
-/*
-//Tabelle erstellen mit Fragen IDs und der Antworten
-
-                        foreach($fragenListe as $frage) {
-
-                            echo "<tr>";
-                            echo "<td>" . $frage['fragentext'] . "</td>";
-                            echo "<td>" . $frage['fragentext'] . "</td>";
-                            echo "</tr>";
-                        }
-*/
-                        #for($i = 0; $i < count($fragenListe); $i++) {
-                        #    $antworten[$i] = '0';
-                        #    echo "<tr>
-                        #        <td>Frage " . ($i + 1) . "</td>
-                        #        <td>";
-                        #        if ($antworten[$i] == '1') {
-                        #            echo "$fragenListe[$i]";
-                        #        } elseif ($antworten[$i] == '2') {
-                        #            echo "Antwort 2";
-                        #        } elseif ($antworten[$i] == '3') {
-                        #            echo "Antwort 3";
-                        #        } elseif ($antworten[$i] == '4') {
-                        #            echo "Antwort 4";
-                        #        } else {
-                        #            echo "Keine Antwort";
-                        #        }
-                        #        echo "</td>
-                        #    </tr>";
-                        #}
 
                         $conn->close();
                     ?>
@@ -149,11 +126,7 @@ if(!isset($_SESSION['userid'])) {
             <button type="button" class="buttonSpielen" onclick="window.location.href='startGame.php';"> Quiz beenden! </button>
         </div>
     </main>
-    <script>
-    //    function openStart(id) {
-    //    window.location.href = "antworten.php?fragen_id=" + id;
-    //    }
-    </script>
+ 
     <footer>
 
     </footer>
