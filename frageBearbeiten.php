@@ -63,10 +63,11 @@ if(!isset($_SESSION['userid'])) {
                 <input type='text' class='inputDeck' name='fragentext' value='<?php echo $fragentext; ?>'></input>
                 
                 <label for='frage' class='labelDeck'> Antwort 1:</label>
-                <input type='text' class='inputDeck' name='Antwort1' value='<?php echo $antwortEins; ?>'></input>
-                
-                <input type='radio' class='radioDeck' name='richtigkeit' value='1' <?php if($richtigkeit == '1') echo 'checked'; ?>>
-                <label>Richtige Antwort</label><br><br>
+                <div style='display: flex; align-items: center;'>
+  <input type='text' class='inputDeck' name='Antwort1' value='<?php echo $antwortEins; ?>'>
+  <input type='radio' class='radioDeck' name='richtigkeit' value='1' <?php if($richtigkeit == '1') echo 'checked'; ?>>
+  <label>Richtige Antwort</label>
+</div><br>
                 
                 <label for='frage' class='labelDeck'> Antwort 2:</label>
                 <input type='text' class='inputDeck' name='Antwort2' value='<?php echo $antwortZwei; ?>'></input>
