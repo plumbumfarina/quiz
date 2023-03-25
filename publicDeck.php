@@ -26,7 +26,7 @@ session_start();
 	<main>
         <h1 class="formTitle">Kartendecks</h1>
         <div>
-            <button type='button' class='button' onclick="window.location.href = 'deckAuswaehlen.php';"> Nur eigene Kartendecks spielen </button>
+            <button type='button' class='button' onclick="window.location.href = 'userDeck.php';"> Nur eigene Kartendecks spielen </button>
         </div>
         <br>
             <table class="TabelleDeck">
