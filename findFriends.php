@@ -22,8 +22,9 @@ session_start();
         ?>
     </header>
 	<main>
-        <div class="buttonContainer">
-            <h1>Freund/in finden</h1>
+        <h1>Freund/in finden</h1>
+        <div class="ContainerDeck">
+                        
         </div>
     </main>
     <?php

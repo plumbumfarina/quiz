@@ -22,8 +22,39 @@ session_start();
         ?>
     </header>
 	<main>
-        <div class="buttonContainer">
-            <h1>Freiem Spiel beitreten</h1>
+        <h1>Freiem Spiel beitreten</h1>
+        <div class="ContainerDeck">
+            <table class="TableDeck">
+                <thead>
+                    <tr>
+                        <th>Modul</th>
+                        <th>Anzahl Fragen</th>
+                        <th>User</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>Einführung in die Wirtschaftinformatik</th>
+                        <th>25</th>
+                        <th>maxMustermann</th>
+                        <th>
+                            <button class="buttonBlue"> wartet auf Spieler </button>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Betriebswirtschaftslehre</th>
+                        <th>18</th>
+                        <th>8055</th>
+                        <th>
+                            <button class="buttonBlue"> wartet auf Spieler </button>
+                        </th>
+                    </tr>
+                </tbody>
+            </table class="TableDeck">
+        </div>
+        <div class="ContainerDeck">
+            <p style="text-align:center"><button id="start_btn" role="button">Zufälligem Spiel beitreten</button></p>
         </div>
     </main>
     <?php
