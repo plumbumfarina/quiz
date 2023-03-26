@@ -3,7 +3,7 @@ session_start();
 
 $servername = "localhost";
 $username = "root";
-$password = "toor";
+$password = "";
 $dbname = "ProjektQuiz";
 $user_id = $_SESSION['userid'];
 

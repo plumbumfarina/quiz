@@ -44,7 +44,7 @@ if(!isset($_SESSION['userid'])) {
 // Datenbank-Verbindung
                         $servername = "localhost";
                         $username = "root";
-                        $password = "toor";
+                        $password = "";
                         $dbname = "ProjektQuiz";
                     
                         // Create connection
