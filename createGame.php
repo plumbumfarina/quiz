@@ -25,7 +25,7 @@ session_start();
 	<main>
         <h1>Freies Spiel eröffnen</h1>
         <div class="ContainerDeck" style="padding:15px;">
-            <h2>Kartendeck Suchen</h2>
+            <h3>Kartendeck Suchen</h3>
             <form method="post" class="formDeck">
                 <label for="deckname" class="labelDeck">Kartendeckname:</label>
                 <input type="text" name="deckname" class="inputDeck">
