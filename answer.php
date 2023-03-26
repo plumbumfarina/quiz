@@ -189,7 +189,7 @@ const buttonContainer = document.getElementById("ContainerDeck");
 
   // Set the width of each button proportional to the length of the longest string
   for (let i = 0; i < buttons.length; i++) {
-    buttons[i].style.width = (buttons[i].value.length / maxLength) * 100 + "%";
+    buttons[i].style.heigth = (buttons[i].value.length / maxLength) * 100 + "%";
   }
 </script>
 </body>
