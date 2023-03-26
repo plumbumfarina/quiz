@@ -176,7 +176,21 @@ document.querySelectorAll('button[name^="answer"]').forEach((button) => {
   });
 });
 
+const buttonContainer = document.getElementById("ContainerDeck");
+  const buttons = buttonContainer.getElementsByTagName("button");
+  let maxLength = 0;
 
+  // Find the longest string
+  for (let i = 0; i < buttons.length; i++) {
+    if (buttons[i].value.length > maxLength) {
+      maxLength = buttons[i].value.length;
+    }
+  }
+
+  // Set the width of each button proportional to the length of the longest string
+  for (let i = 0; i < buttons.length; i++) {
+    buttons[i].style.width = (buttons[i].value.length / maxLength) * 100 + "%";
+  }
 </script>
 </body>
 </html>
