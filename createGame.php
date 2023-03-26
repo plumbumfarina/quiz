@@ -26,7 +26,7 @@ session_start();
         <h1>Freies Spiel eröffnen</h1>
     </main>
     <?php
-        include_once('lib/.php')
+        include_once('lib/footer.php')
     ?>
 </body>
 </html>
