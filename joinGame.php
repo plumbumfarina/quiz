@@ -24,6 +24,9 @@ session_start();
 	<main>
         <h1>Freiem Spiel beitreten</h1>
         <div class="ContainerDeck">
+            <p style="text-align:center"><button id="start_btn" role="button">Zufälligem Spiel beitreten</button></p>
+        </div>
+        <div class="ContainerDeck">
             <table class="TabelleDeck">
                 <thead class="THeadDeck">
                     <tr>
@@ -39,7 +42,7 @@ session_start();
                         <th>25</th>
                         <th>maxMustermann</th>
                         <th>
-                            <button class="buttonBlue"> wartet auf Spieler </button>
+                            <button class="buttonBlue"> Beitreten </button>
                         </th>
                     </tr>
                     <tr class="TRDeck">
@@ -47,15 +50,13 @@ session_start();
                         <th>18</th>
                         <th>8055</th>
                         <th>
-                            <button class="buttonBlue"> wartet auf Spieler </button>
+                            <button class="buttonBlue"> Beitreten </button>
                         </th>
                     </tr>
                 </tbody>
             </table class="TableDeck">
         </div>
-        <div class="ContainerDeck">
-            <p style="text-align:center"><button id="start_btn" role="button">Zufälligem Spiel beitreten</button></p>
-        </div>
+        
     </main>
     <?php
         include_once('lib/footer.php')
