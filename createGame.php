@@ -57,6 +57,7 @@ session_start();
             </select>
             <button class="buttonYellow"> Kartendecks filtern </button>
         </div>
+        <br>
         <table class="TabelleDeck">
             <thead class="THeadDeck">
                     <tr>
