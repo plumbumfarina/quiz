@@ -30,7 +30,7 @@ if(isset($kartendeck_id)) {
 }
 
 if ($conn->query($sql) === TRUE) {
-  header("Refresh: 0.1; URL=../addQuestion.php?kartendeck_id=$kartendeck_id");
+  header("Refresh: 0.1; URL=../newQuestion.php?kartendeck_id=$kartendeck_id");
 } else {
   echo "Error: " . $sql . "<br>" . $conn->error;
 }
