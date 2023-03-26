@@ -142,13 +142,13 @@ if(!isset($_SESSION['userid'])) {
                     
                     <input type="hidden" name="question_id" value="<?php echo $fragen_id; ?>">
 
-                    <div>
-                        <button style="width:45%; height:90%;" type='submit' name='answer' value='<?php echo $currentAntworten[0]; ?>'><?php echo $currentAntworten[0]; ?></button>
-                        <button style="width:45%; height:90%;" type='submit' name='answer' value='<?php echo $currentAntworten[1]; ?>'><?php echo $currentAntworten[1]; ?></button>
+                    <div id="button-container" style="display: flex;">
+                        <button id="button-1" style="width:45%;" type='submit' name='answer' value='<?php echo $currentAntworten[0]; ?>'><?php echo $currentAntworten[0]; ?></button>
+                        <button id="button-2" style="width:45%;"  type='submit' name='answer' value='<?php echo $currentAntworten[1]; ?>'><?php echo $currentAntworten[1]; ?></button>
                     </div>
-                    <div>
-                        <button style="width:45%; height:90%;" type='submit' name='answer' value='<?php echo $currentAntworten[2]; ?>'><?php echo $currentAntworten[2]; ?></button>
-                        <button style="width:45%; height:90%;" type='submit' name='answer' value='<?php echo $currentAntworten[3]; ?>'><?php echo $currentAntworten[3]; ?></button>
+                    <div id="button-container" style="display: flex;">
+                        <button id="button-3" style="width:45%;" type='submit' name='answer' value='<?php echo $currentAntworten[2]; ?>'><?php echo $currentAntworten[2]; ?></button>
+                        <button id="button-4" style="width:45%;" type='submit' name='answer' value='<?php echo $currentAntworten[3]; ?>'><?php echo $currentAntworten[3]; ?></button>
                     </div>
 
                 <!-- <button type="submit" name="next_question">Nächste Frage</button> -->
@@ -164,6 +164,22 @@ if(!isset($_SESSION['userid'])) {
 ?>
 
 <script>
+  const button1 = document.getElementById('button-1');
+  const button2 = document.getElementById('button-2');
+  const button3 = document.getElementById('button-3');
+  const button4 = document.getElementById('button-4');
+
+  // Get the height of each button's content
+  const buttonHeights = [button1.offsetHeight, button2.offsetHeight, button3.offsetHeight, button4.offsetHeight];
+  const tallestButtonHeight = Math.max(...buttonHeights);
+
+  // Set the height of all buttons to be equal to the height of the tallest button
+  button1.style.height = `${tallestButtonHeight}px`;
+  button2.style.height = `${tallestButtonHeight}px`;
+  button3.style.height = `${tallestButtonHeight}px`;
+  button4.style.height = `${tallestButtonHeight}px`;
+
+
 
 document.querySelectorAll('button[name^="answer"]').forEach((button) => {
   button.addEventListener('click', () => {
