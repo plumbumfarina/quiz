@@ -24,17 +24,17 @@ session_start();
 	<main>
         <h1>Freiem Spiel beitreten</h1>
         <div class="ContainerDeck">
-            <table class="TableDeck">
-                <thead>
+            <table class="TabelleDeck">
+                <thead class="THeadDeck">
                     <tr>
-                        <th>Modul</th>
-                        <th>Anzahl Fragen</th>
-                        <th>User</th>
-                        <th></th>
+                        <th class="THDeck">Modul</th>
+                        <th class="THDeck">Anzahl Fragen</th>
+                        <th class="THDeck">User</th>
+                        <th class="THDeck"> </th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    <tr class="TRDeck">
                         <th>Einführung in die Wirtschaftinformatik</th>
                         <th>25</th>
                         <th>maxMustermann</th>
@@ -42,7 +42,7 @@ session_start();
                             <button class="buttonBlue"> wartet auf Spieler </button>
                         </th>
                     </tr>
-                    <tr>
+                    <tr class="TRDeck">
                         <th>Betriebswirtschaftslehre</th>
                         <th>18</th>
                         <th>8055</th>
