@@ -28,8 +28,8 @@ session_start();
             <table class="TabelleDeck">
                 <thead  class="THeadDeck">
                     <tr>
+                        <th class="THDeck">Fragennummer</th>
                         <th class="THDeck">Frage</th>
-                        <th class="THDeck">Beantwortet</th>
                     </tr>
                 </thead>
                 <tbody>
