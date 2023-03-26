@@ -23,7 +23,7 @@ session_start();
     </header>
 	<main>
         <h1>Freunde</h1>
-        <div class="ContainerDeck">
+        <div class="ContainerDeck" style="padding:5px;">
             <h2>Bestehende Freundschaften</h2>
         </div>
         <table class="TabelleDeck">
@@ -58,7 +58,7 @@ session_start();
             </tbody>
         </table class="TableDeck">
         <br>
-        <div class="ContainerDeck" style="padding:10px;">
+        <div class="ContainerDeck" style="padding:5px;">
             <h2>Freund Finden</h2>
             <form method="post" class="formDeck" style="padding:5px">
                 <label for="deckname" class="labelDeck">Username :</label>
