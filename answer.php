@@ -143,12 +143,12 @@ if(!isset($_SESSION['userid'])) {
                     <input type="hidden" name="question_id" value="<?php echo $fragen_id; ?>">
 
                     <div>
-                        <button style="width:40%; " type='submit' name='answer' value='<?php echo $currentAntworten[0]; ?>'><?php echo $currentAntworten[0]; ?></button>
-                        <button style="width:40%; " type='submit' name='answer' value='<?php echo $currentAntworten[1]; ?>'><?php echo $currentAntworten[1]; ?></button>
+                        <button style="width:50%; height:90%;" type='submit' name='answer' value='<?php echo $currentAntworten[0]; ?>'><?php echo $currentAntworten[0]; ?></button>
+                        <button style="width:50%; height:90%;" type='submit' name='answer' value='<?php echo $currentAntworten[1]; ?>'><?php echo $currentAntworten[1]; ?></button>
                     </div>
                     <div>
-                        <button style="width:40%; " type='submit' name='answer' value='<?php echo $currentAntworten[2]; ?>'><?php echo $currentAntworten[2]; ?></button>
-                        <button style="width:40%; " type='submit' name='answer' value='<?php echo $currentAntworten[3]; ?>'><?php echo $currentAntworten[3]; ?></button>
+                        <button style="width:50%; height:90%;" type='submit' name='answer' value='<?php echo $currentAntworten[2]; ?>'><?php echo $currentAntworten[2]; ?></button>
+                        <button style="width:50%; height:90%;" type='submit' name='answer' value='<?php echo $currentAntworten[3]; ?>'><?php echo $currentAntworten[3]; ?></button>
                     </div>
 
                 <!-- <button type="submit" name="next_question">Nächste Frage</button> -->
@@ -176,21 +176,6 @@ document.querySelectorAll('button[name^="answer"]').forEach((button) => {
   });
 });
 
-const buttonContainer = document.getElementById("ContainerDeck");
-  const buttons = buttonContainer.getElementsByTagName("button");
-  let maxLength = 0;
-
-  // Find the longest string
-  for (let i = 0; i < buttons.length; i++) {
-    if (buttons[i].value.length > maxLength) {
-      maxLength = buttons[i].value.length;
-    }
-  }
-
-  // Set the width of each button proportional to the length of the longest string
-  for (let i = 0; i < buttons.length; i++) {
-    buttons[i].style.heigth = (buttons[i].value.length / maxLength) * 100 + "%";
-  }
 </script>
 </body>
 </html>
