@@ -24,7 +24,7 @@ session_start();
     </header>
 	<main>
         <h1>Freies Spiel eröffnen</h1>
-        <div class="ContainerDeck">
+        <div class="ContainerDeck" style="padding:15px;">
             <label for="modul" class="labelDeck">Wähle ein Modul aus:</label>
             <select id="modul" name="modul" class="selectDeck">
                     <?php
