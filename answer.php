@@ -142,11 +142,11 @@ if(!isset($_SESSION['userid'])) {
                     
                     <input type="hidden" name="question_id" value="<?php echo $fragen_id; ?>">
 
-                    <div id="button-container">
+                    <div id="button-container" style="display:flex; text-align: center;" >
                         <button id="button-1" style="width:45%;" type='submit' name='answer' value='<?php echo $currentAntworten[0]; ?>'><?php echo $currentAntworten[0]; ?></button>
                         <button id="button-2" style="width:45%;"  type='submit' name='answer' value='<?php echo $currentAntworten[1]; ?>'><?php echo $currentAntworten[1]; ?></button>
                     </div>
-                    <div id="button-container">
+                    <div id="button-container style="display:flex; text-align: center;"">
                         <button id="button-3" style="width:45%;" type='submit' name='answer' value='<?php echo $currentAntworten[2]; ?>'><?php echo $currentAntworten[2]; ?></button>
                         <button id="button-4" style="width:45%;" type='submit' name='answer' value='<?php echo $currentAntworten[3]; ?>'><?php echo $currentAntworten[3]; ?></button>
                     </div>
