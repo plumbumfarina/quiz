@@ -25,38 +25,38 @@ session_start();
         <h1>Freunde</h1>
         <div class="ContainerDeck">
             <h2>Bestehende Freundschaften</h2>
-            <table class="TabelleDeck">
-                <thead class="THeadDeck">
-                    <tr>
-                        <th class="THDeck">User</th>
-                        <th class="THDeck">Win</th>
-                        <th class="THDeck">Loose</th>
-                        <th class="THDeck">Tie</th>
-                        <th class="THDeck"></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="TRDeck">
-                        <th>maxMustermann</th>
-                        <th>9</th>
-                        <th>1</th>
-                        <th>2</th>
-                        <th>
-                            <button class="buttonBlue"> Herausfordern </button>
-                        </th>
-                    </tr>
-                    <tr class="TRDeck">
-                        <th>8055</th>
-                        <th>2</th>
-                        <th>9</th>
-                        <th>5</th>
-                        <th>
-                            <button class="buttonBlue"> Herausfordern </button>
-                        </th>
-                    </tr>
-                </tbody>
-            </table class="TableDeck">
         </div>
+        <table class="TabelleDeck">
+            <thead class="THeadDeck">
+                <tr>
+                    <th class="THDeck">User</th>
+                    <th class="THDeck">Win</th>
+                    <th class="THDeck">Loose</th>
+                    <th class="THDeck">Tie</th>
+                    <th class="THDeck"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TRDeck">
+                    <th>maxMustermann</th>
+                    <th>9</th>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>
+                        <button class="buttonBlue"> Herausfordern </button>
+                    </th>
+                </tr>
+                <tr class="TRDeck">
+                    <th>8055</th>
+                    <th>2</th>
+                    <th>9</th>
+                    <th>5</th>
+                    <th>
+                        <button class="buttonBlue"> Herausfordern </button>
+                    </th>
+                </tr>
+            </tbody>
+        </table class="TableDeck">
         <br>
         <div class="ContainerDeck" style="padding:10px;">
             <h2>Freund Finden</h2>
