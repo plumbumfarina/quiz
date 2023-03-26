@@ -16,7 +16,7 @@
 	<main>
 		<h1>Cookie-Einstellungen<h1>
 
-		<h2> --Hier können Deine Einstellungen stehen --</h2>
+		<h2> --Hier können Deine Cookie-Einstellungen stehen --</h2>
 	</main>
 	<?php
 			include_once('lib/footer.php')
