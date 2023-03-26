@@ -39,22 +39,59 @@ session_start();
             </thead>
             <tbody>
                 <tr class="TRDeck">
-                    <th>maxMustermann</th>
-                    <th>9</th>
-                    <th>1</th>
-                    <th>2</th>
-                    <th>
+                    <td>maxMustermann</td>
+                    <td>9</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>
                         <button class="buttonBlue"> Herausfordern </button>
-                    </th>
+                    </td>
                 </tr>
                 <tr class="TRDeck">
-                    <th>8055</th>
-                    <th>2</th>
-                    <th>9</th>
-                    <th>5</th>
-                    <th>
+                    <td>8055</td>
+                    <td>2</td>
+                    <td>9</td>
+                    <td>5</td>
+                    <td>
                         <button class="buttonBlue"> Herausfordern </button>
-                    </th>
+                    </td>
+                </tr>
+            </tbody>
+        </table class="TableDeck">
+        <br>
+        <div class="ContainerDeck" style="padding:2px;">
+            <h2>Freundschaftsanfragen</h2>
+        </div>
+        <br>
+        <table class="TabelleDeck">
+            <thead class="THeadDeck">
+                <tr>
+                    <th class="THDeck">Nickname</th>
+                    <th class="THDeck">Email</th>
+                    <th class="THDeck"></th>
+                    <th class="THDeck"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TRDeck">
+                    <td>bartSimposon</td>
+                    <td>bs@gmaily.com</td>
+                    <td>
+                        <button class="buttonGreen"> Annehmen </button>
+                    </td>
+                    <td>
+                        <button class="buttonRed"> Ablehnen </button>
+                    </td>
+                </tr>
+                <tr class="TRDeck">
+                    <td>lisaSimposon</td>
+                    <td>ls@gmaily.com</td>
+                    <td>
+                        <button class="buttonGreen"> Annehmen </button>
+                    </td>
+                    <td>
+                        <button class="buttonRed"> Ablehnen </button>
+                    </td>
                 </tr>
             </tbody>
         </table class="TableDeck">
