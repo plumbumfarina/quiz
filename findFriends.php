@@ -30,10 +30,10 @@ session_start();
         <table class="TabelleDeck">
             <thead class="THeadDeck">
                 <tr>
-                    <th class="THDeck">User</th>
-                    <th class="THDeck">Win</th>
-                    <th class="THDeck">Loose</th>
-                    <th class="THDeck">Tie</th>
+                    <th class="THDeck">Benutzer</th>
+                    <th class="THDeck">Gewonnen</th>
+                    <th class="THDeck">Verloren</th>
+                    <th class="THDeck">Unentschieden</th>
                     <th class="THDeck"></th>
                 </tr>
             </thead>
@@ -71,8 +71,8 @@ session_start();
         <table class="TabelleDeck">
             <thead class="THeadDeck">
                 <tr>
-                    <th class="THDeck">Nickname</th>
-                    <th class="THDeck">Email</th>
+                    <th class="THDeck">Benutzername</th>
+                    <th class="THDeck">E-Mail</th>
                     <th class="THDeck"></th>
                 </tr>
             </thead>
