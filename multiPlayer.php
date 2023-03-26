@@ -24,9 +24,9 @@
 	<main>
         <div class="buttonContainer">
             <h1>Mehrspieler Modus</h1>
-                <p style="text-align:center"><button id="start_btn" onclick="window.location.href='createGame.php';" class="btn btn-primary btn-lg" role="button">Freies Spiel eröffnen</button></p>
-                <p style="text-align:center"><button id="start_btn" onclick="window.location.href='joinGame.php';" class="btn btn-primary btn-lg" role="button">Freiem Spiel beitreten</button></p>                 
-                <p style="text-align:center"><button id="start_btn"  onclick="window.location.href='findFriends.php';" class="btn btn-primary btn-lg" role="button">Freund/in finden</button></p>
+                <p style="text-align:center"><button id="start_btn" onclick="window.location.href='createGame.php';" role="button">Freies Spiel eröffnen</button></p>
+                <p style="text-align:center"><button id="start_btn" onclick="window.location.href='joinGame.php';"  role="button">Freiem Spiel beitreten</button></p>                 
+                <p style="text-align:center"><button id="start_btn"  onclick="window.location.href='findFriends.php';" role="button">Freund/in finden</button></p>
         </div>
     </main>
     <?php
