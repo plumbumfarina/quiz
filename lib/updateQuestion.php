@@ -41,7 +41,7 @@ if(isset($fragen_id)) {
 // Prüfung ob Update der Frage erfolgreich war
 if ($conn->query($sql) === TRUE) {
   // Absprung auf die Übersciht der Fragen mit Übergabe der Kartendeck_ID
-  header("Refresh: 0.1; URL=../fragenUebersicht.php?kartendeck_id=$kartendeck_id");
+  header("Refresh: 0.1; URL=../questionOverview.php?kartendeck_id=$kartendeck_id");
 } else {
   echo "Error: " . $sql . "<br>" . $conn->error;
 }
