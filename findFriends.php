@@ -61,67 +61,44 @@ session_start();
         <div class="ContainerDeck" style="padding:10px;">
             <h2>Freund Finden</h2>
             <form method="post" class="formDeck" style="padding:5px">
-                <label for="deckname" class="labelDeck">Kartendeckname:</label>
+                <label for="deckname" class="labelDeck">Username :</label>
                 <input type="text" name="deckname" class="inputDeck">
                 <button class="buttonYellow"> Freund Finden </button>
             </form>
         </div>
+        <br>
         <table class="TabelleDeck">
             <thead class="THeadDeck">
-                    <tr>
-                        <th class="THDeck">Deckname</th>
-                        <th class="THDeck">Modulkürzel</th>
-                        <th class="THDeck">Modulname</th>
-                        <th class="THDeck">Anazhl Fragen</th>
-                        <th class="THDeck"></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php
-                        include_once('lib/dbConnectorMYSQLI.php');
-                        
-                        // SQL Abfrage um die öffentlichen Kartendecks zu ermitteln
-                        $sql = "SELECT kartendeck_id, kartendeck_name, kartendeck.modul_id, public, modulkuerzel, modulname FROM kartendeck JOIN modul WHERE (kartendeck.modul_id = modul.modul_id) AND (public = TRUE)";
-                        $result = $conn->query($sql);
-
-                        function getFragenAnzahl($kartendeck_id){
-                            global $conn;
-                            $result1 = $conn->query("SELECT * FROM fragen WHERE kartendeck_id = $kartendeck_id");
-                            // Anzahl der Zeilen in der Ergebnismenge abrufen
-                            $anzahlFragen = $result1->num_rows;
-
-                            return $anzahlFragen;
-                        }
-
-                        if ($result->num_rows > 0) {
-                            // Ausgabe der SQL Abfrage 
-                            while($row = $result->fetch_assoc()) {
-                                $fragenAnzahl = getFragenAnzahl($row["kartendeck_id"]);
-                                echo "<tr class='TRDeck'>
-                                    <td>" . $row["kartendeck_name"]. "</td>
-                                    <td>" . $row["modulkuerzel"]. "</td>
-                                    <td>" . $row["modulname"]. "</td>
-                                    <td>" . $fragenAnzahl. "</td>
-                                    <td>
-                                        <button type='button' class='buttonBlue' value='" . $row["kartendeck_id"]. "' onclick='openPageGame(" .  $row['kartendeck_id']. ")'". ($fragenAnzahl == 0 ? " disabled" : "") ."> Spiel eröffnen </button>
-                                    </td>
-                                </tr>";
-                            }
-                        } else {
-                            //Ausgabe bei leerer Abfrage
-                            echo "<tr class='TRDeck'>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                </tr>";
-                        }
-
-                        $conn->close();
-                    ?>
-                </tbody>
-            </table>
+                <tr>
+                    <th class="THDeck">Nickname</th>
+                    <th class="THDeck">Email</th>
+                    <th class="THDeck"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TRDeck">
+                    <td>kunibert</td>
+                    <td>kunibert@gmaily.com</td>
+                    <td>
+                        <button class="buttonBlue"> Freundschaftsanfrage senden! </button>
+                    </td>
+                </tr> 
+                <tr class="TRDeck">
+                    <td>dagobert</td>
+                    <td>dagobertDuck@gmaily.com</td>
+                    <td>
+                        <button class="buttonBlue"> Freundschaftsanfrage senden! </button>
+                    </td>
+                </tr> 
+                <tr class="TRDeck">
+                    <td>homer</td>
+                    <td>homerSimpson@gmaily.com</td>
+                    <td>
+                        <button class="buttonBlue"> Freundschaftsanfrage senden! </button>
+                    </td>
+                </tr> 
+            </tbody>
+        </table>
     </main>
     <?php
 		include_once('lib/footer.php')
